@@ -12,11 +12,23 @@ async function scrapeSpell(classType, timer = 0) {
   if (!(classtype in spellIds["Spells"])) {
     spellIds["Spells"][classtype] = {};
   }
+  if (!(classtype in spellIds["Talents"])) {
+    spellIds["Talents"][classtype] = {};
+  }
+  if (!(classtype in spellIds["Covenants"])) {
+    spellIds["Covenants"][classtype] = {};
+  }
   for (spec in classSpecs[classType]) {
     let url = `https://shadowlands.wowhead.com/talent-calc/${classType}/${classSpecs[classType][spec]}`;
     let readableSpec = classSpecs[classType][spec];
     if (readableSpec === "beast-mastery") {
       readableSpec = "beast Mastery";
+    }
+    if (!(readableSpec.toUpperCase() in spellIds["Talents"][classtype])) {
+      spellIds["Talents"][classtype][readableSpec.toUpperCase()] = {
+        Normal: {},
+        PvP: {}
+      };
     }
     console.log(`checking ${readableSpec}`);
     await page.goto(url, { timeout: 0 });
@@ -28,6 +40,146 @@ async function scrapeSpell(classType, timer = 0) {
     //Then go through talents, make sure to grab the row and column info - issue here with the fact some are passive
     //Go through pvp talents aswell - some also passive
     //then grab covenant abilities - replace the kyrian one with https://www.wowhead.com/item=177278/phial-of-serenity
+    const talentData = await page.evaluate(() => {
+      tds = Array.from(
+        document.querySelectorAll(
+          "table.talentcalc-core > tbody > tr.talentcalc-row > td[data-row]"
+        )
+      );
+      return tds.map(td => {
+        const spellId = td.querySelector("a.screen").href;
+        const row = td.getAttribute("data-row");
+        const col = td.getAttribute("data-col");
+        const spellName = td.querySelector("div > table > tbody > tr > td")
+          .textContent;
+        return {
+          spellId,
+          row,
+          col,
+          spellName
+        };
+      });
+    });
+
+    talentData.forEach(({ spellId, row, col, spellName }) => {
+      const regex = /spell=(\d+)/;
+      const found = spellId.match(regex);
+      if (!found) {
+        console.log(`error with ${spellId}, could not be parsed`);
+        return;
+      } else {
+        if (found.length !== 2) {
+          console.log(
+            `error with ${spellId}, parse didnt get sufficient values`
+          );
+          return;
+        }
+      }
+      if (
+        spellName in
+        spellIds["Talents"][classtype][readableSpec.toUpperCase()]["Normal"]
+      ) {
+        console.log(`${spellName} already in talents for ${classtype}`);
+      } else {
+        spellIds["Talents"][classtype][readableSpec.toUpperCase()]["Normal"][
+          spellName
+        ] = {
+          spellId: found[1],
+          row,
+          col
+        };
+      }
+    });
+
+    await page.click("div.talentcalc-pvp > div.iconmedium > a");
+
+    const pvpTalentData = await page.evaluate(() => {
+      tds = Array.from(
+        document.querySelectorAll("div.talentcalc-pvp-talent:not(.active)")
+      );
+      return tds.map(td => {
+        const spellId = td.querySelector("span + a").href;
+        const spellName = td.textContent;
+        return {
+          spellId,
+          spellName
+        };
+      });
+    });
+    pvpTalentData.forEach(({ spellId, spellName }) => {
+      const regex = /spell=(\d+)/;
+      const found = spellId.match(regex);
+      if (!found) {
+        console.log(`error with ${spellId}, could not be parsed`);
+        return;
+      } else {
+        if (found.length !== 2) {
+          console.log(
+            `error with ${spellId}, parse didnt get sufficient values`
+          );
+          return;
+        }
+      }
+      if (
+        spellName in
+        spellIds["Talents"][classtype][readableSpec.toUpperCase()]["PvP"]
+      ) {
+        console.log(`${spellName} already in PvP talents for ${classtype}`);
+      } else {
+        spellIds["Talents"][classtype][readableSpec.toUpperCase()]["PvP"][
+          spellName
+        ] = {
+          spellId: found[1]
+        };
+      }
+    });
+
+    const covenantData = await page.evaluate(() => {
+      tds = Array.from(
+        document.querySelectorAll(
+          "div.talentcalc-covenants-cell-flex > div[data-row] > div.inner > div.iconmedium + div.iconmedium"
+        )
+      );
+      return tds.map(td => {
+        const covNum = td.parentElement.parentElement.getAttribute(
+          "data-covenant"
+        );
+        const spellId = td.querySelector("a").href;
+        return {
+          covNum,
+          spellId
+        };
+      });
+    });
+
+    covenantData.forEach(({ covNum, spellId }) => {
+      const regex = /spell=(\d+)/;
+      const found = spellId.match(regex);
+      if (!found) {
+        console.log(`error with ${spellId}, could not be parsed`);
+        return;
+      } else {
+        if (found.length !== 2) {
+          console.log(
+            `error with ${spellId}, parse didnt get sufficient values`
+          );
+          return;
+        }
+      }
+      let spellID = found[1];
+      const covenantName = covenantOptions[covNum];
+      //if covenant is Summon steward switch to vial
+      if (spellID === "324739") {
+        spellID = "177278"; //Vial of serenity
+      }
+      if (!(covenantName in spellIds["Covenants"][classtype])) {
+        spellIds["Covenants"][classtype][covenantName] = {};
+      }
+      spellIds["Covenants"][classtype][covenantName][spellID] = {
+        spellId: spellID
+      };
+    });
+
     const spellData = await page.evaluate(() => {
       const tds = Array.from(
         document.querySelectorAll(
@@ -43,40 +195,13 @@ async function scrapeSpell(classType, timer = 0) {
 
         const spellDetails = childs[2].children;
         const spellName = spellDetails[1].textContent;
-        const spellID = spellDetails[1].href;
+        const spellId = spellDetails[1].href;
         storage.push({
           abilityLearntLevel,
           doesItHaveAStar,
           isItPassive,
           spellName,
-          spellID,
-        });
-        return storage;
-      }, []);
-    });
-
-    const talentData = await page.evaluate(() => {
-      const tds = Array.from(
-        document.querySelectorAll(
-          "div.talentcalc-spell-list-table > table > tbody > tr"
-        )
-      );
-      return tds.reduce((storage, td) => {
-        const childs = td.children;
-        const abilityLearntLevel = childs[0].textContent;
-        const doesItHaveAStar = childs[1].textContent;
-
-        const isItPassive = childs[2].textContent.includes("(Passive)");
-
-        const spellDetails = childs[2].children;
-        const spellName = spellDetails[1].textContent;
-        const spellID = spellDetails[1].href;
-        storage.push({
-          abilityLearntLevel,
-          doesItHaveAStar,
-          isItPassive,
-          spellName,
-          spellID,
+          spellId
         });
         return storage;
       }, []);
@@ -88,13 +213,13 @@ async function scrapeSpell(classType, timer = 0) {
         doesItHaveAStar,
         isItPassive,
         spellName,
-        spellID,
+        spellId
       }) => {
         if (isItPassive) {
           return;
         }
 
-        const isItBlacklisted = blacklistedSpells[classType].some((blSpell) =>
+        const isItBlacklisted = blacklistedSpells[classType].some(blSpell =>
           RegExp(blSpell).test(
             `${abilityLearntLevel}${doesItHaveAStar}:${spellName}`
           )
@@ -103,30 +228,37 @@ async function scrapeSpell(classType, timer = 0) {
           return;
         }
         const regex = /spell=(\d+)/;
-        const found = spellID.match(regex);
+        const found = spellId.match(regex);
         if (!found) {
-          console.log(`error with ${spellID}, could not be parsed`);
+          console.log(`error with ${spellId}, could not be parsed`);
           return;
         } else {
           if (found.length !== 2) {
             console.log(
-              `error with ${spellID}, parse didnt get sufficient values`
+              `error with ${spellId}, parse didnt get sufficient values`
             );
             return;
           }
         }
-        if (spellName in spellIds[classtype]) {
+        if (spellName in spellIds["Spells"][classtype]) {
           spellIds["Spells"][classtype][spellName]["spec"].push(
             readableSpec.toUpperCase()
           );
         } else {
           spellIds["Spells"][classtype][spellName] = {
             spec: [readableSpec.toUpperCase()],
-            spellId: found[1],
+            spellId: found[1]
           };
         }
       }
     );
+  }
+  //We cut out hex, since we couldnt distinguish it from the other 8 hexs, so now we just add it in manually.
+  if (classType === "Shaman" && !("Hex" in spellIds["Spells"]["Shaman"])) {
+    spellIds["Spells"]["Shaman"]["Hex"] = {
+      spec: ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+      spellId: "51514"
+    };
   }
   browser.close();
   let t1 = performance.now();
@@ -134,7 +266,7 @@ async function scrapeSpell(classType, timer = 0) {
 }
 
 function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 let spellIds = { Spells: {}, Talents: {}, Covenants: {} };
@@ -150,7 +282,7 @@ const classes = [
   "rogue",
   "shaman",
   "warlock",
-  "warrior",
+  "warrior"
 ];
 
 const classReadable = {
@@ -165,7 +297,13 @@ const classReadable = {
   rogue: "Rogue",
   shaman: "Shaman",
   warlock: "Warlock",
-  warrior: "Warrior",
+  warrior: "Warrior"
+};
+const covenantOptions = {
+  "1": "Kyrian",
+  "2": "Venthyr",
+  "3": "Night Fae",
+  "4": "Necrolord"
 };
 
 const classSpecs = {
@@ -180,14 +318,14 @@ const classSpecs = {
   rogue: ["assasination", "subtlety", "outlaw"],
   shaman: ["restoration", "elemental", "enhancement"],
   warlock: ["destruction", "affliction", "demonology"],
-  warrior: ["fury", "arms", "protection"],
+  warrior: ["fury", "arms", "protection"]
 };
 const blacklistedSpells = {
   "death-knight": [
     "1:Frost Breath",
     "6:Runeforging",
     "10:Death Gate",
-    "27:Path of Frost",
+    "27:Path of Frost"
   ],
   "demon-hunter": [
     "1:Fodder to the Flame",
@@ -197,7 +335,7 @@ const blacklistedSpells = {
     "1:Chaos Strike",
     "1:Demon's Bite",
     "1:Fel Rush",
-    "1:Vengeful Retreat",
+    "1:Vengeful Retreat"
   ],
   druid: [
     "1:Flap",
@@ -206,7 +344,7 @@ const blacklistedSpells = {
     "19:Charm Woodland Creature",
     "22:Teleport: Moonglade",
     "24:Flight Form",
-    "13:Sunfire",
+    "13:Sunfire"
   ],
   hunter: [
     "1:Volley",
@@ -227,7 +365,7 @@ const blacklistedSpells = {
     "41:Call Pet 4",
     "43:Eagle Eye",
     "47:Fetch",
-    "48:Call Pet 5",
+    "48:Call Pet 5"
   ],
   mage: [
     "1:Polymorph",
@@ -238,7 +376,7 @@ const blacklistedSpells = {
     "11:Teleport",
     "24:Portal",
     "17:Conjure Mana Gem",
-    "25:Polymorph",
+    "25:Polymorph"
   ],
   monk: [
     "1\\*:Spinning Crane Kick",
@@ -246,7 +384,7 @@ const blacklistedSpells = {
     "10:Soothing Mist",
     "11:Zen Pilgrimage",
     "17:Touch of Fatality",
-    "37:Zen Flight",
+    "37:Zen Flight"
   ],
   paladin: [
     "1\\*:Judgement",
@@ -254,7 +392,7 @@ const blacklistedSpells = {
     "1:Crusader's Direhorn",
     "(1):Summon .*",
     "19:Contemplation",
-    "54:Sense Undead",
+    "54:Sense Undead"
   ],
   priest: ["1:Shoot", "22:Mind Vision"],
   rogue: ["1:Detection", "24:Pick Lock", "24:Pick Pocket"],
@@ -264,8 +402,8 @@ const blacklistedSpells = {
     "1:Primordial Wave",
     "14:Far Sight",
     "32:Astral Recall",
-    "41:Hex",
-  ], //Thinking ill just manually add hex: spell id: 51514
+    "41:Hex"
+  ],
   warlock: [
     "1:DreadSteed",
     "1:Felsteed",
@@ -275,16 +413,16 @@ const blacklistedSpells = {
     "31:Ritual of Doom",
     "32:Soulstone",
     "33:Ritual of Summoning",
-    "47:Create Soulwell",
+    "47:Create Soulwell"
   ],
-  warrior: ["1:Hotbar Slot 01", "1:Hotbar Slot 02"],
+  warrior: ["1:Hotbar Slot 01", "1:Hotbar Slot 02"]
 };
 let promises = [];
 for (let k = 0; k < classes.length; k++) {
-  promises.push(scrapeSpell(classes[k], 5000 * k));
+  promises.push(scrapeSpell(classes[k], 8000 * k));
 }
 
 Promise.all(promises).then(() => {
   let jsonToWrite = JSON.stringify(spellIds);
-  fs.writeFileSync(`Spells.json`, jsonToWrite);
+  fs.writeFileSync(`SpellsPhase1.json`, jsonToWrite);
 });
