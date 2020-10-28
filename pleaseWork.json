@@ -1,0 +1,1176 @@
+{
+  "Death-knight": {
+    "Death Coil": { "spec": ["BLOOD", "FROST", "UNHOLY"], "spellId": "47541" },
+    "Death and Decay": {
+      "spec": ["BLOOD", "FROST", "UNHOLY"],
+      "spellId": "43265"
+    },
+    "Death Strike": {
+      "spec": ["BLOOD", "FROST", "UNHOLY"],
+      "spellId": "49998"
+    },
+    "Death Grip": { "spec": ["BLOOD", "FROST", "UNHOLY"], "spellId": "49576" },
+    "Mind Freeze": { "spec": ["BLOOD", "FROST", "UNHOLY"], "spellId": "47528" },
+    "Anti-Magic Shell": {
+      "spec": ["BLOOD", "FROST", "UNHOLY"],
+      "spellId": "48707"
+    },
+    "Heart Strike": { "spec": ["BLOOD"], "spellId": "206930" },
+    "Marrowrend": { "spec": ["BLOOD"], "spellId": "195182" },
+    "Raise Dead": {
+      "spec": ["BLOOD", "FROST", "UNHOLY", "UNHOLY"],
+      "spellId": "46585"
+    },
+    "Chains of Ice": {
+      "spec": ["BLOOD", "FROST", "UNHOLY"],
+      "spellId": "45524"
+    },
+    "Dark Command": {
+      "spec": ["BLOOD", "FROST", "UNHOLY"],
+      "spellId": "56222"
+    },
+    "Blood Boil": { "spec": ["BLOOD"], "spellId": "50842" },
+    "Corpse Exploder": {
+      "spec": ["BLOOD", "FROST", "UNHOLY"],
+      "spellId": "127344"
+    },
+    "Rune Tap": { "spec": ["BLOOD"], "spellId": "194679" },
+    "Asphyxiate": { "spec": ["BLOOD"], "spellId": "221562" },
+    "Death's Caress": { "spec": ["BLOOD"], "spellId": "195292" },
+    "Vampiric Blood": { "spec": ["BLOOD"], "spellId": "55233" },
+    "Gorefiend's Grasp": { "spec": ["BLOOD"], "spellId": "108199" },
+    "Lichborne": { "spec": ["BLOOD", "FROST", "UNHOLY"], "spellId": "49039" },
+    "Dancing Rune Weapon": { "spec": ["BLOOD"], "spellId": "49028" },
+    "Control Undead": {
+      "spec": ["BLOOD", "FROST", "UNHOLY"],
+      "spellId": "111673"
+    },
+    "Icebound Fortitude": {
+      "spec": ["BLOOD", "FROST", "UNHOLY"],
+      "spellId": "48792"
+    },
+    "Raise Ally": { "spec": ["BLOOD", "FROST", "UNHOLY"], "spellId": "61999" },
+    "Anti-Magic Zone": {
+      "spec": ["BLOOD", "FROST", "UNHOLY"],
+      "spellId": "51052"
+    },
+    "Sacrificial Pact": {
+      "spec": ["BLOOD", "FROST", "UNHOLY"],
+      "spellId": "327574"
+    },
+    "Howling Blast": { "spec": ["FROST"], "spellId": "49184" },
+    "Frost Strike": { "spec": ["FROST"], "spellId": "49143" },
+    "Obliterate": { "spec": ["FROST"], "spellId": "49020" },
+    "Remorseless Winter": { "spec": ["FROST"], "spellId": "196770" },
+    "Pillar of Frost": { "spec": ["FROST"], "spellId": "51271" },
+    "Frostwyrm's Fury": { "spec": ["FROST"], "spellId": "279302" },
+    "Empower Rune Weapon": { "spec": ["FROST"], "spellId": "47568" },
+    "Festering Strike": { "spec": ["UNHOLY"], "spellId": "85948" },
+    "Scourge Strike": { "spec": ["UNHOLY"], "spellId": "55090" },
+    "Outbreak": { "spec": ["UNHOLY"], "spellId": "77575" },
+    "Apocalypse": { "spec": ["UNHOLY"], "spellId": "275699" },
+    "Dark Transformation": { "spec": ["UNHOLY"], "spellId": "63560" },
+    "Epidemic": { "spec": ["UNHOLY"], "spellId": "207317" },
+    "Army of the Dead": { "spec": ["UNHOLY"], "spellId": "42650" }
+  },
+  "Demon-hunter": {
+    "Demon Spikes": { "spec": ["VENGEANCE"], "spellId": "203720" },
+    "Fiery Brand": { "spec": ["VENGEANCE"], "spellId": "204021" },
+    "Infernal Strike": { "spec": ["VENGEANCE"], "spellId": "189110" },
+    "Metamorphosis": { "spec": ["VENGEANCE", "HAVOC"], "spellId": "191427" },
+    "Shear": { "spec": ["VENGEANCE"], "spellId": "203782" },
+    "Soul Cleave": { "spec": ["VENGEANCE"], "spellId": "228477" },
+    "Spectral Sight": { "spec": ["VENGEANCE", "HAVOC"], "spellId": "188501" },
+    "Torment": { "spec": ["VENGEANCE", "HAVOC"], "spellId": "185245" },
+    "Throw Glaive": {
+      "spec": ["VENGEANCE", "VENGEANCE", "HAVOC"],
+      "spellId": "204157"
+    },
+    "Fel Devastation": { "spec": ["VENGEANCE"], "spellId": "212084" },
+    "Sigil of Flame": { "spec": ["VENGEANCE"], "spellId": "204596" },
+    "Immolation Aura": { "spec": ["VENGEANCE", "HAVOC"], "spellId": "258920" },
+    "Consume Magic": { "spec": ["VENGEANCE", "HAVOC"], "spellId": "278326" },
+    "Sigil of Misery": { "spec": ["VENGEANCE"], "spellId": "207684" },
+    "Disrupt": { "spec": ["VENGEANCE", "HAVOC"], "spellId": "183752" },
+    "Imprison": { "spec": ["VENGEANCE", "HAVOC"], "spellId": "217832" },
+    "Sigil of Silence": { "spec": ["VENGEANCE"], "spellId": "202137" },
+    "Chaos Nova": { "spec": ["HAVOC"], "spellId": "179057" },
+    "Chaos Strike": { "spec": ["HAVOC"], "spellId": "162794" },
+    "Demon's Bite": { "spec": ["HAVOC"], "spellId": "162243" },
+    "Fel Rush": { "spec": ["HAVOC"], "spellId": "195072" },
+    "Vengeful Retreat": { "spec": ["HAVOC"], "spellId": "198793" },
+    "Eye Beam": { "spec": ["HAVOC"], "spellId": "198013" },
+    "Blade Dance": { "spec": ["HAVOC"], "spellId": "188499" },
+    "Blur": { "spec": ["HAVOC"], "spellId": "198589" },
+    "Darkness": { "spec": ["HAVOC"], "spellId": "196718" }
+  },
+  "Druid": {
+    "Wrath": {
+      "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE", "BALANCE"],
+      "spellId": "5176"
+    },
+    "Moonfire": {
+      "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+      "spellId": "8921"
+    },
+    "Regrowth": {
+      "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+      "spellId": "8936"
+    },
+    "Entangling Roots": {
+      "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+      "spellId": "339"
+    },
+    "Cat Form": {
+      "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+      "spellId": "768"
+    },
+    "Shred": {
+      "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+      "spellId": "5221"
+    },
+    "Dash": {
+      "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+      "spellId": "1850"
+    },
+    "Ferocious Bite": {
+      "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+      "spellId": "22568"
+    },
+    "Bear Form": {
+      "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+      "spellId": "5487"
+    },
+    "Mangle": {
+      "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+      "spellId": "33917"
+    },
+    "Rejuvenation": { "spec": ["RESTORATION"], "spellId": "774" },
+    "Travel Form": {
+      "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+      "spellId": "783"
+    },
+    "Swiftmend": { "spec": ["RESTORATION"], "spellId": "18562" },
+    "Ironbark": { "spec": ["RESTORATION"], "spellId": "102342" },
+    "Revive": {
+      "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+      "spellId": "50769"
+    },
+    "Growl": {
+      "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+      "spellId": "6795"
+    },
+    "Prowl": {
+      "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+      "spellId": "5215"
+    },
+    "Ironfur": {
+      "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+      "spellId": "192081"
+    },
+    "Mount Form": {
+      "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+      "spellId": "210053"
+    },
+    "Nature's Cure": { "spec": ["RESTORATION"], "spellId": "88423" },
+    "Lifebloom": { "spec": ["RESTORATION"], "spellId": "33763" },
+    "Sunfire": { "spec": ["RESTORATION", "BALANCE"], "spellId": "93402" },
+    "Barkskin": {
+      "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+      "spellId": "22812"
+    },
+    "Ursol's Vortex": { "spec": ["RESTORATION"], "spellId": "102793" },
+    "Rebirth": {
+      "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+      "spellId": "20484"
+    },
+    "Wild Growth": { "spec": ["RESTORATION"], "spellId": "48438" },
+    "Tranquility": { "spec": ["RESTORATION"], "spellId": "740" },
+    "Hibernate": {
+      "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+      "spellId": "2637"
+    },
+    "Efflorescence": { "spec": ["RESTORATION"], "spellId": "145205" },
+    "Soothe": {
+      "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+      "spellId": "2908"
+    },
+    "Innervate": { "spec": ["RESTORATION", "BALANCE"], "spellId": "29166" },
+    "Stampeding Roar": {
+      "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+      "spellId": "106898"
+    },
+    "Revitalize": { "spec": ["RESTORATION"], "spellId": "212040" },
+    "Cyclone": {
+      "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+      "spellId": "33786"
+    },
+    "Nature's Swiftness": { "spec": ["RESTORATION"], "spellId": "132158" },
+    "Rake": { "spec": ["FERAL"], "spellId": "1822" },
+    "Thrash": { "spec": ["FERAL", "GUARDIAN"], "spellId": "106832" },
+    "Tiger's Fury": { "spec": ["FERAL"], "spellId": "5217" },
+    "Remove Corruption": {
+      "spec": ["FERAL", "GUARDIAN", "BALANCE"],
+      "spellId": "2782"
+    },
+    "Rip": { "spec": ["FERAL"], "spellId": "1079" },
+    "Swipe": { "spec": ["FERAL", "GUARDIAN"], "spellId": "213764" },
+    "Skull Bash": { "spec": ["FERAL", "GUARDIAN"], "spellId": "106839" },
+    "Maim": { "spec": ["FERAL"], "spellId": "22570" },
+    "Survival Instincts": { "spec": ["FERAL", "GUARDIAN"], "spellId": "61336" },
+    "Berserk": { "spec": ["FERAL", "GUARDIAN"], "spellId": "106951" },
+    "Maul": { "spec": ["GUARDIAN"], "spellId": "6807" },
+    "Frenzied Regeneration": { "spec": ["GUARDIAN"], "spellId": "22842" },
+    "Incapacitating Roar": { "spec": ["GUARDIAN"], "spellId": "99" },
+    "Starfire": { "spec": ["BALANCE"], "spellId": "194153" },
+    "Starsurge": { "spec": ["BALANCE"], "spellId": "78674" },
+    "Moonkin Form": { "spec": ["BALANCE"], "spellId": "24858" },
+    "Solar Beam": { "spec": ["BALANCE"], "spellId": "78675" },
+    "Typhoon": { "spec": ["BALANCE"], "spellId": "132469" },
+    "Starfall": { "spec": ["BALANCE"], "spellId": "191034" },
+    "Celestial Alignment": { "spec": ["BALANCE"], "spellId": "194223" }
+  },
+  "Hunter": {
+    "Steady Shot": {
+      "spec": ["BEAST-MASTERY", "MARKSMANSHIP", "SURVIVAL"],
+      "spellId": "56641"
+    },
+    "Arcane Shot": {
+      "spec": ["BEAST-MASTERY", "MARKSMANSHIP", "SURVIVAL"],
+      "spellId": "185358"
+    },
+    "Wing Clip": {
+      "spec": ["BEAST-MASTERY", "MARKSMANSHIP", "SURVIVAL"],
+      "spellId": "195645"
+    },
+    "Disengage": {
+      "spec": ["BEAST-MASTERY", "MARKSMANSHIP", "SURVIVAL"],
+      "spellId": "781"
+    },
+    "Aspect of the Cheetah": {
+      "spec": ["BEAST-MASTERY", "MARKSMANSHIP", "SURVIVAL"],
+      "spellId": "186257"
+    },
+    "Mend Pet": {
+      "spec": ["BEAST-MASTERY", "MARKSMANSHIP", "SURVIVAL"],
+      "spellId": "136"
+    },
+    "Revive Pet": {
+      "spec": ["BEAST-MASTERY", "MARKSMANSHIP", "SURVIVAL"],
+      "spellId": "982"
+    },
+    "Feign Death": {
+      "spec": ["BEAST-MASTERY", "MARKSMANSHIP", "SURVIVAL"],
+      "spellId": "5384"
+    },
+    "Hunter's Mark": {
+      "spec": ["BEAST-MASTERY", "MARKSMANSHIP", "SURVIVAL"],
+      "spellId": "257284"
+    },
+    "Aspect of the Turtle": {
+      "spec": ["BEAST-MASTERY", "MARKSMANSHIP", "SURVIVAL"],
+      "spellId": "186265"
+    },
+    "Exhilaration": {
+      "spec": ["BEAST-MASTERY", "MARKSMANSHIP", "SURVIVAL"],
+      "spellId": "109304"
+    },
+    "Freezing Trap": {
+      "spec": ["BEAST-MASTERY", "MARKSMANSHIP", "SURVIVAL"],
+      "spellId": "187650"
+    },
+    "Kill Command": {
+      "spec": ["BEAST-MASTERY", "SURVIVAL"],
+      "spellId": "34026"
+    },
+    "Barbed Shot": { "spec": ["BEAST-MASTERY"], "spellId": "217200" },
+    "Concussive Shot": {
+      "spec": ["BEAST-MASTERY", "MARKSMANSHIP"],
+      "spellId": "5116"
+    },
+    "Cobra Shot": { "spec": ["BEAST-MASTERY"], "spellId": "193455" },
+    "Counter Shot": {
+      "spec": ["BEAST-MASTERY", "MARKSMANSHIP"],
+      "spellId": "147362"
+    },
+    "Flare": {
+      "spec": ["BEAST-MASTERY", "MARKSMANSHIP", "SURVIVAL"],
+      "spellId": "1543"
+    },
+    "Bestial Wrath": { "spec": ["BEAST-MASTERY"], "spellId": "19574" },
+    "Tar Trap": {
+      "spec": ["BEAST-MASTERY", "MARKSMANSHIP", "SURVIVAL"],
+      "spellId": "187698"
+    },
+    "Command Pet": {
+      "spec": ["BEAST-MASTERY", "MARKSMANSHIP", "SURVIVAL"],
+      "spellId": "272651"
+    },
+    "Multi-Shot": {
+      "spec": ["BEAST-MASTERY", "MARKSMANSHIP"],
+      "spellId": "2643"
+    },
+    "Misdirection": {
+      "spec": ["BEAST-MASTERY", "MARKSMANSHIP", "SURVIVAL"],
+      "spellId": "34477"
+    },
+    "Eyes of the Beast": {
+      "spec": ["BEAST-MASTERY", "MARKSMANSHIP", "SURVIVAL"],
+      "spellId": "321297"
+    },
+    "Intimidation": {
+      "spec": ["BEAST-MASTERY", "SURVIVAL"],
+      "spellId": "19577"
+    },
+    "Tranquilizing Shot": {
+      "spec": ["BEAST-MASTERY", "MARKSMANSHIP", "SURVIVAL"],
+      "spellId": "19801"
+    },
+    "Aspect of the Wild": { "spec": ["BEAST-MASTERY"], "spellId": "193530" },
+    "Scare Beast": {
+      "spec": ["BEAST-MASTERY", "MARKSMANSHIP", "SURVIVAL"],
+      "spellId": "1513"
+    },
+    "Kill Shot": {
+      "spec": ["BEAST-MASTERY", "MARKSMANSHIP", "SURVIVAL", "SURVIVAL"],
+      "spellId": "53351"
+    },
+    "Aimed Shot": { "spec": ["MARKSMANSHIP"], "spellId": "19434" },
+    "Bursting Shot": { "spec": ["MARKSMANSHIP"], "spellId": "186387" },
+    "Rapid Fire": { "spec": ["MARKSMANSHIP"], "spellId": "257044" },
+    "Trueshot": { "spec": ["MARKSMANSHIP"], "spellId": "288613" },
+    "Raptor Strike": { "spec": ["SURVIVAL"], "spellId": "186270" },
+    "Serpent Sting": { "spec": ["SURVIVAL"], "spellId": "259491" },
+    "Harpoon": { "spec": ["SURVIVAL"], "spellId": "190925" },
+    "Muzzle": { "spec": ["SURVIVAL"], "spellId": "187707" },
+    "Wildfire Bomb": { "spec": ["SURVIVAL"], "spellId": "259495" },
+    "Carve": { "spec": ["SURVIVAL"], "spellId": "187708" },
+    "Aspect of the Eagle": { "spec": ["SURVIVAL"], "spellId": "186289" },
+    "Coordinated Assault": { "spec": ["SURVIVAL"], "spellId": "266779" }
+  },
+  "Mage": {
+    "Frostbolt": { "spec": ["FIRE", "FROST", "ARCANE"], "spellId": "116" },
+    "Fire Blast": {
+      "spec": ["FIRE", "FIRE", "FROST", "ARCANE"],
+      "spellId": "319836"
+    },
+    "Frost Nova": { "spec": ["FIRE", "FROST", "ARCANE"], "spellId": "122" },
+    "Blink": { "spec": ["FIRE", "FROST", "ARCANE"], "spellId": "1953" },
+    "Conjure Refreshment": {
+      "spec": ["FIRE", "FROST", "ARCANE"],
+      "spellId": "190336"
+    },
+    "Arcane Explosion": {
+      "spec": ["FIRE", "FROST", "ARCANE"],
+      "spellId": "1449"
+    },
+    "Counterspell": { "spec": ["FIRE", "FROST", "ARCANE"], "spellId": "2139" },
+    "Arcane Intellect": {
+      "spec": ["FIRE", "FROST", "ARCANE"],
+      "spellId": "1459"
+    },
+    "Slow Fall": { "spec": ["FIRE", "FROST", "ARCANE"], "spellId": "130" },
+    "Fireball": { "spec": ["FIRE"], "spellId": "133" },
+    "Polymorph": { "spec": ["FIRE", "FROST", "ARCANE"], "spellId": "118" },
+    "Pyroblast": { "spec": ["FIRE"], "spellId": "11366" },
+    "Scorch": { "spec": ["FIRE"], "spellId": "2948" },
+    "Flamestrike": { "spec": ["FIRE"], "spellId": "2120" },
+    "Phoenix Flames": { "spec": ["FIRE"], "spellId": "257541" },
+    "Blazing Barrier": { "spec": ["FIRE"], "spellId": "235313" },
+    "Ice Block": { "spec": ["FIRE", "FROST", "ARCANE"], "spellId": "45438" },
+    "Dragon's Breath": { "spec": ["FIRE"], "spellId": "31661" },
+    "Remove Curse": { "spec": ["FIRE", "FROST", "ARCANE"], "spellId": "475" },
+    "Combustion": { "spec": ["FIRE"], "spellId": "190319" },
+    "Invisibility": { "spec": ["FIRE", "FROST", "ARCANE"], "spellId": "66" },
+    "Spellsteal": { "spec": ["FIRE", "FROST", "ARCANE"], "spellId": "30449" },
+    "Mirror Image": { "spec": ["FIRE", "FROST", "ARCANE"], "spellId": "55342" },
+    "Time Warp": { "spec": ["FIRE", "FROST", "ARCANE"], "spellId": "80353" },
+    "Alter Time": { "spec": ["FIRE", "FROST", "ARCANE"], "spellId": "108978" },
+    "Ice Lance": { "spec": ["FROST"], "spellId": "30455" },
+    "Summon Water Elemental": { "spec": ["FROST"], "spellId": "31687" },
+    "Blizzard": { "spec": ["FROST"], "spellId": "190356" },
+    "Cone of Cold": { "spec": ["FROST"], "spellId": "120" },
+    "Flurry": { "spec": ["FROST"], "spellId": "44614" },
+    "Ice Barrier": { "spec": ["FROST"], "spellId": "11426" },
+    "Icy Veins": { "spec": ["FROST"], "spellId": "12472" },
+    "Frozen Orb": { "spec": ["FROST"], "spellId": "84714" },
+    "Cold Snap": { "spec": ["FROST"], "spellId": "235219" },
+    "Arcane Barrage": { "spec": ["ARCANE"], "spellId": "44425" },
+    "Arcane Blast": { "spec": ["ARCANE"], "spellId": "30451" },
+    "Slow": { "spec": ["ARCANE"], "spellId": "31589" },
+    "Arcane Missiles": { "spec": ["ARCANE"], "spellId": "5143" },
+    "Conjure Mana Gem": { "spec": ["ARCANE"], "spellId": "759" },
+    "Prismatic Barrier": { "spec": ["ARCANE"], "spellId": "235450" },
+    "Evocation": { "spec": ["ARCANE"], "spellId": "12051" },
+    "Arcane Power": { "spec": ["ARCANE"], "spellId": "12042" },
+    "Touch of the Magi": { "spec": ["ARCANE"], "spellId": "321507" },
+    "Presence of Mind": { "spec": ["ARCANE"], "spellId": "205025" },
+    "Greater Invisibility": { "spec": ["ARCANE"], "spellId": "110959" }
+  },
+  "Monk": {
+    "Tiger Palm": {
+      "spec": ["WINDWALKER", "MISTWEAVER", "BREWMASTER"],
+      "spellId": "100780"
+    },
+    "Blackout Kick": {
+      "spec": ["WINDWALKER", "MISTWEAVER", "BREWMASTER", "BREWMASTER"],
+      "spellId": "100784"
+    },
+    "Roll": {
+      "spec": ["WINDWALKER", "MISTWEAVER", "BREWMASTER"],
+      "spellId": "109132"
+    },
+    "Vivify": {
+      "spec": ["WINDWALKER", "MISTWEAVER", "BREWMASTER"],
+      "spellId": "116670"
+    },
+    "Crackling Jade Lightning": {
+      "spec": ["WINDWALKER", "MISTWEAVER", "BREWMASTER"],
+      "spellId": "117952"
+    },
+    "Leg Sweep": {
+      "spec": ["WINDWALKER", "MISTWEAVER", "BREWMASTER"],
+      "spellId": "119381"
+    },
+    "Spinning Crane Kick": {
+      "spec": ["WINDWALKER", "MISTWEAVER", "BREWMASTER"],
+      "spellId": "101546"
+    },
+    "Expel Harm": {
+      "spec": ["WINDWALKER", "MISTWEAVER", "BREWMASTER"],
+      "spellId": "322101"
+    },
+    "Rising Sun Kick": {
+      "spec": ["WINDWALKER", "MISTWEAVER"],
+      "spellId": "107428"
+    },
+    "Touch of Death": {
+      "spec": ["WINDWALKER", "MISTWEAVER", "BREWMASTER"],
+      "spellId": "322109"
+    },
+    "Fists of Fury": { "spec": ["WINDWALKER"], "spellId": "113656" },
+    "Resuscitate": {
+      "spec": ["WINDWALKER", "MISTWEAVER", "BREWMASTER"],
+      "spellId": "115178"
+    },
+    "Provoke": {
+      "spec": ["WINDWALKER", "MISTWEAVER", "BREWMASTER"],
+      "spellId": "115546"
+    },
+    "Spear Hand Strike": {
+      "spec": ["WINDWALKER", "BREWMASTER"],
+      "spellId": "116705"
+    },
+    "Flying Serpent Kick": { "spec": ["WINDWALKER"], "spellId": "101545" },
+    "Paralysis": {
+      "spec": ["WINDWALKER", "MISTWEAVER", "BREWMASTER"],
+      "spellId": "115078"
+    },
+    "Detox": {
+      "spec": ["WINDWALKER", "MISTWEAVER", "MISTWEAVER", "BREWMASTER"],
+      "spellId": "218164"
+    },
+    "Storm, Earth, and Fire": { "spec": ["WINDWALKER"], "spellId": "137639" },
+    "Fortifying Brew": {
+      "spec": [
+        "WINDWALKER",
+        "WINDWALKER",
+        "MISTWEAVER",
+        "MISTWEAVER",
+        "BREWMASTER"
+      ],
+      "spellId": "243435"
+    },
+    "Touch of Karma": { "spec": ["WINDWALKER"], "spellId": "122470" },
+    "Transcendence": {
+      "spec": ["WINDWALKER", "MISTWEAVER", "BREWMASTER"],
+      "spellId": "101643"
+    },
+    "Transcendence: Transfer": {
+      "spec": ["WINDWALKER", "MISTWEAVER", "BREWMASTER"],
+      "spellId": "119996"
+    },
+    "Disable": { "spec": ["WINDWALKER"], "spellId": "116095" },
+    "Invoke Xuen, the White Tiger": {
+      "spec": ["WINDWALKER"],
+      "spellId": "123904"
+    },
+    "Enveloping Mist": { "spec": ["MISTWEAVER"], "spellId": "124682" },
+    "Soothing Mist": { "spec": ["MISTWEAVER"], "spellId": "115175" },
+    "Renewing Mist": { "spec": ["MISTWEAVER"], "spellId": "115151" },
+    "Essence Font": { "spec": ["MISTWEAVER"], "spellId": "191837" },
+    "Thunder Focus Tea": { "spec": ["MISTWEAVER"], "spellId": "116680" },
+    "Life Cocoon": { "spec": ["MISTWEAVER"], "spellId": "116849" },
+    "Invoke Yu'lon, the Jade Serpent": {
+      "spec": ["MISTWEAVER"],
+      "spellId": "322118"
+    },
+    "Revival": { "spec": ["MISTWEAVER"], "spellId": "115310" },
+    "Reawaken": { "spec": ["MISTWEAVER"], "spellId": "212051" },
+    "Keg Smash": { "spec": ["BREWMASTER"], "spellId": "121253" },
+    "Purifying Brew": { "spec": ["BREWMASTER"], "spellId": "119582" },
+    "Celestial Brew": { "spec": ["BREWMASTER"], "spellId": "322507" },
+    "Breath of Fire": { "spec": ["BREWMASTER"], "spellId": "115181" },
+    "Zen Meditation": { "spec": ["BREWMASTER"], "spellId": "115176" },
+    "Invoke Niuzao, the Black Ox": {
+      "spec": ["BREWMASTER"],
+      "spellId": "132578"
+    },
+    "Clash": { "spec": ["BREWMASTER"], "spellId": "324312" }
+  },
+  "Paladin": {
+    "Crusader Strike": {
+      "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+      "spellId": "35395"
+    },
+    "Shield of the Righteous": {
+      "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+      "spellId": "53600"
+    },
+    "Judgment": {
+      "spec": ["RETRIBUTION", "HOLY", "HOLY", "PROTECTION", "PROTECTION"],
+      "spellId": "20271"
+    },
+    "Flash of Light": {
+      "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+      "spellId": "19750"
+    },
+    "Hammer of Justice": {
+      "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+      "spellId": "853"
+    },
+    "Consecration": {
+      "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+      "spellId": "26573"
+    },
+    "Word of Glory": {
+      "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+      "spellId": "85673"
+    },
+    "Lay on Hands": {
+      "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+      "spellId": "633"
+    },
+    "Divine Shield": {
+      "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+      "spellId": "642"
+    },
+    "Templar's Verdict": { "spec": ["RETRIBUTION"], "spellId": "85256" },
+    "Cleanse Toxins": {
+      "spec": ["RETRIBUTION", "PROTECTION"],
+      "spellId": "213644"
+    },
+    "Redemption": {
+      "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+      "spellId": "7328"
+    },
+    "Hand of Reckoning": {
+      "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+      "spellId": "62124"
+    },
+    "Divine Steed": {
+      "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+      "spellId": "190784"
+    },
+    "Hand of Hindrance": { "spec": ["RETRIBUTION"], "spellId": "183218" },
+    "Blade of Justice": { "spec": ["RETRIBUTION"], "spellId": "184575" },
+    "Crusader Aura": {
+      "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+      "spellId": "32223"
+    },
+    "Blessing of Freedom": {
+      "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+      "spellId": "1044"
+    },
+    "Divine Storm": { "spec": ["RETRIBUTION"], "spellId": "53385" },
+    "Turn Evil": {
+      "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+      "spellId": "10326"
+    },
+    "Shield of Vengeance": { "spec": ["RETRIBUTION"], "spellId": "184662" },
+    "Rebuke": { "spec": ["RETRIBUTION", "PROTECTION"], "spellId": "96231" },
+    "Devotion Aura": {
+      "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+      "spellId": "465"
+    },
+    "Blessing of Sacrifice": {
+      "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+      "spellId": "6940"
+    },
+    "Avenging Wrath": {
+      "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+      "spellId": "31884"
+    },
+    "Retribution Aura": {
+      "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+      "spellId": "183435"
+    },
+    "Wake of Ashes": { "spec": ["RETRIBUTION"], "spellId": "255937" },
+    "Blessing of Protection": {
+      "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+      "spellId": "1022"
+    },
+    "Hammer of Wrath": {
+      "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+      "spellId": "24275"
+    },
+    "Concentration Aura": {
+      "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+      "spellId": "317920"
+    },
+    "Holy Shock": { "spec": ["HOLY"], "spellId": "20473" },
+    "Holy Light": { "spec": ["HOLY"], "spellId": "82326" },
+    "Cleanse": { "spec": ["HOLY"], "spellId": "4987" },
+    "Beacon of Light": { "spec": ["HOLY"], "spellId": "53563" },
+    "Divine Protection": { "spec": ["HOLY", "PROTECTION"], "spellId": "498" },
+    "Light of the Martyr": { "spec": ["HOLY"], "spellId": "183998" },
+    "Light of Dawn": { "spec": ["HOLY"], "spellId": "85222" },
+    "Aura Mastery": { "spec": ["HOLY"], "spellId": "31821" },
+    "Absolution": { "spec": ["HOLY"], "spellId": "212056" },
+    "Avenger's Shield": { "spec": ["PROTECTION"], "spellId": "31935" },
+    "Hammer of the Righteous": { "spec": ["PROTECTION"], "spellId": "53595" },
+    "Guardian of Ancient Kings": { "spec": ["PROTECTION"], "spellId": "86659" },
+    "Ardent Defender": { "spec": ["PROTECTION"], "spellId": "31850" }
+  },
+  "Priest": {
+    "Smite": { "spec": ["DISCIPLINE", "HOLY", "SHADOW"], "spellId": "585" },
+    "Shadow Word: Pain": {
+      "spec": ["DISCIPLINE", "HOLY", "SHADOW"],
+      "spellId": "589"
+    },
+    "Flash Heal": {
+      "spec": ["DISCIPLINE", "HOLY", "SHADOW"],
+      "spellId": "2061"
+    },
+    "Power Word: Shield": {
+      "spec": ["DISCIPLINE", "HOLY", "SHADOW"],
+      "spellId": "17"
+    },
+    "Mind Blast": {
+      "spec": ["DISCIPLINE", "HOLY", "SHADOW"],
+      "spellId": "8092"
+    },
+    "Power Word: Fortitude": {
+      "spec": ["DISCIPLINE", "HOLY", "SHADOW"],
+      "spellId": "21562"
+    },
+    "Psychic Scream": {
+      "spec": ["DISCIPLINE", "HOLY", "SHADOW"],
+      "spellId": "8122"
+    },
+    "Desperate Prayer": {
+      "spec": ["DISCIPLINE", "HOLY", "SHADOW"],
+      "spellId": "19236"
+    },
+    "Fade": { "spec": ["DISCIPLINE", "HOLY", "SHADOW"], "spellId": "586" },
+    "Resurrection": {
+      "spec": ["DISCIPLINE", "HOLY", "SHADOW"],
+      "spellId": "2006"
+    },
+    "Penance": { "spec": ["DISCIPLINE"], "spellId": "47540" },
+    "Purify": { "spec": ["DISCIPLINE", "HOLY"], "spellId": "527" },
+    "Shadow Mend": { "spec": ["DISCIPLINE", "SHADOW"], "spellId": "186263" },
+    "Shadowfiend": { "spec": ["DISCIPLINE", "SHADOW"], "spellId": "34433" },
+    "Levitate": { "spec": ["DISCIPLINE", "HOLY", "SHADOW"], "spellId": "1706" },
+    "Power Word: Radiance": { "spec": ["DISCIPLINE"], "spellId": "194509" },
+    "Dispel Magic": {
+      "spec": ["DISCIPLINE", "HOLY", "SHADOW"],
+      "spellId": "528"
+    },
+    "Mind Sear": { "spec": ["DISCIPLINE", "SHADOW"], "spellId": "48045" },
+    "Shackle Undead": {
+      "spec": ["DISCIPLINE", "HOLY", "SHADOW"],
+      "spellId": "9484"
+    },
+    "Holy Nova": { "spec": ["DISCIPLINE", "HOLY"], "spellId": "132157" },
+    "Mind Control": {
+      "spec": ["DISCIPLINE", "HOLY", "SHADOW"],
+      "spellId": "605"
+    },
+    "Mass Resurrection": {
+      "spec": ["DISCIPLINE", "HOLY"],
+      "spellId": "212036"
+    },
+    "Pain Suppression": { "spec": ["DISCIPLINE"], "spellId": "33206" },
+    "Rapture": { "spec": ["DISCIPLINE"], "spellId": "47536" },
+    "Mass Dispel": {
+      "spec": ["DISCIPLINE", "HOLY", "SHADOW"],
+      "spellId": "32375"
+    },
+    "Power Word: Barrier": { "spec": ["DISCIPLINE"], "spellId": "62618" },
+    "Leap of Faith": {
+      "spec": ["DISCIPLINE", "HOLY", "SHADOW"],
+      "spellId": "73325"
+    },
+    "Mind Soothe": {
+      "spec": ["DISCIPLINE", "HOLY", "SHADOW"],
+      "spellId": "453"
+    },
+    "Power Infusion": {
+      "spec": ["DISCIPLINE", "HOLY", "SHADOW"],
+      "spellId": "10060"
+    },
+    "Holy Word: Serenity": { "spec": ["HOLY"], "spellId": "2050" },
+    "Renew": { "spec": ["HOLY"], "spellId": "139" },
+    "Heal": { "spec": ["HOLY"], "spellId": "2060" },
+    "Holy Fire": { "spec": ["HOLY"], "spellId": "14914" },
+    "Holy Word: Chastise": { "spec": ["HOLY"], "spellId": "88625" },
+    "Guardian Spirit": { "spec": ["HOLY"], "spellId": "47788" },
+    "Prayer of Healing": { "spec": ["HOLY"], "spellId": "596" },
+    "Circle of Healing": { "spec": ["HOLY"], "spellId": "204883" },
+    "Holy Word: Sanctify": { "spec": ["HOLY"], "spellId": "34861" },
+    "Prayer of Mending": { "spec": ["HOLY"], "spellId": "33076" },
+    "Divine Hymn": { "spec": ["HOLY"], "spellId": "64843" },
+    "Symbol of Hope": { "spec": ["HOLY"], "spellId": "64901" },
+    "Devouring Plague": { "spec": ["SHADOW"], "spellId": "335467" },
+    "Mind Flay": { "spec": ["SHADOW"], "spellId": "15407" },
+    "Shadowform": { "spec": ["SHADOW"], "spellId": "232698" },
+    "Vampiric Touch": { "spec": ["SHADOW"], "spellId": "34914" },
+    "Dispersion": { "spec": ["SHADOW"], "spellId": "47585" },
+    "Purify Disease": { "spec": ["SHADOW"], "spellId": "213634" },
+    "Void Eruption": { "spec": ["SHADOW"], "spellId": "228260" },
+    "Vampiric Embrace": { "spec": ["SHADOW"], "spellId": "15286" },
+    "Silence": { "spec": ["SHADOW"], "spellId": "15487" }
+  },
+  "Rogue": {
+    "Sinister Strike": {
+      "spec": ["ASSASINATION", "SUBTLETY", "OUTLAW", "OUTLAW"],
+      "spellId": "1752"
+    },
+    "Eviscerate": {
+      "spec": ["ASSASINATION", "SUBTLETY", "OUTLAW"],
+      "spellId": "196819"
+    },
+    "Cheap Shot": {
+      "spec": ["ASSASINATION", "SUBTLETY", "OUTLAW"],
+      "spellId": "1833"
+    },
+    "Stealth": {
+      "spec": ["ASSASINATION", "SUBTLETY", "OUTLAW"],
+      "spellId": "1784"
+    },
+    "Sprint": {
+      "spec": ["ASSASINATION", "SUBTLETY", "OUTLAW"],
+      "spellId": "2983"
+    },
+    "Kick": {
+      "spec": ["ASSASINATION", "SUBTLETY", "OUTLAW"],
+      "spellId": "1766"
+    },
+    "Ambush": {
+      "spec": ["ASSASINATION", "SUBTLETY", "OUTLAW"],
+      "spellId": "8676"
+    },
+    "Crimson Vial": {
+      "spec": ["ASSASINATION", "SUBTLETY", "OUTLAW"],
+      "spellId": "185311"
+    },
+    "Slice and Dice": {
+      "spec": ["ASSASINATION", "SUBTLETY", "OUTLAW"],
+      "spellId": "315496"
+    },
+    "Instant Poison": {
+      "spec": ["ASSASINATION", "SUBTLETY", "OUTLAW"],
+      "spellId": "315584"
+    },
+    "Sap": {
+      "spec": ["ASSASINATION", "SUBTLETY", "OUTLAW"],
+      "spellId": "6770"
+    },
+    "Mutilate": { "spec": ["ASSASINATION"], "spellId": "1329" },
+    "Deadly Poison": { "spec": ["ASSASINATION"], "spellId": "2823" },
+    "Kidney Shot": {
+      "spec": ["ASSASINATION", "SUBTLETY", "OUTLAW"],
+      "spellId": "408"
+    },
+    "Garrote": { "spec": ["ASSASINATION"], "spellId": "703" },
+    "Rupture": { "spec": ["ASSASINATION", "SUBTLETY"], "spellId": "1943" },
+    "Shadowstep": { "spec": ["ASSASINATION", "SUBTLETY"], "spellId": "36554" },
+    "Fan of Knives": { "spec": ["ASSASINATION"], "spellId": "51723" },
+    "Evasion": {
+      "spec": ["ASSASINATION", "SUBTLETY", "OUTLAW"],
+      "spellId": "5277"
+    },
+    "Envenom": { "spec": ["ASSASINATION"], "spellId": "32645" },
+    "Vanish": {
+      "spec": ["ASSASINATION", "SUBTLETY", "OUTLAW"],
+      "spellId": "1856"
+    },
+    "Distract": {
+      "spec": ["ASSASINATION", "SUBTLETY", "OUTLAW"],
+      "spellId": "1725"
+    },
+    "Poisoned Knife": { "spec": ["ASSASINATION"], "spellId": "185565" },
+    "Shiv": {
+      "spec": ["ASSASINATION", "SUBTLETY", "OUTLAW"],
+      "spellId": "5938"
+    },
+    "Crippling Poison": {
+      "spec": ["ASSASINATION", "SUBTLETY", "OUTLAW"],
+      "spellId": "3408"
+    },
+    "Feint": {
+      "spec": ["ASSASINATION", "SUBTLETY", "OUTLAW"],
+      "spellId": "1966"
+    },
+    "Wound Poison": {
+      "spec": ["ASSASINATION", "SUBTLETY", "OUTLAW"],
+      "spellId": "8679"
+    },
+    "Blind": {
+      "spec": ["ASSASINATION", "SUBTLETY", "OUTLAW"],
+      "spellId": "2094"
+    },
+    "Vendetta": { "spec": ["ASSASINATION"], "spellId": "79140" },
+    "Cloak of Shadows": {
+      "spec": ["ASSASINATION", "SUBTLETY", "OUTLAW"],
+      "spellId": "31224"
+    },
+    "Tricks of the Trade": {
+      "spec": ["ASSASINATION", "SUBTLETY", "OUTLAW"],
+      "spellId": "57934"
+    },
+    "Shroud of Concealment": {
+      "spec": ["ASSASINATION", "SUBTLETY", "OUTLAW"],
+      "spellId": "114018"
+    },
+    "Numbing Poison": {
+      "spec": ["ASSASINATION", "SUBTLETY", "OUTLAW"],
+      "spellId": "5761"
+    },
+    "Shadowstrike": { "spec": ["SUBTLETY"], "spellId": "185438" },
+    "Backstab": { "spec": ["SUBTLETY"], "spellId": "53" },
+    "Shuriken Toss": { "spec": ["SUBTLETY"], "spellId": "114014" },
+    "Shuriken Storm": { "spec": ["SUBTLETY"], "spellId": "197835" },
+    "Shadow Dance": { "spec": ["SUBTLETY"], "spellId": "185313" },
+    "Symbols of Death": { "spec": ["SUBTLETY"], "spellId": "212283" },
+    "Shadow Blades": { "spec": ["SUBTLETY"], "spellId": "121471" },
+    "Black Powder": { "spec": ["SUBTLETY"], "spellId": "319175" },
+    "Pistol Shot": { "spec": ["OUTLAW"], "spellId": "185763" },
+    "Between the Eyes": { "spec": ["OUTLAW"], "spellId": "315341" },
+    "Grappling Hook": { "spec": ["OUTLAW"], "spellId": "195457" },
+    "Blade Flurry": { "spec": ["OUTLAW"], "spellId": "13877" },
+    "Dispatch": { "spec": ["OUTLAW"], "spellId": "2098" },
+    "Roll the Bones": { "spec": ["OUTLAW"], "spellId": "315508" },
+    "Adrenaline Rush": { "spec": ["OUTLAW"], "spellId": "13750" },
+    "Gouge": { "spec": ["OUTLAW"], "spellId": "1776" }
+  },
+  "Shaman": {
+    "Ancestral Vision": { "spec": ["RESTORATION"], "spellId": "212048" },
+    "Lightning Bolt": {
+      "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+      "spellId": "188196"
+    },
+    "Primal Strike": {
+      "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+      "spellId": "73899"
+    },
+    "Flame Shock": {
+      "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+      "spellId": "188389"
+    },
+    "Healing Surge": {
+      "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+      "spellId": "8004"
+    },
+    "Earthbind Totem": {
+      "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+      "spellId": "2484"
+    },
+    "Flametongue Weapon": {
+      "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+      "spellId": "318038"
+    },
+    "Lightning Shield": {
+      "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+      "spellId": "192106"
+    },
+    "Ghost Wolf": {
+      "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+      "spellId": "2645"
+    },
+    "Riptide": { "spec": ["RESTORATION"], "spellId": "61295" },
+    "Lava Burst": { "spec": ["RESTORATION", "ELEMENTAL"], "spellId": "51505" },
+    "Wind Shear": {
+      "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+      "spellId": "57994"
+    },
+    "Ancestral Spirit": {
+      "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+      "spellId": "2008"
+    },
+    "Frost Shock": {
+      "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+      "spellId": "196840"
+    },
+    "Purify Spirit": { "spec": ["RESTORATION"], "spellId": "77130" },
+    "Chain Heal": {
+      "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+      "spellId": "1064"
+    },
+    "Capacitor Totem": {
+      "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+      "spellId": "192058"
+    },
+    "Chain Lightning": {
+      "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+      "spellId": "188443"
+    },
+    "Healing Wave": { "spec": ["RESTORATION"], "spellId": "77472" },
+    "Healing Stream Totem": {
+      "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+      "spellId": "5394"
+    },
+    "Water Walking": {
+      "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+      "spellId": "546"
+    },
+    "Healing Rain": { "spec": ["RESTORATION"], "spellId": "73920" },
+    "Earth Elemental": {
+      "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+      "spellId": "198103"
+    },
+    "Mana Tide Totem": { "spec": ["RESTORATION"], "spellId": "16191" },
+    "Purge": {
+      "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+      "spellId": "370"
+    },
+    "Water Shield": { "spec": ["RESTORATION"], "spellId": "52127" },
+    "Astral Shift": {
+      "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+      "spellId": "108271"
+    },
+    "Spirit Link Totem": { "spec": ["RESTORATION"], "spellId": "98008" },
+    "Spiritwalker's Grace": {
+      "spec": ["RESTORATION", "ELEMENTAL"],
+      "spellId": "79206"
+    },
+    "Tremor Totem": {
+      "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+      "spellId": "8143"
+    },
+    "Bloodlust": {
+      "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+      "spellId": "2825"
+    },
+    "Heroism": {
+      "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+      "spellId": "32182"
+    },
+    "Healing Tide Totem": { "spec": ["RESTORATION"], "spellId": "108280" },
+    "Earth Shock": { "spec": ["ELEMENTAL"], "spellId": "8042" },
+    "Cleanse Spirit": {
+      "spec": ["ELEMENTAL", "ENHANCEMENT"],
+      "spellId": "51886"
+    },
+    "Fire Elemental": { "spec": ["ELEMENTAL"], "spellId": "198067" },
+    "Earthquake": { "spec": ["ELEMENTAL"], "spellId": "61882" },
+    "Thunderstorm": { "spec": ["ELEMENTAL"], "spellId": "51490" },
+    "Windfury Weapon": { "spec": ["ENHANCEMENT"], "spellId": "33757" },
+    "Lava Lash": { "spec": ["ENHANCEMENT"], "spellId": "60103" },
+    "Stormstrike": { "spec": ["ENHANCEMENT"], "spellId": "17364" },
+    "Feral Spirit": { "spec": ["ENHANCEMENT"], "spellId": "51533" },
+    "Crash Lightning": { "spec": ["ENHANCEMENT"], "spellId": "187874" },
+    "Spirit Walk": { "spec": ["ENHANCEMENT"], "spellId": "58875" },
+    "Windfury Totem": { "spec": ["ENHANCEMENT"], "spellId": "8512" }
+  },
+  "Warlock": {
+    "Dreadsteed": {
+      "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
+      "spellId": "23161"
+    },
+    "Shadow Bolt": {
+      "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
+      "spellId": "686"
+    },
+    "Corruption": {
+      "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
+      "spellId": "172"
+    },
+    "Summon Imp": {
+      "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
+      "spellId": "688"
+    },
+    "Unending Resolve": {
+      "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
+      "spellId": "104773"
+    },
+    "Fear": {
+      "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
+      "spellId": "5782"
+    },
+    "Curse of Weakness": {
+      "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
+      "spellId": "702"
+    },
+    "Create Healthstone": {
+      "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
+      "spellId": "6201"
+    },
+    "Health Funnel": {
+      "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
+      "spellId": "755"
+    },
+    "Drain Life": {
+      "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
+      "spellId": "234153"
+    },
+    "Chaos Bolt": { "spec": ["DESTRUCTION"], "spellId": "116858" },
+    "Incinerate": { "spec": ["DESTRUCTION"], "spellId": "29722" },
+    "Summon Voidwalker": {
+      "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
+      "spellId": "697"
+    },
+    "Immolate": { "spec": ["DESTRUCTION"], "spellId": "348" },
+    "Curse of Exhaustion": {
+      "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
+      "spellId": "334275"
+    },
+    "Conflagrate": { "spec": ["DESTRUCTION"], "spellId": "17962" },
+    "Unending Breath": {
+      "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
+      "spellId": "5697"
+    },
+    "Summon Succubus": {
+      "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
+      "spellId": "712"
+    },
+    "Fel Domination": {
+      "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
+      "spellId": "333889"
+    },
+    "Summon Felhunter": {
+      "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
+      "spellId": "691"
+    },
+    "Havoc": { "spec": ["DESTRUCTION"], "spellId": "80240" },
+    "Rain of Fire": { "spec": ["DESTRUCTION"], "spellId": "5740" },
+    "Command Demon": {
+      "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
+      "spellId": "119898"
+    },
+    "Curse of Tongues": {
+      "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
+      "spellId": "1714"
+    },
+    "Shadowfury": {
+      "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
+      "spellId": "30283"
+    },
+    "Demonic Circle": {
+      "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
+      "spellId": "48018"
+    },
+    "Demonic Circle: Teleport": {
+      "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
+      "spellId": "48020"
+    },
+    "Summon Infernal": { "spec": ["DESTRUCTION"], "spellId": "1122" },
+    "Banish": {
+      "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
+      "spellId": "710"
+    },
+    "Demonic Gateway": {
+      "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
+      "spellId": "111771"
+    },
+    "Agony": { "spec": ["AFFLICTION"], "spellId": "980" },
+    "Malefic Rapture": { "spec": ["AFFLICTION"], "spellId": "324536" },
+    "Unstable Affliction": { "spec": ["AFFLICTION"], "spellId": "316099" },
+    "Seed of Corruption": { "spec": ["AFFLICTION"], "spellId": "27243" },
+    "Summon Darkglare": { "spec": ["AFFLICTION"], "spellId": "205180" },
+    "Hand of Gul'dan": { "spec": ["DEMONOLOGY"], "spellId": "105174" },
+    "Summon Felguard": { "spec": ["DEMONOLOGY"], "spellId": "30146" },
+    "Call Dreadstalkers": { "spec": ["DEMONOLOGY"], "spellId": "104316" },
+    "Demonbolt": { "spec": ["DEMONOLOGY"], "spellId": "264178" },
+    "Implosion": { "spec": ["DEMONOLOGY"], "spellId": "196277" },
+    "Summon Demonic Tyrant": { "spec": ["DEMONOLOGY"], "spellId": "265187" }
+  },
+  "Warrior": {
+    "Slam": { "spec": ["FURY", "ARMS", "PROTECTION"], "spellId": "1464" },
+    "Charge": { "spec": ["FURY", "ARMS", "PROTECTION"], "spellId": "100" },
+    "Shield Slam": {
+      "spec": ["FURY", "ARMS", "PROTECTION"],
+      "spellId": "23922"
+    },
+    "Hamstring": { "spec": ["FURY", "ARMS", "PROTECTION"], "spellId": "1715" },
+    "Victory Rush": {
+      "spec": ["FURY", "ARMS", "PROTECTION"],
+      "spellId": "34428"
+    },
+    "Shield Block": {
+      "spec": ["FURY", "ARMS", "PROTECTION"],
+      "spellId": "2565"
+    },
+    "Pummel": { "spec": ["FURY", "ARMS", "PROTECTION"], "spellId": "6552" },
+    "Execute": {
+      "spec": ["FURY", "FURY", "ARMS", "PROTECTION"],
+      "spellId": "5308"
+    },
+    "Whirlwind": {
+      "spec": ["FURY", "FURY", "ARMS", "PROTECTION"],
+      "spellId": "190411"
+    },
+    "Bloodthirst": { "spec": ["FURY"], "spellId": "23881" },
+    "Raging Blow": { "spec": ["FURY"], "spellId": "85288" },
+    "Taunt": { "spec": ["FURY", "ARMS", "PROTECTION"], "spellId": "355" },
+    "Ignore Pain": {
+      "spec": ["FURY", "ARMS", "PROTECTION"],
+      "spellId": "190456"
+    },
+    "Rampage": { "spec": ["FURY"], "spellId": "184367" },
+    "Piercing Howl": { "spec": ["FURY", "ARMS"], "spellId": "12323" },
+    "Enraged Regeneration": { "spec": ["FURY"], "spellId": "184364" },
+    "Heroic Throw": {
+      "spec": ["FURY", "ARMS", "PROTECTION"],
+      "spellId": "57755"
+    },
+    "Berserker Rage": {
+      "spec": ["FURY", "ARMS", "PROTECTION"],
+      "spellId": "18499"
+    },
+    "Heroic Leap": {
+      "spec": ["FURY", "ARMS", "PROTECTION"],
+      "spellId": "6544"
+    },
+    "Intimidating Shout": {
+      "spec": ["FURY", "ARMS", "PROTECTION"],
+      "spellId": "5246"
+    },
+    "Recklessness": { "spec": ["FURY"], "spellId": "1719" },
+    "Battle Shout": {
+      "spec": ["FURY", "ARMS", "PROTECTION"],
+      "spellId": "6673"
+    },
+    "Shattering Throw": {
+      "spec": ["FURY", "ARMS", "PROTECTION"],
+      "spellId": "64382"
+    },
+    "Intervene": { "spec": ["FURY", "ARMS", "PROTECTION"], "spellId": "3411" },
+    "Rallying Cry": {
+      "spec": ["FURY", "ARMS", "PROTECTION"],
+      "spellId": "97462"
+    },
+    "Spell Reflection": {
+      "spec": ["FURY", "ARMS", "PROTECTION"],
+      "spellId": "23920"
+    },
+    "Challenging Shout": {
+      "spec": ["FURY", "ARMS", "PROTECTION"],
+      "spellId": "1161"
+    },
+    "Mortal Strike": { "spec": ["ARMS"], "spellId": "12294" },
+    "Overpower": { "spec": ["ARMS"], "spellId": "7384" },
+    "Colossus Smash": { "spec": ["ARMS"], "spellId": "167105" },
+    "Sweeping Strikes": { "spec": ["ARMS"], "spellId": "260708" },
+    "Die by the Sword": { "spec": ["ARMS"], "spellId": "118038" },
+    "Bladestorm": { "spec": ["ARMS"], "spellId": "227847" },
+    "Revenge": { "spec": ["PROTECTION"], "spellId": "6572" },
+    "Devastate": { "spec": ["PROTECTION"], "spellId": "20243" },
+    "Thunder Clap": { "spec": ["PROTECTION"], "spellId": "6343" },
+    "Shockwave": { "spec": ["PROTECTION"], "spellId": "46968" },
+    "Shield Wall": { "spec": ["PROTECTION"], "spellId": "871" },
+    "Demoralizing Shout": { "spec": ["PROTECTION"], "spellId": "1160" },
+    "Last Stand": { "spec": ["PROTECTION"], "spellId": "12975" }
+  }
+}
