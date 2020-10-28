@@ -9,8 +9,8 @@ async function scrapeSpell(classType, timer = 0) {
   console.log(`${classtype} starting`);
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
-  if (!(classtype in spellIds)) {
-    spellIds[classtype] = {};
+  if (!(classtype in spellIds["Spells"])) {
+    spellIds["Spells"][classtype] = {};
   }
   for (spec in classSpecs[classType]) {
     let url = `https://shadowlands.wowhead.com/talent-calc/${classType}/${classSpecs[classType][spec]}`;
@@ -28,7 +28,7 @@ async function scrapeSpell(classType, timer = 0) {
     //Then go through talents, make sure to grab the row and column info - issue here with the fact some are passive
     //Go through pvp talents aswell - some also passive
     //then grab covenant abilities - replace the kyrian one with https://www.wowhead.com/item=177278/phial-of-serenity
-    const data = await page.evaluate(() => {
+    const spellData = await page.evaluate(() => {
       const tds = Array.from(
         document.querySelectorAll(
           "div.talentcalc-spell-list-table > table > tbody > tr"
@@ -49,24 +49,52 @@ async function scrapeSpell(classType, timer = 0) {
           doesItHaveAStar,
           isItPassive,
           spellName,
-          spellID
+          spellID,
         });
         return storage;
       }, []);
     });
-    data.forEach(
+
+    const talentData = await page.evaluate(() => {
+      const tds = Array.from(
+        document.querySelectorAll(
+          "div.talentcalc-spell-list-table > table > tbody > tr"
+        )
+      );
+      return tds.reduce((storage, td) => {
+        const childs = td.children;
+        const abilityLearntLevel = childs[0].textContent;
+        const doesItHaveAStar = childs[1].textContent;
+
+        const isItPassive = childs[2].textContent.includes("(Passive)");
+
+        const spellDetails = childs[2].children;
+        const spellName = spellDetails[1].textContent;
+        const spellID = spellDetails[1].href;
+        storage.push({
+          abilityLearntLevel,
+          doesItHaveAStar,
+          isItPassive,
+          spellName,
+          spellID,
+        });
+        return storage;
+      }, []);
+    });
+
+    spellData.forEach(
       ({
         abilityLearntLevel,
         doesItHaveAStar,
         isItPassive,
         spellName,
-        spellID
+        spellID,
       }) => {
         if (isItPassive) {
           return;
         }
 
-        const isItBlacklisted = blacklistedSpells[classType].some(blSpell =>
+        const isItBlacklisted = blacklistedSpells[classType].some((blSpell) =>
           RegExp(blSpell).test(
             `${abilityLearntLevel}${doesItHaveAStar}:${spellName}`
           )
@@ -88,13 +116,13 @@ async function scrapeSpell(classType, timer = 0) {
           }
         }
         if (spellName in spellIds[classtype]) {
-          spellIds[classtype][spellName]["spec"].push(
+          spellIds["Spells"][classtype][spellName]["spec"].push(
             readableSpec.toUpperCase()
           );
         } else {
-          spellIds[classtype][spellName] = {
+          spellIds["Spells"][classtype][spellName] = {
             spec: [readableSpec.toUpperCase()],
-            spellId: found[1]
+            spellId: found[1],
           };
         }
       }
@@ -106,10 +134,10 @@ async function scrapeSpell(classType, timer = 0) {
 }
 
 function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-let spellIds = {};
+let spellIds = { Spells: {}, Talents: {}, Covenants: {} };
 const classes = [
   "death-knight",
   "demon-hunter",
@@ -122,7 +150,7 @@ const classes = [
   "rogue",
   "shaman",
   "warlock",
-  "warrior"
+  "warrior",
 ];
 
 const classReadable = {
@@ -137,7 +165,7 @@ const classReadable = {
   rogue: "Rogue",
   shaman: "Shaman",
   warlock: "Warlock",
-  warrior: "Warrior"
+  warrior: "Warrior",
 };
 
 const classSpecs = {
@@ -152,14 +180,14 @@ const classSpecs = {
   rogue: ["assasination", "subtlety", "outlaw"],
   shaman: ["restoration", "elemental", "enhancement"],
   warlock: ["destruction", "affliction", "demonology"],
-  warrior: ["fury", "arms", "protection"]
+  warrior: ["fury", "arms", "protection"],
 };
 const blacklistedSpells = {
   "death-knight": [
     "1:Frost Breath",
     "6:Runeforging",
     "10:Death Gate",
-    "27:Path of Frost"
+    "27:Path of Frost",
   ],
   "demon-hunter": [
     "1:Fodder to the Flame",
@@ -169,7 +197,7 @@ const blacklistedSpells = {
     "1:Chaos Strike",
     "1:Demon's Bite",
     "1:Fel Rush",
-    "1:Vengeful Retreat"
+    "1:Vengeful Retreat",
   ],
   druid: [
     "1:Flap",
@@ -178,7 +206,7 @@ const blacklistedSpells = {
     "19:Charm Woodland Creature",
     "22:Teleport: Moonglade",
     "24:Flight Form",
-    "13:Sunfire"
+    "13:Sunfire",
   ],
   hunter: [
     "1:Volley",
@@ -199,7 +227,7 @@ const blacklistedSpells = {
     "41:Call Pet 4",
     "43:Eagle Eye",
     "47:Fetch",
-    "48:Call Pet 5"
+    "48:Call Pet 5",
   ],
   mage: [
     "1:Polymorph",
@@ -210,7 +238,7 @@ const blacklistedSpells = {
     "11:Teleport",
     "24:Portal",
     "17:Conjure Mana Gem",
-    "25:Polymorph"
+    "25:Polymorph",
   ],
   monk: [
     "1\\*:Spinning Crane Kick",
@@ -218,7 +246,7 @@ const blacklistedSpells = {
     "10:Soothing Mist",
     "11:Zen Pilgrimage",
     "17:Touch of Fatality",
-    "37:Zen Flight"
+    "37:Zen Flight",
   ],
   paladin: [
     "1\\*:Judgement",
@@ -226,7 +254,7 @@ const blacklistedSpells = {
     "1:Crusader's Direhorn",
     "(1):Summon .*",
     "19:Contemplation",
-    "54:Sense Undead"
+    "54:Sense Undead",
   ],
   priest: ["1:Shoot", "22:Mind Vision"],
   rogue: ["1:Detection", "24:Pick Lock", "24:Pick Pocket"],
@@ -236,7 +264,7 @@ const blacklistedSpells = {
     "1:Primordial Wave",
     "14:Far Sight",
     "32:Astral Recall",
-    "41:Hex"
+    "41:Hex",
   ], //Thinking ill just manually add hex: spell id: 51514
   warlock: [
     "1:DreadSteed",
@@ -247,9 +275,9 @@ const blacklistedSpells = {
     "31:Ritual of Doom",
     "32:Soulstone",
     "33:Ritual of Summoning",
-    "47:Create Soulwell"
+    "47:Create Soulwell",
   ],
-  warrior: ["1:Hotbar Slot 01", "1:Hotbar Slot 02"]
+  warrior: ["1:Hotbar Slot 01", "1:Hotbar Slot 02"],
 };
 let promises = [];
 for (let k = 0; k < classes.length; k++) {
