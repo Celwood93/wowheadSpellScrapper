@@ -419,7 +419,7 @@ const blacklistedSpells = {
 };
 let promises = [];
 for (let k = 0; k < classes.length; k++) {
-  promises.push(scrapeSpell(classes[k], 8000 * k));
+  promises.push(scrapeSpell(classes[k], 1000 * k));
 }
 
 Promise.all(promises).then(() => {
