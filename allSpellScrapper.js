@@ -102,5 +102,5 @@ for (let k = 0; k < classes.length; k++) {
 
 Promise.all(promises).then(() => {
   let jsonToWrite = JSON.stringify(spellIds);
-  fs.writeFileSync(`newTest.json`, jsonToWrite);
+  fs.writeFileSync(`EverySingleSpell.json`, jsonToWrite);
 });
