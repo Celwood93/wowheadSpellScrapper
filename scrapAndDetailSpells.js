@@ -1,63 +1,102 @@
 const puppeteer = require("puppeteer");
 const fs = require("fs");
-const spellData = require("./SpellsPhase1.json");
+const spellData = require("./SpellsPhase1Test.json"); //for testing atm
 const maxPages = 100;
-
-//Type is incase Spells/Talents/PvPTalents/Covenants produces a different type of datastorage -- might not need here
-async function getDetails(spellId, browser, type) {
-  let pages = await browser.pages();
-  while (pages.length === maxPages) {
-    pages = await browser.pages();
-    await sleep(3000);
-  }
-  const page = await browser.newPage();
-  await page.goto(`https://wowhead.com/spell=${spellId}`);
-  //returns all spell information that ISNT currently included.
-  await page.close();
-}
+const promises = [];
 const cachedIds = {};
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+//Type is incase Spells/Talents/PvPTalents/Covenants produces a different type of datastorage -- might not need here
+async function getDetails(spellId, browser, type) {
+  let newDataForId;
+  if (!(spellId in cachedIds)) {
+    let pages = await browser.pages();
+
+    while (pages.length === maxPages) {
+      pages = await browser.pages();
+      await sleep(3000);
+    }
+
+    const page = await browser.newPage();
+
+    await page.goto(`https://wowhead.com/spell=${spellId}`);
+
+    const pageSpellData = await page.evaluate(() => {
+      let datas = {};
+      datas["Description"] = document.querySelector("span.q").textContent;
+      Array.from(document.querySelectorAll("#spelldetails > tbody > tr"))
+        .map(el => {
+          const tharr = Array.from(
+            el.querySelectorAll(
+              "th:not(.grid-hideable-cell):not(.grid-nesting-wrapper)"
+            )
+          ).flat();
+          const tdarr = Array.from(
+            el.querySelectorAll(
+              "td:not(.grid-hideable-cell):not(.grid-nesting-wrapper)"
+            )
+          ).flat();
+          return tharr.forEach((e, i) => {
+            if (e.textContent === "Flags") {
+              datas[e.textContent] = Array.from(
+                tdarr[i].querySelectorAll("li")
+              ).map(el => el.textContent);
+            } else {
+              datas[e.textContent] = tdarr[i].textContent;
+            }
+          });
+        })
+        .flat();
+      return datas;
+    });
+    //process
+    newDataForId = filterData(pageSpellData);
+    console.log(
+      `${Object.keys(cachedIds).length + 1}/${promises.length} finished`
+    );
+    cachedIds[spellId] = newDataForId;
+    await page.close();
+  } else {
+    newDataForId = cachedIds[spellId];
+  }
+
+  // spellData["Spells"][className][spellName] = {
+  //   ...spellData["Spells"][className][spellName],
+  //   ...newDataForId
+  // };
+}
+
+function filterData(pageSpellData) {
+  let newDataForId = pageSpellData;
+  return newDataForId;
+}
+
 async function runSpells(browser) {
-  for (const className in Object.keys(spellData["Spells"])) {
-    for (const spellName in Object.keys(spellData["Spells"][className])) {
-      const spellId = spellData["Spells"][className][spellName].spellId;
-      const newDataForId = await collectInformationOnSpellId(
-        spellId,
-        browser,
-        "Spell"
-      );
-      spellData["Spells"][className][spellName] = {
-        ...spellData["Spells"][className][spellName],
-        ...newDataForId
-      };
+  const classNames = Object.keys(spellData["Spells"]);
+  for (const className in classNames) {
+    const spellNames = Object.keys(spellData["Spells"][classNames[className]]);
+    for (const spellName in spellNames) {
+      const spellId =
+        spellData["Spells"][classNames[className]][spellNames[spellName]]
+          .spellId;
+      promises.push(getDetails(spellId, browser, "Spell"));
     }
   }
 }
 
-async function collectInformationOnSpellId(spellId, browser, type) {
-  let newDataForId;
-  if (!(spellId in cachedIds)) {
-    newDataForId = await getDetails(spellId, browser, type);
-    cachedIds[spellId] = newDataForId;
-  } else {
-    newDataForID = cachedIds[spellId];
-  }
-  return newDataForId;
-}
 async function runAllThings() {
   const browser = await puppeteer.launch();
-  promises.push(runSpells(browser));
-  // promises.push(runTalents(browser));
-  // promises.push(runPvPTalents(browser));
-  // promises.push(runCovenants(browser));
+  runSpells(browser);
+  // runTalents(browser);
+  // runPvPTalents(browser);
+  // runCovenants(browser);
 
   Promise.all(promises).then(() => {
-    let jsonToWrite = JSON.stringify(spellIds);
-    fs.writeFileSync(`SpellsPhase2.json`, jsonToWrite);
+    // let jsonToWrite = JSON.stringify(spellIds);
+    // fs.writeFileSync(`SpellsPhase2Test.json`, jsonToWrite);
     browser.close();
   });
 }

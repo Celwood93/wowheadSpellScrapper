@@ -254,10 +254,20 @@ async function scrapeSpell(classType, timer = 0) {
     );
   }
   //We cut out hex, since we couldnt distinguish it from the other 8 hexs, so now we just add it in manually.
+  //Earth shield is bugged as of this moment, its not included with talents for some reason
   if (classType === "Shaman" && !("Hex" in spellIds["Spells"]["Shaman"])) {
     spellIds["Spells"]["Shaman"]["Hex"] = {
       spec: ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
       spellId: "51514"
+    };
+  }
+  if (
+    classType === "Shaman" &&
+    !("Earth Shield" in spellIds["Spells"]["Shaman"])
+  ) {
+    spellIds["Spells"]["Shaman"]["Earth Shield"] = {
+      spec: ["RESTORATION"],
+      spellId: "974"
     };
   }
   browser.close();
