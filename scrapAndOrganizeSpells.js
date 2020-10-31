@@ -279,7 +279,6 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-let spellIds = { Spells: {}, Talents: {}, Covenants: {} };
 const classes = [
   "death-knight",
   "demon-hunter",
@@ -427,7 +426,10 @@ const blacklistedSpells = {
   ],
   warrior: ["1:Hotbar Slot 01", "1:Hotbar Slot 02"]
 };
+
+let spellIds = { Spells: {}, Talents: {}, Covenants: {} };
 let promises = [];
+
 for (let k = 0; k < classes.length; k++) {
   promises.push(scrapeSpell(classes[k], 1000 * k));
 }
