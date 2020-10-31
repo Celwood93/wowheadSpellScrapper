@@ -1,33 +1,40 @@
 const puppeteer = require("puppeteer");
+const Mutex = require("async-mutex").Mutex;
 const fs = require("fs");
 const spellData = require("./SpellsPhase1Test.json"); //for testing atm
-const maxPages = 100;
+const maxPages = 20;
 const promises = [];
 const cachedIds = {};
 
 function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 //Type is incase Spells/Talents/PvPTalents/Covenants produces a different type of datastorage -- might not need here
-async function getDetails(spellId, browser, className, spellName, type) {
+async function getDetails(spellId, browser, className, spellName, type, mutex) {
   let newDataForId;
   if (!(spellId in cachedIds)) {
-    let pages = await browser.pages();
+    const release = await mutex.acquire();
+    let page;
+    try {
+      let pages = await browser.pages();
 
-    while (pages.length === maxPages) {
-      pages = await browser.pages();
-      await sleep(3000);
+      while (pages.length > maxPages) {
+        pages = await browser.pages();
+        await sleep(3000);
+      }
+
+      page = await browser.newPage();
+    } finally {
+      release();
     }
 
-    const page = await browser.newPage();
-
-    await page.goto(`https://wowhead.com/spell=${spellId}`);
+    await page.goto(`https://wowhead.com/spell=${spellId}`, { timeout: 0 });
     //could also grab rank 2/3/4 of spells to check if they add durations /reduce cds
     const pageSpellData = await page.evaluate(() => {
       let datas = {};
       datas["Description"] = Array.from(document.querySelectorAll("span.q"))
-        .map(e => e.textContent)
+        .map((e) => e.textContent)
         .join(" ");
       const isRechargeCooldown = document
         .querySelector(
@@ -37,7 +44,7 @@ async function getDetails(spellId, browser, className, spellName, type) {
         )
         .textContent.match(/(\d\d?\.?\d?\d?) (\w+) recharge/);
       Array.from(document.querySelectorAll("#spelldetails > tbody > tr"))
-        .map(el => {
+        .map((el) => {
           const tharr = Array.from(
             el.querySelectorAll(
               "th:not(.grid-hideable-cell):not(.grid-nesting-wrapper)"
@@ -52,7 +59,7 @@ async function getDetails(spellId, browser, className, spellName, type) {
             if (e.textContent === "Flags") {
               datas[e.textContent] = Array.from(
                 tdarr[i].querySelectorAll("li")
-              ).map(el => el.textContent);
+              ).map((el) => el.textContent);
             } else {
               datas[e.textContent] = tdarr[i].textContent;
             }
@@ -77,25 +84,28 @@ async function getDetails(spellId, browser, className, spellName, type) {
 
   spellData["Spells"][className][spellName] = {
     ...spellData["Spells"][className][spellName],
-    ...newDataForId
+    ...newDataForId,
   };
 }
 
 function filterData(pageSpellData, spellId) {
   let newDataForId = {};
   const doesIncludeSelf = pageSpellData["Range"].includes("Self");
+  const isInPartyOrRaid = pageSpellData["Description"].includes(
+    "party or raid, all party and raid"
+  );
   const doesIncludeRadius = Object.keys(pageSpellData)
-    .filter(topics => topics.includes("Effect"))
-    .some(details => pageSpellData[details].includes("Radius"));
+    .filter((topics) => topics.includes("Effect"))
+    .some((details) => pageSpellData[details].includes("Radius"));
   const doesIncludeHealingAndDamage =
     /damage to an enemy/.test(pageSpellData["Description"]) &&
     /healing to an ally/.test(pageSpellData["Description"]);
   const doesIncludeHealingInEffect = Object.keys(pageSpellData)
-    .filter(topics => topics.includes("Effect"))
-    .some(details => pageSpellData[details].includes("Heal"));
+    .filter((topics) => topics.includes("Effect"))
+    .some((details) => pageSpellData[details].includes("Heal"));
   const ftInDesc = /friendly target/.test(pageSpellData["Description"]);
   const porInDesc = /party or raid member/.test(pageSpellData["Description"]);
-  const allyInDesc = /ally/.test(pageSpellData["Description"]);
+  const allyInDesc = /\bally\b/.test(pageSpellData["Description"]);
   const healThemInDesc = /healing them/.test(pageSpellData["Description"]);
   const healTargInDesc = /healing the target/.test(
     pageSpellData["Description"]
@@ -105,7 +115,7 @@ function filterData(pageSpellData, spellId) {
   );
   const flagsOneTarg =
     !!pageSpellData["Flags"] &&
-    pageSpellData["Flags"].some(e =>
+    pageSpellData["Flags"].some((e) =>
       e.includes("The aura can only affect one target")
     );
   const maxTargOne =
@@ -113,13 +123,13 @@ function filterData(pageSpellData, spellId) {
     pageSpellData["Max targets"].includes("1");
   //TODO Add in changes from ranks at somepoint
   const durMatchVals = pageSpellData["Duration"].match(
-    /(\d\d?\.?\d?\d?) (min)?(sec)?/
+    /(\d\d?\.?\d?\d?) (?:(min)|(sec))/
   );
   const descDurMatch = pageSpellData.Description.match(
-    /(\d\d?\.?\d?\d?) (min)?(sec)?/
+    /(\d\d?\.?\d?\d?) (?:(min)|(sec))/
   );
   const cdMatch = pageSpellData["Cooldown"].match(
-    /(\d\d?\.?\d?\d?) (min)?(sec)?/
+    /(\d\d?\.?\d?\d?) (?:(min)|(sec))/
   );
   let dur;
   if (durMatchVals) {
@@ -141,28 +151,27 @@ function filterData(pageSpellData, spellId) {
   } else {
     dur = 0;
   }
-
   //TODO Add in changes from ranks at somepoint
   const cd = cdMatch ? (cdMatch[2] ? cdMatch[1] * 60 : cdMatch[1]) : 0;
-  const durLtCd = dur < cd;
-  const durGtCd = dur > cd;
+  const durLtCd = 1 * dur < 1 * cd;
+  const durGtCd = 1 * dur > 1 * cd;
 
   const doesItTM = Object.keys(pageSpellData)
-    .filter(topics => topics.includes("Effect"))
-    .some(details => pageSpellData[details].includes("Trigger Missle"));
+    .filter((topics) => topics.includes("Effect"))
+    .some((details) => pageSpellData[details].includes("Trigger Missle"));
   const descEnemy = pageSpellData["Description"].includes("enemy");
   const doesItNWD = Object.keys(pageSpellData)
-    .filter(topics => topics.includes("Effect"))
-    .some(details =>
+    .filter((topics) => topics.includes("Effect"))
+    .some((details) =>
       pageSpellData[details].includes("Normalized Weapon Damage")
     );
   const doesItSD = Object.keys(pageSpellData)
-    .filter(topics => topics.includes("Effect"))
-    .some(details => pageSpellData[details].includes("School Damage"));
+    .filter((topics) => topics.includes("Effect"))
+    .some((details) => pageSpellData[details].includes("School Damage"));
   const doesItRC = pageSpellData["Range"].includes("Combat");
   const descDmg = pageSpellData["Description"].includes("damage");
   const doesItNegMech = negativeMechanics.includes(pageSpellData["Mechanic"]);
-  if (doesIncludeSelf) {
+  if (doesIncludeSelf || isInPartyOrRaid) {
     //Self
     newDataForId["targetType"] = targetTypes[0];
   } else if (doesIncludeRadius) {
@@ -231,7 +240,7 @@ const targetTypes = [
   "ONE_FRIENDLY",
   "MANY_FRIENDLY",
   "ONE_ENEMY",
-  "MANY_ENEMY"
+  "MANY_ENEMY",
 ];
 
 const negativeMechanics = [
@@ -239,10 +248,10 @@ const negativeMechanics = [
   "Snared",
   "Disoriented",
   "Polymorphed",
-  "Rooted"
+  "Rooted",
 ];
 
-async function runSpells(browser) {
+async function runSpells(browser, mutex) {
   const classNames = Object.keys(spellData["Spells"]);
   for (const className in classNames) {
     const spellNames = Object.keys(spellData["Spells"][classNames[className]]);
@@ -257,7 +266,8 @@ async function runSpells(browser) {
             browser,
             classNames[className],
             spellNames[spellName],
-            "Spell"
+            "Spell",
+            mutex
           )
         );
       }
@@ -267,14 +277,23 @@ async function runSpells(browser) {
 
 async function runAllThings() {
   const browser = await puppeteer.launch();
-  runSpells(browser);
+  const mutex = new Mutex();
+  runSpells(browser, mutex);
   // runTalents(browser);
   // runPvPTalents(browser);
   // runCovenants(browser);
+  // console.log(
+  //   filterData(
+  //     JSON.parse(
+  //       '{"Description":"Hurls molten lava at the target, dealing (108% of Spell power) Fire damage. Elemental ,  Restoration (Level 20)Lava Burst will always critically strike if the target is affected by Flame Shock ElementalGenerates 10 Maelstrom.","Duration":"n/a","School":"Fire","Mechanic":"n/a","Dispel type":"n/a","GCD category":"Normal","Cost":"2.5% of base mana","Range":"40 yards (Long)","Cast time":"2 seconds","Cooldown":"8 sec","GCD":"1.5 seconds","Effect #1":"Trigger Missile (Lava Burst)","Effect #2":"Give Power (Maelstrom)","Flags":["Cannot be used while shapeshifted","Persists through death"]}'
+  //     ),
+  //     "51505"
+  //   )
+  // );
 
   Promise.all(promises).then(() => {
     let jsonToWrite = JSON.stringify(spellData);
-    fs.writeFileSync(`SpellsPhase2Test.json`, jsonToWrite);
+    fs.writeFileSync(`SpellsPhase2Test2.json`, jsonToWrite);
     browser.close();
   });
 }
