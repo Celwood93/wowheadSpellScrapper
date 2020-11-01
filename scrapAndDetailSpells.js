@@ -1,13 +1,14 @@
 const puppeteer = require("puppeteer");
 const Mutex = require("async-mutex").Mutex;
 const fs = require("fs");
+const _ = require("lodash");
 const spellData = require("./SpellsPhase1Test.json"); //for testing atm
-const maxPages = 8;
+const maxPages = 28;
 const promises = [];
 const cachedIds = {};
 
 function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 //Type is incase Spells/Talents/PvPTalents/Covenants produces a different type of datastorage -- might not need here
@@ -34,13 +35,13 @@ async function getDetails(spellId, browser, className, spellName, type, mutex) {
     while (didTimeout) {
       try {
         await page.goto(`https://wowhead.com/spell=${spellId}`, {
-          timeout: 35000,
+          timeout: 30000 + 5000 * timeoutCounter
         });
         //could also grab rank 2/3/4 of spells to check if they add durations /reduce cds
         pageSpellData = await page.evaluate(() => {
           let datas = {};
           datas["Description"] = Array.from(document.querySelectorAll("span.q"))
-            .map((e) => e.textContent)
+            .map(e => e.textContent)
             .join(" ");
           const isRechargeCooldown = document
             .querySelector(
@@ -50,7 +51,7 @@ async function getDetails(spellId, browser, className, spellName, type, mutex) {
             )
             .textContent.match(/(\d\d?\.?\d?\d?) (\w+) recharge/);
           Array.from(document.querySelectorAll("#spelldetails > tbody > tr"))
-            .map((el) => {
+            .map(el => {
               const tharr = Array.from(
                 el.querySelectorAll(
                   "th:not(.grid-hideable-cell):not(.grid-nesting-wrapper)"
@@ -65,7 +66,7 @@ async function getDetails(spellId, browser, className, spellName, type, mutex) {
                 if (e.textContent === "Flags") {
                   datas[e.textContent] = Array.from(
                     tdarr[i].querySelectorAll("li")
-                  ).map((el) => el.textContent);
+                  ).map(el => el.textContent);
                 } else {
                   datas[e.textContent] = tdarr[i].textContent;
                 }
@@ -73,7 +74,9 @@ async function getDetails(spellId, browser, className, spellName, type, mutex) {
             })
             .flat();
           if (isRechargeCooldown) {
-            datas.Cooldown = `${isRechargeCooldown[1]} ${isRechargeCooldown[2]}`;
+            datas.Cooldown = `${isRechargeCooldown[1]} ${
+              isRechargeCooldown[2]
+            }`;
           }
           return datas;
         });
@@ -98,7 +101,7 @@ async function getDetails(spellId, browser, className, spellName, type, mutex) {
   if (newDataForId) {
     spellData["Spells"][className][spellName] = {
       ...spellData["Spells"][className][spellName],
-      ...newDataForId,
+      ...newDataForId
     };
   }
 }
@@ -109,18 +112,32 @@ function filterData(pageSpellData, spellId) {
   const isInPartyOrRaid = pageSpellData["Description"].includes(
     "party or raid, all party and raid"
   );
+  const isAroundOrInfront = /nearby enemies[^.]|(enemies|targets [\w ]+) in front of you/.test(
+    pageSpellData["Description"]
+  );
+  const summonNotEngageNoRadius =
+    /Calls forth|Summon/.test(pageSpellData["Description"]) &&
+    pageSpellData["Flags"] &&
+    pageSpellData["Flags"].includes("Does not engage target") &&
+    Object.keys(pageSpellData)
+      .filter(topics => topics.includes("Effect"))
+      .some(details => !pageSpellData[details].includes("Radius"));
   const doesIncludeRadius = Object.keys(pageSpellData)
-    .filter((topics) => topics.includes("Effect"))
-    .some((details) => pageSpellData[details].includes("Radius"));
+    .filter(topics => topics.includes("Effect"))
+    .some(details => pageSpellData[details].includes("Radius"));
   const doesIncludeHealingAndDamage =
     /damage to an enemy/.test(pageSpellData["Description"]) &&
     /healing to an ally/.test(pageSpellData["Description"]);
   const doesIncludeHealingInEffect = Object.keys(pageSpellData)
-    .filter((topics) => topics.includes("Effect"))
-    .some((details) => pageSpellData[details].includes("Heal"));
-  const ftInDesc = /friendly target/.test(pageSpellData["Description"]);
-  const porInDesc = /party or raid member/.test(pageSpellData["Description"]);
-  const allyInDesc = /\bally\b/.test(pageSpellData["Description"]);
+    .filter(topics => topics.includes("Effect"))
+    .some(details => pageSpellData[details].includes("Heal"));
+  const ftInDesc = /friendly (target|healer)/.test(
+    pageSpellData["Description"]
+  );
+  const porInDesc = /party or raid member|group member/.test(
+    pageSpellData["Description"]
+  );
+  const allyInDesc = /\bally\b|\ballies\b/.test(pageSpellData["Description"]);
   const healThemInDesc = /healing them/.test(pageSpellData["Description"]);
   const healTargInDesc = /healing the target/.test(
     pageSpellData["Description"]
@@ -130,7 +147,7 @@ function filterData(pageSpellData, spellId) {
   );
   const flagsOneTarg =
     !!pageSpellData["Flags"] &&
-    pageSpellData["Flags"].some((e) =>
+    pageSpellData["Flags"].some(e =>
       e.includes("The aura can only affect one target")
     );
   const maxTargOne =
@@ -170,23 +187,56 @@ function filterData(pageSpellData, spellId) {
   const cd = cdMatch ? (cdMatch[2] ? cdMatch[1] * 60 : cdMatch[1]) : 0;
   const durLtCd = 1 * dur < 1 * cd;
   const durGtCd = 1 * dur > 1 * cd;
-
+  if (!negativeMechanics.includes(pageSpellData["Mechanic"])) {
+    Object.keys(pageSpellData)
+      .filter(topics => topics.includes("Effect"))
+      .some(details => pageSpellData[details].includes("Interrupt"))
+      ? (pageSpellData["Mechanic"] = "Interrupted")
+      : /interrupt/.test(pageSpellData["Description"])
+      ? (pageSpellData["Mechanic"] = "Interrupted")
+      : 0;
+    Object.keys(pageSpellData)
+      .filter(topics => topics.includes("Effect"))
+      .some(details => pageSpellData[details].includes("Stun"))
+      ? (pageSpellData["Mechanic"] = "Stunned")
+      : /stuns/.test(pageSpellData["Description"])
+      ? (pageSpellData["Mechanic"] = "Stunned")
+      : 0;
+    Object.keys(pageSpellData)
+      .filter(topics => topics.includes("Effect"))
+      .some(details => pageSpellData[details].includes("Fear"))
+      ? (pageSpellData["Mechanic"] = "Disoriented")
+      : /disorient/.test(pageSpellData["Description"])
+      ? (pageSpellData["Mechanic"] = "Disoriented")
+      : 0;
+  }
   const doesItTM = Object.keys(pageSpellData)
-    .filter((topics) => topics.includes("Effect"))
-    .some((details) => pageSpellData[details].includes("Trigger Missle"));
+    .filter(topics => topics.includes("Effect"))
+    .some(details => pageSpellData[details].includes("Trigger Missle"));
   const descEnemy = pageSpellData["Description"].includes("enemy");
   const doesItNWD = Object.keys(pageSpellData)
-    .filter((topics) => topics.includes("Effect"))
-    .some((details) =>
+    .filter(topics => topics.includes("Effect"))
+    .some(details =>
       pageSpellData[details].includes("Normalized Weapon Damage")
     );
   const doesItSD = Object.keys(pageSpellData)
-    .filter((topics) => topics.includes("Effect"))
-    .some((details) => pageSpellData[details].includes("School Damage"));
+    .filter(topics => topics.includes("Effect"))
+    .some(details => pageSpellData[details].includes("School Damage"));
   const doesItRC = pageSpellData["Range"].includes("Combat");
   const descDmg = pageSpellData["Description"].includes("damage");
   const doesItNegMech = negativeMechanics.includes(pageSpellData["Mechanic"]);
-  if (doesIncludeSelf || isInPartyOrRaid) {
+  const isTaunt = Object.keys(pageSpellData)
+    .filter(topics => topics.includes("Effect"))
+    .some(details => pageSpellData[details].includes("Taunt"));
+  const isDispel = Object.keys(pageSpellData)
+    .filter(topics => topics.includes("Effect"))
+    .some(details => /Dispel|Spell Steal/.test(pageSpellData[details]));
+  if (
+    doesIncludeSelf ||
+    isInPartyOrRaid ||
+    isAroundOrInfront ||
+    summonNotEngageNoRadius
+  ) {
     //Self
     newDataForId["targetType"] = targetTypes[0];
   } else if (doesIncludeRadius) {
@@ -225,7 +275,9 @@ function filterData(pageSpellData, spellId) {
       doesItTM ||
       descEnemy ||
       descDmg ||
-      doesItNegMech)
+      doesItNegMech ||
+      isTaunt ||
+      isDispel)
   ) {
     //One Enemy
     newDataForId["targetType"] = targetTypes[5];
@@ -237,7 +289,9 @@ function filterData(pageSpellData, spellId) {
       doesItTM ||
       descEnemy ||
       descDmg ||
-      doesItNegMech)
+      doesItNegMech ||
+      isTaunt ||
+      isDispel)
   ) {
     //Many Enemy
     newDataForId["targetType"] = targetTypes[6];
@@ -255,7 +309,7 @@ const targetTypes = [
   "ONE_FRIENDLY",
   "MANY_FRIENDLY",
   "ONE_ENEMY",
-  "MANY_ENEMY",
+  "MANY_ENEMY"
 ];
 
 const negativeMechanics = [
@@ -264,6 +318,7 @@ const negativeMechanics = [
   "Disoriented",
   "Polymorphed",
   "Rooted",
+  "Interrupted"
 ];
 
 async function runSpells(browser, mutex) {
@@ -296,20 +351,9 @@ async function runSpells(browser, mutex) {
   }
 }
 
-const brokenSpells = [
-  6795,
-  2908,
-  29166,
-  106839,
-  132469,
-  130,
-  30449,
-  10326,
-  57994,
-  198103,
-  51533,
-];
+const brokenSpells = [];
 const incorrectSpells = [
+  30449,
   48438,
   106898,
   212040,
@@ -326,8 +370,29 @@ const incorrectSpells = [
   212048,
   98008,
   198067,
-  187874,
+  187874
 ];
+
+async function findDifferences(trueData, newData) {
+  const classNames = Object.keys(trueData["Spells"]);
+  for (const className in classNames) {
+    const spellNames = Object.keys(trueData["Spells"][classNames[className]]);
+    for (const spellName in spellNames) {
+      if (
+        !_.isEqual(
+          trueData["Spells"][classNames[className]][spellNames[spellName]],
+          newData["Spells"][classNames[className]][spellNames[spellName]]
+        )
+      ) {
+        console.log(
+          `${spellNames[spellName]} Not Equal`,
+          trueData["Spells"][classNames[className]][spellNames[spellName]],
+          newData["Spells"][classNames[className]][spellNames[spellName]]
+        );
+      }
+    }
+  }
+}
 
 async function runAllThings() {
   const browser = await puppeteer.launch();
@@ -347,6 +412,10 @@ async function runAllThings() {
 
   Promise.all(promises).then(() => {
     let jsonToWrite = JSON.stringify(spellData);
+    //const testWorkingDataReal = require("./SpellsPhase2AllWorking.json");
+    // if (!_.isEqual(testWorkingDataReal, spellData)) {
+    //   findDifferences(testWorkingDataReal, spellData);
+    // }
     fs.writeFileSync(`SpellsPhase2Test.json`, jsonToWrite);
     browser.close();
   });

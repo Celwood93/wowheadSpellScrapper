@@ -81,6 +81,11 @@
         "spellId": "50769",
         "targetType": "ONE_FRIENDLY"
       },
+      "Growl": {
+        "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+        "spellId": "6795",
+        "targetType": "ONE_ENEMY"
+      },
       "Ironfur": {
         "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
         "spellId": "192081",
@@ -136,6 +141,16 @@
         "spellId": "145205",
         "targetType": "PLACED"
       },
+      "Soothe": {
+        "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+        "spellId": "2908",
+        "targetType": "ONE_ENEMY"
+      },
+      "Innervate": {
+        "spec": ["RESTORATION", "BALANCE"],
+        "spellId": "29166",
+        "targetType": "ONE_FRIENDLY"
+      },
       "Nature's Swiftness": {
         "spec": ["RESTORATION"],
         "spellId": "132158",
@@ -149,7 +164,7 @@
       "Thrash": {
         "spec": ["FERAL", "GUARDIAN"],
         "spellId": "106832",
-        "targetType": "ONE_ENEMY"
+        "targetType": "SELF"
       },
       "Tiger's Fury": {
         "spec": ["FERAL"],
@@ -165,6 +180,11 @@
         "spec": ["FERAL"],
         "spellId": "1079",
         "targetType": "MANY_ENEMY"
+      },
+      "Skull Bash": {
+        "spec": ["FERAL", "GUARDIAN"],
+        "spellId": "106839",
+        "targetType": "ONE_ENEMY"
       },
       "Survival Instincts": {
         "spec": ["FERAL", "GUARDIAN"],
@@ -199,6 +219,11 @@
       "Moonkin Form": {
         "spec": ["BALANCE"],
         "spellId": "24858",
+        "targetType": "SELF"
+      },
+      "Typhoon": {
+        "spec": ["BALANCE"],
+        "spellId": "132469",
         "targetType": "SELF"
       },
       "Starfall": {
@@ -252,6 +277,11 @@
         "spec": ["FIRE", "FROST", "ARCANE"],
         "spellId": "1459",
         "targetType": "SELF"
+      },
+      "Slow Fall": {
+        "spec": ["FIRE", "FROST", "ARCANE"],
+        "spellId": "130",
+        "targetType": "MANY_FRIENDLY"
       },
       "Fireball": {
         "spec": ["FIRE"],
@@ -505,6 +535,11 @@
         "spellId": "53385",
         "targetType": "SELF"
       },
+      "Turn Evil": {
+        "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+        "spellId": "10326",
+        "targetType": "ONE_ENEMY"
+      },
       "Shield of Vengeance": {
         "spec": ["RETRIBUTION"],
         "spellId": "184662",
@@ -689,6 +724,11 @@
         "spellId": "51505",
         "targetType": "ONE_ENEMY"
       },
+      "Wind Shear": {
+        "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+        "spellId": "57994",
+        "targetType": "ONE_ENEMY"
+      },
       "Ancestral Spirit": {
         "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
         "spellId": "2008",
@@ -738,6 +778,11 @@
         "spec": ["RESTORATION"],
         "spellId": "73920",
         "targetType": "PLACED"
+      },
+      "Earth Elemental": {
+        "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+        "spellId": "198103",
+        "targetType": "SELF"
       },
       "Mana Tide Totem": {
         "spec": ["RESTORATION"],
@@ -818,6 +863,11 @@
         "spec": ["ENHANCEMENT"],
         "spellId": "17364",
         "targetType": "ONE_ENEMY"
+      },
+      "Feral Spirit": {
+        "spec": ["ENHANCEMENT"],
+        "spellId": "51533",
+        "targetType": "SELF"
       },
       "Spirit Walk": {
         "spec": ["ENHANCEMENT"],

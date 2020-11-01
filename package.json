@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "async-mutex": "^0.2.4",
+    "lodash": "^4.17.20",
     "puppeteer": "^5.4.0"
   }
 }
