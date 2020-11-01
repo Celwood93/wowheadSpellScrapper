@@ -2,7 +2,7 @@ const puppeteer = require("puppeteer");
 const Mutex = require("async-mutex").Mutex;
 const fs = require("fs");
 const spellData = require("./SpellsPhase1Test.json"); //for testing atm
-const maxPages = 20;
+const maxPages = 8;
 const promises = [];
 const cachedIds = {};
 
@@ -21,71 +21,86 @@ async function getDetails(spellId, browser, className, spellName, type, mutex) {
 
       while (pages.length > maxPages) {
         pages = await browser.pages();
-        await sleep(3000);
+        await sleep(500);
       }
 
       page = await browser.newPage();
     } finally {
       release();
     }
-
-    await page.goto(`https://wowhead.com/spell=${spellId}`, { timeout: 0 });
-    //could also grab rank 2/3/4 of spells to check if they add durations /reduce cds
-    const pageSpellData = await page.evaluate(() => {
-      let datas = {};
-      datas["Description"] = Array.from(document.querySelectorAll("span.q"))
-        .map((e) => e.textContent)
-        .join(" ");
-      const isRechargeCooldown = document
-        .querySelector(
-          `#tt${
-            document.URL.match(/\d+/)[0]
-          } > table > tbody > tr:nth-child(1) > td > table:nth-child(1) > tbody > tr > td`
-        )
-        .textContent.match(/(\d\d?\.?\d?\d?) (\w+) recharge/);
-      Array.from(document.querySelectorAll("#spelldetails > tbody > tr"))
-        .map((el) => {
-          const tharr = Array.from(
-            el.querySelectorAll(
-              "th:not(.grid-hideable-cell):not(.grid-nesting-wrapper)"
+    let timeoutCounter = 1;
+    let didTimeout = true;
+    let pageSpellData;
+    while (didTimeout) {
+      try {
+        await page.goto(`https://wowhead.com/spell=${spellId}`, {
+          timeout: 35000,
+        });
+        //could also grab rank 2/3/4 of spells to check if they add durations /reduce cds
+        pageSpellData = await page.evaluate(() => {
+          let datas = {};
+          datas["Description"] = Array.from(document.querySelectorAll("span.q"))
+            .map((e) => e.textContent)
+            .join(" ");
+          const isRechargeCooldown = document
+            .querySelector(
+              `#tt${
+                document.URL.match(/\d+/)[0]
+              } > table > tbody > tr:nth-child(1) > td > table:nth-child(1) > tbody > tr > td`
             )
-          ).flat();
-          const tdarr = Array.from(
-            el.querySelectorAll(
-              "td:not(.grid-hideable-cell):not(.grid-nesting-wrapper)"
-            )
-          ).flat();
-          return tharr.forEach((e, i) => {
-            if (e.textContent === "Flags") {
-              datas[e.textContent] = Array.from(
-                tdarr[i].querySelectorAll("li")
-              ).map((el) => el.textContent);
-            } else {
-              datas[e.textContent] = tdarr[i].textContent;
-            }
-          });
-        })
-        .flat();
-      if (isRechargeCooldown) {
-        datas.Cooldown = `${isRechargeCooldown[1]} ${isRechargeCooldown[2]}`;
+            .textContent.match(/(\d\d?\.?\d?\d?) (\w+) recharge/);
+          Array.from(document.querySelectorAll("#spelldetails > tbody > tr"))
+            .map((el) => {
+              const tharr = Array.from(
+                el.querySelectorAll(
+                  "th:not(.grid-hideable-cell):not(.grid-nesting-wrapper)"
+                )
+              ).flat();
+              const tdarr = Array.from(
+                el.querySelectorAll(
+                  "td:not(.grid-hideable-cell):not(.grid-nesting-wrapper)"
+                )
+              ).flat();
+              return tharr.forEach((e, i) => {
+                if (e.textContent === "Flags") {
+                  datas[e.textContent] = Array.from(
+                    tdarr[i].querySelectorAll("li")
+                  ).map((el) => el.textContent);
+                } else {
+                  datas[e.textContent] = tdarr[i].textContent;
+                }
+              });
+            })
+            .flat();
+          if (isRechargeCooldown) {
+            datas.Cooldown = `${isRechargeCooldown[1]} ${isRechargeCooldown[2]}`;
+          }
+          return datas;
+        });
+        //process
+        newDataForId = filterData(pageSpellData, spellId);
+        console.log(
+          `${Object.keys(cachedIds).length + 1}/${promises.length} finished`
+        );
+        cachedIds[spellId] = newDataForId;
+        didTimeout = false;
+      } catch (e) {
+        console.log(`Timeout on ${spellId}`, e);
+        didTimeout = !!timeoutCounter % 3;
+        timeoutCounter++;
       }
-      return datas;
-    });
-    //process
-    newDataForId = filterData(pageSpellData, spellId);
-    console.log(
-      `${Object.keys(cachedIds).length + 1}/${promises.length} finished`
-    );
-    cachedIds[spellId] = newDataForId;
+    }
     await page.close();
   } else {
+    console.log(spellId, cachedIds);
     newDataForId = cachedIds[spellId];
   }
-
-  spellData["Spells"][className][spellName] = {
-    ...spellData["Spells"][className][spellName],
-    ...newDataForId,
-  };
+  if (newDataForId) {
+    spellData["Spells"][className][spellName] = {
+      ...spellData["Spells"][className][spellName],
+      ...newDataForId,
+    };
+  }
 }
 
 function filterData(pageSpellData, spellId) {
@@ -260,20 +275,59 @@ async function runSpells(browser, mutex) {
         const spellId =
           spellData["Spells"][classNames[className]][spellNames[spellName]]
             .spellId;
-        promises.push(
-          getDetails(
-            spellId,
-            browser,
-            classNames[className],
-            spellNames[spellName],
-            "Spell",
-            mutex
-          )
-        );
+        if (brokenSpells.concat(incorrectSpells).includes(spellId * 1)) {
+          promises.push(
+            getDetails(
+              spellId,
+              browser,
+              classNames[className],
+              spellNames[spellName],
+              "Spell",
+              mutex
+            )
+          );
+        } else {
+          delete spellData["Spells"][classNames[className]][
+            spellNames[spellName]
+          ];
+        }
       }
     }
   }
 }
+
+const brokenSpells = [
+  6795,
+  2908,
+  29166,
+  106839,
+  132469,
+  130,
+  30449,
+  10326,
+  57994,
+  198103,
+  51533,
+];
+const incorrectSpells = [
+  48438,
+  106898,
+  212040,
+  33786,
+  213764,
+  22570,
+  194153,
+  78675,
+  11366,
+  44614,
+  5143,
+  53600,
+  212056,
+  212048,
+  98008,
+  198067,
+  187874,
+];
 
 async function runAllThings() {
   const browser = await puppeteer.launch();
@@ -293,7 +347,7 @@ async function runAllThings() {
 
   Promise.all(promises).then(() => {
     let jsonToWrite = JSON.stringify(spellData);
-    fs.writeFileSync(`SpellsPhase2Test2.json`, jsonToWrite);
+    fs.writeFileSync(`SpellsPhase2Test.json`, jsonToWrite);
     browser.close();
   });
 }

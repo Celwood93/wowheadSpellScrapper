@@ -1,0 +1,848 @@
+{
+  "Spells": {
+    "Druid": {
+      "Wrath": {
+        "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE", "BALANCE"],
+        "spellId": "5176",
+        "targetType": "ONE_ENEMY"
+      },
+      "Moonfire": {
+        "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+        "spellId": "8921",
+        "targetType": "MANY_ENEMY"
+      },
+      "Regrowth": {
+        "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+        "spellId": "8936",
+        "targetType": "MANY_FRIENDLY"
+      },
+      "Entangling Roots": {
+        "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+        "spellId": "339",
+        "targetType": "ONE_ENEMY"
+      },
+      "Cat Form": {
+        "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+        "spellId": "768",
+        "targetType": "SELF"
+      },
+      "Shred": {
+        "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+        "spellId": "5221",
+        "targetType": "ONE_ENEMY"
+      },
+      "Dash": {
+        "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+        "spellId": "1850",
+        "targetType": "SELF"
+      },
+      "Ferocious Bite": {
+        "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+        "spellId": "22568",
+        "targetType": "ONE_ENEMY"
+      },
+      "Bear Form": {
+        "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+        "spellId": "5487",
+        "targetType": "SELF"
+      },
+      "Mangle": {
+        "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+        "spellId": "33917",
+        "targetType": "ONE_ENEMY"
+      },
+      "Rejuvenation": {
+        "spec": ["RESTORATION"],
+        "spellId": "774",
+        "targetType": "MANY_FRIENDLY"
+      },
+      "Travel Form": {
+        "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+        "spellId": "783",
+        "targetType": "SELF"
+      },
+      "Swiftmend": {
+        "spec": ["RESTORATION"],
+        "spellId": "18562",
+        "targetType": "ONE_FRIENDLY"
+      },
+      "Ironbark": {
+        "spec": ["RESTORATION"],
+        "spellId": "102342",
+        "targetType": "ONE_FRIENDLY"
+      },
+      "Prowl": {
+        "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+        "spellId": "5215",
+        "targetType": "SELF"
+      },
+      "Revive": {
+        "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+        "spellId": "50769",
+        "targetType": "ONE_FRIENDLY"
+      },
+      "Ironfur": {
+        "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+        "spellId": "192081",
+        "targetType": "SELF"
+      },
+      "Mount Form": {
+        "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+        "spellId": "210053",
+        "targetType": "SELF"
+      },
+      "Nature's Cure": {
+        "spec": ["RESTORATION"],
+        "spellId": "88423",
+        "targetType": "ONE_FRIENDLY"
+      },
+      "Lifebloom": {
+        "spec": ["RESTORATION"],
+        "spellId": "33763",
+        "targetType": "ONE_FRIENDLY"
+      },
+      "Sunfire": {
+        "spec": ["RESTORATION", "BALANCE"],
+        "spellId": "93402",
+        "targetType": "MANY_ENEMY"
+      },
+      "Barkskin": {
+        "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+        "spellId": "22812",
+        "targetType": "SELF"
+      },
+      "Ursol's Vortex": {
+        "spec": ["RESTORATION"],
+        "spellId": "102793",
+        "targetType": "PLACED"
+      },
+      "Rebirth": {
+        "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+        "spellId": "20484",
+        "targetType": "ONE_FRIENDLY"
+      },
+      "Tranquility": {
+        "spec": ["RESTORATION"],
+        "spellId": "740",
+        "targetType": "SELF"
+      },
+      "Hibernate": {
+        "spec": ["RESTORATION", "FERAL", "GUARDIAN", "BALANCE"],
+        "spellId": "2637",
+        "targetType": "ONE_ENEMY"
+      },
+      "Efflorescence": {
+        "spec": ["RESTORATION"],
+        "spellId": "145205",
+        "targetType": "PLACED"
+      },
+      "Nature's Swiftness": {
+        "spec": ["RESTORATION"],
+        "spellId": "132158",
+        "targetType": "SELF"
+      },
+      "Rake": {
+        "spec": ["FERAL"],
+        "spellId": "1822",
+        "targetType": "MANY_ENEMY"
+      },
+      "Thrash": {
+        "spec": ["FERAL", "GUARDIAN"],
+        "spellId": "106832",
+        "targetType": "ONE_ENEMY"
+      },
+      "Tiger's Fury": {
+        "spec": ["FERAL"],
+        "spellId": "5217",
+        "targetType": "SELF"
+      },
+      "Remove Corruption": {
+        "spec": ["FERAL", "GUARDIAN", "BALANCE"],
+        "spellId": "2782",
+        "targetType": "ONE_FRIENDLY"
+      },
+      "Rip": {
+        "spec": ["FERAL"],
+        "spellId": "1079",
+        "targetType": "MANY_ENEMY"
+      },
+      "Survival Instincts": {
+        "spec": ["FERAL", "GUARDIAN"],
+        "spellId": "61336",
+        "targetType": "SELF"
+      },
+      "Berserk": {
+        "spec": ["FERAL", "GUARDIAN"],
+        "spellId": "106951",
+        "targetType": "SELF"
+      },
+      "Maul": {
+        "spec": ["GUARDIAN"],
+        "spellId": "6807",
+        "targetType": "ONE_ENEMY"
+      },
+      "Frenzied Regeneration": {
+        "spec": ["GUARDIAN"],
+        "spellId": "22842",
+        "targetType": "SELF"
+      },
+      "Incapacitating Roar": {
+        "spec": ["GUARDIAN"],
+        "spellId": "99",
+        "targetType": "SELF"
+      },
+      "Starsurge": {
+        "spec": ["BALANCE"],
+        "spellId": "78674",
+        "targetType": "ONE_ENEMY"
+      },
+      "Moonkin Form": {
+        "spec": ["BALANCE"],
+        "spellId": "24858",
+        "targetType": "SELF"
+      },
+      "Starfall": {
+        "spec": ["BALANCE"],
+        "spellId": "191034",
+        "targetType": "SELF"
+      },
+      "Celestial Alignment": {
+        "spec": ["BALANCE"],
+        "spellId": "194223",
+        "targetType": "SELF"
+      }
+    },
+    "Mage": {
+      "Frostbolt": {
+        "spec": ["FIRE", "FROST", "ARCANE"],
+        "spellId": "116",
+        "targetType": "MANY_ENEMY"
+      },
+      "Fire Blast": {
+        "spec": ["FIRE", "FIRE", "FROST", "ARCANE"],
+        "spellId": "319836",
+        "targetType": "ONE_ENEMY"
+      },
+      "Frost Nova": {
+        "spec": ["FIRE", "FROST", "ARCANE"],
+        "spellId": "122",
+        "targetType": "SELF"
+      },
+      "Blink": {
+        "spec": ["FIRE", "FROST", "ARCANE"],
+        "spellId": "1953",
+        "targetType": "SELF"
+      },
+      "Conjure Refreshment": {
+        "spec": ["FIRE", "FROST", "ARCANE"],
+        "spellId": "190336",
+        "targetType": "SELF"
+      },
+      "Arcane Explosion": {
+        "spec": ["FIRE", "FROST", "ARCANE"],
+        "spellId": "1449",
+        "targetType": "SELF"
+      },
+      "Counterspell": {
+        "spec": ["FIRE", "FROST", "ARCANE"],
+        "spellId": "2139",
+        "targetType": "ONE_ENEMY"
+      },
+      "Arcane Intellect": {
+        "spec": ["FIRE", "FROST", "ARCANE"],
+        "spellId": "1459",
+        "targetType": "SELF"
+      },
+      "Fireball": {
+        "spec": ["FIRE"],
+        "spellId": "133",
+        "targetType": "ONE_ENEMY"
+      },
+      "Polymorph": {
+        "spec": ["FIRE", "FROST", "ARCANE"],
+        "spellId": "118",
+        "targetType": "ONE_ENEMY"
+      },
+      "Scorch": {
+        "spec": ["FIRE"],
+        "spellId": "2948",
+        "targetType": "ONE_ENEMY"
+      },
+      "Flamestrike": {
+        "spec": ["FIRE"],
+        "spellId": "2120",
+        "targetType": "PLACED"
+      },
+      "Phoenix Flames": {
+        "spec": ["FIRE"],
+        "spellId": "257541",
+        "targetType": "ONE_ENEMY"
+      },
+      "Blazing Barrier": {
+        "spec": ["FIRE"],
+        "spellId": "235313",
+        "targetType": "SELF"
+      },
+      "Ice Block": {
+        "spec": ["FIRE", "FROST", "ARCANE"],
+        "spellId": "45438",
+        "targetType": "SELF"
+      },
+      "Dragon's Breath": {
+        "spec": ["FIRE"],
+        "spellId": "31661",
+        "targetType": "SELF"
+      },
+      "Remove Curse": {
+        "spec": ["FIRE", "FROST", "ARCANE"],
+        "spellId": "475",
+        "targetType": "ONE_FRIENDLY"
+      },
+      "Combustion": {
+        "spec": ["FIRE"],
+        "spellId": "190319",
+        "targetType": "SELF"
+      },
+      "Invisibility": {
+        "spec": ["FIRE", "FROST", "ARCANE"],
+        "spellId": "66",
+        "targetType": "SELF"
+      },
+      "Mirror Image": {
+        "spec": ["FIRE", "FROST", "ARCANE"],
+        "spellId": "55342",
+        "targetType": "SELF"
+      },
+      "Time Warp": {
+        "spec": ["FIRE", "FROST", "ARCANE"],
+        "spellId": "80353",
+        "targetType": "SELF"
+      },
+      "Alter Time": {
+        "spec": ["FIRE", "FROST", "ARCANE"],
+        "spellId": "108978",
+        "targetType": "SELF"
+      },
+      "Ice Lance": {
+        "spec": ["FROST"],
+        "spellId": "30455",
+        "targetType": "ONE_ENEMY"
+      },
+      "Summon Water Elemental": {
+        "spec": ["FROST"],
+        "spellId": "31687",
+        "targetType": "SELF"
+      },
+      "Blizzard": {
+        "spec": ["FROST"],
+        "spellId": "190356",
+        "targetType": "PLACED"
+      },
+      "Cone of Cold": {
+        "spec": ["FROST"],
+        "spellId": "120",
+        "targetType": "SELF"
+      },
+      "Ice Barrier": {
+        "spec": ["FROST"],
+        "spellId": "11426",
+        "targetType": "SELF"
+      },
+      "Icy Veins": {
+        "spec": ["FROST"],
+        "spellId": "12472",
+        "targetType": "SELF"
+      },
+      "Frozen Orb": {
+        "spec": ["FROST"],
+        "spellId": "84714",
+        "targetType": "PLACED"
+      },
+      "Cold Snap": {
+        "spec": ["FROST"],
+        "spellId": "235219",
+        "targetType": "SELF"
+      },
+      "Arcane Barrage": {
+        "spec": ["ARCANE"],
+        "spellId": "44425",
+        "targetType": "ONE_ENEMY"
+      },
+      "Arcane Blast": {
+        "spec": ["ARCANE"],
+        "spellId": "30451",
+        "targetType": "ONE_ENEMY"
+      },
+      "Slow": {
+        "spec": ["ARCANE"],
+        "spellId": "31589",
+        "targetType": "MANY_ENEMY"
+      },
+      "Conjure Mana Gem": {
+        "spec": ["ARCANE"],
+        "spellId": "759",
+        "targetType": "SELF"
+      },
+      "Prismatic Barrier": {
+        "spec": ["ARCANE"],
+        "spellId": "235450",
+        "targetType": "SELF"
+      },
+      "Evocation": {
+        "spec": ["ARCANE"],
+        "spellId": "12051",
+        "targetType": "SELF"
+      },
+      "Arcane Power": {
+        "spec": ["ARCANE"],
+        "spellId": "12042",
+        "targetType": "SELF"
+      },
+      "Touch of the Magi": {
+        "spec": ["ARCANE"],
+        "spellId": "321507",
+        "targetType": "ONE_ENEMY"
+      },
+      "Presence of Mind": {
+        "spec": ["ARCANE"],
+        "spellId": "205025",
+        "targetType": "SELF"
+      },
+      "Greater Invisibility": {
+        "spec": ["ARCANE"],
+        "spellId": "110959",
+        "targetType": "SELF"
+      }
+    },
+    "Paladin": {
+      "Crusader Strike": {
+        "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+        "spellId": "35395",
+        "targetType": "ONE_ENEMY"
+      },
+      "Judgment": {
+        "spec": ["RETRIBUTION", "HOLY", "HOLY", "PROTECTION", "PROTECTION"],
+        "spellId": "20271",
+        "targetType": "ONE_ENEMY"
+      },
+      "Flash of Light": {
+        "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+        "spellId": "19750",
+        "targetType": "ONE_FRIENDLY"
+      },
+      "Hammer of Justice": {
+        "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+        "spellId": "853",
+        "targetType": "ONE_ENEMY"
+      },
+      "Consecration": {
+        "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+        "spellId": "26573",
+        "targetType": "SELF"
+      },
+      "Word of Glory": {
+        "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+        "spellId": "85673",
+        "targetType": "ONE_FRIENDLY"
+      },
+      "Lay on Hands": {
+        "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+        "spellId": "633",
+        "targetType": "ONE_FRIENDLY"
+      },
+      "Divine Shield": {
+        "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+        "spellId": "642",
+        "targetType": "SELF"
+      },
+      "Templar's Verdict": {
+        "spec": ["RETRIBUTION"],
+        "spellId": "85256",
+        "targetType": "ONE_ENEMY"
+      },
+      "Cleanse Toxins": {
+        "spec": ["RETRIBUTION", "PROTECTION"],
+        "spellId": "213644",
+        "targetType": "ONE_FRIENDLY"
+      },
+      "Redemption": {
+        "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+        "spellId": "7328",
+        "targetType": "ONE_FRIENDLY"
+      },
+      "Hand of Reckoning": {
+        "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+        "spellId": "62124",
+        "targetType": "ONE_ENEMY"
+      },
+      "Divine Steed": {
+        "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+        "spellId": "190784",
+        "targetType": "SELF"
+      },
+      "Hand of Hindrance": {
+        "spec": ["RETRIBUTION"],
+        "spellId": "183218",
+        "targetType": "ONE_ENEMY"
+      },
+      "Blade of Justice": {
+        "spec": ["RETRIBUTION"],
+        "spellId": "184575",
+        "targetType": "ONE_ENEMY"
+      },
+      "Crusader Aura": {
+        "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+        "spellId": "32223",
+        "targetType": "SELF"
+      },
+      "Blessing of Freedom": {
+        "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+        "spellId": "1044",
+        "targetType": "ONE_FRIENDLY"
+      },
+      "Divine Storm": {
+        "spec": ["RETRIBUTION"],
+        "spellId": "53385",
+        "targetType": "SELF"
+      },
+      "Shield of Vengeance": {
+        "spec": ["RETRIBUTION"],
+        "spellId": "184662",
+        "targetType": "SELF"
+      },
+      "Rebuke": {
+        "spec": ["RETRIBUTION", "PROTECTION"],
+        "spellId": "96231",
+        "targetType": "ONE_ENEMY"
+      },
+      "Devotion Aura": {
+        "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+        "spellId": "465",
+        "targetType": "SELF"
+      },
+      "Blessing of Protection": {
+        "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+        "spellId": "1022",
+        "targetType": "ONE_FRIENDLY"
+      },
+      "Avenging Wrath": {
+        "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+        "spellId": "31884",
+        "targetType": "SELF"
+      },
+      "Retribution Aura": {
+        "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+        "spellId": "183435",
+        "targetType": "SELF"
+      },
+      "Wake of Ashes": {
+        "spec": ["RETRIBUTION"],
+        "spellId": "255937",
+        "targetType": "SELF"
+      },
+      "Blessing of Sacrifice": {
+        "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+        "spellId": "6940",
+        "targetType": "ONE_FRIENDLY"
+      },
+      "Hammer of Wrath": {
+        "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+        "spellId": "24275",
+        "targetType": "ONE_ENEMY"
+      },
+      "Concentration Aura": {
+        "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
+        "spellId": "317920",
+        "targetType": "SELF"
+      },
+      "Holy Shock": {
+        "spec": ["HOLY"],
+        "spellId": "20473",
+        "targetType": "ONE_ANY"
+      },
+      "Holy Light": {
+        "spec": ["HOLY"],
+        "spellId": "82326",
+        "targetType": "ONE_FRIENDLY"
+      },
+      "Cleanse": {
+        "spec": ["HOLY"],
+        "spellId": "4987",
+        "targetType": "ONE_FRIENDLY"
+      },
+      "Beacon of Light": {
+        "spec": ["HOLY"],
+        "spellId": "53563",
+        "targetType": "ONE_FRIENDLY"
+      },
+      "Divine Protection": {
+        "spec": ["HOLY", "PROTECTION"],
+        "spellId": "498",
+        "targetType": "SELF"
+      },
+      "Light of the Martyr": {
+        "spec": ["HOLY"],
+        "spellId": "183998",
+        "targetType": "ONE_FRIENDLY"
+      },
+      "Light of Dawn": {
+        "spec": ["HOLY"],
+        "spellId": "85222",
+        "targetType": "SELF"
+      },
+      "Aura Mastery": {
+        "spec": ["HOLY"],
+        "spellId": "31821",
+        "targetType": "SELF"
+      },
+      "Avenger's Shield": {
+        "spec": ["PROTECTION"],
+        "spellId": "31935",
+        "targetType": "ONE_ENEMY"
+      },
+      "Hammer of the Righteous": {
+        "spec": ["PROTECTION"],
+        "spellId": "53595",
+        "targetType": "ONE_ENEMY"
+      },
+      "Guardian of Ancient Kings": {
+        "spec": ["PROTECTION"],
+        "spellId": "86659",
+        "targetType": "ONE_ENEMY"
+      },
+      "Ardent Defender": {
+        "spec": ["PROTECTION"],
+        "spellId": "31850",
+        "targetType": "SELF"
+      }
+    },
+    "Priest": {
+      "Shadow Word: Pain": {
+        "spec": ["DISCIPLINE", "HOLY", "SHADOW"],
+        "spellId": "589",
+        "targetType": "MANY_ENEMY"
+      },
+      "Power Word: Shield": {
+        "spec": ["DISCIPLINE", "HOLY", "SHADOW"],
+        "spellId": "17",
+        "targetType": "MANY_FRIENDLY"
+      },
+      "Power Word: Fortitude": {
+        "spec": ["DISCIPLINE", "HOLY", "SHADOW"],
+        "spellId": "21562",
+        "targetType": "SELF"
+      },
+      "Power Word: Barrier": {
+        "spec": ["DISCIPLINE"],
+        "spellId": "62618",
+        "targetType": "PLACED"
+      }
+    },
+    "Shaman": {
+      "Lightning Bolt": {
+        "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+        "spellId": "188196",
+        "targetType": "ONE_ENEMY"
+      },
+      "Primal Strike": {
+        "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+        "spellId": "73899",
+        "targetType": "ONE_ENEMY"
+      },
+      "Flame Shock": {
+        "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+        "spellId": "188389",
+        "targetType": "MANY_ENEMY"
+      },
+      "Healing Surge": {
+        "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+        "spellId": "8004",
+        "targetType": "ONE_FRIENDLY"
+      },
+      "Earthbind Totem": {
+        "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+        "spellId": "2484",
+        "targetType": "PLACED"
+      },
+      "Flametongue Weapon": {
+        "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+        "spellId": "318038",
+        "targetType": "SELF"
+      },
+      "Lightning Shield": {
+        "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+        "spellId": "192106",
+        "targetType": "SELF"
+      },
+      "Ghost Wolf": {
+        "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+        "spellId": "2645",
+        "targetType": "SELF"
+      },
+      "Riptide": {
+        "spec": ["RESTORATION"],
+        "spellId": "61295",
+        "targetType": "MANY_FRIENDLY"
+      },
+      "Lava Burst": {
+        "spec": ["RESTORATION", "ELEMENTAL"],
+        "spellId": "51505",
+        "targetType": "ONE_ENEMY"
+      },
+      "Ancestral Spirit": {
+        "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+        "spellId": "2008",
+        "targetType": "ONE_FRIENDLY"
+      },
+      "Frost Shock": {
+        "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+        "spellId": "196840",
+        "targetType": "MANY_ENEMY"
+      },
+      "Purify Spirit": {
+        "spec": ["RESTORATION"],
+        "spellId": "77130",
+        "targetType": "ONE_FRIENDLY"
+      },
+      "Chain Heal": {
+        "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+        "spellId": "1064",
+        "targetType": "ONE_FRIENDLY"
+      },
+      "Capacitor Totem": {
+        "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+        "spellId": "192058",
+        "targetType": "PLACED"
+      },
+      "Chain Lightning": {
+        "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+        "spellId": "188443",
+        "targetType": "ONE_ENEMY"
+      },
+      "Healing Wave": {
+        "spec": ["RESTORATION"],
+        "spellId": "77472",
+        "targetType": "ONE_FRIENDLY"
+      },
+      "Healing Stream Totem": {
+        "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+        "spellId": "5394",
+        "targetType": "SELF"
+      },
+      "Water Walking": {
+        "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+        "spellId": "546",
+        "targetType": "MANY_FRIENDLY"
+      },
+      "Healing Rain": {
+        "spec": ["RESTORATION"],
+        "spellId": "73920",
+        "targetType": "PLACED"
+      },
+      "Mana Tide Totem": {
+        "spec": ["RESTORATION"],
+        "spellId": "16191",
+        "targetType": "SELF"
+      },
+      "Purge": {
+        "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+        "spellId": "370",
+        "targetType": "ONE_ENEMY"
+      },
+      "Water Shield": {
+        "spec": ["RESTORATION"],
+        "spellId": "52127",
+        "targetType": "SELF"
+      },
+      "Astral Shift": {
+        "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+        "spellId": "108271",
+        "targetType": "SELF"
+      },
+      "Spiritwalker's Grace": {
+        "spec": ["RESTORATION", "ELEMENTAL"],
+        "spellId": "79206",
+        "targetType": "SELF"
+      },
+      "Tremor Totem": {
+        "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+        "spellId": "8143",
+        "targetType": "SELF"
+      },
+      "Bloodlust": {
+        "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+        "spellId": "2825",
+        "targetType": "SELF"
+      },
+      "Heroism": {
+        "spec": ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
+        "spellId": "32182",
+        "targetType": "SELF"
+      },
+      "Healing Tide Totem": {
+        "spec": ["RESTORATION"],
+        "spellId": "108280",
+        "targetType": "SELF"
+      },
+      "Earth Shock": {
+        "spec": ["ELEMENTAL"],
+        "spellId": "8042",
+        "targetType": "ONE_ENEMY"
+      },
+      "Cleanse Spirit": {
+        "spec": ["ELEMENTAL", "ENHANCEMENT"],
+        "spellId": "51886",
+        "targetType": "ONE_FRIENDLY"
+      },
+      "Earthquake": {
+        "spec": ["ELEMENTAL"],
+        "spellId": "61882",
+        "targetType": "PLACED"
+      },
+      "Thunderstorm": {
+        "spec": ["ELEMENTAL"],
+        "spellId": "51490",
+        "targetType": "SELF"
+      },
+      "Windfury Weapon": {
+        "spec": ["ENHANCEMENT"],
+        "spellId": "33757",
+        "targetType": "SELF"
+      },
+      "Lava Lash": {
+        "spec": ["ENHANCEMENT"],
+        "spellId": "60103",
+        "targetType": "ONE_ENEMY"
+      },
+      "Stormstrike": {
+        "spec": ["ENHANCEMENT"],
+        "spellId": "17364",
+        "targetType": "ONE_ENEMY"
+      },
+      "Spirit Walk": {
+        "spec": ["ENHANCEMENT"],
+        "spellId": "58875",
+        "targetType": "SELF"
+      },
+      "Windfury Totem": {
+        "spec": ["ENHANCEMENT"],
+        "spellId": "8512",
+        "targetType": "SELF"
+      }
+    },
+    "Warlock": {
+      "Unstable Affliction": {
+        "spec": ["AFFLICTION"],
+        "spellId": "316099",
+        "targetType": "ONE_ENEMY"
+      }
+    },
+    "Warrior": {
+      "Battle Shout": {
+        "spec": ["FURY", "ARMS", "PROTECTION"],
+        "spellId": "6673",
+        "targetType": "SELF"
+      }
+    }
+  }
+}
