@@ -122,15 +122,37 @@ function filterData(pageSpellData, spellId) {
     Object.keys(pageSpellData)
       .filter(topics => topics.includes("Effect"))
       .some(details => !pageSpellData[details].includes("Radius"));
-  const doesIncludeRadius = Object.keys(pageSpellData)
+  let doesIncludeRadius = false;
+  if (!spellsThatArntPlacedButMatch.includes(spellId)) {
+    doesIncludeRadius = Object.keys(pageSpellData)
+      .filter(topics => topics.includes("Effect"))
+      .some(details =>
+        /^(Create Area Trigger|Dummy|Trigger Missile|School Damage|Distract).*Radius/.test(
+          pageSpellData[details]
+        )
+      );
+  }
+  const isAoeSpeedBoost = Object.keys(pageSpellData)
     .filter(topics => topics.includes("Effect"))
-    .some(details => pageSpellData[details].includes("Radius"));
+    .some(
+      details =>
+        /Apply Aura: Increase Run Speed.*Radius/.test(pageSpellData[details]) &&
+        !/target location/.test(pageSpellData["Description"])
+    );
+  const isMassRez = Object.keys(pageSpellData)
+    .filter(topics => topics.includes("Effect"))
+    .some(details => pageSpellData[details].includes("Mass Resurrection"));
+  const isRez = Object.keys(pageSpellData)
+    .filter(topics => topics.includes("Effect"))
+    .some(details => /^Resurrect/.test(pageSpellData[details]));
   const doesIncludeHealingAndDamage =
     /damage to an enemy/.test(pageSpellData["Description"]) &&
     /healing to an ally/.test(pageSpellData["Description"]);
   const doesIncludeHealingInEffect = Object.keys(pageSpellData)
     .filter(topics => topics.includes("Effect"))
-    .some(details => pageSpellData[details].includes("Heal"));
+    .some(details =>
+      /Periodic Heal|Heal\b|Healing\b/.test(pageSpellData[details])
+    );
   const ftInDesc = /friendly (target|healer)/.test(
     pageSpellData["Description"]
   );
@@ -163,6 +185,7 @@ function filterData(pageSpellData, spellId) {
   const cdMatch = pageSpellData["Cooldown"].match(
     /(\d\d?\.?\d?\d?) (?:(min)|(sec))/
   );
+  //TODO Add in changes from ranks at somepoint
   let dur;
   if (durMatchVals) {
     if (durMatchVals[2]) {
@@ -183,10 +206,22 @@ function filterData(pageSpellData, spellId) {
   } else {
     dur = 0;
   }
-  //TODO Add in changes from ranks at somepoint
+  //Spellsteal includes a time in the description, i think its the only spell that does.
+  if (spellId === "30449") {
+    dur = -1;
+  }
   const cd = cdMatch ? (cdMatch[2] ? cdMatch[1] * 60 : cdMatch[1]) : 0;
-  const durLtCd = 1 * dur < 1 * cd;
-  const durGtCd = 1 * dur > 1 * cd;
+  const gcdAdd = /\d\d?\.?\d?/.test(pageSpellData["GCD"])
+    ? pageSpellData["GCD"].match(/\d\d?\.?\d?/)[0]
+    : 0;
+  const castTimeAdd = /\d\d?\.\d?\d?/.test(pageSpellData["Cast time"])
+    ? pageSpellData["Cast time"].match(/\d\d?\.?\d?/)[0]
+    : /Channeled/.test(pageSpellData["Cast time"])
+    ? dur
+    : 0;
+  const cdRealistic = (1 * cd + 1 * gcdAdd + 1 * castTimeAdd) * 1.5;
+  const durLtCd = 1 * dur < 1 * cdRealistic;
+  const durGtCd = 1 * dur > 1 * cdRealistic;
   if (!negativeMechanics.includes(pageSpellData["Mechanic"])) {
     Object.keys(pageSpellData)
       .filter(topics => topics.includes("Effect"))
@@ -235,7 +270,9 @@ function filterData(pageSpellData, spellId) {
     doesIncludeSelf ||
     isInPartyOrRaid ||
     isAroundOrInfront ||
-    summonNotEngageNoRadius
+    summonNotEngageNoRadius ||
+    isMassRez ||
+    isAoeSpeedBoost
   ) {
     //Self
     newDataForId["targetType"] = targetTypes[0];
@@ -246,22 +283,26 @@ function filterData(pageSpellData, spellId) {
     //One Any
     newDataForId["targetType"] = targetTypes[2];
   } else if (
+    !doesItNegMech &&
     (doesIncludeHealingInEffect ||
       ftInDesc ||
       porInDesc ||
       allyInDesc ||
       healThemInDesc ||
+      isRez ||
       healTargInDesc) &&
     (oneTarAtATime || flagsOneTarg || maxTargOne || durLtCd)
   ) {
     //One Friendly
     newDataForId["targetType"] = targetTypes[3];
   } else if (
+    !doesItNegMech &&
     (doesIncludeHealingInEffect ||
       ftInDesc ||
       porInDesc ||
       allyInDesc ||
       healThemInDesc ||
+      isRez ||
       healTargInDesc) &&
     durGtCd
   ) {
@@ -318,8 +359,12 @@ const negativeMechanics = [
   "Disoriented",
   "Polymorphed",
   "Rooted",
-  "Interrupted"
+  "Interrupted",
+  "Banished"
 ];
+
+//Hand of guldan, maim, starfire, necrotic strike
+const spellsThatArntPlacedButMatch = ["105174", "22570", "194153", "223829"];
 
 async function runSpells(browser, mutex) {
   const classNames = Object.keys(spellData["Spells"]);
@@ -330,7 +375,7 @@ async function runSpells(browser, mutex) {
         const spellId =
           spellData["Spells"][classNames[className]][spellNames[spellName]]
             .spellId;
-        if (brokenSpells.concat(incorrectSpells).includes(spellId * 1)) {
+        if (!brokenSpells.concat(incorrectSpells).includes(spellId * 1)) {
           promises.push(
             getDetails(
               spellId,
@@ -412,11 +457,11 @@ async function runAllThings() {
 
   Promise.all(promises).then(() => {
     let jsonToWrite = JSON.stringify(spellData);
-    //const testWorkingDataReal = require("./SpellsPhase2AllWorking.json");
-    // if (!_.isEqual(testWorkingDataReal, spellData)) {
-    //   findDifferences(testWorkingDataReal, spellData);
-    // }
-    fs.writeFileSync(`SpellsPhase2Test.json`, jsonToWrite);
+    const testWorkingDataReal = require("./SpellsPhase2AllWorking.json");
+    if (!_.isEqual(testWorkingDataReal, spellData)) {
+      findDifferences(testWorkingDataReal, spellData);
+    }
+    //fs.writeFileSync(`SpellsPhase2Test.json`, jsonToWrite);
     browser.close();
   });
 }
