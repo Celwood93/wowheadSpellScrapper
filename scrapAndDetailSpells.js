@@ -517,9 +517,9 @@ async function runAllThings() {
   const browser = await puppeteer.launch();
   const mutex = new Mutex();
   runSpells(browser, mutex);
-  // runTalents(browser);
-  // runPvPTalents(browser);
-  // runCovenants(browser);
+  // runTalents(browser, mutex);
+  // runPvPTalents(browser, mutex);
+  // runCovenants(browser, mutex);
 
   Promise.all(promises).then(() => {
     let jsonToWrite = JSON.stringify(spellData);
