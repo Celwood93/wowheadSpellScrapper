@@ -240,14 +240,89 @@ async function scrapeSpell(classType, timer = 0) {
             return;
           }
         }
-        if (spellName in spellIds["Spells"][classtype]) {
-          spellIds["Spells"][classtype][spellName]["spec"].push(
+        const conflictingSpell = spellData.some(entry => {
+          if (entry.spellId === spellId) {
+            return false;
+          }
+          if (entry.isItPassive) {
+            return false;
+          }
+          const isItBlacklisted = blacklistedSpells[classType].some(blSpell =>
+            RegExp(blSpell).test(
+              `${entry.abilityLearntLevel}${entry.doesItHaveAStar}:${entry.spellName}`
+            )
+          );
+          if (isItBlacklisted) {
+            return false;
+          }
+          if (entry.spellName === spellName) {
+            if (entry.doesItHaveAStar) {
+              return true;
+            }
+          }
+          return false;
+        });
+        if (conflictingSpell) {
+          return;
+        }
+        //If command pet add the corresponding spells
+        if (found[1] === "272651") {
+          [
+            { id: "264667", name: "Primal Fury" },
+            { id: "264735", name: "Survival of the Fittest" },
+            { id: "53271", name: "Master's Call" }
+          ].forEach(({ id, name }) => {
+            if (id in spellIds["Spells"][classtype]) {
+              spellIds["Spells"][classtype][id]["spec"].push(
+                readableSpec.toUpperCase()
+              );
+            } else {
+              spellIds["Spells"][classtype][id] = {
+                spec: [readableSpec.toUpperCase()],
+                spellId: id,
+                spellName: name
+              };
+            }
+          });
+          return;
+        }
+        //If command demon add the corresponding spells
+        if (found[1] === "119898") {
+          [
+            { id: "89808", name: "Singe Magic" },
+            { id: "6358", name: "Seduction" },
+            { id: "19647", name: "Spell Lock" }
+          ].forEach(({ id, name }) => {
+            if (id in spellIds["Spells"][classtype]) {
+              spellIds["Spells"][classtype][id]["spec"].push(
+                readableSpec.toUpperCase()
+              );
+            } else {
+              spellIds["Spells"][classtype][id] = {
+                spec: [readableSpec.toUpperCase()],
+                spellId: id,
+                spellName: name
+              };
+            }
+          });
+          if (readableSpec.toUpperCase() === "DEMONOLOGY") {
+            spellIds["Spells"][classtype]["89766"] = {
+              spec: [readableSpec.toUpperCase()],
+              spellId: "89766",
+              spellName: "Axe Toss"
+            };
+          }
+          return;
+        }
+        if (found[1] in spellIds["Spells"][classtype]) {
+          spellIds["Spells"][classtype][found[1]]["spec"].push(
             readableSpec.toUpperCase()
           );
         } else {
-          spellIds["Spells"][classtype][spellName] = {
+          spellIds["Spells"][classtype][found[1]] = {
             spec: [readableSpec.toUpperCase()],
-            spellId: found[1]
+            spellId: found[1],
+            spellName: spellName
           };
         }
       }
@@ -255,19 +330,37 @@ async function scrapeSpell(classType, timer = 0) {
   }
   //We cut out hex, since we couldnt distinguish it from the other 8 hexs, so now we just add it in manually.
   //Earth shield is bugged as of this moment, its not included with talents for some reason
-  if (classType === "Shaman" && !("Hex" in spellIds["Spells"]["Shaman"])) {
-    spellIds["Spells"]["Shaman"]["Hex"] = {
+  if (classtype === "Shaman" && !("51514" in spellIds["Spells"]["Shaman"])) {
+    spellIds["Spells"]["Shaman"]["51514"] = {
       spec: ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
-      spellId: "51514"
+      spellId: "51514",
+      spellName: "Hex"
+    };
+  }
+  //ATM this is a talent, needs to be the actual spell id for resto, but i cant find that anywhere atm.
+  if (classtype === "Shaman" && !("974" in spellIds["Spells"]["Shaman"])) {
+    spellIds["Spells"]["Shaman"]["974"] = {
+      spec: ["RESTORATION"],
+      spellId: "974",
+      spellName: "Earth Shield"
     };
   }
   if (
-    classType === "Shaman" &&
-    !("Earth Shield" in spellIds["Spells"]["Shaman"])
+    classtype === "Demon Hunter" &&
+    !("187827" in spellIds["Spells"]["Demon Hunter"])
   ) {
-    spellIds["Spells"]["Shaman"]["Earth Shield"] = {
-      spec: ["RESTORATION"],
-      spellId: "974"
+    spellIds["Spells"]["Demon Hunter"]["187827"] = {
+      spec: ["VENGEANCE"],
+      spellId: "187827",
+      spellName: "Metamorphosis"
+    };
+    spellIds["Spells"]["Demon Hunter"]["191427"].spec = ["HAVOC"];
+  }
+  if (classtype === "Priest" && !("205448" in spellIds["Spells"]["Priest"])) {
+    spellIds["Spells"]["Priest"]["205448"] = {
+      spec: ["SHADOW"],
+      spellId: "205448",
+      spellName: "Void Bolt"
     };
   }
   browser.close();
@@ -334,7 +427,9 @@ const blacklistedSpells = {
     "1:Frost Breath",
     "6:Runeforging",
     "10:Death Gate",
-    "27:Path of Frost"
+    "19:Corpse Exploder",
+    "27:Path of Frost",
+    "29\\*:Raise Dead"
   ],
   "demon-hunter": [
     "1:Fodder to the Flame",
@@ -385,18 +480,19 @@ const blacklistedSpells = {
     "11:Teleport",
     "24:Portal",
     "17:Conjure Mana Gem",
-    "25:Polymorph"
+    "25:Polymorph",
+    "32\\*:Fire Blast"
   ],
   monk: [
     "1\\*:Spinning Crane Kick",
-    "10\\*Blackout Kick",
     "10:Soothing Mist",
     "11:Zen Pilgrimage",
     "17:Touch of Fatality",
     "37:Zen Flight"
   ],
   paladin: [
-    "1\\*:Judgement",
+    "1\\*:Judgment",
+    "3\\*:Judgment",
     "1:Tyr's Deliverance",
     "1:Crusader's Direhorn",
     "(1):Summon .*",
@@ -404,7 +500,7 @@ const blacklistedSpells = {
     "54:Sense Undead"
   ],
   priest: ["1:Shoot", "22:Mind Vision"],
-  rogue: ["1:Detection", "24:Pick Lock", "24:Pick Pocket"],
+  rogue: ["1:Detection", "24:Pick Lock", "24:Pick Pocket", "1:Sinister Strike"],
   shaman: [
     "1:Surge of Earth",
     "1:Fae Transfusion",
@@ -414,7 +510,7 @@ const blacklistedSpells = {
     "41:Hex"
   ],
   warlock: [
-    "1:DreadSteed",
+    "1:Dreadsteed",
     "1:Felsteed",
     "1:Shoot",
     "17:Eye of Kilrogg",
@@ -431,10 +527,10 @@ let spellIds = { Spells: {}, Talents: {}, Covenants: {} };
 let promises = [];
 
 for (let k = 0; k < classes.length; k++) {
-  promises.push(scrapeSpell(classes[k], 1000 * k));
+  promises.push(scrapeSpell(classes[k], 3000 * k));
 }
 
 Promise.all(promises).then(() => {
   let jsonToWrite = JSON.stringify(spellIds);
-  fs.writeFileSync(`SpellsPhase1.json`, jsonToWrite);
+  fs.writeFileSync(`SpellsPhase1NEW.json`, jsonToWrite);
 });

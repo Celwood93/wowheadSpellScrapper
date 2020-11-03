@@ -2,7 +2,7 @@ const puppeteer = require("puppeteer");
 const Mutex = require("async-mutex").Mutex;
 const fs = require("fs");
 const _ = require("lodash");
-const spellData = require("./SpellsPhase1Test.json"); //for testing atm
+const spellData = require("./SpellsPhase1.json");
 const maxPages = 28;
 const promises = [];
 const cachedIds = {};
@@ -14,8 +14,8 @@ function sleep(ms) {
 //Type is incase Spells/Talents/PvPTalents/Covenants produces a different type of datastorage -- might not need here
 async function getDetails(spellId, browser, className, spellName, type, mutex) {
   let newDataForId;
+  const release = await mutex.acquire();
   if (!(spellId in cachedIds)) {
-    const release = await mutex.acquire();
     let page;
     try {
       let pages = await browser.pages();
@@ -81,7 +81,7 @@ async function getDetails(spellId, browser, className, spellName, type, mutex) {
           return datas;
         });
         //process
-        newDataForId = filterData(pageSpellData, spellId);
+        newDataForId = filterData(pageSpellData, spellId, spellName);
         console.log(
           `${Object.keys(cachedIds).length + 1}/${promises.length} finished`
         );
@@ -99,14 +99,14 @@ async function getDetails(spellId, browser, className, spellName, type, mutex) {
     newDataForId = cachedIds[spellId];
   }
   if (newDataForId) {
-    spellData["Spells"][className][spellName] = {
-      ...spellData["Spells"][className][spellName],
+    spellData["Spells"][className][spellId] = {
+      ...spellData["Spells"][className][spellId],
       ...newDataForId
     };
   }
 }
 
-function filterData(pageSpellData, spellId) {
+function filterData(pageSpellData, spellId, spellName) {
   let newDataForId = {};
   const doesIncludeSelf = pageSpellData["Range"].includes("Self");
   const isInPartyOrRaid = pageSpellData["Description"].includes(
@@ -337,8 +337,7 @@ function filterData(pageSpellData, spellId) {
     //Many Enemy
     newDataForId["targetType"] = targetTypes[6];
   } else {
-    console.log(pageSpellData);
-    console.log(`Failed to work for ${spellId}`);
+    console.log(`Failed to work for ${spellId} - ${spellName}`);
   }
 
   return newDataForId;
@@ -360,7 +359,8 @@ const negativeMechanics = [
   "Polymorphed",
   "Rooted",
   "Interrupted",
-  "Banished"
+  "Banished",
+  "Asleep"
 ];
 
 //Hand of guldan, maim, starfire, necrotic strike
@@ -369,75 +369,149 @@ const spellsThatArntPlacedButMatch = ["105174", "22570", "194153", "223829"];
 async function runSpells(browser, mutex) {
   const classNames = Object.keys(spellData["Spells"]);
   for (const className in classNames) {
-    const spellNames = Object.keys(spellData["Spells"][classNames[className]]);
-    for (const spellName in spellNames) {
-      if (true) {
-        const spellId =
-          spellData["Spells"][classNames[className]][spellNames[spellName]]
-            .spellId;
-        if (!brokenSpells.concat(incorrectSpells).includes(spellId * 1)) {
-          promises.push(
-            getDetails(
-              spellId,
-              browser,
-              classNames[className],
-              spellNames[spellName],
-              "Spell",
-              mutex
-            )
-          );
-        } else {
-          delete spellData["Spells"][classNames[className]][
-            spellNames[spellName]
-          ];
-        }
+    const spellIds = Object.keys(spellData["Spells"][classNames[className]]);
+    for (const spellId in spellIds) {
+      const spellName =
+        spellData["Spells"][classNames[className]][spellIds[spellId]].spellName;
+      let isAllowedSpell;
+      if (testingWorkingKey) {
+        isAllowedSpell = !brokenSpells
+          .concat(incorrectSpells)
+          .includes(spellIds[spellId] * 1);
+      } else {
+        isAllowedSpell = brokenSpells
+          .concat(incorrectSpells)
+          .includes(spellIds[spellId] * 1);
+      }
+
+      if (isAllowedSpell) {
+        promises.push(
+          getDetails(
+            spellIds[spellId],
+            browser,
+            classNames[className],
+            spellName,
+            "Spell",
+            mutex
+          )
+        );
+      } else {
+        delete spellData["Spells"][classNames[className]][spellIds[spellId]];
       }
     }
   }
 }
 
-const brokenSpells = [];
+const brokenSpells = [
+  46585,
+  49028,
+  111673,
+  781,
+  136,
+  257284,
+  321297,
+  19577,
+  193530,
+  186289,
+  115546,
+  119996,
+  324312,
+  34433,
+  453,
+  10060,
+  64901,
+  315496,
+  36554,
+  195457,
+  755,
+  1714,
+  48018,
+  48020,
+  111771,
+  104316
+];
 const incorrectSpells = [
-  30449,
-  48438,
-  106898,
-  212040,
-  33786,
-  213764,
-  22570,
-  194153,
-  78675,
-  11366,
-  44614,
-  5143,
-  53600,
-  212056,
-  212048,
-  98008,
-  198067,
-  187874
+  47541,
+  49998,
+  206930,
+  195182,
+  108199,
+  49184,
+  55090,
+  77575,
+  212084,
+  109304,
+  19574,
+  2643,
+  257620,
+  264735,
+  266779,
+  121253,
+  132578,
+  115450,
+  218164,
+  527,
+  605,
+  47536,
+  32375,
+  34861,
+  64843,
+  228260,
+  32645,
+  29722,
+  5740,
+  30283,
+  1122,
+  324536,
+  196277,
+  265187,
+  34428,
+  7384
 ];
 
 async function findDifferences(trueData, newData) {
   const classNames = Object.keys(trueData["Spells"]);
   for (const className in classNames) {
-    const spellNames = Object.keys(trueData["Spells"][classNames[className]]);
-    for (const spellName in spellNames) {
+    const spellIds = Object.keys(trueData["Spells"][classNames[className]]);
+    for (const spellId in spellIds) {
       if (
         !_.isEqual(
-          trueData["Spells"][classNames[className]][spellNames[spellName]],
-          newData["Spells"][classNames[className]][spellNames[spellName]]
+          trueData["Spells"][classNames[className]][spellIds[spellId]],
+          newData["Spells"][classNames[className]][spellIds[spellId]]
         )
       ) {
         console.log(
-          `${spellNames[spellName]} Not Equal`,
-          trueData["Spells"][classNames[className]][spellNames[spellName]],
-          newData["Spells"][classNames[className]][spellNames[spellName]]
+          `${trueData["Spells"][classNames[className]][spellIds[spellId]].spellName} Not Equal`,
+          trueData["Spells"][classNames[className]][spellIds[spellId]],
+          newData["Spells"][classNames[className]][spellIds[spellId]]
         );
       }
     }
   }
 }
+
+function checkForImprovements(targetData, calculatedData) {
+  const classNames = Object.keys(calculatedData["Spells"]);
+  for (const className in classNames) {
+    const spellIds = Object.keys(
+      calculatedData["Spells"][classNames[className]]
+    );
+    for (const spellId in spellIds) {
+      if (
+        _.isEqual(
+          targetData["Spells"][classNames[className]][spellIds[spellId]],
+          calculatedData["Spells"][classNames[className]][spellIds[spellId]]
+        )
+      ) {
+        console.log(
+          `${calculatedData["Spells"][classNames[className]][spellIds[spellId]].spellName}, Spell ID: ${spellIds[spellId]} Now Equal`
+        );
+      }
+    }
+  }
+}
+
+const testingWorkingKey = false;
 
 async function runAllThings() {
   const browser = await puppeteer.launch();
@@ -446,22 +520,19 @@ async function runAllThings() {
   // runTalents(browser);
   // runPvPTalents(browser);
   // runCovenants(browser);
-  // console.log(
-  //   filterData(
-  //     JSON.parse(
-  //       '{"Description":"Hurls molten lava at the target, dealing (108% of Spell power) Fire damage. Elemental ,  Restoration (Level 20)Lava Burst will always critically strike if the target is affected by Flame Shock ElementalGenerates 10 Maelstrom.","Duration":"n/a","School":"Fire","Mechanic":"n/a","Dispel type":"n/a","GCD category":"Normal","Cost":"2.5% of base mana","Range":"40 yards (Long)","Cast time":"2 seconds","Cooldown":"8 sec","GCD":"1.5 seconds","Effect #1":"Trigger Missile (Lava Burst)","Effect #2":"Give Power (Maelstrom)","Flags":["Cannot be used while shapeshifted","Persists through death"]}'
-  //     ),
-  //     "51505"
-  //   )
-  // );
 
   Promise.all(promises).then(() => {
     let jsonToWrite = JSON.stringify(spellData);
-    const testWorkingDataReal = require("./SpellsPhase2AllWorking.json");
-    if (!_.isEqual(testWorkingDataReal, spellData)) {
-      findDifferences(testWorkingDataReal, spellData);
+    const testWorkingDataReal = require("./SpellsPhase2AllSpellsWorkingKey.json");
+    const brokeSpellsFixedKey = require("./SpellsPhase2AllBrokenSpellsFIXED.json");
+    if (testingWorkingKey) {
+      if (!_.isEqual(testWorkingDataReal, spellData)) {
+        findDifferences(testWorkingDataReal, spellData);
+      }
+    } else {
+      checkForImprovements(brokeSpellsFixedKey, spellData);
+      //fs.writeFileSync(`SpellsPhase2AllBrokenSpells.json`, jsonToWrite);
     }
-    //fs.writeFileSync(`SpellsPhase2Test.json`, jsonToWrite);
     browser.close();
   });
 }
