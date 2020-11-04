@@ -27,7 +27,7 @@ async function scrapeSpell(classType, timer = 0) {
     if (!(readableSpec.toUpperCase() in spellIds["Talents"][classtype])) {
       spellIds["Talents"][classtype][readableSpec.toUpperCase()] = {
         Normal: {},
-        PvP: {}
+        PvP: {},
       };
     }
     console.log(`checking ${readableSpec}`);
@@ -46,7 +46,7 @@ async function scrapeSpell(classType, timer = 0) {
           "table.talentcalc-core > tbody > tr.talentcalc-row > td[data-row]"
         )
       );
-      return tds.map(td => {
+      return tds.map((td) => {
         const spellId = td.querySelector("a.screen").href;
         const row = td.getAttribute("data-row");
         const col = td.getAttribute("data-col");
@@ -56,7 +56,7 @@ async function scrapeSpell(classType, timer = 0) {
           spellId,
           row,
           col,
-          spellName
+          spellName,
         };
       });
     });
@@ -86,7 +86,7 @@ async function scrapeSpell(classType, timer = 0) {
         ] = {
           spellId: found[1],
           row,
-          col
+          col,
         };
       }
     });
@@ -97,12 +97,12 @@ async function scrapeSpell(classType, timer = 0) {
       tds = Array.from(
         document.querySelectorAll("div.talentcalc-pvp-talent:not(.active)")
       );
-      return tds.map(td => {
+      return tds.map((td) => {
         const spellId = td.querySelector("span + a").href;
         const spellName = td.textContent;
         return {
           spellId,
-          spellName
+          spellName,
         };
       });
     });
@@ -129,7 +129,7 @@ async function scrapeSpell(classType, timer = 0) {
         spellIds["Talents"][classtype][readableSpec.toUpperCase()]["PvP"][
           spellName
         ] = {
-          spellId: found[1]
+          spellId: found[1],
         };
       }
     });
@@ -140,14 +140,14 @@ async function scrapeSpell(classType, timer = 0) {
           "div.talentcalc-covenants-cell-flex > div[data-row] > div.inner > div.iconmedium + div.iconmedium"
         )
       );
-      return tds.map(td => {
+      return tds.map((td) => {
         const covNum = td.parentElement.parentElement.getAttribute(
           "data-covenant"
         );
         const spellId = td.querySelector("a").href;
         return {
           covNum,
-          spellId
+          spellId,
         };
       });
     });
@@ -176,7 +176,7 @@ async function scrapeSpell(classType, timer = 0) {
         spellIds["Covenants"][classtype][covenantName] = {};
       }
       spellIds["Covenants"][classtype][covenantName][spellID] = {
-        spellId: spellID
+        spellId: spellID,
       };
     });
 
@@ -201,7 +201,7 @@ async function scrapeSpell(classType, timer = 0) {
           doesItHaveAStar,
           isItPassive,
           spellName,
-          spellId
+          spellId,
         });
         return storage;
       }, []);
@@ -213,13 +213,13 @@ async function scrapeSpell(classType, timer = 0) {
         doesItHaveAStar,
         isItPassive,
         spellName,
-        spellId
+        spellId,
       }) => {
         if (isItPassive) {
           return;
         }
 
-        const isItBlacklisted = blacklistedSpells[classType].some(blSpell =>
+        const isItBlacklisted = blacklistedSpells[classType].some((blSpell) =>
           RegExp(blSpell).test(
             `${abilityLearntLevel}${doesItHaveAStar}:${spellName}`
           )
@@ -240,14 +240,14 @@ async function scrapeSpell(classType, timer = 0) {
             return;
           }
         }
-        const conflictingSpell = spellData.some(entry => {
+        const conflictingSpell = spellData.some((entry) => {
           if (entry.spellId === spellId) {
             return false;
           }
           if (entry.isItPassive) {
             return false;
           }
-          const isItBlacklisted = blacklistedSpells[classType].some(blSpell =>
+          const isItBlacklisted = blacklistedSpells[classType].some((blSpell) =>
             RegExp(blSpell).test(
               `${entry.abilityLearntLevel}${entry.doesItHaveAStar}:${entry.spellName}`
             )
@@ -270,7 +270,7 @@ async function scrapeSpell(classType, timer = 0) {
           [
             { id: "264667", name: "Primal Fury" },
             { id: "264735", name: "Survival of the Fittest" },
-            { id: "53271", name: "Master's Call" }
+            { id: "53271", name: "Master's Call" },
           ].forEach(({ id, name }) => {
             if (id in spellIds["Spells"][classtype]) {
               spellIds["Spells"][classtype][id]["spec"].push(
@@ -280,7 +280,7 @@ async function scrapeSpell(classType, timer = 0) {
               spellIds["Spells"][classtype][id] = {
                 spec: [readableSpec.toUpperCase()],
                 spellId: id,
-                spellName: name
+                spellName: name,
               };
             }
           });
@@ -291,7 +291,7 @@ async function scrapeSpell(classType, timer = 0) {
           [
             { id: "89808", name: "Singe Magic" },
             { id: "6358", name: "Seduction" },
-            { id: "19647", name: "Spell Lock" }
+            { id: "19647", name: "Spell Lock" },
           ].forEach(({ id, name }) => {
             if (id in spellIds["Spells"][classtype]) {
               spellIds["Spells"][classtype][id]["spec"].push(
@@ -301,7 +301,7 @@ async function scrapeSpell(classType, timer = 0) {
               spellIds["Spells"][classtype][id] = {
                 spec: [readableSpec.toUpperCase()],
                 spellId: id,
-                spellName: name
+                spellName: name,
               };
             }
           });
@@ -309,7 +309,7 @@ async function scrapeSpell(classType, timer = 0) {
             spellIds["Spells"][classtype]["89766"] = {
               spec: [readableSpec.toUpperCase()],
               spellId: "89766",
-              spellName: "Axe Toss"
+              spellName: "Axe Toss",
             };
           }
           return;
@@ -322,7 +322,7 @@ async function scrapeSpell(classType, timer = 0) {
           spellIds["Spells"][classtype][found[1]] = {
             spec: [readableSpec.toUpperCase()],
             spellId: found[1],
-            spellName: spellName
+            spellName: spellName,
           };
         }
       }
@@ -334,7 +334,7 @@ async function scrapeSpell(classType, timer = 0) {
     spellIds["Spells"]["Shaman"]["51514"] = {
       spec: ["RESTORATION", "ELEMENTAL", "ENHANCEMENT"],
       spellId: "51514",
-      spellName: "Hex"
+      spellName: "Hex",
     };
   }
   //ATM this is a talent, needs to be the actual spell id for resto, but i cant find that anywhere atm.
@@ -342,7 +342,7 @@ async function scrapeSpell(classType, timer = 0) {
     spellIds["Spells"]["Shaman"]["974"] = {
       spec: ["RESTORATION"],
       spellId: "974",
-      spellName: "Earth Shield"
+      spellName: "Earth Shield",
     };
   }
   if (
@@ -352,7 +352,7 @@ async function scrapeSpell(classType, timer = 0) {
     spellIds["Spells"]["Demon Hunter"]["187827"] = {
       spec: ["VENGEANCE"],
       spellId: "187827",
-      spellName: "Metamorphosis"
+      spellName: "Metamorphosis",
     };
     spellIds["Spells"]["Demon Hunter"]["191427"].spec = ["HAVOC"];
   }
@@ -360,7 +360,7 @@ async function scrapeSpell(classType, timer = 0) {
     spellIds["Spells"]["Priest"]["205448"] = {
       spec: ["SHADOW"],
       spellId: "205448",
-      spellName: "Void Bolt"
+      spellName: "Void Bolt",
     };
   }
   browser.close();
@@ -369,7 +369,7 @@ async function scrapeSpell(classType, timer = 0) {
 }
 
 function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 const classes = [
@@ -384,7 +384,7 @@ const classes = [
   "rogue",
   "shaman",
   "warlock",
-  "warrior"
+  "warrior",
 ];
 
 const classReadable = {
@@ -399,13 +399,13 @@ const classReadable = {
   rogue: "Rogue",
   shaman: "Shaman",
   warlock: "Warlock",
-  warrior: "Warrior"
+  warrior: "Warrior",
 };
 const covenantOptions = {
-  "1": "Kyrian",
-  "2": "Venthyr",
-  "3": "Night Fae",
-  "4": "Necrolord"
+  1: "Kyrian",
+  2: "Venthyr",
+  3: "Night Fae",
+  4: "Necrolord",
 };
 
 const classSpecs = {
@@ -420,7 +420,7 @@ const classSpecs = {
   rogue: ["assasination", "subtlety", "outlaw"],
   shaman: ["restoration", "elemental", "enhancement"],
   warlock: ["destruction", "affliction", "demonology"],
-  warrior: ["fury", "arms", "protection"]
+  warrior: ["fury", "arms", "protection"],
 };
 const blacklistedSpells = {
   "death-knight": [
@@ -429,7 +429,8 @@ const blacklistedSpells = {
     "10:Death Gate",
     "19:Corpse Exploder",
     "27:Path of Frost",
-    "29\\*:Raise Dead"
+    "29\\*:Raise Dead",
+    "37:Control Undead",
   ],
   "demon-hunter": [
     "1:Fodder to the Flame",
@@ -439,7 +440,7 @@ const blacklistedSpells = {
     "1:Chaos Strike",
     "1:Demon's Bite",
     "1:Fel Rush",
-    "1:Vengeful Retreat"
+    "1:Vengeful Retreat",
   ],
   druid: [
     "1:Flap",
@@ -448,7 +449,7 @@ const blacklistedSpells = {
     "19:Charm Woodland Creature",
     "22:Teleport: Moonglade",
     "24:Flight Form",
-    "13:Sunfire"
+    "13:Sunfire",
   ],
   hunter: [
     "1:Volley",
@@ -469,7 +470,7 @@ const blacklistedSpells = {
     "41:Call Pet 4",
     "43:Eagle Eye",
     "47:Fetch",
-    "48:Call Pet 5"
+    "48:Call Pet 5",
   ],
   mage: [
     "1:Polymorph",
@@ -481,14 +482,14 @@ const blacklistedSpells = {
     "24:Portal",
     "17:Conjure Mana Gem",
     "25:Polymorph",
-    "32\\*:Fire Blast"
+    "32\\*:Fire Blast",
   ],
   monk: [
     "1\\*:Spinning Crane Kick",
     "10:Soothing Mist",
     "11:Zen Pilgrimage",
     "17:Touch of Fatality",
-    "37:Zen Flight"
+    "37:Zen Flight",
   ],
   paladin: [
     "1\\*:Judgment",
@@ -497,7 +498,7 @@ const blacklistedSpells = {
     "1:Crusader's Direhorn",
     "(1):Summon .*",
     "19:Contemplation",
-    "54:Sense Undead"
+    "54:Sense Undead",
   ],
   priest: ["1:Shoot", "22:Mind Vision"],
   rogue: ["1:Detection", "24:Pick Lock", "24:Pick Pocket", "1:Sinister Strike"],
@@ -507,7 +508,7 @@ const blacklistedSpells = {
     "1:Primordial Wave",
     "14:Far Sight",
     "32:Astral Recall",
-    "41:Hex"
+    "41:Hex",
   ],
   warlock: [
     "1:Dreadsteed",
@@ -518,9 +519,9 @@ const blacklistedSpells = {
     "31:Ritual of Doom",
     "32:Soulstone",
     "33:Ritual of Summoning",
-    "47:Create Soulwell"
+    "47:Create Soulwell",
   ],
-  warrior: ["1:Hotbar Slot 01", "1:Hotbar Slot 02"]
+  warrior: ["1:Hotbar Slot 01", "1:Hotbar Slot 02"],
 };
 
 let spellIds = { Spells: {}, Talents: {}, Covenants: {} };

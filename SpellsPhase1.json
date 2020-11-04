@@ -136,11 +136,6 @@
         "spellId": "108199",
         "spellName": "Gorefiend's Grasp"
       },
-      "111673": {
-        "spec": ["BLOOD", "FROST", "UNHOLY"],
-        "spellId": "111673",
-        "spellName": "Control Undead"
-      },
       "194679": {
         "spec": ["BLOOD"],
         "spellId": "194679",

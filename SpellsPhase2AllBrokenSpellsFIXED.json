@@ -17,7 +17,7 @@
         "spec": ["BLOOD"],
         "spellId": "49028",
         "spellName": "Dancing Rune Weapon",
-        "targetType": "SELF"
+        "targetType": "ONE_ENEMY"
       },
       "49184": {
         "spec": ["FROST"],
@@ -48,12 +48,6 @@
         "spellId": "108199",
         "spellName": "Gorefiend's Grasp",
         "targetType": "ONE_ANY"
-      },
-      "111673": {
-        "spec": ["BLOOD", "FROST", "UNHOLY"],
-        "spellId": "111673",
-        "spellName": "Control Undead",
-        "targetType": "ONE_ENEMY"
       },
       "195182": {
         "spec": ["BLOOD"],
