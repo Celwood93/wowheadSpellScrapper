@@ -570,20 +570,25 @@ async function runAllThings() {
   // runPvPTalents(browser, mutex);
   // runCovenants(browser, mutex);
 
-  Promise.all(promises).then(() => {
+  Promise.all(promises).then(async () => {
     let jsonToWrite = JSON.stringify(spellData);
-    // const testWorkingDataReal = require("./SpellsPhase2AllSpellsWorkingKey.json");
-    // const brokeSpellsFixedKey = require("./SpellsPhase2AllBrokenSpellsFIXED.json");
-    if (testingWorkingKey) {
-      console.log(Object.keys(cachedData));
+    const testWorkingDataReal = require("./SpellsPhase2AllSpellsWorkingKey.json");
+    const brokeSpellsFixedKey = require("./SpellsPhase2AllBrokenSpellsFIXED.json");
+    const stringifiedOldCachedData = await fs.readFileSync(
+      "./CachedPageSpellData.json"
+    );
+    const oldCachedData = JSON.parse(stringifiedOldCachedData);
+    if (!_.isEqual(oldCachedData, cachedData)) {
+      console.log("Cached Data updating");
       fs.writeFileSync(
         `./CachedPageSpellData.json`,
         JSON.stringify(cachedData)
       );
-      fs.writeFileSync(`SpellsPhase2AllSpellsWorkingKey3.json`, jsonToWrite);
-      // if (!_.isEqual(testWorkingDataReal, spellData)) {
-      //   findDifferences(testWorkingDataReal, spellData);
-      // }
+    }
+    if (testingWorkingKey) {
+      if (!_.isEqual(testWorkingDataReal, spellData)) {
+        findDifferences(testWorkingDataReal, spellData);
+      }
     } else {
       checkForImprovements(brokeSpellsFixedKey, spellData);
       fs.writeFileSync(`SpellsPhase2AllBrokenSpells.json`, jsonToWrite);
