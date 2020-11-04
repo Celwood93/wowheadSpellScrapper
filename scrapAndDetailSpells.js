@@ -3,95 +3,110 @@ const Mutex = require("async-mutex").Mutex;
 const fs = require("fs");
 const _ = require("lodash");
 const spellData = require("./SpellsPhase1.json");
-const maxPages = 8;
+const maxPages = 28;
 const promises = [];
 const cachedIds = {};
+const cachedData = require("./CachedPageSpellData.json");
 
 function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 //Type is incase Spells/Talents/PvPTalents/Covenants produces a different type of datastorage -- might not need here
 async function getDetails(spellId, browser, className, spellName, type, mutex) {
   let newDataForId;
+  let pageSpellData;
   const release = await mutex.acquire();
   if (!(spellId in cachedIds)) {
     let page;
-    try {
-      let pages = await browser.pages();
-
-      while (pages.length > maxPages) {
-        pages = await browser.pages();
-        await sleep(500);
-      }
-
-      page = await browser.newPage();
-    } finally {
-      release();
-    }
-    let timeoutCounter = 1;
-    let didTimeout = true;
-    let pageSpellData;
-    while (didTimeout) {
+    if (!(spellId in cachedData)) {
       try {
-        await page.goto(`https://wowhead.com/spell=${spellId}`, {
-          timeout: 30000 + 5000 * timeoutCounter,
-        });
-        //could also grab rank 2/3/4 of spells to check if they add durations /reduce cds
-        pageSpellData = await page.evaluate(() => {
-          let datas = {};
-          datas["Description"] = Array.from(document.querySelectorAll("span.q"))
-            .map((e) => e.textContent)
-            .join(" ");
-          const isRechargeCooldown = document
-            .querySelector(
-              `#tt${
-                document.URL.match(/\d+/)[0]
-              } > table > tbody > tr:nth-child(1) > td > table:nth-child(1) > tbody > tr > td`
-            )
-            .textContent.match(/(\d\d?\.?\d?\d?) (\w+) recharge/);
-          Array.from(document.querySelectorAll("#spelldetails > tbody > tr"))
-            .map((el) => {
-              const tharr = Array.from(
-                el.querySelectorAll(
-                  "th:not(.grid-hideable-cell):not(.grid-nesting-wrapper)"
-                )
-              ).flat();
-              const tdarr = Array.from(
-                el.querySelectorAll(
-                  "td:not(.grid-hideable-cell):not(.grid-nesting-wrapper)"
-                )
-              ).flat();
-              return tharr.forEach((e, i) => {
-                if (e.textContent === "Flags") {
-                  datas[e.textContent] = Array.from(
-                    tdarr[i].querySelectorAll("li")
-                  ).map((el) => el.textContent);
-                } else {
-                  datas[e.textContent] = tdarr[i].textContent;
-                }
-              });
-            })
-            .flat();
-          if (isRechargeCooldown) {
-            datas.Cooldown = `${isRechargeCooldown[1]} ${isRechargeCooldown[2]}`;
-          }
-          return datas;
-        });
-        //process
-        newDataForId = filterData(pageSpellData, spellId, spellName);
-        console.log(
-          `${Object.keys(cachedIds).length + 1}/${promises.length} finished`
-        );
-        cachedIds[spellId] = newDataForId;
-        didTimeout = false;
-      } catch (e) {
-        console.log(`Timeout on ${spellId}`, e);
-        didTimeout = !!timeoutCounter % 3;
-        timeoutCounter++;
+        let pages = await browser.pages();
+
+        while (pages.length > maxPages) {
+          pages = await browser.pages();
+          await sleep(500);
+        }
+
+        page = await browser.newPage();
+      } finally {
+        release();
       }
+      let timeoutCounter = 1;
+      let didTimeout = true;
+      while (didTimeout) {
+        try {
+          await page.goto(`https://wowhead.com/spell=${spellId}`, {
+            timeout: 30000 + 5000 * timeoutCounter
+          });
+          //could also grab rank 2/3/4 of spells to check if they add durations /reduce cds
+          pageSpellData = await page.evaluate(() => {
+            let datas = {};
+            datas["Description"] = Array.from(
+              document.querySelectorAll("span.q")
+            )
+              .map(e => e.textContent)
+              .join(" ");
+            const isRechargeCooldown = document
+              .querySelector(
+                `#tt${
+                  document.URL.match(/\d+/)[0]
+                } > table > tbody > tr:nth-child(1) > td > table:nth-child(1) > tbody > tr > td`
+              )
+              .textContent.match(/(\d\d?\.?\d?\d?) (\w+) recharge/);
+            Array.from(document.querySelectorAll("#spelldetails > tbody > tr"))
+              .map(el => {
+                const tharr = Array.from(
+                  el.querySelectorAll(
+                    "th:not(.grid-hideable-cell):not(.grid-nesting-wrapper)"
+                  )
+                ).flat();
+                const tdarr = Array.from(
+                  el.querySelectorAll(
+                    "td:not(.grid-hideable-cell):not(.grid-nesting-wrapper)"
+                  )
+                ).flat();
+                return tharr.forEach((e, i) => {
+                  if (e.textContent === "Flags") {
+                    datas[e.textContent] = Array.from(
+                      tdarr[i].querySelectorAll("li")
+                    ).map(el => el.textContent);
+                  } else {
+                    datas[e.textContent] = tdarr[i].textContent;
+                  }
+                });
+              })
+              .flat();
+            if (isRechargeCooldown) {
+              datas.Cooldown = `${isRechargeCooldown[1]} ${
+                isRechargeCooldown[2]
+              }`;
+            }
+            return datas;
+          });
+          cachedData[spellId] = pageSpellData;
+          //process
+          didTimeout = false;
+        } catch (e) {
+          console.log(`Timeout on ${spellId}`, e);
+          didTimeout = !!timeoutCounter % 3;
+          timeoutCounter++;
+        }
+      }
+    } else {
+      release();
+      pageSpellData = cachedData[spellId];
     }
-    await page.close();
+    if (pageSpellData) {
+      newDataForId = filterData(pageSpellData, spellId, spellName);
+      console.log(
+        `${Object.keys(cachedIds).length + 1}/${promises.length} finished`
+      );
+      cachedIds[spellId] = newDataForId;
+    }
+    if (page) {
+      await page.close();
+    }
   } else {
     console.log(spellId, cachedIds);
     newDataForId = cachedIds[spellId];
@@ -99,7 +114,7 @@ async function getDetails(spellId, browser, className, spellName, type, mutex) {
   if (newDataForId) {
     spellData["Spells"][className][spellId] = {
       ...spellData["Spells"][className][spellId],
-      ...newDataForId,
+      ...newDataForId
     };
   }
 }
@@ -113,53 +128,66 @@ function filterData(pageSpellData, spellId, spellName) {
   const isPetOrDemon =
     /your pet|your summoned Demon/.test(pageSpellData["Description"]) &&
     !/enemy|your target|the target/.test(pageSpellData["Description"]);
-  const isInPartyOrRaid = pageSpellData["Description"].includes(
-    "party or raid, all party and raid"
+  const isInPartyOrRaid = /party or raid, all party and raid/.test(
+    pageSpellData["Description"]
   );
+  const allHealersInRaid = /all healers in your party or raid/.test(
+    pageSpellData["Description"]
+  );
+  const givesAttackSpeedSteroid = Object.keys(pageSpellData)
+    .filter(topics => topics.includes("Effect"))
+    .some(details =>
+      /Apply Aura: Mod Attack Speed %[^-]*\d\d/.test(pageSpellData[details])
+    );
   const isAroundOrInfront = /nearby enemies[^.]|(enemies|targets [\w ]+) in front of you/.test(
     pageSpellData["Description"]
   );
   const teleportOrTransfer = /swap locations|Teleports you/.test(
     pageSpellData["Description"]
   );
-  const summonNotEngageNoRadius =
-    /Calls forth|Summon|^Raises/.test(pageSpellData["Description"]) &&
+  const canSummon = /Calls forth|Summon|^Raises/.test(
+    pageSpellData["Description"]
+  );
+  const doesntEngage =
     pageSpellData["Flags"] &&
     /Does not engage target/.test(pageSpellData["Flags"]);
   let doesIncludeRadius = false;
   if (!spellsThatArntPlacedButMatch.includes(spellId)) {
     doesIncludeRadius = Object.keys(pageSpellData)
-      .filter((topics) => topics.includes("Effect"))
-      .some((details) =>
+      .filter(topics => topics.includes("Effect"))
+      .some(details =>
         /^(Create Area Trigger|Dummy|Trigger Missile|School Damage|Distract).*Radius/.test(
           pageSpellData[details]
         )
       );
   }
+  const descTargLoc = /to the target location/.test(
+    pageSpellData["Description"]
+  );
   const isAoeSpeedBoost = Object.keys(pageSpellData)
-    .filter((topics) => topics.includes("Effect"))
+    .filter(topics => topics.includes("Effect"))
     .some(
-      (details) =>
+      details =>
         /Apply Aura: Increase Run Speed.*Radius/.test(pageSpellData[details]) &&
         !/target location/.test(pageSpellData["Description"])
     );
   const doesOverrideSpell = Object.keys(pageSpellData)
-    .filter((topics) => topics.includes("Effect"))
-    .some((details) =>
+    .filter(topics => topics.includes("Effect"))
+    .some(details =>
       /Apply Aura: Overrides Actionbar Spell/.test(pageSpellData[details])
     );
   const isMassRez = Object.keys(pageSpellData)
-    .filter((topics) => topics.includes("Effect"))
-    .some((details) => pageSpellData[details].includes("Mass Resurrection"));
+    .filter(topics => topics.includes("Effect"))
+    .some(details => pageSpellData[details].includes("Mass Resurrection"));
   const isRez = Object.keys(pageSpellData)
-    .filter((topics) => topics.includes("Effect"))
-    .some((details) => /^Resurrect/.test(pageSpellData[details]));
+    .filter(topics => topics.includes("Effect"))
+    .some(details => /^Resurrect/.test(pageSpellData[details]));
   const doesIncludeHealingAndDamage =
     /damage to an enemy/.test(pageSpellData["Description"]) &&
     /healing to an ally/.test(pageSpellData["Description"]);
   const doesIncludeHealingInEffect = Object.keys(pageSpellData)
-    .filter((topics) => topics.includes("Effect"))
-    .some((details) =>
+    .filter(topics => topics.includes("Effect"))
+    .some(details =>
       /Periodic Heal|Heal\b|Healing\b/.test(pageSpellData[details])
     );
   const ftInDesc = /friendly (target|healer)/.test(
@@ -168,6 +196,7 @@ function filterData(pageSpellData, spellId, spellName) {
   const porInDesc = /party or raid member|group member/.test(
     pageSpellData["Description"]
   );
+  const attackInDesc = /attack/.test(pageSpellData["Description"]);
   const allyInDesc = /\bally\b|\ballies\b/.test(pageSpellData["Description"]);
   const healThemInDesc = /healing them/.test(pageSpellData["Description"]);
   const healTargInDesc = /healing the target/.test(
@@ -178,9 +207,12 @@ function filterData(pageSpellData, spellId, spellName) {
   );
   const flagsOneTarg =
     !!pageSpellData["Flags"] &&
-    pageSpellData["Flags"].some((e) =>
+    pageSpellData["Flags"].some(e =>
       e.includes("The aura can only affect one target")
     );
+  const isRequireUntapped =
+    !!pageSpellData["Flags"] &&
+    pageSpellData["Flags"].some(e => e.includes("Requires untapped target"));
   const maxTargOne =
     !!pageSpellData["Max targets"] &&
     pageSpellData["Max targets"].includes("1");
@@ -233,53 +265,59 @@ function filterData(pageSpellData, spellId, spellName) {
   const durGtCd = 1 * dur > 1 * cdRealistic;
   if (!negativeMechanics.includes(pageSpellData["Mechanic"])) {
     Object.keys(pageSpellData)
-      .filter((topics) => topics.includes("Effect"))
-      .some((details) => pageSpellData[details].includes("Interrupt"))
+      .filter(topics => topics.includes("Effect"))
+      .some(details => pageSpellData[details].includes("Interrupt"))
       ? (pageSpellData["Mechanic"] = "Interrupted")
       : /interrupt/.test(pageSpellData["Description"])
       ? (pageSpellData["Mechanic"] = "Interrupted")
       : 0;
     Object.keys(pageSpellData)
-      .filter((topics) => topics.includes("Effect"))
-      .some((details) => pageSpellData[details].includes("Stun"))
+      .filter(topics => topics.includes("Effect"))
+      .some(details => pageSpellData[details].includes("Stun"))
       ? (pageSpellData["Mechanic"] = "Stunned")
       : /stuns|stunning/.test(pageSpellData["Description"])
       ? (pageSpellData["Mechanic"] = "Stunned")
       : 0;
     Object.keys(pageSpellData)
-      .filter((topics) => topics.includes("Effect"))
-      .some((details) => pageSpellData[details].includes("Fear"))
+      .filter(topics => topics.includes("Effect"))
+      .some(details => pageSpellData[details].includes("Fear"))
       ? (pageSpellData["Mechanic"] = "Disoriented")
       : /disorient/.test(pageSpellData["Description"])
       ? (pageSpellData["Mechanic"] = "Disoriented")
       : 0;
   }
   const doesItTM = Object.keys(pageSpellData)
-    .filter((topics) => topics.includes("Effect"))
-    .some((details) => pageSpellData[details].includes("Trigger Missle"));
+    .filter(topics => topics.includes("Effect"))
+    .some(details => pageSpellData[details].includes("Trigger Missle"));
   const descEnemy = pageSpellData["Description"].includes("enemy");
   const doesItNWD = Object.keys(pageSpellData)
-    .filter((topics) => topics.includes("Effect"))
-    .some((details) =>
+    .filter(topics => topics.includes("Effect"))
+    .some(details =>
       pageSpellData[details].includes("Normalized Weapon Damage")
     );
+  //Lazy but they are unique and have poor descriptions - may be able to change in the future
+  const isPowerInfusion = spellName === "Power Infusion";
+  const isCurseOfTongues = spellName === "Curse of Tongues";
+  const isDemonicGateway = spellName === "Demonic Gateway";
+  const isShadowStepOrWildCharge =
+    spellName === "Shadowstep" || spellName === "Wild Charge";
   const doesItSD = Object.keys(pageSpellData)
-    .filter((topics) => topics.includes("Effect"))
-    .some((details) => pageSpellData[details].includes("School Damage"));
+    .filter(topics => topics.includes("Effect"))
+    .some(details => pageSpellData[details].includes("School Damage"));
   const doesItRC = pageSpellData["Range"].includes("Combat");
   const descDmg = pageSpellData["Description"].includes("damage");
   const doesItNegMech = negativeMechanics.includes(pageSpellData["Mechanic"]);
   const isTaunt =
     Object.keys(pageSpellData)
-      .filter((topics) => topics.includes("Effect"))
-      .some((details) => pageSpellData[details].includes("Taunt")) ||
+      .filter(topics => topics.includes("Effect"))
+      .some(details => pageSpellData[details].includes("Taunt")) ||
     pageSpellData["Description"].includes("Taunts");
   const isDispel = Object.keys(pageSpellData)
-    .filter((topics) => topics.includes("Effect"))
-    .some((details) => /Dispel|Spell Steal/.test(pageSpellData[details]));
+    .filter(topics => topics.includes("Effect"))
+    .some(details => /Dispel|Spell Steal/.test(pageSpellData[details]));
   const isStalked = Object.keys(pageSpellData)
-    .filter((topics) => topics.includes("Effect"))
-    .some((details) => /Apply Aura: Stalked/.test(pageSpellData[details]));
+    .filter(topics => topics.includes("Effect"))
+    .some(details => /Apply Aura: Stalked/.test(pageSpellData[details]));
   const isWeaponRequired =
     pageSpellData["Flags"] &&
     pageSpellData["Flags"].includes("Requires main hand weapon");
@@ -287,20 +325,22 @@ function filterData(pageSpellData, spellId, spellName) {
     doesIncludeSelf ||
     isInPartyOrRaid ||
     isAroundOrInfront ||
-    summonNotEngageNoRadius ||
+    (canSummon && doesntEngage) ||
     isMassRez ||
     isAoeSpeedBoost ||
     isUnlimitedRange ||
     isPetOrDemon ||
     doesOverrideSpell ||
-    teleportOrTransfer
+    teleportOrTransfer ||
+    allHealersInRaid ||
+    givesAttackSpeedSteroid
   ) {
     //Self
     newDataForId["targetType"] = targetTypes[0];
-  } else if (doesIncludeRadius) {
+  } else if (doesIncludeRadius || descTargLoc || isDemonicGateway) {
     //Placed
     newDataForId["targetType"] = targetTypes[1];
-  } else if (doesIncludeHealingAndDamage) {
+  } else if (doesIncludeHealingAndDamage || isShadowStepOrWildCharge) {
     //One Any
     newDataForId["targetType"] = targetTypes[2];
   } else if (
@@ -311,7 +351,8 @@ function filterData(pageSpellData, spellId, spellName) {
       allyInDesc ||
       healThemInDesc ||
       isRez ||
-      healTargInDesc) &&
+      healTargInDesc ||
+      isPowerInfusion) && //not sure how else to catch it, its too unique
     (oneTarAtATime || flagsOneTarg || maxTargOne || durLtCd)
   ) {
     //One Friendly
@@ -341,7 +382,9 @@ function filterData(pageSpellData, spellId, spellName) {
       isTaunt ||
       isDispel ||
       isWeaponRequired ||
-      isStalked)
+      isStalked ||
+      isRequireUntapped ||
+      attackInDesc)
   ) {
     //One Enemy
     newDataForId["targetType"] = targetTypes[5];
@@ -357,7 +400,10 @@ function filterData(pageSpellData, spellId, spellName) {
       isTaunt ||
       isDispel ||
       isWeaponRequired ||
-      isStalked)
+      isStalked ||
+      isRequireUntapped ||
+      attackInDesc ||
+      isCurseOfTongues)
   ) {
     //Many Enemy
     newDataForId["targetType"] = targetTypes[6];
@@ -374,7 +420,7 @@ const targetTypes = [
   "ONE_FRIENDLY",
   "MANY_FRIENDLY",
   "ONE_ENEMY",
-  "MANY_ENEMY",
+  "MANY_ENEMY"
 ];
 
 const negativeMechanics = [
@@ -385,7 +431,7 @@ const negativeMechanics = [
   "Rooted",
   "Interrupted",
   "Banished",
-  "Asleep",
+  "Asleep"
 ];
 
 //Hand of guldan, maim, starfire, necrotic strike
@@ -427,34 +473,7 @@ async function runSpells(browser, mutex) {
   }
 }
 
-const brokenSpells = [
-  46585,
-  49028,
-  111673,
-  781,
-  136,
-  257284,
-  321297,
-  19577,
-  193530,
-  186289,
-  115546,
-  119996,
-  324312,
-  34433,
-  453,
-  10060,
-  64901,
-  315496,
-  36554,
-  195457,
-  755,
-  1714,
-  48018,
-  48020,
-  111771,
-  104316,
-];
+const brokenSpells = [];
 const incorrectSpells = [
   47541,
   49998,
@@ -491,7 +510,7 @@ const incorrectSpells = [
   196277,
   265187,
   34428,
-  7384,
+  7384
 ];
 
 async function findDifferences(trueData, newData) {
@@ -506,10 +525,7 @@ async function findDifferences(trueData, newData) {
         )
       ) {
         console.log(
-          `${
-            trueData["Spells"][classNames[className]][spellIds[spellId]]
-              .spellName
-          } Not Equal`,
+          `${trueData["Spells"][classNames[className]][spellIds[spellId]].spellName} Not Equal`,
           trueData["Spells"][classNames[className]][spellIds[spellId]],
           newData["Spells"][classNames[className]][spellIds[spellId]]
         );
@@ -520,10 +536,13 @@ async function findDifferences(trueData, newData) {
 
 function checkForImprovements(targetData, calculatedData) {
   const classNames = Object.keys(calculatedData["Spells"]);
+  let spellsLength = 0;
+  let spellsWorkingLength = 0;
   for (const className in classNames) {
     const spellIds = Object.keys(
       calculatedData["Spells"][classNames[className]]
     );
+    spellsLength += spellIds.length;
     for (const spellId in spellIds) {
       if (
         _.isEqual(
@@ -531,18 +550,17 @@ function checkForImprovements(targetData, calculatedData) {
           calculatedData["Spells"][classNames[className]][spellIds[spellId]]
         )
       ) {
+        spellsWorkingLength++;
         console.log(
-          `${
-            calculatedData["Spells"][classNames[className]][spellIds[spellId]]
-              .spellName
-          }, Spell ID: ${spellIds[spellId]} Now Equal`
+          `${calculatedData["Spells"][classNames[className]][spellIds[spellId]].spellName}, Spell ID: ${spellIds[spellId]} Now Equal`
         );
       }
     }
   }
+  console.log(`${spellsWorkingLength}/${spellsLength} now work`);
 }
 
-const testingWorkingKey = false;
+const testingWorkingKey = true;
 
 async function runAllThings() {
   const browser = await puppeteer.launch();
@@ -554,12 +572,18 @@ async function runAllThings() {
 
   Promise.all(promises).then(() => {
     let jsonToWrite = JSON.stringify(spellData);
-    const testWorkingDataReal = require("./SpellsPhase2AllSpellsWorkingKey.json");
-    const brokeSpellsFixedKey = require("./SpellsPhase2AllBrokenSpellsFIXED.json");
+    // const testWorkingDataReal = require("./SpellsPhase2AllSpellsWorkingKey.json");
+    // const brokeSpellsFixedKey = require("./SpellsPhase2AllBrokenSpellsFIXED.json");
     if (testingWorkingKey) {
-      if (!_.isEqual(testWorkingDataReal, spellData)) {
-        findDifferences(testWorkingDataReal, spellData);
-      }
+      console.log(Object.keys(cachedData));
+      fs.writeFileSync(
+        `./CachedPageSpellData.json`,
+        JSON.stringify(cachedData)
+      );
+      fs.writeFileSync(`SpellsPhase2AllSpellsWorkingKey3.json`, jsonToWrite);
+      // if (!_.isEqual(testWorkingDataReal, spellData)) {
+      //   findDifferences(testWorkingDataReal, spellData);
+      // }
     } else {
       checkForImprovements(brokeSpellsFixedKey, spellData);
       fs.writeFileSync(`SpellsPhase2AllBrokenSpells.json`, jsonToWrite);

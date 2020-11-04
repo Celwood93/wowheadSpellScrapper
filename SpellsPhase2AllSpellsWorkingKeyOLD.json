@@ -19,12 +19,6 @@
         "spellName": "Chains of Ice",
         "targetType": "MANY_ENEMY"
       },
-      "46585": {
-        "spec": ["BLOOD", "FROST", "UNHOLY"],
-        "spellId": "46585",
-        "spellName": "Raise Dead",
-        "targetType": "SELF"
-      },
       "47528": {
         "spec": ["BLOOD", "FROST", "UNHOLY"],
         "spellId": "47528",
@@ -53,12 +47,6 @@
         "spec": ["FROST"],
         "spellId": "49020",
         "spellName": "Obliterate",
-        "targetType": "ONE_ENEMY"
-      },
-      "49028": {
-        "spec": ["BLOOD"],
-        "spellId": "49028",
-        "spellName": "Dancing Rune Weapon",
         "targetType": "ONE_ENEMY"
       },
       "49039": {
@@ -685,18 +673,6 @@
       }
     },
     "Hunter": {
-      "136": {
-        "spec": ["BEAST MASTERY", "MARKSMANSHIP", "SURVIVAL"],
-        "spellId": "136",
-        "spellName": "Mend Pet",
-        "targetType": "SELF"
-      },
-      "781": {
-        "spec": ["BEAST MASTERY", "MARKSMANSHIP", "SURVIVAL"],
-        "spellId": "781",
-        "spellName": "Disengage",
-        "targetType": "SELF"
-      },
       "982": {
         "spec": ["BEAST MASTERY", "MARKSMANSHIP", "SURVIVAL"],
         "spellId": "982",
@@ -731,12 +707,6 @@
         "spec": ["MARKSMANSHIP"],
         "spellId": "19434",
         "spellName": "Aimed Shot",
-        "targetType": "ONE_ENEMY"
-      },
-      "19577": {
-        "spec": ["BEAST MASTERY", "SURVIVAL"],
-        "spellId": "19577",
-        "spellName": "Intimidation",
         "targetType": "ONE_ENEMY"
       },
       "19801": {
@@ -805,12 +775,6 @@
         "spellName": "Raptor Strike",
         "targetType": "ONE_ENEMY"
       },
-      "186289": {
-        "spec": ["SURVIVAL"],
-        "spellId": "186289",
-        "spellName": "Aspect of the Eagle",
-        "targetType": "SELF"
-      },
       "186387": {
         "spec": ["MARKSMANSHIP"],
         "spellId": "186387",
@@ -853,12 +817,6 @@
         "spellName": "Cobra Shot",
         "targetType": "ONE_ENEMY"
       },
-      "193530": {
-        "spec": ["BEAST MASTERY"],
-        "spellId": "193530",
-        "spellName": "Aspect of the Wild",
-        "targetType": "SELF"
-      },
       "195645": {
         "spec": ["BEAST MASTERY", "MARKSMANSHIP", "SURVIVAL"],
         "spellId": "195645",
@@ -875,12 +833,6 @@
         "spec": ["MARKSMANSHIP"],
         "spellId": "257044",
         "spellName": "Rapid Fire",
-        "targetType": "ONE_ENEMY"
-      },
-      "257284": {
-        "spec": ["BEAST MASTERY", "MARKSMANSHIP", "SURVIVAL"],
-        "spellId": "257284",
-        "spellName": "Hunter's Mark",
         "targetType": "ONE_ENEMY"
       },
       "259489": {
@@ -918,12 +870,6 @@
         "spellId": "320976",
         "spellName": "Kill Shot",
         "targetType": "ONE_ENEMY"
-      },
-      "321297": {
-        "spec": ["BEAST MASTERY", "MARKSMANSHIP", "SURVIVAL"],
-        "spellId": "321297",
-        "spellName": "Eyes of the Beast",
-        "targetType": "SELF"
       }
     },
     "Mage": {
@@ -1301,12 +1247,6 @@
         "spellName": "Revival",
         "targetType": "SELF"
       },
-      "115546": {
-        "spec": ["WINDWALKER", "MISTWEAVER", "BREWMASTER"],
-        "spellId": "115546",
-        "spellName": "Provoke",
-        "targetType": "ONE_ENEMY"
-      },
       "116095": {
         "spec": ["WINDWALKER"],
         "spellId": "116095",
@@ -1353,12 +1293,6 @@
         "spec": ["BREWMASTER"],
         "spellId": "119582",
         "spellName": "Purifying Brew",
-        "targetType": "SELF"
-      },
-      "119996": {
-        "spec": ["WINDWALKER", "MISTWEAVER", "BREWMASTER"],
-        "spellId": "119996",
-        "spellName": "Transcendence: Transfer",
         "targetType": "SELF"
       },
       "122470": {
@@ -1432,12 +1366,6 @@
         "spellId": "322507",
         "spellName": "Celestial Brew",
         "targetType": "SELF"
-      },
-      "324312": {
-        "spec": ["BREWMASTER"],
-        "spellId": "324312",
-        "spellName": "Clash",
-        "targetType": "ONE_ENEMY"
       }
     },
     "Paladin": {
@@ -1713,12 +1641,6 @@
         "spellName": "Renew",
         "targetType": "MANY_FRIENDLY"
       },
-      "453": {
-        "spec": ["DISCIPLINE", "HOLY", "SHADOW"],
-        "spellId": "453",
-        "spellName": "Mind Soothe",
-        "targetType": "MANY_ENEMY"
-      },
       "528": {
         "spec": ["DISCIPLINE", "HOLY", "SHADOW"],
         "spellId": "528",
@@ -1797,12 +1719,6 @@
         "spellName": "Shackle Undead",
         "targetType": "ONE_ENEMY"
       },
-      "10060": {
-        "spec": ["DISCIPLINE", "HOLY", "SHADOW"],
-        "spellId": "10060",
-        "spellName": "Power Infusion",
-        "targetType": "ONE_FRIENDLY"
-      },
       "14914": {
         "spec": ["HOLY"],
         "spellId": "14914",
@@ -1851,12 +1767,6 @@
         "spellName": "Pain Suppression",
         "targetType": "ONE_FRIENDLY"
       },
-      "34433": {
-        "spec": ["DISCIPLINE", "SHADOW"],
-        "spellId": "34433",
-        "spellName": "Shadowfiend",
-        "targetType": "ONE_ENEMY"
-      },
       "34914": {
         "spec": ["SHADOW"],
         "spellId": "34914",
@@ -1892,12 +1802,6 @@
         "spellId": "62618",
         "spellName": "Power Word: Barrier",
         "targetType": "PLACED"
-      },
-      "64901": {
-        "spec": ["HOLY"],
-        "spellId": "64901",
-        "spellName": "Symbol of Hope",
-        "targetType": "SELF"
       },
       "73325": {
         "spec": ["DISCIPLINE", "HOLY", "SHADOW"],
@@ -2123,12 +2027,6 @@
         "spellName": "Cloak of Shadows",
         "targetType": "SELF"
       },
-      "36554": {
-        "spec": ["ASSASINATION", "SUBTLETY"],
-        "spellId": "36554",
-        "spellName": "Shadowstep",
-        "targetType": "ONE_ANY"
-      },
       "51723": {
         "spec": ["ASSASINATION"],
         "spellId": "51723",
@@ -2201,12 +2099,6 @@
         "spellName": "Sinister Strike",
         "targetType": "ONE_ENEMY"
       },
-      "195457": {
-        "spec": ["OUTLAW"],
-        "spellId": "195457",
-        "spellName": "Grappling Hook",
-        "targetType": "PLACED"
-      },
       "196819": {
         "spec": ["ASSASINATION", "SUBTLETY", "OUTLAW"],
         "spellId": "196819",
@@ -2230,12 +2122,6 @@
         "spellId": "315341",
         "spellName": "Between the Eyes",
         "targetType": "ONE_ENEMY"
-      },
-      "315496": {
-        "spec": ["ASSASINATION", "SUBTLETY", "OUTLAW"],
-        "spellId": "315496",
-        "spellName": "Slice and Dice",
-        "targetType": "SELF"
       },
       "315508": {
         "spec": ["OUTLAW"],
@@ -2595,22 +2481,10 @@
         "spellName": "Summon Succubus",
         "targetType": "SELF"
       },
-      "755": {
-        "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
-        "spellId": "755",
-        "spellName": "Health Funnel",
-        "targetType": "SELF"
-      },
       "980": {
         "spec": ["AFFLICTION"],
         "spellId": "980",
         "spellName": "Agony",
-        "targetType": "MANY_ENEMY"
-      },
-      "1714": {
-        "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
-        "spellId": "1714",
-        "spellName": "Curse of Tongues",
         "targetType": "MANY_ENEMY"
       },
       "5697": {
@@ -2661,18 +2535,6 @@
         "spellName": "Summon Felguard",
         "targetType": "SELF"
       },
-      "48018": {
-        "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
-        "spellId": "48018",
-        "spellName": "Demonic Circle",
-        "targetType": "SELF"
-      },
-      "48020": {
-        "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
-        "spellId": "48020",
-        "spellName": "Demonic Circle: Teleport",
-        "targetType": "SELF"
-      },
       "80240": {
         "spec": ["DESTRUCTION"],
         "spellId": "80240",
@@ -2691,12 +2553,6 @@
         "spellName": "Singe Magic",
         "targetType": "ONE_FRIENDLY"
       },
-      "104316": {
-        "spec": ["DEMONOLOGY"],
-        "spellId": "104316",
-        "spellName": "Call Dreadstalkers",
-        "targetType": "ONE_ENEMY"
-      },
       "104773": {
         "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
         "spellId": "104773",
@@ -2708,12 +2564,6 @@
         "spellId": "105174",
         "spellName": "Hand of Gul'dan",
         "targetType": "ONE_ENEMY"
-      },
-      "111771": {
-        "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
-        "spellId": "111771",
-        "spellName": "Demonic Gateway",
-        "targetType": "PLACED"
       },
       "116858": {
         "spec": ["DESTRUCTION"],

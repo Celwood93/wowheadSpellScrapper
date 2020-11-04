@@ -202,7 +202,7 @@
         "spec": ["DISCIPLINE", "HOLY", "SHADOW"],
         "spellId": "453",
         "spellName": "Mind Soothe",
-        "targetType": "ONE_ENEMY"
+        "targetType": "MANY_ENEMY"
       },
       "527": {
         "spec": ["DISCIPLINE", "HOLY"],
@@ -345,7 +345,7 @@
         "spec": ["DEMONOLOGY"],
         "spellId": "104316",
         "spellName": "Call Dreadstalkers",
-        "targetType": "ONE_TARGET"
+        "targetType": "ONE_ENEMY"
       },
       "111771": {
         "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
