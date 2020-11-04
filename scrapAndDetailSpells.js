@@ -3,13 +3,13 @@ const Mutex = require("async-mutex").Mutex;
 const fs = require("fs");
 const _ = require("lodash");
 const spellData = require("./SpellsPhase1.json");
-const maxPages = 28;
+const maxPages = 8;
 const promises = [];
 const cachedIds = {};
 const cachedData = require("./CachedPageSpellData.json");
 
 function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 //Type is incase Spells/Talents/PvPTalents/Covenants produces a different type of datastorage -- might not need here
@@ -37,7 +37,7 @@ async function getDetails(spellId, browser, className, spellName, type, mutex) {
       while (didTimeout) {
         try {
           await page.goto(`https://wowhead.com/spell=${spellId}`, {
-            timeout: 30000 + 5000 * timeoutCounter
+            timeout: 30000 + 5000 * timeoutCounter,
           });
           //could also grab rank 2/3/4 of spells to check if they add durations /reduce cds
           pageSpellData = await page.evaluate(() => {
@@ -45,7 +45,7 @@ async function getDetails(spellId, browser, className, spellName, type, mutex) {
             datas["Description"] = Array.from(
               document.querySelectorAll("span.q")
             )
-              .map(e => e.textContent)
+              .map((e) => e.textContent)
               .join(" ");
             const isRechargeCooldown = document
               .querySelector(
@@ -55,7 +55,7 @@ async function getDetails(spellId, browser, className, spellName, type, mutex) {
               )
               .textContent.match(/(\d\d?\.?\d?\d?) (\w+) recharge/);
             Array.from(document.querySelectorAll("#spelldetails > tbody > tr"))
-              .map(el => {
+              .map((el) => {
                 const tharr = Array.from(
                   el.querySelectorAll(
                     "th:not(.grid-hideable-cell):not(.grid-nesting-wrapper)"
@@ -70,7 +70,7 @@ async function getDetails(spellId, browser, className, spellName, type, mutex) {
                   if (e.textContent === "Flags") {
                     datas[e.textContent] = Array.from(
                       tdarr[i].querySelectorAll("li")
-                    ).map(el => el.textContent);
+                    ).map((el) => el.textContent);
                   } else {
                     datas[e.textContent] = tdarr[i].textContent;
                   }
@@ -78,9 +78,7 @@ async function getDetails(spellId, browser, className, spellName, type, mutex) {
               })
               .flat();
             if (isRechargeCooldown) {
-              datas.Cooldown = `${isRechargeCooldown[1]} ${
-                isRechargeCooldown[2]
-              }`;
+              datas.Cooldown = `${isRechargeCooldown[1]} ${isRechargeCooldown[2]}`;
             }
             return datas;
           });
@@ -99,9 +97,9 @@ async function getDetails(spellId, browser, className, spellName, type, mutex) {
     }
     if (pageSpellData) {
       newDataForId = filterData(pageSpellData, spellId, spellName);
-      console.log(
-        `${Object.keys(cachedIds).length + 1}/${promises.length} finished`
-      );
+      // console.log(
+      //   `${Object.keys(cachedIds).length + 1}/${promises.length} finished`
+      // );
       cachedIds[spellId] = newDataForId;
     }
     if (page) {
@@ -114,7 +112,7 @@ async function getDetails(spellId, browser, className, spellName, type, mutex) {
   if (newDataForId) {
     spellData["Spells"][className][spellId] = {
       ...spellData["Spells"][className][spellId],
-      ...newDataForId
+      ...newDataForId,
     };
   }
 }
@@ -135,13 +133,16 @@ function filterData(pageSpellData, spellId, spellName) {
     pageSpellData["Description"]
   );
   const givesAttackSpeedSteroid = Object.keys(pageSpellData)
-    .filter(topics => topics.includes("Effect"))
-    .some(details =>
+    .filter((topics) => topics.includes("Effect"))
+    .some((details) =>
       /Apply Aura: Mod Attack Speed %[^-]*\d\d/.test(pageSpellData[details])
     );
-  const isAroundOrInfront = /nearby enemies[^.]|(enemies|targets [\w ]+) in front of you/.test(
+  const isAroundOrInfront = /(enemies|targets [\w ]+|enemies directly) in front of you/.test(
     pageSpellData["Description"]
   );
+  const aroundShortRange =
+    / nearby enemies/.test(pageSpellData["Description"]) &&
+    /\(Vision\)|(8|5) yards/.test(pageSpellData["Range"]);
   const teleportOrTransfer = /swap locations|Teleports you/.test(
     pageSpellData["Description"]
   );
@@ -154,8 +155,8 @@ function filterData(pageSpellData, spellId, spellName) {
   let doesIncludeRadius = false;
   if (!spellsThatArntPlacedButMatch.includes(spellId)) {
     doesIncludeRadius = Object.keys(pageSpellData)
-      .filter(topics => topics.includes("Effect"))
-      .some(details =>
+      .filter((topics) => topics.includes("Effect"))
+      .some((details) =>
         /^(Create Area Trigger|Dummy|Trigger Missile|School Damage|Distract).*Radius/.test(
           pageSpellData[details]
         )
@@ -165,29 +166,29 @@ function filterData(pageSpellData, spellId, spellName) {
     pageSpellData["Description"]
   );
   const isAoeSpeedBoost = Object.keys(pageSpellData)
-    .filter(topics => topics.includes("Effect"))
+    .filter((topics) => topics.includes("Effect"))
     .some(
-      details =>
+      (details) =>
         /Apply Aura: Increase Run Speed.*Radius/.test(pageSpellData[details]) &&
         !/target location/.test(pageSpellData["Description"])
     );
   const doesOverrideSpell = Object.keys(pageSpellData)
-    .filter(topics => topics.includes("Effect"))
-    .some(details =>
+    .filter((topics) => topics.includes("Effect"))
+    .some((details) =>
       /Apply Aura: Overrides Actionbar Spell/.test(pageSpellData[details])
     );
   const isMassRez = Object.keys(pageSpellData)
-    .filter(topics => topics.includes("Effect"))
-    .some(details => pageSpellData[details].includes("Mass Resurrection"));
+    .filter((topics) => topics.includes("Effect"))
+    .some((details) => pageSpellData[details].includes("Mass Resurrection"));
   const isRez = Object.keys(pageSpellData)
-    .filter(topics => topics.includes("Effect"))
-    .some(details => /^Resurrect/.test(pageSpellData[details]));
+    .filter((topics) => topics.includes("Effect"))
+    .some((details) => /^Resurrect/.test(pageSpellData[details]));
   const doesIncludeHealingAndDamage =
     /damage to an enemy/.test(pageSpellData["Description"]) &&
     /healing to an ally/.test(pageSpellData["Description"]);
   const doesIncludeHealingInEffect = Object.keys(pageSpellData)
-    .filter(topics => topics.includes("Effect"))
-    .some(details =>
+    .filter((topics) => topics.includes("Effect"))
+    .some((details) =>
       /Periodic Heal|Heal\b|Healing\b/.test(pageSpellData[details])
     );
   const ftInDesc = /friendly (target|healer)/.test(
@@ -207,12 +208,12 @@ function filterData(pageSpellData, spellId, spellName) {
   );
   const flagsOneTarg =
     !!pageSpellData["Flags"] &&
-    pageSpellData["Flags"].some(e =>
+    pageSpellData["Flags"].some((e) =>
       e.includes("The aura can only affect one target")
     );
   const isRequireUntapped =
     !!pageSpellData["Flags"] &&
-    pageSpellData["Flags"].some(e => e.includes("Requires untapped target"));
+    pageSpellData["Flags"].some((e) => e.includes("Requires untapped target"));
   const maxTargOne =
     !!pageSpellData["Max targets"] &&
     pageSpellData["Max targets"].includes("1");
@@ -221,7 +222,7 @@ function filterData(pageSpellData, spellId, spellName) {
     /(\d\d?\.?\d?\d?) (?:(min)|(sec))/
   );
   const descDurMatch = pageSpellData.Description.match(
-    /(\d\d?\.?\d?\d?) (?:(min)|(sec))/
+    /(?:[^%] for|over) (\d\d?\.?\d?\d?) (?:(min)|(sec))/
   );
   const cdMatch = pageSpellData["Cooldown"].match(
     /(\d\d?\.?\d?\d?) (?:(min)|(sec))/
@@ -265,59 +266,67 @@ function filterData(pageSpellData, spellId, spellName) {
   const durGtCd = 1 * dur > 1 * cdRealistic;
   if (!negativeMechanics.includes(pageSpellData["Mechanic"])) {
     Object.keys(pageSpellData)
-      .filter(topics => topics.includes("Effect"))
-      .some(details => pageSpellData[details].includes("Interrupt"))
+      .filter((topics) => topics.includes("Effect"))
+      .some((details) => pageSpellData[details].includes("Interrupt"))
       ? (pageSpellData["Mechanic"] = "Interrupted")
       : /interrupt/.test(pageSpellData["Description"])
       ? (pageSpellData["Mechanic"] = "Interrupted")
       : 0;
     Object.keys(pageSpellData)
-      .filter(topics => topics.includes("Effect"))
-      .some(details => pageSpellData[details].includes("Stun"))
+      .filter((topics) => topics.includes("Effect"))
+      .some((details) => pageSpellData[details].includes("Stun"))
       ? (pageSpellData["Mechanic"] = "Stunned")
       : /stuns|stunning/.test(pageSpellData["Description"])
       ? (pageSpellData["Mechanic"] = "Stunned")
       : 0;
     Object.keys(pageSpellData)
-      .filter(topics => topics.includes("Effect"))
-      .some(details => pageSpellData[details].includes("Fear"))
+      .filter((topics) => topics.includes("Effect"))
+      .some((details) => pageSpellData[details].includes("Fear"))
       ? (pageSpellData["Mechanic"] = "Disoriented")
       : /disorient/.test(pageSpellData["Description"])
       ? (pageSpellData["Mechanic"] = "Disoriented")
       : 0;
   }
   const doesItTM = Object.keys(pageSpellData)
-    .filter(topics => topics.includes("Effect"))
-    .some(details => pageSpellData[details].includes("Trigger Missle"));
+    .filter((topics) => topics.includes("Effect"))
+    .some((details) => pageSpellData[details].includes("Trigger Missle"));
   const descEnemy = pageSpellData["Description"].includes("enemy");
   const doesItNWD = Object.keys(pageSpellData)
-    .filter(topics => topics.includes("Effect"))
-    .some(details =>
+    .filter((topics) => topics.includes("Effect"))
+    .some((details) =>
       pageSpellData[details].includes("Normalized Weapon Damage")
     );
-  //Lazy but they are unique and have poor descriptions - may be able to change in the future
+  //TODO maybe find better way to do these - right now not enough similar spells to justfy more specific stuff. Might change when we do talents
   const isPowerInfusion = spellName === "Power Infusion";
   const isCurseOfTongues = spellName === "Curse of Tongues";
   const isDemonicGateway = spellName === "Demonic Gateway";
-  const isShadowStepOrWildCharge =
-    spellName === "Shadowstep" || spellName === "Wild Charge";
+  const isOneAnyException =
+    spellName === "Shadowstep" ||
+    spellName === "Wild Charge" ||
+    spellName === "Death Coil" ||
+    spellName === "Gorefiend's Grasp";
   const doesItSD = Object.keys(pageSpellData)
-    .filter(topics => topics.includes("Effect"))
-    .some(details => pageSpellData[details].includes("School Damage"));
+    .filter((topics) => topics.includes("Effect"))
+    .some((details) => pageSpellData[details].includes("School Damage"));
   const doesItRC = pageSpellData["Range"].includes("Combat");
   const descDmg = pageSpellData["Description"].includes("damage");
   const doesItNegMech = negativeMechanics.includes(pageSpellData["Mechanic"]);
   const isTaunt =
     Object.keys(pageSpellData)
-      .filter(topics => topics.includes("Effect"))
-      .some(details => pageSpellData[details].includes("Taunt")) ||
+      .filter((topics) => topics.includes("Effect"))
+      .some((details) => pageSpellData[details].includes("Taunt")) ||
     pageSpellData["Description"].includes("Taunts");
   const isDispel = Object.keys(pageSpellData)
-    .filter(topics => topics.includes("Effect"))
-    .some(details => /Dispel|Spell Steal/.test(pageSpellData[details]));
+    .filter((topics) => topics.includes("Effect"))
+    .some((details) => /Dispel|Spell Steal/.test(pageSpellData[details]));
+  const isFriendlyDispel = Object.keys(pageSpellData)
+    .filter((topics) => topics.includes("Effect"))
+    .some((details) =>
+      /Dispel\s\((Curse|Disease|Poison)\)/.test(pageSpellData[details])
+    );
   const isStalked = Object.keys(pageSpellData)
-    .filter(topics => topics.includes("Effect"))
-    .some(details => /Apply Aura: Stalked/.test(pageSpellData[details]));
+    .filter((topics) => topics.includes("Effect"))
+    .some((details) => /Apply Aura: Stalked/.test(pageSpellData[details]));
   const isWeaponRequired =
     pageSpellData["Flags"] &&
     pageSpellData["Flags"].includes("Requires main hand weapon");
@@ -325,6 +334,7 @@ function filterData(pageSpellData, spellId, spellName) {
     doesIncludeSelf ||
     isInPartyOrRaid ||
     isAroundOrInfront ||
+    aroundShortRange ||
     (canSummon && doesntEngage) ||
     isMassRez ||
     isAoeSpeedBoost ||
@@ -340,32 +350,34 @@ function filterData(pageSpellData, spellId, spellName) {
   } else if (doesIncludeRadius || descTargLoc || isDemonicGateway) {
     //Placed
     newDataForId["targetType"] = targetTypes[1];
-  } else if (doesIncludeHealingAndDamage || isShadowStepOrWildCharge) {
+  } else if (doesIncludeHealingAndDamage || isOneAnyException) {
     //One Any
     newDataForId["targetType"] = targetTypes[2];
   } else if (
     !doesItNegMech &&
-    (doesIncludeHealingInEffect ||
+    ((doesIncludeHealingInEffect && !doesItRC) ||
       ftInDesc ||
       porInDesc ||
       allyInDesc ||
       healThemInDesc ||
       isRez ||
       healTargInDesc ||
-      isPowerInfusion) && //not sure how else to catch it, its too unique
+      isPowerInfusion ||
+      isFriendlyDispel) && //not sure how else to catch it, its too unique
     (oneTarAtATime || flagsOneTarg || maxTargOne || durLtCd)
   ) {
     //One Friendly
     newDataForId["targetType"] = targetTypes[3];
   } else if (
     !doesItNegMech &&
-    (doesIncludeHealingInEffect ||
+    ((doesIncludeHealingInEffect && !doesItRC) ||
       ftInDesc ||
       porInDesc ||
       allyInDesc ||
       healThemInDesc ||
       isRez ||
-      healTargInDesc) &&
+      healTargInDesc ||
+      isFriendlyDispel) &&
     durGtCd
   ) {
     //Many Friendly
@@ -420,7 +432,7 @@ const targetTypes = [
   "ONE_FRIENDLY",
   "MANY_FRIENDLY",
   "ONE_ENEMY",
-  "MANY_ENEMY"
+  "MANY_ENEMY",
 ];
 
 const negativeMechanics = [
@@ -431,11 +443,21 @@ const negativeMechanics = [
   "Rooted",
   "Interrupted",
   "Banished",
-  "Asleep"
+  "Asleep",
 ];
 
-//Hand of guldan, maim, starfire, necrotic strike
-const spellsThatArntPlacedButMatch = ["105174", "22570", "194153", "223829"];
+//Hand of guldan, maim, starfire, necrotic strike, howling blast, scourge strike, multishot, kegsmash
+const spellsThatArntPlacedButMatch = [
+  "105174",
+  "22570",
+  "194153",
+  "223829",
+  "49184",
+  "55090",
+  "257620",
+  "2643",
+  "121253",
+];
 
 async function runSpells(browser, mutex) {
   const classNames = Object.keys(spellData["Spells"]);
@@ -475,42 +497,18 @@ async function runSpells(browser, mutex) {
 
 const brokenSpells = [];
 const incorrectSpells = [
-  47541,
-  49998,
-  206930,
-  195182,
-  108199,
-  49184,
-  55090,
-  77575,
-  212084,
-  109304,
-  19574,
-  2643,
-  257620,
-  264735,
-  266779,
-  121253,
-  132578,
-  115450,
-  218164,
-  527,
   605,
   47536,
   32375,
   34861,
   64843,
   228260,
-  32645,
   29722,
   5740,
   30283,
-  1122,
   324536,
   196277,
   265187,
-  34428,
-  7384
 ];
 
 async function findDifferences(trueData, newData) {
@@ -525,7 +523,10 @@ async function findDifferences(trueData, newData) {
         )
       ) {
         console.log(
-          `${trueData["Spells"][classNames[className]][spellIds[spellId]].spellName} Not Equal`,
+          `${
+            trueData["Spells"][classNames[className]][spellIds[spellId]]
+              .spellName
+          } Not Equal`,
           trueData["Spells"][classNames[className]][spellIds[spellId]],
           newData["Spells"][classNames[className]][spellIds[spellId]]
         );
@@ -552,7 +553,13 @@ function checkForImprovements(targetData, calculatedData) {
       ) {
         spellsWorkingLength++;
         console.log(
-          `${calculatedData["Spells"][classNames[className]][spellIds[spellId]].spellName}, Spell ID: ${spellIds[spellId]} Now Equal`
+          `${
+            calculatedData["Spells"][classNames[className]][spellIds[spellId]]
+              .spellName
+          }, Spell ID: ${spellIds[spellId]} Now Equal With ${
+            calculatedData["Spells"][classNames[className]][spellIds[spellId]]
+              .targetType
+          }`
         );
       }
     }
@@ -586,6 +593,7 @@ async function runAllThings() {
       );
     }
     if (testingWorkingKey) {
+      fs.writeFileSync(`SpellsPhase2AllSpellsWorkingKey.json`, jsonToWrite);
       if (!_.isEqual(testWorkingDataReal, spellData)) {
         findDifferences(testWorkingDataReal, spellData);
       }

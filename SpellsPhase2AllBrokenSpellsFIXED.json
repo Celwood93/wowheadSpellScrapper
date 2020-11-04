@@ -11,7 +11,7 @@
         "spec": ["BLOOD", "FROST", "UNHOLY"],
         "spellId": "47541",
         "spellName": "Death Coil",
-        "targetType": "ONE_ENEMY"
+        "targetType": "ONE_ANY"
       },
       "49028": {
         "spec": ["BLOOD"],
@@ -59,7 +59,7 @@
         "spec": ["BLOOD"],
         "spellId": "206930",
         "spellName": "Heart Strike",
-        "targetType": "ONE_ENEMY"
+        "targetType": "MANY_ENEMY"
       }
     },
     "Demon Hunter": {
@@ -67,6 +67,12 @@
         "spec": ["VENGEANCE"],
         "spellId": "212084",
         "spellName": "Fel Devastation",
+        "targetType": "SELF"
+      },
+      "228477": {
+        "spec": ["VENGEANCE"],
+        "spellId": "228477",
+        "spellName": "Soul Cleave",
         "targetType": "SELF"
       }
     },
@@ -142,7 +148,7 @@
         "spec": ["SURVIVAL"],
         "spellId": "266779",
         "spellName": "Coordinated Assault",
-        "targetType": "ONE_ENEMY"
+        "targetType": "SELF"
       },
       "321297": {
         "spec": ["BEAST MASTERY", "MARKSMANSHIP", "SURVIVAL"],
@@ -175,7 +181,7 @@
         "spec": ["BREWMASTER"],
         "spellId": "121253",
         "spellName": "Keg Smash",
-        "targetType": "ONE_ENEMY"
+        "targetType": "MANY_ENEMY"
       },
       "132578": {
         "spec": ["BREWMASTER"],

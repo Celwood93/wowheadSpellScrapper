@@ -423,6 +423,25 @@
     "Effect": "Apply Aura: Mod % Damage Taken (Arcane, Fire, Frost, Holy, Nature, Physical, Shadow)Value: -20%\n",
     "Flags": ["Cannot be used while shapeshifted", "Generates no threat"]
   },
+  "527": {
+    "Description": "Dispels harmful effects on the target, removing all Magic and Disease effects.",
+    "Duration": "n/a",
+    "School": "Holy",
+    "Mechanic": "n/a",
+    "Dispel type": "Magic",
+    "GCD category": "Normal",
+    "Cost": "1.3% of base mana",
+    "Range": "40 yards (Long)",
+    "Cast time": "Instant",
+    "Cooldown": "8 sec",
+    "GCD": "1.5 seconds",
+    "Effect #1": "Dispel (Disease)Value: 100\n",
+    "Effect #2": "Dispel (Magic)Value: 100\n",
+    "Flags": [
+      "Cannot be used while shapeshifted",
+      "Does not require shapeshift"
+    ]
+  },
   "528": {
     "Description": "Dispels Magic on the enemy target, removing 1 beneficial Magic effect.",
     "Duration": "n/a",
@@ -531,6 +550,28 @@
     "Effect #3": "DummyValue: 5Server-side script\n",
     "Flags": [
       "Cannot be used while shapeshifted",
+      "Does not require shapeshift"
+    ]
+  },
+  "605": {
+    "Description": "Controls a mind up to 1 level above yours for 30 sec. Does not work versus Demonic[][, Undead,] or Mechanical beings. Shares diminishing returns with other disorienting effects. 30 seconds remaining",
+    "Duration": "30 seconds",
+    "School": "Shadow",
+    "Mechanic": "Disoriented",
+    "Dispel type": "Magic",
+    "GCD category": "Normal",
+    "Cost": "2% of base mana",
+    "Range": "30 yards (Medium)",
+    "Cast time": "1.8 seconds",
+    "Cooldown": "n/a",
+    "GCD": "1.5 seconds",
+    "Effect #1": "Apply Aura: PossessValue: 35Radius: 100 yards\n",
+    "Effect #2": "Apply Aura: Mod Damage Done % (Arcane, Fire, Frost, Holy, Nature, Physical, Shadow)",
+    "Flags": [
+      "Cannot be used while shapeshifted",
+      "Stops auto-attack",
+      "Channeled",
+      "Requires untapped target",
       "Does not require shapeshift"
     ]
   },
@@ -996,6 +1037,22 @@
     "Effect #1": "Apply Aura: Periodic DamageInterval: 2 seconds ({term('apmod_colon')}0.14)Mechanic: Bleeding\n",
     "Effect #2": "Apply Aura: DummyValue: 2Server-side script\n",
     "Effect #3": "DummyValue: 6Server-side script\n"
+  },
+  "1122": {
+    "Description": "Summons an Infernal from the Twisting Nether, impacting for (60% of Spell power) Fire damage and stunning all enemies in the area for 2 sec.The Infernal will serve you for 30 sec, dealing [(50% of Spell power) * (100) / 100] damage to all nearby enemies every 2 sec and generating 1 Soul Shard Fragment every 0.5 sec.",
+    "Duration": "250 milliseconds",
+    "School": "Shadow",
+    "Mechanic": "Stunned",
+    "Dispel type": "n/a",
+    "GCD category": "Normal",
+    "Cost": "2% of base mana",
+    "Range": "30 yards (Medium)",
+    "Cast time": "Instant",
+    "Cooldown": "3 minutes",
+    "GCD": "1.5 seconds",
+    "Effect #1": "Summon (Leap Target)Value: 1\n",
+    "Effect #2": "Trigger Missile (Infernal Awakening)Radius: 10 yards\n",
+    "Effect #3": "Trigger Missile Spell with ValueValue: 1\n"
   },
   "1160": {
     "Description": "Morale KillerDemoralizes all enemies within 10 yards, reducing the damage they do by 20% for 8 secDemoralizes all enemies within 10 yards, reducing the damage they deal to you by 10% for 8 sec.Booming VoiceGenerates 0 Rage. 8 seconds remaining",
@@ -1682,6 +1739,27 @@
       "The aura can only affect one target"
     ]
   },
+  "2643": {
+    "Description": "Fires several missiles, hitting up to 5 targets within 8 yards of your current target for (10.9512% of Attack power) Physical damage Beast Mastery (Level 32)and triggering Beast Cleave",
+    "Duration": "n/a",
+    "School": "Physical",
+    "Mechanic": "n/a",
+    "Dispel type": "n/a",
+    "GCD category": "Normal",
+    "Cost": "40 Focus",
+    "Range": "40 yards (Long)",
+    "Cast time": "Instant",
+    "Cooldown": "n/a",
+    "GCD": "1.5 seconds",
+    "Max targets": "5 - Default",
+    "Effect #1": "DummyRadius: 8 yardsServer-side script\n",
+    "Effect #2": "School Damage (Physical) ({term('apmod_colon')}0.109512)Radius: 8 yards\n",
+    "Flags": [
+      "Requires a ranged weapon",
+      "Cannot be used while shapeshifted",
+      "Bandage spell"
+    ]
+  },
   "2645": {
     "Description": "Turn into a Ghost Wolf, increasing movement speed by 30% and preventing movement speed from being reduced below 100%.",
     "Duration": "n/a",
@@ -2117,6 +2195,29 @@
     "Effect #2": "Apply Aura: Increase Swim Speed %Value: 20%\n",
     "Flags": ["Cannot be used while shapeshifted"]
   },
+  "5740": {
+    "Description": "Calls down a rain of hellfire, dealing [(13.5% of Spell power) * 8] Fire damage over 8 sec to enemies in the area. 8 seconds remaining",
+    "Duration": "8 seconds",
+    "School": "Fire",
+    "Mechanic": "n/a",
+    "Dispel type": "n/a",
+    "GCD category": "Normal",
+    "Cost": "30 Soul Shards",
+    "Range": "40 yards (Long)",
+    "Cast time": "Instant",
+    "Cooldown": "n/a",
+    "GCD": "1.5 seconds",
+    "Effect #1": "Persistent Area Aura: DummyValue: 50Radius: 8 yardsServer-side script\n",
+    "Effect #2": "Create Area Trigger (5420)",
+    "Effect #3": "Apply Aura: Periodic DummyInterval: 1 second\n",
+    "Flags": [
+      "Cannot be used while shapeshifted",
+      "Cannot be reflected",
+      "All spell effects are harmful",
+      "Generates no threat",
+      "Starts ticking at aura application"
+    ]
+  },
   "5761": {
     "Description": "Coats your weapons with a Non-Lethal Poison that lasts for 1 hour.  Each strike has a 50% chance of poisoning the enemy, clouding their mind and slowing their attack and casting speed by 15% for 10 sec. 1 hour remaining",
     "Duration": "1 hour",
@@ -2381,6 +2482,28 @@
     "GCD": "1.5 seconds",
     "Effect": "Resurrect with % Health/ManaValue: 35\n",
     "Flags": ["Cannot be used in combat"]
+  },
+  "7384": {
+    "Description": "Overpower the enemy, dealing (91.5% of Attack power) Physical damage. Cannot be blocked, dodged, or parried. Arms (Level 28)Increases the damage of your next Mortal Strike or Cleave by 20%Increases the damage of your next Mortal Strike by 20%[.] Arms (Level 49) stacking up to 1 times 15 seconds remaining",
+    "Duration": "15 seconds",
+    "School": "Physical",
+    "Mechanic": "n/a",
+    "Dispel type": "n/a",
+    "GCD category": "Normal",
+    "Cost": "None",
+    "Range": "5 yards (Combat)",
+    "Cast time": "Instant",
+    "Cooldown": "12 sec",
+    "GCD": "1.5 seconds",
+    "Aura proc chance": "100%",
+    "Effect #1": "School Damage (Physical) ({term('apmod_colon')}0.915)\n",
+    "Effect #2": "Apply Aura: Modifies Damage/Healing DoneValue: 20%\nAffected Spells:\nCleave\nMortal Strike\n\n//<![CDATA[\nWH.ge('icontab-icon1').appendChild(g_spells.createIcon(845, 0, \"0\"));\nWH.ge('icontab-icon2').appendChild(g_spells.createIcon(12294, 0, \"0\"));\n//]]>\nSee more\nMortal Strike\nMortal Strike\nCleave\nMortal Strike\n\n//<![CDATA[\nWH.ge('icontab-icon3').appendChild(g_spells.createIcon(192945, 0, \"0\"));\nWH.ge('icontab-icon4').appendChild(g_spells.createIcon(213791, 0, \"0\"));\nWH.ge('icontab-icon5').appendChild(g_spells.createIcon(334073, 0, \"0\"));\nWH.ge('icontab-icon6').appendChild(g_spells.createIcon(339385, 0, \"0\"));\n//]]>\n",
+    "": "Mortal Strike",
+    "Flags": [
+      "Cannot be used while shapeshifted",
+      "Cannot be dodged, parried or blocked",
+      "Requires main hand weapon"
+    ]
   },
   "8004": {
     "Description": "A quick surge of healing energy that restores (248% of Spell power) of a friendly target's health.",
@@ -2992,6 +3115,33 @@
     "Effect #2": "DummyValue: 50Server-side script\n",
     "Flags": ["Requires a ranged weapon", "Cannot be used while shapeshifted"]
   },
+  "19574": {
+    "Description": "Sends you and your pet into a rage, instantly dealing [Attack power * 0.65 * 1 * (1 + Versatility) * 1] Physical damage to its target, and increasing all damage you both deal by 25% for 15 sec.  Beast Mastery (Level 34)Bestial Wrath's remaining cooldown is reduced by 12 sec each time you use Barbed Shot 15 seconds remaining",
+    "Duration": "15 seconds",
+    "School": "Physical",
+    "Mechanic": "n/a",
+    "Dispel type": "n/a",
+    "GCD category": "Normal",
+    "Cost": "None",
+    "Range": "100 yards (Vision)",
+    "Cast time": "Instant",
+    "Cooldown": "1.5 minutes",
+    "GCD": "1.5 seconds",
+    "Effect #1": "Apply Aura: Modifies Damage/Healing DoneValue: 25%\nAffected Spells:\nSteady Shot\nSteel Trap\nArcane Shot\nVolley\nChakrams\nBloodshed\nMongoose Bite\nSerpent Sting\nFlanking Strike\nStomp\nButchery\nKill Shot\nSerpent Sting\nKill Command\nMulti-Shot\nMulti-Shot\nBarbed Shot\nAimed Shot\n \n\n\nShow 7 More \n\n\nCobra Shot\nCarve\nBursting Shot\nRaptor Strike\nKill Shot\nKill Command\nSniper Shot\n\n//<![CDATA[\nWH.ge('icontab-icon1').appendChild(g_spells.createIcon(56641, 0, \"0\"));\nWH.ge('icontab-icon2').appendChild(g_spells.createIcon(162487, 0, \"0\"));\nWH.ge('icontab-icon3').appendChild(g_spells.createIcon(185358, 0, \"0\"));\nWH.ge('icontab-icon4').appendChild(g_spells.createIcon(260247, 0, \"0\"));\nWH.ge('icontab-icon5').appendChild(g_spells.createIcon(259398, 0, \"0\"));\nWH.ge('icontab-icon6').appendChild(g_spells.createIcon(321530, 0, \"0\"));\nWH.ge('icontab-icon7').appendChild(g_spells.createIcon(259387, 0, \"0\"));\nWH.ge('icontab-icon8').appendChild(g_spells.createIcon(271788, 0, \"0\"));\nWH.ge('icontab-icon9').appendChild(g_spells.createIcon(269751, 0, \"0\"));\nWH.ge('icontab-icon10').appendChild(g_spells.createIcon(199530, 0, \"0\"));\nWH.ge('icontab-icon11').appendChild(g_spells.createIcon(212436, 0, \"0\"));\nWH.ge('icontab-icon12').appendChild(g_spells.createIcon(320976, 0, \"0\"));\nWH.ge('icontab-icon13').appendChild(g_spells.createIcon(259491, 0, \"0\"));\nWH.ge('icontab-icon14').appendChild(g_spells.createIcon(259489, 0, \"0\"));\nWH.ge('icontab-icon15').appendChild(g_spells.createIcon(2643, 0, \"0\"));\nWH.ge('icontab-icon16').appendChild(g_spells.createIcon(257620, 0, \"0\"));\nWH.ge('icontab-icon17').appendChild(g_spells.createIcon(217200, 0, \"0\"));\nWH.ge('icontab-icon18').appendChild(g_spells.createIcon(19434, 0, \"0\"));\nWH.ge('icontab-icon19').appendChild(g_spells.createIcon(193455, 0, \"0\"));\nWH.ge('icontab-icon20').appendChild(g_spells.createIcon(187708, 0, \"0\"));\nWH.ge('icontab-icon21').appendChild(g_spells.createIcon(186387, 0, \"0\"));\nWH.ge('icontab-icon22').appendChild(g_spells.createIcon(186270, 0, \"0\"));\nWH.ge('icontab-icon23').appendChild(g_spells.createIcon(53351, 0, \"0\"));\nWH.ge('icontab-icon24').appendChild(g_spells.createIcon(34026, 0, \"0\"));\nWH.ge('icontab-icon25').appendChild(g_spells.createIcon(203155, 0, \"0\"));\n//]]>\nSee more\nAuto Shot\nExplosive Trap\nCareful Aim\nSerpent Sting\nBarrage\nA Murder of Crows\nChimaera Shot\nChimaera Shot\nLacerate\nMongoose Bite\nHatchet Toss\nCaltrops\nVolley\nBlack Arrow\nDragonsfire Grenade\nDragonsfire Conflagration\nPiercing Shot\nThrow Axe\n \n\n\nShow 46 More \n\n\nSteel Trap Expert\nStampede\nDire Beast: Hawk\nExplosive Shot\nSidewinders\nSerpent Sting\nMongoose Bite\nSurv 8 - Flanking Strike\nRapid Fire\nAimed Shot\nArcane Shot\nMulti-Shot\nRaptor Strike\nFlanking Strike\nSerpent Sting\nDisengage\nChakrams\nScorching Wildfire\nViolent Reaction\nArctic Bola\nRapid Fire\nWildfire Bomb\nRaptor Strike\nMongoose Bite\nChakrams\nChakrams\nSerpent Sting\nKill Command\nWildfire Bomb\nFlanking Strike\nExplosive Shot\nPheromone Bomb\nPheromone Bomb\nShrapnel Bomb\nShrapnel Bomb\nVolatile Bomb\nVolatile Bomb\nHarpoon\nWildfire Cluster\nLatent Poison\nMulti-Shot\nKill Command\nBloodshed\nWildfire Cluster\nChimaera Shot\nChimaera Shot\n\n//<![CDATA[\nWH.ge('icontab-icon26').appendChild(g_spells.createIcon(75, 0, \"0\"));\nWH.ge('icontab-icon27').appendChild(g_spells.createIcon(13812, 0, \"0\"));\nWH.ge('icontab-icon28').appendChild(g_spells.createIcon(63468, 0, \"0\"));\nWH.ge('icontab-icon29').appendChild(g_spells.createIcon(118253, 0, \"0\"));\nWH.ge('icontab-icon30').appendChild(g_spells.createIcon(120361, 0, \"0\"));\nWH.ge('icontab-icon31').appendChild(g_spells.createIcon(131900, 0, \"0\"));\nWH.ge('icontab-icon32').appendChild(g_spells.createIcon(171454, 0, \"0\"));\nWH.ge('icontab-icon33').appendChild(g_spells.createIcon(171457, 0, \"0\"));\nWH.ge('icontab-icon34').appendChild(g_spells.createIcon(185855, 0, \"0\"));\nWH.ge('icontab-icon35').appendChild(g_spells.createIcon(190928, 0, \"0\"));\nWH.ge('icontab-icon36').appendChild(g_spells.createIcon(193265, 0, \"0\"));\nWH.ge('icontab-icon37').appendChild(g_spells.createIcon(194279, 0, \"0\"));\nWH.ge('icontab-icon38').appendChild(g_spells.createIcon(194392, 0, \"0\"));\nWH.ge('icontab-icon39').appendChild(g_spells.createIcon(194599, 0, \"0\"));\nWH.ge('icontab-icon40').appendChild(g_spells.createIcon(194858, 0, \"0\"));\nWH.ge('icontab-icon41').appendChild(g_spells.createIcon(194859, 0, \"0\"));\nWH.ge('icontab-icon42').appendChild(g_spells.createIcon(198670, 0, \"0\"));\nWH.ge('icontab-icon43').appendChild(g_spells.createIcon(200167, 0, \"0\"));\nWH.ge('icontab-icon44').appendChild(g_spells.createIcon(201199, 0, \"0\"));\nWH.ge('icontab-icon45').appendChild(g_spells.createIcon(201594, 0, \"0\"));\nWH.ge('icontab-icon46').appendChild(g_spells.createIcon(208684, 0, \"0\"));\nWH.ge('icontab-icon47').appendChild(g_spells.createIcon(212680, 0, \"0\"));\nWH.ge('icontab-icon48').appendChild(g_spells.createIcon(214581, 0, \"0\"));\nWH.ge('icontab-icon49').appendChild(g_spells.createIcon(255556, 0, \"0\"));\nWH.ge('icontab-icon50').appendChild(g_spells.createIcon(255616, 0, \"0\"));\nWH.ge('icontab-icon51').appendChild(g_spells.createIcon(256802, 0, \"0\"));\nWH.ge('icontab-icon52').appendChild(g_spells.createIcon(257045, 0, \"0\"));\nWH.ge('icontab-icon53').appendChild(g_spells.createIcon(257276, 0, \"0\"));\nWH.ge('icontab-icon54').appendChild(g_spells.createIcon(257283, 0, \"0\"));\nWH.ge('icontab-icon55').appendChild(g_spells.createIcon(258361, 0, \"0\"));\nWH.ge('icontab-icon56').appendChild(g_spells.createIcon(259271, 0, \"0\"));\nWH.ge('icontab-icon57').appendChild(g_spells.createIcon(259278, 0, \"0\"));\nWH.ge('icontab-icon58').appendChild(g_spells.createIcon(259293, 0, \"0\"));\nWH.ge('icontab-icon59').appendChild(g_spells.createIcon(259390, 0, \"0\"));\nWH.ge('icontab-icon60').appendChild(g_spells.createIcon(259396, 0, \"0\"));\nWH.ge('icontab-icon61').appendChild(g_spells.createIcon(259587, 0, \"0\"));\nWH.ge('icontab-icon62').appendChild(g_spells.createIcon(260231, 0, \"0\"));\nWH.ge('icontab-icon63').appendChild(g_spells.createIcon(260297, 0, \"0\"));\nWH.ge('icontab-icon64').appendChild(g_spells.createIcon(263585, 0, \"0\"));\nWH.ge('icontab-icon65').appendChild(g_spells.createIcon(265157, 0, \"0\"));\nWH.ge('icontab-icon66').appendChild(g_spells.createIcon(265189, 0, \"0\"));\nWH.ge('icontab-icon67').appendChild(g_spells.createIcon(265888, 0, \"0\"));\nWH.ge('icontab-icon68').appendChild(g_spells.createIcon(267617, 0, \"0\"));\nWH.ge('icontab-icon69').appendChild(g_spells.createIcon(267666, 0, \"0\"));\nWH.ge('icontab-icon70').appendChild(g_spells.createIcon(268423, 0, \"0\"));\nWH.ge('icontab-icon71').appendChild(g_spells.createIcon(268783, 0, \"0\"));\nWH.ge('icontab-icon72').appendChild(g_spells.createIcon(269747, 0, \"0\"));\nWH.ge('icontab-icon73').appendChild(g_spells.createIcon(269752, 0, \"0\"));\nWH.ge('icontab-icon74').appendChild(g_spells.createIcon(269850, 0, \"0\"));\nWH.ge('icontab-icon75').appendChild(g_spells.createIcon(270329, 0, \"0\"));\nWH.ge('icontab-icon76').appendChild(g_spells.createIcon(270332, 0, \"0\"));\nWH.ge('icontab-icon77').appendChild(g_spells.createIcon(270338, 0, \"0\"));\nWH.ge('icontab-icon78').appendChild(g_spells.createIcon(270339, 0, \"0\"));\nWH.ge('icontab-icon79').appendChild(g_spells.createIcon(271048, 0, \"0\"));\nWH.ge('icontab-icon80').appendChild(g_spells.createIcon(271049, 0, \"0\"));\nWH.ge('icontab-icon81').appendChild(g_spells.createIcon(271625, 0, \"0\"));\nWH.ge('icontab-icon82').appendChild(g_spells.createIcon(272745, 0, \"0\"));\nWH.ge('icontab-icon83').appendChild(g_spells.createIcon(273289, 0, \"0\"));\nWH.ge('icontab-icon84').appendChild(g_spells.createIcon(278565, 0, \"0\"));\nWH.ge('icontab-icon85').appendChild(g_spells.createIcon(291367, 0, \"0\"));\nWH.ge('icontab-icon86').appendChild(g_spells.createIcon(321538, 0, \"0\"));\nWH.ge('icontab-icon87').appendChild(g_spells.createIcon(336899, 0, \"0\"));\nWH.ge('icontab-icon88').appendChild(g_spells.createIcon(344120, 0, \"0\"));\nWH.ge('icontab-icon89').appendChild(g_spells.createIcon(344121, 0, \"0\"));\n//]]>\n",
+    "": "Wildfire Cluster",
+    "Effect #2": "DummyServer-side script\n",
+    "Effect #3": "DummyValue: 12Server-side script\n",
+    "Effect #4": "Apply Aura: Modifies Periodic Damage/Healing Done (22)Value: 25%\nAffected Spells:\nSteady Shot\nSteel Trap\nArcane Shot\nVolley\nChakrams\nBloodshed\nMongoose Bite\nSerpent Sting\nFlanking Strike\nStomp\nButchery\nKill Shot\nSerpent Sting\nKill Command\nMulti-Shot\nMulti-Shot\nBarbed Shot\nAimed Shot\n \n\n\nShow 7 More \n\n\nCobra Shot\nCarve\nBursting Shot\nRaptor Strike\nKill Shot\nKill Command\nSniper Shot\n\n//<![CDATA[\nWH.ge('icontab-icon90').appendChild(g_spells.createIcon(56641, 0, \"0\"));\nWH.ge('icontab-icon91').appendChild(g_spells.createIcon(162487, 0, \"0\"));\nWH.ge('icontab-icon92').appendChild(g_spells.createIcon(185358, 0, \"0\"));\nWH.ge('icontab-icon93').appendChild(g_spells.createIcon(260247, 0, \"0\"));\nWH.ge('icontab-icon94').appendChild(g_spells.createIcon(259398, 0, \"0\"));\nWH.ge('icontab-icon95').appendChild(g_spells.createIcon(321530, 0, \"0\"));\nWH.ge('icontab-icon96').appendChild(g_spells.createIcon(259387, 0, \"0\"));\nWH.ge('icontab-icon97').appendChild(g_spells.createIcon(271788, 0, \"0\"));\nWH.ge('icontab-icon98').appendChild(g_spells.createIcon(269751, 0, \"0\"));\nWH.ge('icontab-icon99').appendChild(g_spells.createIcon(199530, 0, \"0\"));\nWH.ge('icontab-icon100').appendChild(g_spells.createIcon(212436, 0, \"0\"));\nWH.ge('icontab-icon101').appendChild(g_spells.createIcon(320976, 0, \"0\"));\nWH.ge('icontab-icon102').appendChild(g_spells.createIcon(259491, 0, \"0\"));\nWH.ge('icontab-icon103').appendChild(g_spells.createIcon(259489, 0, \"0\"));\nWH.ge('icontab-icon104').appendChild(g_spells.createIcon(2643, 0, \"0\"));\nWH.ge('icontab-icon105').appendChild(g_spells.createIcon(257620, 0, \"0\"));\nWH.ge('icontab-icon106').appendChild(g_spells.createIcon(217200, 0, \"0\"));\nWH.ge('icontab-icon107').appendChild(g_spells.createIcon(19434, 0, \"0\"));\nWH.ge('icontab-icon108').appendChild(g_spells.createIcon(193455, 0, \"0\"));\nWH.ge('icontab-icon109').appendChild(g_spells.createIcon(187708, 0, \"0\"));\nWH.ge('icontab-icon110').appendChild(g_spells.createIcon(186387, 0, \"0\"));\nWH.ge('icontab-icon111').appendChild(g_spells.createIcon(186270, 0, \"0\"));\nWH.ge('icontab-icon112').appendChild(g_spells.createIcon(53351, 0, \"0\"));\nWH.ge('icontab-icon113').appendChild(g_spells.createIcon(34026, 0, \"0\"));\nWH.ge('icontab-icon114').appendChild(g_spells.createIcon(203155, 0, \"0\"));\n//]]>\nSee more\nAuto Shot\nExplosive Trap\nCareful Aim\nSerpent Sting\nBarrage\nA Murder of Crows\nChimaera Shot\nChimaera Shot\nLacerate\nMongoose Bite\nHatchet Toss\nCaltrops\nVolley\nBlack Arrow\nDragonsfire Grenade\nDragonsfire Conflagration\nPiercing Shot\nThrow Axe\n \n\n\nShow 46 More \n\n\nSteel Trap Expert\nStampede\nDire Beast: Hawk\nExplosive Shot\nSidewinders\nSerpent Sting\nMongoose Bite\nSurv 8 - Flanking Strike\nRapid Fire\nAimed Shot\nArcane Shot\nMulti-Shot\nRaptor Strike\nFlanking Strike\nSerpent Sting\nDisengage\nChakrams\nScorching Wildfire\nViolent Reaction\nArctic Bola\nRapid Fire\nWildfire Bomb\nRaptor Strike\nMongoose Bite\nChakrams\nChakrams\nSerpent Sting\nKill Command\nWildfire Bomb\nFlanking Strike\nExplosive Shot\nPheromone Bomb\nPheromone Bomb\nShrapnel Bomb\nShrapnel Bomb\nVolatile Bomb\nVolatile Bomb\nHarpoon\nWildfire Cluster\nLatent Poison\nMulti-Shot\nKill Command\nBloodshed\nWildfire Cluster\nChimaera Shot\nChimaera Shot\n\n//<![CDATA[\nWH.ge('icontab-icon115').appendChild(g_spells.createIcon(75, 0, \"0\"));\nWH.ge('icontab-icon116').appendChild(g_spells.createIcon(13812, 0, \"0\"));\nWH.ge('icontab-icon117').appendChild(g_spells.createIcon(63468, 0, \"0\"));\nWH.ge('icontab-icon118').appendChild(g_spells.createIcon(118253, 0, \"0\"));\nWH.ge('icontab-icon119').appendChild(g_spells.createIcon(120361, 0, \"0\"));\nWH.ge('icontab-icon120').appendChild(g_spells.createIcon(131900, 0, \"0\"));\nWH.ge('icontab-icon121').appendChild(g_spells.createIcon(171454, 0, \"0\"));\nWH.ge('icontab-icon122').appendChild(g_spells.createIcon(171457, 0, \"0\"));\nWH.ge('icontab-icon123').appendChild(g_spells.createIcon(185855, 0, \"0\"));\nWH.ge('icontab-icon124').appendChild(g_spells.createIcon(190928, 0, \"0\"));\nWH.ge('icontab-icon125').appendChild(g_spells.createIcon(193265, 0, \"0\"));\nWH.ge('icontab-icon126').appendChild(g_spells.createIcon(194279, 0, \"0\"));\nWH.ge('icontab-icon127').appendChild(g_spells.createIcon(194392, 0, \"0\"));\nWH.ge('icontab-icon128').appendChild(g_spells.createIcon(194599, 0, \"0\"));\nWH.ge('icontab-icon129').appendChild(g_spells.createIcon(194858, 0, \"0\"));\nWH.ge('icontab-icon130').appendChild(g_spells.createIcon(194859, 0, \"0\"));\nWH.ge('icontab-icon131').appendChild(g_spells.createIcon(198670, 0, \"0\"));\nWH.ge('icontab-icon132').appendChild(g_spells.createIcon(200167, 0, \"0\"));\nWH.ge('icontab-icon133').appendChild(g_spells.createIcon(201199, 0, \"0\"));\nWH.ge('icontab-icon134').appendChild(g_spells.createIcon(201594, 0, \"0\"));\nWH.ge('icontab-icon135').appendChild(g_spells.createIcon(208684, 0, \"0\"));\nWH.ge('icontab-icon136').appendChild(g_spells.createIcon(212680, 0, \"0\"));\nWH.ge('icontab-icon137').appendChild(g_spells.createIcon(214581, 0, \"0\"));\nWH.ge('icontab-icon138').appendChild(g_spells.createIcon(255556, 0, \"0\"));\nWH.ge('icontab-icon139').appendChild(g_spells.createIcon(255616, 0, \"0\"));\nWH.ge('icontab-icon140').appendChild(g_spells.createIcon(256802, 0, \"0\"));\nWH.ge('icontab-icon141').appendChild(g_spells.createIcon(257045, 0, \"0\"));\nWH.ge('icontab-icon142').appendChild(g_spells.createIcon(257276, 0, \"0\"));\nWH.ge('icontab-icon143').appendChild(g_spells.createIcon(257283, 0, \"0\"));\nWH.ge('icontab-icon144').appendChild(g_spells.createIcon(258361, 0, \"0\"));\nWH.ge('icontab-icon145').appendChild(g_spells.createIcon(259271, 0, \"0\"));\nWH.ge('icontab-icon146').appendChild(g_spells.createIcon(259278, 0, \"0\"));\nWH.ge('icontab-icon147').appendChild(g_spells.createIcon(259293, 0, \"0\"));\nWH.ge('icontab-icon148').appendChild(g_spells.createIcon(259390, 0, \"0\"));\nWH.ge('icontab-icon149').appendChild(g_spells.createIcon(259396, 0, \"0\"));\nWH.ge('icontab-icon150').appendChild(g_spells.createIcon(259587, 0, \"0\"));\nWH.ge('icontab-icon151').appendChild(g_spells.createIcon(260231, 0, \"0\"));\nWH.ge('icontab-icon152').appendChild(g_spells.createIcon(260297, 0, \"0\"));\nWH.ge('icontab-icon153').appendChild(g_spells.createIcon(263585, 0, \"0\"));\nWH.ge('icontab-icon154').appendChild(g_spells.createIcon(265157, 0, \"0\"));\nWH.ge('icontab-icon155').appendChild(g_spells.createIcon(265189, 0, \"0\"));\nWH.ge('icontab-icon156').appendChild(g_spells.createIcon(265888, 0, \"0\"));\nWH.ge('icontab-icon157').appendChild(g_spells.createIcon(267617, 0, \"0\"));\nWH.ge('icontab-icon158').appendChild(g_spells.createIcon(267666, 0, \"0\"));\nWH.ge('icontab-icon159').appendChild(g_spells.createIcon(268423, 0, \"0\"));\nWH.ge('icontab-icon160').appendChild(g_spells.createIcon(268783, 0, \"0\"));\nWH.ge('icontab-icon161').appendChild(g_spells.createIcon(269747, 0, \"0\"));\nWH.ge('icontab-icon162').appendChild(g_spells.createIcon(269752, 0, \"0\"));\nWH.ge('icontab-icon163').appendChild(g_spells.createIcon(269850, 0, \"0\"));\nWH.ge('icontab-icon164').appendChild(g_spells.createIcon(270329, 0, \"0\"));\nWH.ge('icontab-icon165').appendChild(g_spells.createIcon(270332, 0, \"0\"));\nWH.ge('icontab-icon166').appendChild(g_spells.createIcon(270338, 0, \"0\"));\nWH.ge('icontab-icon167').appendChild(g_spells.createIcon(270339, 0, \"0\"));\nWH.ge('icontab-icon168').appendChild(g_spells.createIcon(271048, 0, \"0\"));\nWH.ge('icontab-icon169').appendChild(g_spells.createIcon(271049, 0, \"0\"));\nWH.ge('icontab-icon170').appendChild(g_spells.createIcon(271625, 0, \"0\"));\nWH.ge('icontab-icon171').appendChild(g_spells.createIcon(272745, 0, \"0\"));\nWH.ge('icontab-icon172').appendChild(g_spells.createIcon(273289, 0, \"0\"));\nWH.ge('icontab-icon173').appendChild(g_spells.createIcon(278565, 0, \"0\"));\nWH.ge('icontab-icon174').appendChild(g_spells.createIcon(291367, 0, \"0\"));\nWH.ge('icontab-icon175').appendChild(g_spells.createIcon(321538, 0, \"0\"));\nWH.ge('icontab-icon176').appendChild(g_spells.createIcon(336899, 0, \"0\"));\nWH.ge('icontab-icon177').appendChild(g_spells.createIcon(344120, 0, \"0\"));\nWH.ge('icontab-icon178').appendChild(g_spells.createIcon(344121, 0, \"0\"));\n//]]>\n",
+    "Flags": [
+      "Cannot be used while shapeshifted",
+      "Unaffected by invulnerability",
+      "Generates no threat",
+      "Remove auras on immunity",
+      "Can be used while stunned",
+      "Usable while feared",
+      "Usable while confused"
+    ]
+  },
   "19577": {
     "Description": "Commands your pet to intimidate the target, stunning it for 5 sec.",
     "Duration": "n/a",
@@ -3376,6 +3526,23 @@
       "Does not require shapeshift"
     ]
   },
+  "29722": {
+    "Description": "Draws fire toward the enemy, dealing (64.1% of Spell power) Fire damage.Generates 2 Soul Shard Fragments and an additional 1 on critical strikes.",
+    "Duration": "n/a",
+    "School": "Fire",
+    "Mechanic": "n/a",
+    "Dispel type": "n/a",
+    "GCD category": "Normal",
+    "Cost": "2% of base mana",
+    "Range": "40 yards (Long)",
+    "Cast time": "2 seconds",
+    "Cooldown": "n/a",
+    "GCD": "1.5 seconds",
+    "Effect #1": "DummyServer-side script\n",
+    "Effect #2": "School Damage (Fire) ({term('spmod_colon')}0.641)Radius: 8 yards\n",
+    "Effect #3": "DummyValue: 100Server-side script\n",
+    "Flags": ["Cannot be used while shapeshifted", "Bandage spell"]
+  },
   "30146": {
     "Description": "Summons a Felguard under your command as a powerful melee combatant.",
     "Duration": "n/a",
@@ -3389,6 +3556,25 @@
     "Cooldown": "n/a",
     "GCD": "1.5 seconds",
     "Effect": "Summon Pet (Felguard)Value: 1\n"
+  },
+  "30283": {
+    "Description": "Stuns all enemies within 8 yds for 3 sec. 3 seconds remaining",
+    "Duration": "3 seconds",
+    "School": "Shadow",
+    "Mechanic": "Stunned",
+    "Dispel type": "Magic",
+    "GCD category": "Normal",
+    "Cost": "1% of base mana",
+    "Range": "35 yards (Medium-Long)",
+    "Cast time": "1.5 seconds",
+    "Cooldown": "1 minute",
+    "GCD": "1.5 seconds",
+    "Effect": "Apply Aura: StunRadius: 8 yards\n",
+    "Flags": [
+      "Cannot be used while shapeshifted",
+      "Cannot be reflected",
+      "All spell effects are harmful"
+    ]
   },
   "30449": {
     "Description": "Steals Kleptomaniaall beneficial magic effects from the target. These effects lasts a maximum of 2 mina beneficial magic effect from the target. This effect lasts a maximum of 2 min.",
@@ -3623,6 +3809,46 @@
       "Persists through death"
     ]
   },
+  "32375": {
+    "Description": "Dispels magic in a 15 yard radius, removing all harmful Magic from 5 friendly targets and 1 beneficial Magic effects from 5 enemy targets. Mass DispelPotent enough to remove Magic that is normally undispellable",
+    "Duration": "n/a",
+    "School": "Holy",
+    "Mechanic": "n/a",
+    "Dispel type": "n/a",
+    "GCD category": "Normal",
+    "Cost": "8% of base mana",
+    "Range": "30 yards (Medium)",
+    "Cast time": "1.5 seconds",
+    "Cooldown": "45 seconds",
+    "GCD": "1.5 seconds",
+    "Effect #1": "Dispel (Magic)Value: 100Radius: 15 yards\n",
+    "Effect #2": "Trigger Spell\nMass Dispel\n\n//<![CDATA[\nWH.ge('icontab-icon1').appendChild(g_spells.createIcon(32592, 1, \"0\"));\n//]]>\n",
+    "": "Mass Dispel",
+    "Effect #3": "Trigger Spell\nMass Dispel\n\n//<![CDATA[\nWH.ge('icontab-icon2').appendChild(g_spells.createIcon(72734, 1, \"0\"));\n//]]>\n",
+    "Effect #4": "DummyValue: 5Server-side script\n",
+    "Flags": ["Unaffected by invulnerability"]
+  },
+  "32645": {
+    "Description": "Finishing move that drives your poisoned blades in deep, dealing instant Nature damage and increasing your poison application chance by 30%. Damage and duration increased per combo point.   1 point  : [(16% of Attack power) * 1] damage, 2 sec   2 points: [(16% of Attack power) * 2] damage, 3 sec   3 points: [(16% of Attack power) * 3] damage, 4 sec   4 points: [(16% of Attack power) * 4] damage, 5 sec   5 points: [(16% of Attack power) * 5] damage, 6 secDeeper Stratagem   6 points: [(16% of Attack power) * 6] damage, 7 sec 1 second remaining",
+    "Duration": "1 second",
+    "School": "Nature",
+    "Mechanic": "n/a",
+    "Dispel type": "n/a",
+    "GCD category": "Normal",
+    "Cost": "35 Energy / 1 to 5 Combo Points",
+    "Range": "5 yards (Combat)",
+    "Cast time": "Instant",
+    "Cooldown": "n/a",
+    "GCD": "1 second",
+    "Aura proc chance": "100%",
+    "Effect #1": "School Damage (Nature) ({term('apmod_colon')}0.16)\n",
+    "Effect #2": "Apply Aura: Modifies Proc Chance (18)Value: 30\nAffected Spells:\nWound Poison\nDeadly Poison\nSlaughter Poison\n\n//<![CDATA[\nWH.ge('icontab-icon1').appendChild(g_spells.createIcon(8679, 0, \"0\"));\nWH.ge('icontab-icon2').appendChild(g_spells.createIcon(2823, 0, \"0\"));\nWH.ge('icontab-icon3').appendChild(g_spells.createIcon(323658, 0, \"0\"));\n//]]>\n",
+    "": "Mutilate",
+    "Effect #3": "Apply Aura: Modifies Critical Strike Chance (7)Affected Spells:\nWound Poison\nDeadly Poison\nSlaughter\nSlaughter Poison\nSlaughter Poison\n\n//<![CDATA[\nWH.ge('icontab-icon4').appendChild(g_spells.createIcon(8679, 0, \"0\"));\nWH.ge('icontab-icon5').appendChild(g_spells.createIcon(2823, 0, \"0\"));\nWH.ge('icontab-icon6').appendChild(g_spells.createIcon(323654, 0, \"0\"));\nWH.ge('icontab-icon7').appendChild(g_spells.createIcon(323658, 0, \"0\"));\nWH.ge('icontab-icon8').appendChild(g_spells.createIcon(323658, 0, \"0\"));\n//]]>\nSee more\nDeadly Poison\nDeadly Poison\nWound Poison\nWound Poison\nVenomous Wound\nVenomous Wound\nDeadly Poison\nToxic Shock\nToxic Shock\nAgonizing Poison\nAgonizing Poison\nSlaughter Poison\nSlaughter Poison\nSlaughter Poison\nSlaughter Poison\nSlaughter Poison\n\n//<![CDATA[\nWH.ge('icontab-icon9').appendChild(g_spells.createIcon(2818, 0, \"0\"));\nWH.ge('icontab-icon10').appendChild(g_spells.createIcon(2818, 0, \"0\"));\nWH.ge('icontab-icon11').appendChild(g_spells.createIcon(8680, 0, \"0\"));\nWH.ge('icontab-icon12').appendChild(g_spells.createIcon(8680, 0, \"0\"));\nWH.ge('icontab-icon13').appendChild(g_spells.createIcon(79136, 0, \"0\"));\nWH.ge('icontab-icon14').appendChild(g_spells.createIcon(79136, 0, \"0\"));\nWH.ge('icontab-icon15').appendChild(g_spells.createIcon(113780, 0, \"0\"));\nWH.ge('icontab-icon16').appendChild(g_spells.createIcon(115195, 0, \"0\"));\nWH.ge('icontab-icon17').appendChild(g_spells.createIcon(115195, 0, \"0\"));\nWH.ge('icontab-icon18').appendChild(g_spells.createIcon(200803, 0, \"0\"));\nWH.ge('icontab-icon19').appendChild(g_spells.createIcon(200803, 0, \"0\"));\nWH.ge('icontab-icon20').appendChild(g_spells.createIcon(323659, 0, \"0\"));\nWH.ge('icontab-icon21').appendChild(g_spells.createIcon(323659, 0, \"0\"));\nWH.ge('icontab-icon22').appendChild(g_spells.createIcon(323659, 0, \"0\"));\nWH.ge('icontab-icon23').appendChild(g_spells.createIcon(323660, 0, \"0\"));\nWH.ge('icontab-icon24').appendChild(g_spells.createIcon(323662, 0, \"0\"));\n//]]>\n",
+    "Effect #4": "Apply Aura: Modifies Damage/Healing DoneAffected Spells:\nMutilate\nMutilate\nBlindside\n\n//<![CDATA[\nWH.ge('icontab-icon25').appendChild(g_spells.createIcon(5374, 0, \"0\"));\nWH.ge('icontab-icon26').appendChild(g_spells.createIcon(27576, 0, \"0\"));\nWH.ge('icontab-icon27').appendChild(g_spells.createIcon(111240, 0, \"0\"));\n//]]>\n",
+    "Effect #5": "Apply Aura: Modifies Critical Strike Chance (7)Affected Spells:\nMutilate\nMutilate\n\n//<![CDATA[\nWH.ge('icontab-icon28').appendChild(g_spells.createIcon(5374, 0, \"0\"));\nWH.ge('icontab-icon29').appendChild(g_spells.createIcon(27576, 0, \"0\"));\n//]]>\n",
+    "Flags": ["Cannot be used while shapeshifted", "Requires main hand weapon"]
+  },
   "33076": {
     "Description": "Places a ward on an ally that heals them for (61% of Spell power) the next time they take damage, and then jumps to another ally within 20 yds. Jumps up to 5 times and lasts 30 sec after each jump.",
     "Duration": "n/a",
@@ -3753,6 +3979,21 @@
       "Generates no threat"
     ]
   },
+  "34428": {
+    "Description": "Strikes the target, causing (40% of Attack power) damage and healing you for 10% of your maximum health.Only usable within 20 sec after you kill an enemy that yields experience or honor.",
+    "Duration": "n/a",
+    "School": "Physical",
+    "Mechanic": "n/a",
+    "Dispel type": "n/a",
+    "GCD category": "Normal",
+    "Cost": "None",
+    "Range": "5 yards (Combat)",
+    "Cast time": "Instant",
+    "Cooldown": "n/a",
+    "GCD": "1.5 seconds",
+    "Effect": "School Damage (Physical) ({term('apmod_colon')}0.4)\n",
+    "Flags": ["Cannot be used while shapeshifted"]
+  },
   "34433": {
     "Description": "Summons a shadowy fiend to attack the target for 15 sec. Shadow (Level 32)Generates 3 Insanity each time the Shadowfiend attacks. Discipline (Level 32)Generates 1% Mana each time the Shadowfiend attacks. 15 seconds remaining",
     "Duration": "15 seconds",
@@ -3793,6 +4034,27 @@
       "Cannot be used while shapeshifted",
       "Starts cooldown after aura fades",
       "Generates no threat"
+    ]
+  },
+  "34861": {
+    "Description": "Releases miraculous light at a target location, healing up to 6 allies within 10 yds for (245% of Spell power).Cooldown reduced by 6 sec when you cast Prayer of Healing and by 2 sec when you cast Renew.",
+    "Duration": "n/a",
+    "School": "Holy",
+    "Mechanic": "n/a",
+    "Dispel type": "n/a",
+    "GCD category": "Normal",
+    "Cost": "5% of base mana",
+    "Range": "40 yards (Long)",
+    "Cast time": "Instant",
+    "Cooldown": "1 minute",
+    "GCD": "1.5 seconds",
+    "Effect #1": "Heal ({term('spmod_colon')}2.45)Radius: 10 yards\n",
+    "Effect #2": "DummyValue: 6Server-side script\n",
+    "Effect #3": "DummyValue: 6Server-side script\n",
+    "Effect #4": "DummyValue: 2Server-side script\n",
+    "Flags": [
+      "Cannot be used while shapeshifted",
+      "Does not require shapeshift"
     ]
   },
   "34914": {
@@ -4018,6 +4280,25 @@
     "Effect": "Interrupt CastMechanic: Interrupted\n",
     "Flags": ["Cannot miss"]
   },
+  "47536": {
+    "Description": "Immediately Power Word: Shield your target, and for the next 8 sec, Power Word: Shield absorbs an additional 200% and may be cast on targets with Weakened Soul. 8 seconds remaining",
+    "Duration": "8 seconds",
+    "School": "Holy",
+    "Mechanic": "n/a",
+    "Dispel type": "n/a",
+    "GCD category": "Normal",
+    "Cost": "3.1% of base mana",
+    "Range": "40 yards (Long)",
+    "Cast time": "Instant",
+    "Cooldown": "1.5 minutes",
+    "GCD": "1.5 seconds",
+    "Effect #1": "DummyServer-side script\n",
+    "Effect #2": "Apply Aura: Dummy (11)Value: 200Server-side script\n",
+    "Effect #3": "Apply Aura: Modifies Power Cost (14)Affected Spells:\nPower Word: Shield\n\n//<![CDATA[\nWH.ge('icontab-icon1').appendChild(g_spells.createIcon(17, 0, \"0\"));\n//]]>\nSee more\nPower Word: Shield\n\n//<![CDATA[\nWH.ge('icontab-icon2').appendChild(g_spells.createIcon(123258, 0, \"0\"));\n//]]>\n",
+    "": "Power Word: Shield",
+    "Effect #4": "Apply Aura: Water Walking",
+    "Effect #5": "Apply Aura: Mod Dispel Resistance %"
+  },
   "47540": {
     "Description": "Launches a volley of holy light at the target, causing Castigation[(40% of Spell power) * 4][(40% of Spell power) * 3] Holy damage to an enemy or Castigation[(125% of Spell power) * 4][(125% of Spell power) * 3] healing to an ally over 2 sec. Castable while moving.",
     "Duration": "n/a",
@@ -4039,6 +4320,22 @@
       "Generates no threat",
       "Starts ticking at aura application"
     ]
+  },
+  "47541": {
+    "Description": "Fires a blast of unholy energy at the target, causing (50.3% of Attack power) Shadow damage to an enemy or healing an Undead ally for (265% of Attack power) health. Unholy (Level 41)Reduces the cooldown of Dark Transformation by 1 sec",
+    "Duration": "n/a",
+    "School": "Shadow",
+    "Mechanic": "n/a",
+    "Dispel type": "n/a",
+    "GCD category": "Normal",
+    "Cost": "40 Runic Power",
+    "Range": "30 yards (Medium)",
+    "Cast time": "Instant",
+    "Cooldown": "n/a",
+    "GCD": "1.5 seconds",
+    "Effect #1": "DummyServer-side script\n",
+    "Effect #2": "DummyValue: 1000Server-side script\n",
+    "Flags": ["Generates no threat"]
   },
   "47568": {
     "Description": "Empower your rune weapon, gaining 15% Haste and generating 1 Rune and 5 Runic Power instantly and every 5 sec for 20 sec. 20 seconds remaining",
@@ -4305,6 +4602,26 @@
     "Effect #4": "Trigger Spell\nFrost Strike\n\n//<![CDATA[\nWH.ge('icontab-icon3').appendChild(g_spells.createIcon(325464, 1, \"0\"));\n//]]>\n",
     "Flags": ["Requires main hand weapon"]
   },
+  "49184": {
+    "Description": "Blast the target with a frigid wind, dealing [(14.37% of Attack power) * [(Attack power * 0.98)][((Attack power + Offhand attack power) * 2 / 3)] -- 2H, DW / Attack power] Northrend WindsFrost damage and applying Frost Fever to the targetFrost damage to that foe, and reduced damage to all other enemies within 10 yards, infecting all targets with Frost Fever. Frost FeverA disease that deals [(171.2% of Attack power) * [(Attack power * 0.98)][((Attack power + Offhand attack power) * 2 / 3)] -- 2H, DW / Attack power] Frost damage over 24 sec and has a chance to grant the Death Knight 5 Runic Power each time it deals damage.",
+    "Duration": "n/a",
+    "School": "Frost",
+    "Mechanic": "n/a",
+    "Dispel type": "n/a",
+    "GCD category": "Normal",
+    "Cost": "1 Rune / -10 Runic Power",
+    "Range": "30 yards (Medium)",
+    "Cast time": "Instant",
+    "Cooldown": "n/a",
+    "GCD": "1.5 seconds",
+    "Effect #1": "School Damage (Frost) ({term('apmod_colon')}0.1437)Radius: 10 yards\n",
+    "Effect #2": "DummyServer-side script\n",
+    "Flags": [
+      "Cannot be reflected",
+      "All spell effects are harmful",
+      "Bandage spell"
+    ]
+  },
   "49576": {
     "Description": "Harnesses the energy that surrounds and binds all matter, drawing the target toward you Bloodand forcing the enemy to attack you",
     "Duration": "n/a",
@@ -4319,6 +4636,24 @@
     "GCD": "500 milliseconds",
     "Effect": "Script Effect",
     "Flags": ["Requires untapped target", "Does not engage target"]
+  },
+  "49998": {
+    "Description": "Focuses dark power into a strike Frostwith both weapons, that deals a total of [(46.4256% of Attack power) + (29.835% of Attack power)] Blood ,  Unholy ,  Initialthat deals (46.4256% of Attack power) Physical damage and heals you for 25% of all damage taken in the last 5 sec, minimum 7% of maximum health.",
+    "Duration": "n/a",
+    "School": "Physical",
+    "Mechanic": "n/a",
+    "Dispel type": "n/a",
+    "GCD category": "Normal",
+    "Cost": "45 Runic Power",
+    "Range": "5 yards (Combat)",
+    "Cast time": "Instant",
+    "Cooldown": "n/a",
+    "GCD": "1.5 seconds",
+    "Effect #1": "School Damage (Physical) ({term('apmod_colon')}0.464256)\n",
+    "Effect #2": "DummyValue: 25Server-side script\n",
+    "Effect #3": "DummyValue: 7Server-side script\n",
+    "Effect #4": "DummyValue: 5Server-side script\n",
+    "Flags": ["Requires main hand weapon"]
   },
   "50334": {
     "Description": "Go berserk for 15 sec, reducing the cooldowns of Mangle, Thrash, Growl, and Frenzied Regeneration by 50% and the cost of Ironfur by 50%. 15 seconds remaining",
@@ -4640,6 +4975,26 @@
     "Effect": "School Damage (Holy) ({term('apmod_colon')}0.5)Radius: 6 yards\n",
     "Flags": ["Cannot be used while shapeshifted"]
   },
+  "55090": {
+    "Description": "An unholy strike that deals (34.5% of Attack power) Physical damage and (19% of Attack power)% Shadow damage, and causes 1 Festering Wound to burst.",
+    "Duration": "n/a",
+    "School": "Physical",
+    "Mechanic": "n/a",
+    "Dispel type": "n/a",
+    "GCD category": "Normal",
+    "Cost": "1 Rune / -10 Runic Power",
+    "Range": "5 yards (Combat)",
+    "Cast time": "Instant",
+    "Cooldown": "n/a",
+    "GCD": "1.5 seconds",
+    "Max targets": "5 - Default",
+    "Effect #1": "DummyServer-side script\n",
+    "Effect #2": "School Damage (Physical) ({term('apmod_colon')}0.345)Radius: 8 yards\n",
+    "Effect #3": "Trigger Spell\nScourge Strike\n\n//<![CDATA[\nWH.ge('icontab-icon1').appendChild(g_spells.createIcon(70890, 1, \"0\"));\n//]]>\n",
+    "": "Scourge Strike",
+    "Effect #4": "DummyValue: 5Server-side script\n",
+    "Flags": ["Requires main hand weapon", "Bandage spell"]
+  },
   "55233": {
     "Description": "Embrace your undeath, increasing your maximum health by 30% and increasing all healing and absorbs received by 30% for 10 sec. 10 seconds remaining",
     "Duration": "10 seconds",
@@ -4950,6 +5305,32 @@
       "Requires main hand weapon"
     ]
   },
+  "64843": {
+    "Description": "Heals all party or raid members within 40 yards for [5 * (60% of Spell power)] over 8 sec, and increases healing done to them by 10% for 8 sec. Healing increased by 100% when not in a raid. 8 seconds remaining",
+    "Duration": "8 seconds",
+    "School": "Holy",
+    "Mechanic": "n/a",
+    "Dispel type": "n/a",
+    "GCD category": "Normal",
+    "Cost": "4.4% of base mana",
+    "Range": "40 yards (Long)",
+    "Cast time": "Channeled",
+    "Cooldown": "3 minutes",
+    "GCD": "1.5 seconds",
+    "Effect #1": "Apply Aura: Periodically trigger spellInterval: 2 seconds\n\nDivine Hymn\n\n//<![CDATA[\nWH.ge('icontab-icon1').appendChild(g_spells.createIcon(64844, 1, \"0\"));\n//]]>\n",
+    "": "Divine Hymn",
+    "Effect #2": "Apply Aura: DummyValue: 100Server-side script\n",
+    "Effect #3": "Apply Aura: DummyServer-side script\n",
+    "Effect #4": "DummyValue: 12Server-side script\n",
+    "Flags": [
+      "Cannot be used while shapeshifted",
+      "Channeled",
+      "Channeled",
+      "Does not require shapeshift",
+      "Cannot be Spellstolen",
+      "Starts ticking at aura application"
+    ]
+  },
   "64901": {
     "Description": "Bolster the morale of all healers in your party or raid within 40 yards, restoring 2% of their missing mana immediately and every 1 sec for 5 sec. 5 seconds remaining",
     "Duration": "5 seconds",
@@ -5057,6 +5438,22 @@
     "GCD": "1.5 seconds",
     "Effect": "Heal ({term('spmod_colon')}3)\n",
     "Flags": ["Cannot be used while shapeshifted"]
+  },
+  "77575": {
+    "Description": "Deals (10% of Attack power) Shadow damage to the target and infects all nearby enemies with Virulent Plague. Virulent PlagueA disease that deals (112.5% of Attack power) Shadow damage over 27 sec. It erupts when the infected target dies, dealing (24% of Attack power) Shadow damage to nearby enemies.",
+    "Duration": "n/a",
+    "School": "Shadow",
+    "Mechanic": "n/a",
+    "Dispel type": "n/a",
+    "GCD category": "Normal",
+    "Cost": "1 Rune / -10 Runic Power",
+    "Range": "30 yards (Medium)",
+    "Cast time": "Instant",
+    "Cooldown": "n/a",
+    "GCD": "1.5 seconds",
+    "Effect #1": "School Damage (Shadow) ({term('apmod_colon')}0.1)\n",
+    "Effect #2": "Trigger Spell\nVirulent Plague\n\n//<![CDATA[\nWH.ge('icontab-icon1').appendChild(g_spells.createIcon(191587, 1, \"0\"));\n//]]>\n",
+    "": "Virulent Plague"
   },
   "78674": {
     "Description": "Launch a surge of stellar energies at the target, dealing (207% of Spell power) Astral damage, and empowering the damage bonus of any active Eclipse for its duration.",
@@ -5724,6 +6121,22 @@
     "": "Rising Sun Kick",
     "Flags": ["Cannot be used while shapeshifted"]
   },
+  "108199": {
+    "Description": "Shadowy tendrils coil around all enemies within 15 yards of a hostile or friendly target, pulling them to the target's location.",
+    "Duration": "10 seconds",
+    "School": "Shadow",
+    "Mechanic": "n/a",
+    "Dispel type": "n/a",
+    "GCD category": "Normal",
+    "Cost": "None",
+    "Range": "30 yards (Medium)",
+    "Cast time": "Instant",
+    "Cooldown": "2 minutes",
+    "GCD": "1.5 seconds",
+    "Effect #1": "Script EffectMechanic: Gripped\n",
+    "Effect #2": "Script EffectMechanic: GrippedRadius: 15 yards\n",
+    "Effect #3": "Apply Aura: DummyMechanic: GrippedRadius: 15 yardsServer-side script\n"
+  },
   "108271": {
     "Description": "Shift partially into the elemental planes, taking 40% less damage for 8 sec. 8 seconds remaining",
     "Duration": "8 seconds",
@@ -5794,6 +6207,21 @@
       "Does not break stealth",
       "Generates no threat"
     ]
+  },
+  "109304": {
+    "Description": "Heals you for 30% Beast Mastery ,  Marksmanship ,  Survival (Level 44)and your pet for 100% of maximum health.",
+    "Duration": "n/a",
+    "School": "Physical",
+    "Mechanic": "n/a",
+    "Dispel type": "n/a",
+    "GCD category": "Normal",
+    "Cost": "None",
+    "Range": "45 yards (Longer)",
+    "Cast time": "Instant",
+    "Cooldown": "2 minutes",
+    "GCD": "1.5 seconds",
+    "Effect": "Heal for % of Total HealthValue: 30\n",
+    "Flags": ["Cannot crit"]
   },
   "110959": {
     "Description": "Makes you invisible and untargetable for 20 sec, removing all threat. Any action taken cancels this effect.You take 60% reduced damage while invisible and for 3 sec after reappearing.",
@@ -6031,6 +6459,23 @@
     "Effect #4": "Dispel (Magic)Value: 100Radius: 40 yards\n",
     "Flags": ["Generates no threat", "Remove auras on immunity"]
   },
+  "115450": {
+    "Description": "Removes all Magic, Poison, and Disease effects from the target.",
+    "Duration": "n/a",
+    "School": "Nature",
+    "Mechanic": "n/a",
+    "Dispel type": "n/a",
+    "GCD category": "Normal",
+    "Cost": "1.3% of base mana",
+    "Range": "40 yards (Long)",
+    "Cast time": "Instant",
+    "Cooldown": "8 sec",
+    "GCD": "1.5 seconds",
+    "Effect #1": "Dispel (Disease)Value: 100\n",
+    "Effect #2": "Dispel (Poison)Value: 100\n",
+    "Effect #3": "Dispel (Magic)Value: 100\n",
+    "Flags": ["All spell effects are harmful", "Cannot crit"]
+  },
   "115546": {
     "Description": "Taunts the target to attack youProvokeand causes them to move toward you at 0% increased speed.Summon Black Ox StatueThis ability can be targeted on your Statue of the Black Ox, causing the same effect on all enemies within  10 yards of the statue",
     "Duration": "n/a",
@@ -6231,6 +6676,31 @@
     "Effect #1": "DummyValue: 1Server-side script\n",
     "Effect #2": "Apply Aura: DummyServer-side script\n"
   },
+  "121253": {
+    "Description": "Smash a keg of brew on the target, dealing (85.995% of Attack power) damage to all enemies within 8 yds and reducing their movement speed by 20% for 15 sec. Deals reduced damage beyond 5 targets.Grants Shuffle for 5 sec and reduces the remaining cooldown on your Brews by 3 sec. 15 seconds remaining",
+    "Duration": "15 seconds",
+    "School": "Physical",
+    "Mechanic": "n/a",
+    "Dispel type": "n/a",
+    "GCD category": "Normal",
+    "Cost": "40 Energy",
+    "Range": "15 yards (Shorter)",
+    "Cast time": "Instant",
+    "Cooldown": "8 sec",
+    "GCD": "1 second",
+    "Effect #1": "DummyServer-side script\n",
+    "Effect #2": "School Damage (Physical) ({term('apmod_colon')}0.85995)Radius: 8 yards\n",
+    "Effect #3": "Apply Aura: Decrease Run Speed %Value: -20%Mechanic: SnaredRadius: 8 yards\n",
+    "Effect #4": "DummyValue: 3Server-side script\n",
+    "Effect #5": "Apply Aura: DummyRadius: 8 yardsServer-side script\n",
+    "Effect #6": "DummyValue: 5Server-side script\n",
+    "Effect #7": "DummyValue: 5Server-side script\n",
+    "Flags": [
+      "Cannot be reflected",
+      "All spell effects are harmful",
+      "Bandage spell"
+    ]
+  },
   "121471": {
     "Description": "Draws upon surrounding shadows to empower your weapons, causing your combo point generating abilities to generate 1 additional combo point and deal 50% additional damage as Shadow for 20 sec. 20 seconds remaining",
     "Duration": "20 seconds",
@@ -6367,6 +6837,22 @@
     "Effect #2": "Trigger Spell\nTyphoon\n\n//<![CDATA[\nWH.ge('icontab-icon1').appendChild(g_spells.createIcon(61391, 1, \"0\"));\n//]]>\n",
     "": "Typhoon",
     "Flags": ["All spell effects are harmful"]
+  },
+  "132578": {
+    "Description": "Summons an effigy of Niuzao, the Black Ox for 25 sec. Niuzao attacks your primary target, and frequently Stomps, damaging all nearby enemies Brewmaster (Level 58)for (16.38% of Attack power) plus 25% of Stagger damage recently purified.While active, 25% of damage delayed by Stagger is instead Staggered by Niuzao. 25 seconds remaining",
+    "Duration": "25 seconds",
+    "School": "Nature",
+    "Mechanic": "n/a",
+    "Dispel type": "n/a",
+    "GCD category": "Normal",
+    "Cost": "None",
+    "Range": "40 yards (Long)",
+    "Cast time": "Instant",
+    "Cooldown": "3 minutes",
+    "GCD": "1.5 seconds",
+    "Effect #1": "Summon (Niuzao)",
+    "Effect #2": "Apply Aura: DummyValue: 25Server-side script\n",
+    "Effect #3": "Apply Aura: Absorb Damage (Physical)"
   },
   "137639": {
     "Description": "Split into 3 elemental spirits for 15 sec, each spirit dealing 45% of normal damage and healing.You directly control the Storm spirit, while Earth and Fire spirits mimic your attacks on nearby enemies.While active, casting Storm, Earth, and Fire again will cause the spirits to fixate on your target. 15 seconds remaining",
@@ -7546,6 +8032,23 @@
     "Effect #2": "DummyValue: 25Server-side script\n",
     "Flags": ["Cannot be used while shapeshifted", "Generates no threat"]
   },
+  "195182": {
+    "Description": "Smash the target, dealing (37.557% of Attack power) Physical damage and generating 3 charges of Bone Shield. Bone ShieldSurrounds you with a barrier of whirling bones, increasing Armor by (50 * Strength / 100) Blood (Level 41) and your Haste by 0% Each melee attack against you consumes a charge. Lasts 30 sec or until all charges are consumed.",
+    "Duration": "n/a",
+    "School": "Physical",
+    "Mechanic": "n/a",
+    "Dispel type": "n/a",
+    "GCD category": "Normal",
+    "Cost": "2 Runes / -20 Runic Power",
+    "Range": "5 yards (Combat)",
+    "Cast time": "Instant",
+    "Cooldown": "n/a",
+    "GCD": "1.5 seconds",
+    "Effect #1": "DummyValue: 1Server-side script\n",
+    "Effect #2": "School Damage (Physical) ({term('apmod_colon')}0.37557)\n",
+    "Effect #3": "DummyValue: 3Server-side script\n",
+    "Flags": ["Requires main hand weapon"]
+  },
   "195292": {
     "Description": "Reach out with necrotic tendrils, dealing (14.742% of Attack power) Shadow damage and applying Blood Plague to your target. Blood PlagueA shadowy disease that drains 64 health from the target over 24 sec.  ",
     "Duration": "n/a",
@@ -7599,6 +8102,21 @@
       "Cannot be reflected",
       "All spell effects are harmful"
     ]
+  },
+  "196277": {
+    "Description": "Demonic forces suck all of your Wild Imps toward the target, and then cause them to violently explode, dealing (26.4% of Spell power) Shadowflame damage to all enemies within 8 yards.",
+    "Duration": "n/a",
+    "School": "Fire, Shadow",
+    "Mechanic": "n/a",
+    "Dispel type": "n/a",
+    "GCD category": "Normal",
+    "Cost": "2% of base mana",
+    "Range": "40 yards (Long)",
+    "Cast time": "Instant",
+    "Cooldown": "n/a",
+    "GCD": "1.5 seconds",
+    "Effect #1": "DummyValue: 3Server-side script\n",
+    "Effect #2": "DummyValue: 50Radius: 100 yardsServer-side script\n"
   },
   "196718": {
     "Description": "Summons darkness around you in an 8 yd radius, granting friendly targets a 20% chance to avoid all damage from an attack. Lasts 8 sec.",
@@ -7965,6 +8483,25 @@
     "Effect #1": "School Damage (Physical) ({term('apmod_colon')}0.611793)\n",
     "Effect #2": "DummyValue: 3Server-side script\n"
   },
+  "206930": {
+    "Description": "Instantly strike the target and 1 other nearby enemy, causing (24.219% of Attack power) Physical damage, and reducing enemies' movement speed by 20% for 8 sec Blood (Level 23)Generates 5 bonus Runic PowerHeartbreaker plus 2 Runic Power per additional enemy struck 8 seconds remaining",
+    "Duration": "8 seconds",
+    "School": "Physical",
+    "Mechanic": "n/a",
+    "Dispel type": "n/a",
+    "GCD category": "Normal",
+    "Cost": "1 Rune / -10 Runic Power",
+    "Range": "5 yards (Combat)",
+    "Cast time": "Instant",
+    "Cooldown": "n/a",
+    "GCD": "1.5 seconds",
+    "Effect #1": "DummyServer-side script\n",
+    "Effect #2": "School Damage (Physical) ({term('apmod_colon')}0.24219)\n",
+    "Effect #3": "DummyValue: 5Server-side script\n",
+    "Effect #4": "DummyValue: 3Server-side script\n",
+    "Effect #5": "Apply Aura: Decrease Run Speed %Value: -20%Mechanic: Snared\n",
+    "Flags": ["Requires main hand weapon"]
+  },
   "207317": {
     "Description": "Causes each of your Virulent Plagues to flare up, dealing (20% of Attack power) Shadow damage to the infected enemy, and an additional (8% of Attack power) Shadow damage to all other enemies near them.",
     "Duration": "n/a",
@@ -8111,6 +8648,24 @@
     "Effect": "Mass ResurrectionValue: 35Radius: 100 yards\n",
     "Flags": ["Cannot be used in combat", "Not usable in arena", "Guild perk"]
   },
+  "212084": {
+    "Description": "Unleash the fel within you, damaging enemies directly in front of you for [(15.561% of Attack power) * (10)] Fire damage over 2 sec. Vengeance (Level 23)Causing damage also heals you for up to [(40.95% of Attack power) * 10] health",
+    "Duration": "2 seconds",
+    "School": "Fire",
+    "Mechanic": "n/a",
+    "Dispel type": "n/a",
+    "GCD category": "Normal",
+    "Cost": "50 Fury",
+    "Range": "20 yards (Short)",
+    "Cast time": "Channeled",
+    "Cooldown": "1 minute",
+    "GCD": "1.5 seconds",
+    "Effect #1": "Apply Aura: Periodically trigger spellInterval: 200 milliseconds\n\nFel Devastation\n\n//<![CDATA[\nWH.ge('icontab-icon1').appendChild(g_spells.createIcon(212105, 1, \"0\"));\n//]]>\n",
+    "": "Fel Devastation",
+    "Effect #2": "Apply Aura: Decrease Run Speed %Value: -200%\n",
+    "Effect #3": "Apply Aura: DummyServer-side script\n",
+    "Flags": ["Channeled", "Channeled"]
+  },
   "212283": {
     "Description": "Invoke ancient symbols of power, generating 40 Energy and increasing your damage done by 15% for 10 sec.  Subtlety (Level 43)Your next combo point generator will critically strike 10 seconds remaining",
     "Duration": "10 seconds",
@@ -8225,6 +8780,22 @@
       "The aura can only affect one target"
     ]
   },
+  "218164": {
+    "Description": "Removes all Poison and Disease effects from the target.",
+    "Duration": "n/a",
+    "School": "Nature",
+    "Mechanic": "n/a",
+    "Dispel type": "n/a",
+    "GCD category": "Normal",
+    "Cost": "20 Energy",
+    "Range": "40 yards (Long)",
+    "Cast time": "Instant",
+    "Cooldown": "8 sec",
+    "GCD": "1.5 seconds",
+    "Effect #1": "Dispel (Disease)Value: 100\n",
+    "Effect #2": "Dispel (Poison)Value: 100\n",
+    "Flags": ["All spell effects are harmful", "Cannot crit"]
+  },
   "221562": {
     "Description": "Lifts the enemy target off the ground, crushing their throat with dark energy and stunning them for 5 sec. 5 seconds remaining",
     "Duration": "5 seconds",
@@ -8263,6 +8834,20 @@
       "Requires main hand weapon",
       "Starts ticking at aura application"
     ]
+  },
+  "228260": {
+    "Description": "Releases an explosive blast of pure void energy, activating Voidform and causing [(64.6% of Spell power) * 2] Shadow damage to all enemies within 10 yds of your target.During Voidform, this ability is replaced by Void Bolt.",
+    "Duration": "n/a",
+    "School": "Shadow",
+    "Mechanic": "n/a",
+    "Dispel type": "n/a",
+    "GCD category": "Normal",
+    "Cost": "None",
+    "Range": "40 yards (Long)",
+    "Cast time": "1.5 seconds",
+    "Cooldown": "1.5 minutes",
+    "GCD": "1.5 seconds",
+    "Effect": "DummyValue: 1Radius: 10 yardsServer-side script\n"
   },
   "228477": {
     "Description": "Viciously strike 5 enemies in front of you for (70.2% of Attack power) Physical damage and heal yourself for (50% of Attack power).Consumes up to 2 Soul Fragments within 25 yds Vengeance (Level 14)and heals you for an additional (50% of Attack power) for each Soul Fragment consumed",
@@ -8465,6 +9050,26 @@
     "Effect": "Trigger Missile (Phoenix Flames)",
     "Flags": ["Cannot be used while shapeshifted"]
   },
+  "257620": {
+    "Description": "Fires several missiles, hitting your current target and up to 5 enemies within 10 yards for (37.5% of Attack power) Physical damage",
+    "Duration": "n/a",
+    "School": "Physical",
+    "Mechanic": "n/a",
+    "Dispel type": "n/a",
+    "GCD category": "Normal",
+    "Cost": "20 Focus",
+    "Range": "40 yards (Long)",
+    "Cast time": "Instant",
+    "Cooldown": "n/a",
+    "GCD": "1.5 seconds",
+    "Max targets": "5 - Default",
+    "Effect": "School Damage (Physical) ({term('apmod_colon')}0.375)Radius: 10 yards\n",
+    "Flags": [
+      "Requires a ranged weapon",
+      "Cannot be used while shapeshifted",
+      "Bandage spell"
+    ]
+  },
   "258920": {
     "Description": "Engulf yourself in flames, [instantly causing (27.027% of Attack power) Fire damage to enemies within 8 yards and]radiating [(10.0901% of Attack power) * 6] Fire damage over 6 sec.Burning HatredGenerates 50 Fury over 6 sec.[Generates 20 Fury.] VengeanceGenerates 20 Fury over 6 sec. 6 seconds remaining",
     "Duration": "6 seconds",
@@ -8586,6 +9191,62 @@
       "Cannot be used while shapeshifted",
       "Generates no threat",
       "Not usable in arena"
+    ]
+  },
+  "264735": {
+    "Description": "Reduces all damage you and your pet take by 20% for 6 sec. 6 seconds remaining",
+    "Duration": "6 seconds",
+    "School": "Physical",
+    "Mechanic": "n/a",
+    "Dispel type": "n/a",
+    "GCD category": "n/a",
+    "Cost": "None",
+    "Range": "50000 yards (Anywhere - Unlimited)",
+    "Cast time": "Instant",
+    "Cooldown": "3 minutes",
+    "GCD": "0 seconds",
+    "Effect #1": "Apply Aura: Mod % Damage Taken (Arcane, Fire, Frost, Holy, Nature, Physical, Shadow)Value: -20%\n",
+    "Effect #2": "Apply Aura: Mod % Damage Taken (Arcane, Fire, Frost, Holy, Nature, Physical, Shadow)Value: -20%\n",
+    "Flags": ["Cannot be used while shapeshifted", "Generates no threat"]
+  },
+  "265187": {
+    "Description": "Summon a Demonic Tyrant to increase the duration of all of your current lesser demons by 15 sec, and increase the damage of all of your other demons by 15%, while damaging your target. Demonology (Level 58)Generates 5 Soul Shards.",
+    "Duration": "15 seconds",
+    "School": "Shadow",
+    "Mechanic": "n/a",
+    "Dispel type": "n/a",
+    "GCD category": "Normal",
+    "Cost": "2% of base mana",
+    "Range": "40 yards (Long)",
+    "Cast time": "2 seconds",
+    "Cooldown": "1.5 minutes",
+    "GCD": "1.5 seconds",
+    "Effect #1": "Summon (Demonic Tyrant)Value: 1Radius: 5 yards\n",
+    "Effect #2": "Give Power (Soul Shards)Value: 50\n",
+    "Flags": ["Cannot be used while shapeshifted"]
+  },
+  "266779": {
+    "Description": "You and your pet attack as one, increasing all damage you both deal by 20% for 20 sec. SurvivalWhile Coordinated Assault is active, Kill Command's chance to reset is increased by 25% 20 seconds remaining",
+    "Duration": "20 seconds",
+    "School": "Physical",
+    "Mechanic": "n/a",
+    "Dispel type": "n/a",
+    "GCD category": "n/a",
+    "Cost": "None",
+    "Range": "100 yards (Vision)",
+    "Cast time": "Instant",
+    "Cooldown": "2 minutes",
+    "GCD": "0 seconds",
+    "Effect #1": "Apply Aura: Modifies Damage/Healing DoneValue: 20%\nAffected Spells:\nSteady Shot\nSteel Trap\nArcane Shot\nVolley\nChakrams\nBloodshed\nMongoose Bite\nSerpent Sting\nFlanking Strike\nStomp\nButchery\nKill Shot\nSerpent Sting\nKill Command\nMulti-Shot\nMulti-Shot\nBarbed Shot\nAimed Shot\n \n\n\nShow 7 More \n\n\nCobra Shot\nCarve\nBursting Shot\nRaptor Strike\nKill Shot\nKill Command\nSniper Shot\n\n//<![CDATA[\nWH.ge('icontab-icon1').appendChild(g_spells.createIcon(56641, 0, \"0\"));\nWH.ge('icontab-icon2').appendChild(g_spells.createIcon(162487, 0, \"0\"));\nWH.ge('icontab-icon3').appendChild(g_spells.createIcon(185358, 0, \"0\"));\nWH.ge('icontab-icon4').appendChild(g_spells.createIcon(260247, 0, \"0\"));\nWH.ge('icontab-icon5').appendChild(g_spells.createIcon(259398, 0, \"0\"));\nWH.ge('icontab-icon6').appendChild(g_spells.createIcon(321530, 0, \"0\"));\nWH.ge('icontab-icon7').appendChild(g_spells.createIcon(259387, 0, \"0\"));\nWH.ge('icontab-icon8').appendChild(g_spells.createIcon(271788, 0, \"0\"));\nWH.ge('icontab-icon9').appendChild(g_spells.createIcon(269751, 0, \"0\"));\nWH.ge('icontab-icon10').appendChild(g_spells.createIcon(199530, 0, \"0\"));\nWH.ge('icontab-icon11').appendChild(g_spells.createIcon(212436, 0, \"0\"));\nWH.ge('icontab-icon12').appendChild(g_spells.createIcon(320976, 0, \"0\"));\nWH.ge('icontab-icon13').appendChild(g_spells.createIcon(259491, 0, \"0\"));\nWH.ge('icontab-icon14').appendChild(g_spells.createIcon(259489, 0, \"0\"));\nWH.ge('icontab-icon15').appendChild(g_spells.createIcon(2643, 0, \"0\"));\nWH.ge('icontab-icon16').appendChild(g_spells.createIcon(257620, 0, \"0\"));\nWH.ge('icontab-icon17').appendChild(g_spells.createIcon(217200, 0, \"0\"));\nWH.ge('icontab-icon18').appendChild(g_spells.createIcon(19434, 0, \"0\"));\nWH.ge('icontab-icon19').appendChild(g_spells.createIcon(193455, 0, \"0\"));\nWH.ge('icontab-icon20').appendChild(g_spells.createIcon(187708, 0, \"0\"));\nWH.ge('icontab-icon21').appendChild(g_spells.createIcon(186387, 0, \"0\"));\nWH.ge('icontab-icon22').appendChild(g_spells.createIcon(186270, 0, \"0\"));\nWH.ge('icontab-icon23').appendChild(g_spells.createIcon(53351, 0, \"0\"));\nWH.ge('icontab-icon24').appendChild(g_spells.createIcon(34026, 0, \"0\"));\nWH.ge('icontab-icon25').appendChild(g_spells.createIcon(203155, 0, \"0\"));\n//]]>\nSee more\nExplosive Trap\nCareful Aim\nSerpent Sting\nBarrage\nA Murder of Crows\nChimaera Shot\nChimaera Shot\nLacerate\nMongoose Bite\nHatchet Toss\nCaltrops\nVolley\nBlack Arrow\nDragonsfire Grenade\nDragonsfire Conflagration\nPiercing Shot\nThrow Axe\nSteel Trap Expert\n \n\n\nShow 45 More \n\n\nStampede\nDire Beast: Hawk\nExplosive Shot\nSidewinders\nSerpent Sting\nMongoose Bite\nSurv 8 - Flanking Strike\nRapid Fire\nAimed Shot\nArcane Shot\nMulti-Shot\nRaptor Strike\nFlanking Strike\nSerpent Sting\nDisengage\nChakrams\nScorching Wildfire\nViolent Reaction\nArctic Bola\nRapid Fire\nWildfire Bomb\nRaptor Strike\nMongoose Bite\nChakrams\nChakrams\nSerpent Sting\nKill Command\nWildfire Bomb\nFlanking Strike\nExplosive Shot\nPheromone Bomb\nPheromone Bomb\nShrapnel Bomb\nShrapnel Bomb\nVolatile Bomb\nVolatile Bomb\nHarpoon\nWildfire Cluster\nLatent Poison\nMulti-Shot\nKill Command\nBloodshed\nWildfire Cluster\nChimaera Shot\nChimaera Shot\n\n//<![CDATA[\nWH.ge('icontab-icon26').appendChild(g_spells.createIcon(13812, 0, \"0\"));\nWH.ge('icontab-icon27').appendChild(g_spells.createIcon(63468, 0, \"0\"));\nWH.ge('icontab-icon28').appendChild(g_spells.createIcon(118253, 0, \"0\"));\nWH.ge('icontab-icon29').appendChild(g_spells.createIcon(120361, 0, \"0\"));\nWH.ge('icontab-icon30').appendChild(g_spells.createIcon(131900, 0, \"0\"));\nWH.ge('icontab-icon31').appendChild(g_spells.createIcon(171454, 0, \"0\"));\nWH.ge('icontab-icon32').appendChild(g_spells.createIcon(171457, 0, \"0\"));\nWH.ge('icontab-icon33').appendChild(g_spells.createIcon(185855, 0, \"0\"));\nWH.ge('icontab-icon34').appendChild(g_spells.createIcon(190928, 0, \"0\"));\nWH.ge('icontab-icon35').appendChild(g_spells.createIcon(193265, 0, \"0\"));\nWH.ge('icontab-icon36').appendChild(g_spells.createIcon(194279, 0, \"0\"));\nWH.ge('icontab-icon37').appendChild(g_spells.createIcon(194392, 0, \"0\"));\nWH.ge('icontab-icon38').appendChild(g_spells.createIcon(194599, 0, \"0\"));\nWH.ge('icontab-icon39').appendChild(g_spells.createIcon(194858, 0, \"0\"));\nWH.ge('icontab-icon40').appendChild(g_spells.createIcon(194859, 0, \"0\"));\nWH.ge('icontab-icon41').appendChild(g_spells.createIcon(198670, 0, \"0\"));\nWH.ge('icontab-icon42').appendChild(g_spells.createIcon(200167, 0, \"0\"));\nWH.ge('icontab-icon43').appendChild(g_spells.createIcon(201199, 0, \"0\"));\nWH.ge('icontab-icon44').appendChild(g_spells.createIcon(201594, 0, \"0\"));\nWH.ge('icontab-icon45').appendChild(g_spells.createIcon(208684, 0, \"0\"));\nWH.ge('icontab-icon46').appendChild(g_spells.createIcon(212680, 0, \"0\"));\nWH.ge('icontab-icon47').appendChild(g_spells.createIcon(214581, 0, \"0\"));\nWH.ge('icontab-icon48').appendChild(g_spells.createIcon(255556, 0, \"0\"));\nWH.ge('icontab-icon49').appendChild(g_spells.createIcon(255616, 0, \"0\"));\nWH.ge('icontab-icon50').appendChild(g_spells.createIcon(256802, 0, \"0\"));\nWH.ge('icontab-icon51').appendChild(g_spells.createIcon(257045, 0, \"0\"));\nWH.ge('icontab-icon52').appendChild(g_spells.createIcon(257276, 0, \"0\"));\nWH.ge('icontab-icon53').appendChild(g_spells.createIcon(257283, 0, \"0\"));\nWH.ge('icontab-icon54').appendChild(g_spells.createIcon(258361, 0, \"0\"));\nWH.ge('icontab-icon55').appendChild(g_spells.createIcon(259271, 0, \"0\"));\nWH.ge('icontab-icon56').appendChild(g_spells.createIcon(259278, 0, \"0\"));\nWH.ge('icontab-icon57').appendChild(g_spells.createIcon(259293, 0, \"0\"));\nWH.ge('icontab-icon58').appendChild(g_spells.createIcon(259390, 0, \"0\"));\nWH.ge('icontab-icon59').appendChild(g_spells.createIcon(259396, 0, \"0\"));\nWH.ge('icontab-icon60').appendChild(g_spells.createIcon(259587, 0, \"0\"));\nWH.ge('icontab-icon61').appendChild(g_spells.createIcon(260231, 0, \"0\"));\nWH.ge('icontab-icon62').appendChild(g_spells.createIcon(260297, 0, \"0\"));\nWH.ge('icontab-icon63').appendChild(g_spells.createIcon(263585, 0, \"0\"));\nWH.ge('icontab-icon64').appendChild(g_spells.createIcon(265157, 0, \"0\"));\nWH.ge('icontab-icon65').appendChild(g_spells.createIcon(265189, 0, \"0\"));\nWH.ge('icontab-icon66').appendChild(g_spells.createIcon(265888, 0, \"0\"));\nWH.ge('icontab-icon67').appendChild(g_spells.createIcon(267617, 0, \"0\"));\nWH.ge('icontab-icon68').appendChild(g_spells.createIcon(267666, 0, \"0\"));\nWH.ge('icontab-icon69').appendChild(g_spells.createIcon(268423, 0, \"0\"));\nWH.ge('icontab-icon70').appendChild(g_spells.createIcon(268783, 0, \"0\"));\nWH.ge('icontab-icon71').appendChild(g_spells.createIcon(269747, 0, \"0\"));\nWH.ge('icontab-icon72').appendChild(g_spells.createIcon(269752, 0, \"0\"));\nWH.ge('icontab-icon73').appendChild(g_spells.createIcon(269850, 0, \"0\"));\nWH.ge('icontab-icon74').appendChild(g_spells.createIcon(270329, 0, \"0\"));\nWH.ge('icontab-icon75').appendChild(g_spells.createIcon(270332, 0, \"0\"));\nWH.ge('icontab-icon76').appendChild(g_spells.createIcon(270338, 0, \"0\"));\nWH.ge('icontab-icon77').appendChild(g_spells.createIcon(270339, 0, \"0\"));\nWH.ge('icontab-icon78').appendChild(g_spells.createIcon(271048, 0, \"0\"));\nWH.ge('icontab-icon79').appendChild(g_spells.createIcon(271049, 0, \"0\"));\nWH.ge('icontab-icon80').appendChild(g_spells.createIcon(271625, 0, \"0\"));\nWH.ge('icontab-icon81').appendChild(g_spells.createIcon(272745, 0, \"0\"));\nWH.ge('icontab-icon82').appendChild(g_spells.createIcon(273289, 0, \"0\"));\nWH.ge('icontab-icon83').appendChild(g_spells.createIcon(278565, 0, \"0\"));\nWH.ge('icontab-icon84').appendChild(g_spells.createIcon(291367, 0, \"0\"));\nWH.ge('icontab-icon85').appendChild(g_spells.createIcon(321538, 0, \"0\"));\nWH.ge('icontab-icon86').appendChild(g_spells.createIcon(336899, 0, \"0\"));\nWH.ge('icontab-icon87').appendChild(g_spells.createIcon(344120, 0, \"0\"));\nWH.ge('icontab-icon88').appendChild(g_spells.createIcon(344121, 0, \"0\"));\n//]]>\n",
+    "": "Wildfire Cluster",
+    "Effect #2": "Apply Aura: Modifies Periodic Damage/Healing Done (22)Value: 20%\nAffected Spells:\nSteady Shot\nSteel Trap\nArcane Shot\nVolley\nChakrams\nBloodshed\nMongoose Bite\nSerpent Sting\nFlanking Strike\nStomp\nButchery\nKill Shot\nSerpent Sting\nKill Command\nMulti-Shot\nMulti-Shot\nBarbed Shot\nAimed Shot\n \n\n\nShow 7 More \n\n\nCobra Shot\nCarve\nBursting Shot\nRaptor Strike\nKill Shot\nKill Command\nSniper Shot\n\n//<![CDATA[\nWH.ge('icontab-icon89').appendChild(g_spells.createIcon(56641, 0, \"0\"));\nWH.ge('icontab-icon90').appendChild(g_spells.createIcon(162487, 0, \"0\"));\nWH.ge('icontab-icon91').appendChild(g_spells.createIcon(185358, 0, \"0\"));\nWH.ge('icontab-icon92').appendChild(g_spells.createIcon(260247, 0, \"0\"));\nWH.ge('icontab-icon93').appendChild(g_spells.createIcon(259398, 0, \"0\"));\nWH.ge('icontab-icon94').appendChild(g_spells.createIcon(321530, 0, \"0\"));\nWH.ge('icontab-icon95').appendChild(g_spells.createIcon(259387, 0, \"0\"));\nWH.ge('icontab-icon96').appendChild(g_spells.createIcon(271788, 0, \"0\"));\nWH.ge('icontab-icon97').appendChild(g_spells.createIcon(269751, 0, \"0\"));\nWH.ge('icontab-icon98').appendChild(g_spells.createIcon(199530, 0, \"0\"));\nWH.ge('icontab-icon99').appendChild(g_spells.createIcon(212436, 0, \"0\"));\nWH.ge('icontab-icon100').appendChild(g_spells.createIcon(320976, 0, \"0\"));\nWH.ge('icontab-icon101').appendChild(g_spells.createIcon(259491, 0, \"0\"));\nWH.ge('icontab-icon102').appendChild(g_spells.createIcon(259489, 0, \"0\"));\nWH.ge('icontab-icon103').appendChild(g_spells.createIcon(2643, 0, \"0\"));\nWH.ge('icontab-icon104').appendChild(g_spells.createIcon(257620, 0, \"0\"));\nWH.ge('icontab-icon105').appendChild(g_spells.createIcon(217200, 0, \"0\"));\nWH.ge('icontab-icon106').appendChild(g_spells.createIcon(19434, 0, \"0\"));\nWH.ge('icontab-icon107').appendChild(g_spells.createIcon(193455, 0, \"0\"));\nWH.ge('icontab-icon108').appendChild(g_spells.createIcon(187708, 0, \"0\"));\nWH.ge('icontab-icon109').appendChild(g_spells.createIcon(186387, 0, \"0\"));\nWH.ge('icontab-icon110').appendChild(g_spells.createIcon(186270, 0, \"0\"));\nWH.ge('icontab-icon111').appendChild(g_spells.createIcon(53351, 0, \"0\"));\nWH.ge('icontab-icon112').appendChild(g_spells.createIcon(34026, 0, \"0\"));\nWH.ge('icontab-icon113').appendChild(g_spells.createIcon(203155, 0, \"0\"));\n//]]>\nSee more\nExplosive Trap\nCareful Aim\nSerpent Sting\nBarrage\nA Murder of Crows\nChimaera Shot\nChimaera Shot\nLacerate\nMongoose Bite\nHatchet Toss\nCaltrops\nVolley\nBlack Arrow\nDragonsfire Grenade\nDragonsfire Conflagration\nPiercing Shot\nThrow Axe\nSteel Trap Expert\n \n\n\nShow 45 More \n\n\nStampede\nDire Beast: Hawk\nExplosive Shot\nSidewinders\nSerpent Sting\nMongoose Bite\nSurv 8 - Flanking Strike\nRapid Fire\nAimed Shot\nArcane Shot\nMulti-Shot\nRaptor Strike\nFlanking Strike\nSerpent Sting\nDisengage\nChakrams\nScorching Wildfire\nViolent Reaction\nArctic Bola\nRapid Fire\nWildfire Bomb\nRaptor Strike\nMongoose Bite\nChakrams\nChakrams\nSerpent Sting\nKill Command\nWildfire Bomb\nFlanking Strike\nExplosive Shot\nPheromone Bomb\nPheromone Bomb\nShrapnel Bomb\nShrapnel Bomb\nVolatile Bomb\nVolatile Bomb\nHarpoon\nWildfire Cluster\nLatent Poison\nMulti-Shot\nKill Command\nBloodshed\nWildfire Cluster\nChimaera Shot\nChimaera Shot\n\n//<![CDATA[\nWH.ge('icontab-icon114').appendChild(g_spells.createIcon(13812, 0, \"0\"));\nWH.ge('icontab-icon115').appendChild(g_spells.createIcon(63468, 0, \"0\"));\nWH.ge('icontab-icon116').appendChild(g_spells.createIcon(118253, 0, \"0\"));\nWH.ge('icontab-icon117').appendChild(g_spells.createIcon(120361, 0, \"0\"));\nWH.ge('icontab-icon118').appendChild(g_spells.createIcon(131900, 0, \"0\"));\nWH.ge('icontab-icon119').appendChild(g_spells.createIcon(171454, 0, \"0\"));\nWH.ge('icontab-icon120').appendChild(g_spells.createIcon(171457, 0, \"0\"));\nWH.ge('icontab-icon121').appendChild(g_spells.createIcon(185855, 0, \"0\"));\nWH.ge('icontab-icon122').appendChild(g_spells.createIcon(190928, 0, \"0\"));\nWH.ge('icontab-icon123').appendChild(g_spells.createIcon(193265, 0, \"0\"));\nWH.ge('icontab-icon124').appendChild(g_spells.createIcon(194279, 0, \"0\"));\nWH.ge('icontab-icon125').appendChild(g_spells.createIcon(194392, 0, \"0\"));\nWH.ge('icontab-icon126').appendChild(g_spells.createIcon(194599, 0, \"0\"));\nWH.ge('icontab-icon127').appendChild(g_spells.createIcon(194858, 0, \"0\"));\nWH.ge('icontab-icon128').appendChild(g_spells.createIcon(194859, 0, \"0\"));\nWH.ge('icontab-icon129').appendChild(g_spells.createIcon(198670, 0, \"0\"));\nWH.ge('icontab-icon130').appendChild(g_spells.createIcon(200167, 0, \"0\"));\nWH.ge('icontab-icon131').appendChild(g_spells.createIcon(201199, 0, \"0\"));\nWH.ge('icontab-icon132').appendChild(g_spells.createIcon(201594, 0, \"0\"));\nWH.ge('icontab-icon133').appendChild(g_spells.createIcon(208684, 0, \"0\"));\nWH.ge('icontab-icon134').appendChild(g_spells.createIcon(212680, 0, \"0\"));\nWH.ge('icontab-icon135').appendChild(g_spells.createIcon(214581, 0, \"0\"));\nWH.ge('icontab-icon136').appendChild(g_spells.createIcon(255556, 0, \"0\"));\nWH.ge('icontab-icon137').appendChild(g_spells.createIcon(255616, 0, \"0\"));\nWH.ge('icontab-icon138').appendChild(g_spells.createIcon(256802, 0, \"0\"));\nWH.ge('icontab-icon139').appendChild(g_spells.createIcon(257045, 0, \"0\"));\nWH.ge('icontab-icon140').appendChild(g_spells.createIcon(257276, 0, \"0\"));\nWH.ge('icontab-icon141').appendChild(g_spells.createIcon(257283, 0, \"0\"));\nWH.ge('icontab-icon142').appendChild(g_spells.createIcon(258361, 0, \"0\"));\nWH.ge('icontab-icon143').appendChild(g_spells.createIcon(259271, 0, \"0\"));\nWH.ge('icontab-icon144').appendChild(g_spells.createIcon(259278, 0, \"0\"));\nWH.ge('icontab-icon145').appendChild(g_spells.createIcon(259293, 0, \"0\"));\nWH.ge('icontab-icon146').appendChild(g_spells.createIcon(259390, 0, \"0\"));\nWH.ge('icontab-icon147').appendChild(g_spells.createIcon(259396, 0, \"0\"));\nWH.ge('icontab-icon148').appendChild(g_spells.createIcon(259587, 0, \"0\"));\nWH.ge('icontab-icon149').appendChild(g_spells.createIcon(260231, 0, \"0\"));\nWH.ge('icontab-icon150').appendChild(g_spells.createIcon(260297, 0, \"0\"));\nWH.ge('icontab-icon151').appendChild(g_spells.createIcon(263585, 0, \"0\"));\nWH.ge('icontab-icon152').appendChild(g_spells.createIcon(265157, 0, \"0\"));\nWH.ge('icontab-icon153').appendChild(g_spells.createIcon(265189, 0, \"0\"));\nWH.ge('icontab-icon154').appendChild(g_spells.createIcon(265888, 0, \"0\"));\nWH.ge('icontab-icon155').appendChild(g_spells.createIcon(267617, 0, \"0\"));\nWH.ge('icontab-icon156').appendChild(g_spells.createIcon(267666, 0, \"0\"));\nWH.ge('icontab-icon157').appendChild(g_spells.createIcon(268423, 0, \"0\"));\nWH.ge('icontab-icon158').appendChild(g_spells.createIcon(268783, 0, \"0\"));\nWH.ge('icontab-icon159').appendChild(g_spells.createIcon(269747, 0, \"0\"));\nWH.ge('icontab-icon160').appendChild(g_spells.createIcon(269752, 0, \"0\"));\nWH.ge('icontab-icon161').appendChild(g_spells.createIcon(269850, 0, \"0\"));\nWH.ge('icontab-icon162').appendChild(g_spells.createIcon(270329, 0, \"0\"));\nWH.ge('icontab-icon163').appendChild(g_spells.createIcon(270332, 0, \"0\"));\nWH.ge('icontab-icon164').appendChild(g_spells.createIcon(270338, 0, \"0\"));\nWH.ge('icontab-icon165').appendChild(g_spells.createIcon(270339, 0, \"0\"));\nWH.ge('icontab-icon166').appendChild(g_spells.createIcon(271048, 0, \"0\"));\nWH.ge('icontab-icon167').appendChild(g_spells.createIcon(271049, 0, \"0\"));\nWH.ge('icontab-icon168').appendChild(g_spells.createIcon(271625, 0, \"0\"));\nWH.ge('icontab-icon169').appendChild(g_spells.createIcon(272745, 0, \"0\"));\nWH.ge('icontab-icon170').appendChild(g_spells.createIcon(273289, 0, \"0\"));\nWH.ge('icontab-icon171').appendChild(g_spells.createIcon(278565, 0, \"0\"));\nWH.ge('icontab-icon172').appendChild(g_spells.createIcon(291367, 0, \"0\"));\nWH.ge('icontab-icon173').appendChild(g_spells.createIcon(321538, 0, \"0\"));\nWH.ge('icontab-icon174').appendChild(g_spells.createIcon(336899, 0, \"0\"));\nWH.ge('icontab-icon175').appendChild(g_spells.createIcon(344120, 0, \"0\"));\nWH.ge('icontab-icon176').appendChild(g_spells.createIcon(344121, 0, \"0\"));\n//]]>\n",
+    "Effect #3": "Apply Aura: Mod Damage Done % (Arcane, Fire, Frost, Holy, Nature, Physical, Shadow)Value: 20%\n",
+    "Effect #4": "Apply Aura: DummyValue: 25Server-side script\n",
+    "Effect #5": "Apply Aura: Mod Auto Attack Damage %Value: 20%\n",
+    "Flags": [
+      "Cannot be used while shapeshifted",
+      "Does not break stealth",
+      "Generates no threat"
     ]
   },
   "275699": {
@@ -8957,6 +9618,28 @@
     "GCD": "1 second",
     "Effect": "DummyServer-side script\n",
     "Flags": ["Requires untapped target"]
+  },
+  "324536": {
+    "Description": "Your damaging periodic effects erupt on all targets, causing [0.335000008 * (Spell power) * (1 + Versatility)] Shadow damage per effect.",
+    "Duration": "n/a",
+    "School": "Shadow",
+    "Mechanic": "n/a",
+    "Dispel type": "n/a",
+    "GCD category": "Normal",
+    "Cost": "10 Soul Shards",
+    "Range": "100 yards (Vision)",
+    "Cast time": "1.5 seconds",
+    "Cooldown": "n/a",
+    "GCD": "1.5 seconds",
+    "Effect": "Dummy ({term('spmod_colon')}0.335)Radius: 100 yardsServer-side script\n",
+    "Flags": [
+      "Cannot be used while shapeshifted",
+      "Unaffected by invulnerability",
+      "Cannot be reflected",
+      "All spell effects are harmful",
+      "Generates no threat",
+      "Cannot miss"
+    ]
   },
   "327574": {
     "Description": "Sacrifice your ghoul to deal (75% of Attack power) Shadow damage to 8 nearby enemies and heal for 25% of your maximum health.",

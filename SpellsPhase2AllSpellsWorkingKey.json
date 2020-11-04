@@ -321,12 +321,6 @@
         "spellName": "Imprison",
         "targetType": "ONE_ENEMY"
       },
-      "228477": {
-        "spec": ["VENGEANCE"],
-        "spellId": "228477",
-        "spellName": "Soul Cleave",
-        "targetType": "SELF"
-      },
       "258920": {
         "spec": ["VENGEANCE", "HAVOC"],
         "spellId": "258920",
@@ -937,7 +931,7 @@
         "spec": ["FIRE", "FROST", "ARCANE"],
         "spellId": "116",
         "spellName": "Frostbolt",
-        "targetType": "MANY_ENEMY"
+        "targetType": "ONE_ENEMY"
       },
       "118": {
         "spec": ["FIRE", "FROST", "ARCANE"],
@@ -1843,7 +1837,7 @@
         "spec": ["HOLY"],
         "spellId": "33076",
         "spellName": "Prayer of Mending",
-        "targetType": "MANY_FRIENDLY"
+        "targetType": "ONE_FRIENDLY"
       },
       "33206": {
         "spec": ["DISCIPLINE"],
@@ -2557,7 +2551,7 @@
         "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
         "spellId": "686",
         "spellName": "Shadow Bolt",
-        "targetType": "MANY_ENEMY"
+        "targetType": "ONE_ENEMY"
       },
       "688": {
         "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
