@@ -31,6 +31,12 @@
         "spellName": "Mind Freeze",
         "targetType": "ONE_ENEMY"
       },
+      "47541": {
+        "spec": ["BLOOD", "FROST", "UNHOLY"],
+        "spellId": "47541",
+        "spellName": "Death Coil",
+        "targetType": "ONE_ANY"
+      },
       "47568": {
         "spec": ["FROST"],
         "spellId": "47568",
@@ -73,10 +79,22 @@
         "spellName": "Frost Strike",
         "targetType": "ONE_ENEMY"
       },
+      "49184": {
+        "spec": ["FROST"],
+        "spellId": "49184",
+        "spellName": "Howling Blast",
+        "targetType": "MANY_ENEMY"
+      },
       "49576": {
         "spec": ["BLOOD", "FROST", "UNHOLY"],
         "spellId": "49576",
         "spellName": "Death Grip",
+        "targetType": "ONE_ENEMY"
+      },
+      "49998": {
+        "spec": ["BLOOD", "FROST", "UNHOLY"],
+        "spellId": "49998",
+        "spellName": "Death Strike",
         "targetType": "ONE_ENEMY"
       },
       "50842": {
@@ -96,6 +114,12 @@
         "spellId": "51271",
         "spellName": "Pillar of Frost",
         "targetType": "SELF"
+      },
+      "55090": {
+        "spec": ["UNHOLY"],
+        "spellId": "55090",
+        "spellName": "Scourge Strike",
+        "targetType": "ONE_ENEMY"
       },
       "55233": {
         "spec": ["BLOOD"],
@@ -121,17 +145,35 @@
         "spellName": "Dark Transformation",
         "targetType": "SELF"
       },
+      "77575": {
+        "spec": ["UNHOLY"],
+        "spellId": "77575",
+        "spellName": "Outbreak",
+        "targetType": "MANY_ENEMY"
+      },
       "85948": {
         "spec": ["UNHOLY"],
         "spellId": "85948",
         "spellName": "Festering Strike",
         "targetType": "ONE_ENEMY"
       },
+      "108199": {
+        "spec": ["BLOOD"],
+        "spellId": "108199",
+        "spellName": "Gorefiend's Grasp",
+        "targetType": "ONE_ANY"
+      },
       "194679": {
         "spec": ["BLOOD"],
         "spellId": "194679",
         "spellName": "Rune Tap",
         "targetType": "SELF"
+      },
+      "195182": {
+        "spec": ["BLOOD"],
+        "spellId": "195182",
+        "spellName": "Marrowrend",
+        "targetType": "ONE_ENEMY"
       },
       "195292": {
         "spec": ["BLOOD"],
@@ -144,6 +186,12 @@
         "spellId": "196770",
         "spellName": "Remorseless Winter",
         "targetType": "SELF"
+      },
+      "206930": {
+        "spec": ["BLOOD"],
+        "spellId": "206930",
+        "spellName": "Heart Strike",
+        "targetType": "MANY_ENEMY"
       },
       "207317": {
         "spec": ["UNHOLY"],
@@ -315,11 +363,23 @@
         "spellName": "Sigil of Misery",
         "targetType": "PLACED"
       },
+      "212084": {
+        "spec": ["VENGEANCE"],
+        "spellId": "212084",
+        "spellName": "Fel Devastation",
+        "targetType": "SELF"
+      },
       "217832": {
         "spec": ["VENGEANCE", "HAVOC"],
         "spellId": "217832",
         "spellName": "Imprison",
         "targetType": "ONE_ENEMY"
+      },
+      "228477": {
+        "spec": ["VENGEANCE"],
+        "spellId": "228477",
+        "spellName": "Soul Cleave",
+        "targetType": "SELF"
       },
       "258920": {
         "spec": ["VENGEANCE", "HAVOC"],
@@ -709,6 +769,12 @@
         "spellName": "Flare",
         "targetType": "PLACED"
       },
+      "2643": {
+        "spec": ["BEAST MASTERY"],
+        "spellId": "2643",
+        "spellName": "Multi-Shot",
+        "targetType": "ONE_ENEMY"
+      },
       "5116": {
         "spec": ["BEAST MASTERY", "MARKSMANSHIP"],
         "spellId": "5116",
@@ -726,6 +792,12 @@
         "spellId": "19434",
         "spellName": "Aimed Shot",
         "targetType": "ONE_ENEMY"
+      },
+      "19574": {
+        "spec": ["BEAST MASTERY"],
+        "spellId": "19574",
+        "spellName": "Bestial Wrath",
+        "targetType": "SELF"
       },
       "19577": {
         "spec": ["BEAST MASTERY", "SURVIVAL"],
@@ -768,6 +840,12 @@
         "spellId": "56641",
         "spellName": "Steady Shot",
         "targetType": "ONE_ENEMY"
+      },
+      "109304": {
+        "spec": ["BEAST MASTERY", "MARKSMANSHIP", "SURVIVAL"],
+        "spellId": "109304",
+        "spellName": "Exhilaration",
+        "targetType": "SELF"
       },
       "147362": {
         "spec": ["BEAST MASTERY", "MARKSMANSHIP"],
@@ -877,6 +955,12 @@
         "spellName": "Hunter's Mark",
         "targetType": "ONE_ENEMY"
       },
+      "257620": {
+        "spec": ["MARKSMANSHIP"],
+        "spellId": "257620",
+        "spellName": "Multi-Shot",
+        "targetType": "ONE_ENEMY"
+      },
       "259489": {
         "spec": ["SURVIVAL"],
         "spellId": "259489",
@@ -899,6 +983,18 @@
         "spec": ["BEAST MASTERY", "MARKSMANSHIP", "SURVIVAL"],
         "spellId": "264667",
         "spellName": "Primal Fury",
+        "targetType": "SELF"
+      },
+      "264735": {
+        "spec": ["BEAST MASTERY", "MARKSMANSHIP", "SURVIVAL"],
+        "spellId": "264735",
+        "spellName": "Survival of the Fittest",
+        "targetType": "SELF"
+      },
+      "266779": {
+        "spec": ["SURVIVAL"],
+        "spellId": "266779",
+        "spellName": "Coordinated Assault",
         "targetType": "SELF"
       },
       "288613": {
@@ -1295,6 +1391,12 @@
         "spellName": "Revival",
         "targetType": "SELF"
       },
+      "115450": {
+        "spec": ["MISTWEAVER"],
+        "spellId": "115450",
+        "spellName": "Detox",
+        "targetType": "ONE_FRIENDLY"
+      },
       "115546": {
         "spec": ["WINDWALKER", "MISTWEAVER", "BREWMASTER"],
         "spellId": "115546",
@@ -1355,6 +1457,12 @@
         "spellName": "Transcendence: Transfer",
         "targetType": "SELF"
       },
+      "121253": {
+        "spec": ["BREWMASTER"],
+        "spellId": "121253",
+        "spellName": "Keg Smash",
+        "targetType": "MANY_ENEMY"
+      },
       "122470": {
         "spec": ["WINDWALKER"],
         "spellId": "122470",
@@ -1372,6 +1480,12 @@
         "spellId": "124682",
         "spellName": "Enveloping Mist",
         "targetType": "MANY_FRIENDLY"
+      },
+      "132578": {
+        "spec": ["BREWMASTER"],
+        "spellId": "132578",
+        "spellName": "Invoke Niuzao, the Black Ox",
+        "targetType": "ONE_ENEMY"
       },
       "137639": {
         "spec": ["WINDWALKER"],
@@ -1396,6 +1510,12 @@
         "spellId": "212051",
         "spellName": "Reawaken",
         "targetType": "SELF"
+      },
+      "218164": {
+        "spec": ["WINDWALKER", "BREWMASTER"],
+        "spellId": "218164",
+        "spellName": "Detox",
+        "targetType": "ONE_FRIENDLY"
       },
       "243435": {
         "spec": ["WINDWALKER", "MISTWEAVER"],
@@ -1712,6 +1832,12 @@
         "spellId": "453",
         "spellName": "Mind Soothe",
         "targetType": "MANY_ENEMY"
+      },
+      "527": {
+        "spec": ["DISCIPLINE", "HOLY"],
+        "spellId": "527",
+        "spellName": "Purify",
+        "targetType": "ONE_FRIENDLY"
       },
       "528": {
         "spec": ["DISCIPLINE", "HOLY", "SHADOW"],
@@ -2116,6 +2242,12 @@
         "spellId": "31224",
         "spellName": "Cloak of Shadows",
         "targetType": "SELF"
+      },
+      "32645": {
+        "spec": ["ASSASINATION"],
+        "spellId": "32645",
+        "spellName": "Envenom",
+        "targetType": "ONE_ENEMY"
       },
       "36554": {
         "spec": ["ASSASINATION", "SUBTLETY"],
@@ -2601,6 +2733,12 @@
         "spellName": "Agony",
         "targetType": "MANY_ENEMY"
       },
+      "1122": {
+        "spec": ["DESTRUCTION"],
+        "spellId": "1122",
+        "spellName": "Summon Infernal",
+        "targetType": "PLACED"
+      },
       "1714": {
         "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
         "spellId": "1714",
@@ -2861,6 +2999,12 @@
         "spellName": "Battle Shout",
         "targetType": "SELF"
       },
+      "7384": {
+        "spec": ["ARMS"],
+        "spellId": "7384",
+        "spellName": "Overpower",
+        "targetType": "ONE_ENEMY"
+      },
       "12294": {
         "spec": ["ARMS"],
         "spellId": "12294",
@@ -2907,6 +3051,12 @@
         "spec": ["FURY", "ARMS", "PROTECTION"],
         "spellId": "23922",
         "spellName": "Shield Slam",
+        "targetType": "ONE_ENEMY"
+      },
+      "34428": {
+        "spec": ["FURY", "ARMS", "PROTECTION"],
+        "spellId": "34428",
+        "spellName": "Victory Rush",
         "targetType": "ONE_ENEMY"
       },
       "46968": {
