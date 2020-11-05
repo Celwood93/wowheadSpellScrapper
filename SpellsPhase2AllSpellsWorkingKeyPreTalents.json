@@ -3225,50 +3225,43 @@
             "spellId": "48743",
             "spellName": "Death Pact",
             "row": "5",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "114556": {
             "spellId": "114556",
             "spellName": "Purgatory",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "194662": {
             "spellId": "194662",
             "spellName": "Rapid Decomposition",
             "row": "1",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "194844": {
             "spellId": "194844",
             "spellName": "Bonestorm",
             "row": "6",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "195679": {
             "spellId": "195679",
             "spellName": "Bloodworms",
             "row": "5",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "205723": {
             "spellId": "205723",
             "spellName": "Red Thirst",
             "row": "6",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "205727": {
             "spellId": "205727",
             "spellName": "Anti-Magic Barrier",
             "row": "3",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "206931": {
             "spellId": "206931",
@@ -3280,92 +3273,79 @@
             "spellId": "206940",
             "spellName": "Mark of Blood",
             "row": "3",
-            "col": "2",
-            "targetType": "MANY_ENEMY"
+            "col": "2"
           },
           "206967": {
             "spellId": "206967",
             "spellName": "Will of the Necropolis",
             "row": "3",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "206970": {
             "spellId": "206970",
             "spellName": "Tightening Grasp",
             "row": "4",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "206974": {
             "spellId": "206974",
             "spellName": "Foul Bulwark",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "212552": {
             "spellId": "212552",
             "spellName": "Wraith Walk",
             "row": "4",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "219809": {
             "spellId": "219809",
             "spellName": "Tombstone",
             "row": "0",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "221536": {
             "spellId": "221536",
             "spellName": "Heartbreaker",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "221699": {
             "spellId": "221699",
             "spellName": "Blood Tap",
             "row": "2",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "273946": {
             "spellId": "273946",
             "spellName": "Hemostasis",
             "row": "1",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "273952": {
             "spellId": "273952",
             "spellName": "Grip of the Dead",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "273953": {
             "spellId": "273953",
             "spellName": "Voracious",
             "row": "5",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "274156": {
             "spellId": "274156",
             "spellName": "Consumption",
             "row": "1",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "317610": {
             "spellId": "317610",
             "spellName": "Relish in Blood",
             "row": "2",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           }
         },
         "PvP": {
@@ -3391,148 +3371,127 @@
             "spellId": "48743",
             "spellName": "Death Pact",
             "row": "4",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "57330": {
             "spellId": "57330",
             "spellName": "Horn of Winter",
             "row": "1",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "108194": {
             "spellId": "108194",
             "spellName": "Asphyxiate",
             "row": "2",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "152279": {
             "spellId": "152279",
             "spellName": "Breath of Sindragosa",
             "row": "6",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "194878": {
             "spellId": "194878",
             "spellName": "Icy Talons",
             "row": "0",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "194909": {
             "spellId": "194909",
             "spellName": "Frozen Pulse",
             "row": "3",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "194912": {
             "spellId": "194912",
             "spellName": "Gathering Storm",
             "row": "5",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "194913": {
             "spellId": "194913",
             "spellName": "Glacial Advance",
             "row": "5",
-            "col": "2",
-            "targetType": "PLACED"
+            "col": "2"
           },
           "207061": {
             "spellId": "207061",
             "spellName": "Murderous Efficiency",
             "row": "1",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "207104": {
             "spellId": "207104",
             "spellName": "Runic Attenuation",
             "row": "1",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "207126": {
             "spellId": "207126",
             "spellName": "Icecap",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "207142": {
             "spellId": "207142",
             "spellName": "Avalanche",
             "row": "3",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "207167": {
             "spellId": "207167",
             "spellName": "Blinding Sleet",
             "row": "2",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "207200": {
             "spellId": "207200",
             "spellName": "Permafrost",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "207230": {
             "spellId": "207230",
             "spellName": "Frostscythe",
             "row": "3",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "212552": {
             "spellId": "212552",
             "spellName": "Wraith Walk",
             "row": "4",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "253593": {
             "spellId": "253593",
             "spellName": "Inexorable Assault",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "276079": {
             "spellId": "276079",
             "spellName": "Death's Reach",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "281208": {
             "spellId": "281208",
             "spellName": "Cold Heart",
             "row": "0",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "281238": {
             "spellId": "281238",
             "spellName": "Obliteration",
             "row": "6",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "321995": {
             "spellId": "321995",
             "spellName": "Hypothermic Presence",
             "row": "5",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           }
         },
         "PvP": {
@@ -3557,148 +3516,127 @@
             "spellId": "48743",
             "spellName": "Death Pact",
             "row": "4",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "49206": {
             "spellId": "49206",
             "spellName": "Summon Gargoyle",
             "row": "6",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "108194": {
             "spellId": "108194",
             "spellName": "Asphyxiate",
             "row": "2",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "115989": {
             "spellId": "115989",
             "spellName": "Unholy Blight",
             "row": "1",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "152280": {
             "spellId": "152280",
             "spellName": "Defile",
             "row": "5",
-            "col": "2",
-            "targetType": "PLACED"
+            "col": "2"
           },
           "194916": {
             "spellId": "194916",
             "spellName": "All Will Serve",
             "row": "0",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "194917": {
             "spellId": "194917",
             "spellName": "Pestilent Pustules",
             "row": "3",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "207264": {
             "spellId": "207264",
             "spellName": "Bursting Sores",
             "row": "1",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "207269": {
             "spellId": "207269",
             "spellName": "Ebon Fever",
             "row": "1",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "207272": {
             "spellId": "207272",
             "spellName": "Infected Claws",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "207289": {
             "spellId": "207289",
             "spellName": "Unholy Assault",
             "row": "6",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "207311": {
             "spellId": "207311",
             "spellName": "Clawing Shadows",
             "row": "0",
-            "col": "2",
-            "targetType": "PLACED"
+            "col": "2"
           },
           "207321": {
             "spellId": "207321",
             "spellName": "Spell Eater",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "212552": {
             "spellId": "212552",
             "spellName": "Wraith Walk",
             "row": "4",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "273952": {
             "spellId": "273952",
             "spellName": "Grip of the Dead",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "276023": {
             "spellId": "276023",
             "spellName": "Harbinger of Doom",
             "row": "3",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "276079": {
             "spellId": "276079",
             "spellName": "Death's Reach",
             "row": "2",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "276837": {
             "spellId": "276837",
             "spellName": "Army of the Damned",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "277234": {
             "spellId": "277234",
             "spellName": "Pestilence",
             "row": "5",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "319230": {
             "spellId": "319230",
             "spellName": "Unholy Pact",
             "row": "5",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "343294": {
             "spellId": "343294",
             "spellName": "Soul Reaper",
             "row": "3",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           }
         },
         "PvP": {
@@ -3729,148 +3667,127 @@
             "spellId": "202138",
             "spellName": "Sigil of Chains",
             "row": "4",
-            "col": "2",
-            "targetType": "PLACED"
+            "col": "2"
           },
           "207548": {
             "spellId": "207548",
             "spellName": "Agonizing Flames",
             "row": "0",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "207550": {
             "spellId": "207550",
             "spellName": "Abyssal Strike",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "207666": {
             "spellId": "207666",
             "spellName": "Concentrated Sigils",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "207697": {
             "spellId": "207697",
             "spellName": "Feast of Souls",
             "row": "1",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "207739": {
             "spellId": "207739",
             "spellName": "Burning Alive",
             "row": "1",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "209258": {
             "spellId": "209258",
             "spellName": "Last Resort",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "209281": {
             "spellId": "209281",
             "spellName": "Quickened Sigils",
             "row": "4",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "217996": {
             "spellId": "217996",
             "spellName": "Soul Rending",
             "row": "3",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "218612": {
             "spellId": "218612",
             "spellName": "Feed the Demon",
             "row": "3",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "227174": {
             "spellId": "227174",
             "spellName": "Fallout",
             "row": "1",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "232893": {
             "spellId": "232893",
             "spellName": "Felblade",
             "row": "0",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "247454": {
             "spellId": "247454",
             "spellName": "Spirit Bomb",
             "row": "2",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "263642": {
             "spellId": "263642",
             "spellName": "Fracture",
             "row": "3",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "263648": {
             "spellId": "263648",
             "spellName": "Soul Barrier",
             "row": "5",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "268175": {
             "spellId": "268175",
             "spellName": "Void Reaver",
             "row": "5",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "320331": {
             "spellId": "320331",
             "spellName": "Infernal Armor",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "320341": {
             "spellId": "320341",
             "spellName": "Bulk Extraction",
             "row": "6",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "321453": {
             "spellId": "321453",
             "spellName": "Demonic",
             "row": "5",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "326853": {
             "spellId": "326853",
             "spellName": "Ruinous Bulwark",
             "row": "6",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "336639": {
             "spellId": "336639",
             "spellName": "Charred Flesh",
             "row": "2",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           }
         },
         "PvP": {
@@ -3892,148 +3809,127 @@
             "spellId": "196555",
             "spellName": "Netherwalk",
             "row": "3",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "203550": {
             "spellId": "203550",
             "spellName": "Blind Fury",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "203555": {
             "spellId": "203555",
             "spellName": "Demon Blades",
             "row": "1",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "203556": {
             "spellId": "203556",
             "spellName": "Master of the Glaive",
             "row": "5",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "204909": {
             "spellId": "204909",
             "spellName": "Soul Rending",
             "row": "3",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "205411": {
             "spellId": "205411",
             "spellName": "Desperate Instincts",
             "row": "3",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "206416": {
             "spellId": "206416",
             "spellName": "First Blood",
             "row": "4",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "206476": {
             "spellId": "206476",
             "spellName": "Momentum",
             "row": "6",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "206477": {
             "spellId": "206477",
             "spellName": "Unleashed Power",
             "row": "5",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "206478": {
             "spellId": "206478",
             "spellName": "Demonic Appetite",
             "row": "0",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "211881": {
             "spellId": "211881",
             "spellName": "Fel Eruption",
             "row": "5",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "213410": {
             "spellId": "213410",
             "spellName": "Demonic",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "232893": {
             "spellId": "232893",
             "spellName": "Felblade",
             "row": "0",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "258860": {
             "spellId": "258860",
             "spellName": "Essence Break",
             "row": "4",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "258876": {
             "spellId": "258876",
             "spellName": "Insatiable Hunger",
             "row": "1",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "258881": {
             "spellId": "258881",
             "spellName": "Trail of Ruin",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "258887": {
             "spellId": "258887",
             "spellName": "Cycle of Hatred",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "258925": {
             "spellId": "258925",
             "spellName": "Fel Barrage",
             "row": "6",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "320374": {
             "spellId": "320374",
             "spellName": "Burning Hatred",
             "row": "1",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "342817": {
             "spellId": "342817",
             "spellName": "Glaive Tempest",
             "row": "2",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "347461": {
             "spellId": "347461",
             "spellName": "Unbound Chaos",
             "row": "2",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           }
         },
         "PvP": {
@@ -4058,148 +3954,127 @@
             "spellId": "5211",
             "spellName": "Mighty Bash",
             "row": "3",
-            "col": "0",
-            "targetType": "ONE_ENEMY"
+            "col": "0"
           },
           "33891": {
             "spellId": "33891",
             "spellName": "Incarnation: Tree of Life",
             "row": "4",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "50464": {
             "spellId": "50464",
             "spellName": "Nourish",
             "row": "0",
-            "col": "1",
-            "targetType": "ONE_FRIENDLY"
+            "col": "1"
           },
           "102351": {
             "spellId": "102351",
             "spellName": "Cenarion Ward",
             "row": "0",
-            "col": "2",
-            "targetType": "ONE_FRIENDLY"
+            "col": "2"
           },
           "102359": {
             "spellId": "102359",
             "spellName": "Mass Entanglement",
             "row": "3",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "108238": {
             "spellId": "108238",
             "spellName": "Renewal",
             "row": "1",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "132302": {
             "spellId": "132302",
             "spellName": "Wild Charge",
             "row": "1",
-            "col": "2",
-            "targetType": "ONE_ANY"
+            "col": "2"
           },
           "155675": {
             "spellId": "155675",
             "spellName": "Germination",
             "row": "6",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "158478": {
             "spellId": "158478",
             "spellName": "Soul of the Forest",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "197073": {
             "spellId": "197073",
             "spellName": "Inner Peace",
             "row": "5",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "197490": {
             "spellId": "197490",
             "spellName": "Feral Affinity",
             "row": "2",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "197491": {
             "spellId": "197491",
             "spellName": "Guardian Affinity",
             "row": "2",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "197632": {
             "spellId": "197632",
             "spellName": "Balance Affinity",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "197721": {
             "spellId": "197721",
             "spellName": "Flourish",
             "row": "6",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "200390": {
             "spellId": "200390",
             "spellName": "Cultivation",
             "row": "4",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "203651": {
             "spellId": "203651",
             "spellName": "Overgrowth",
             "row": "5",
-            "col": "2",
-            "targetType": "ONE_FRIENDLY"
+            "col": "2"
           },
           "207383": {
             "spellId": "207383",
             "spellName": "Abundance",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "207385": {
             "spellId": "207385",
             "spellName": "Spring Blossoms",
             "row": "5",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "252216": {
             "spellId": "252216",
             "spellName": "Tiger Dash",
             "row": "1",
-            "col": "0",
-            "targetType": "SELF"
+            "col": "0"
           },
           "274902": {
             "spellId": "274902",
             "spellName": "Photosynthesis",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "319454": {
             "spellId": "319454",
             "spellName": "Heart of the Wild",
             "row": "3",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           }
         },
         "PvP": {}
@@ -4210,148 +4085,127 @@
             "spellId": "5211",
             "spellName": "Mighty Bash",
             "row": "3",
-            "col": "0",
-            "targetType": "ONE_ENEMY"
+            "col": "0"
           },
           "52610": {
             "spellId": "52610",
             "spellName": "Savage Roar",
             "row": "4",
-            "col": "1",
-            "targetType": "MANY_ENEMY"
+            "col": "1"
           },
           "102359": {
             "spellId": "102359",
             "spellName": "Mass Entanglement",
             "row": "3",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "102543": {
             "spellId": "102543",
             "spellName": "Incarnation: King of the Jungle",
             "row": "4",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "108238": {
             "spellId": "108238",
             "spellName": "Renewal",
             "row": "1",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "132302": {
             "spellId": "132302",
             "spellName": "Wild Charge",
             "row": "1",
-            "col": "2",
-            "targetType": "ONE_ANY"
+            "col": "2"
           },
           "155580": {
             "spellId": "155580",
             "spellName": "Lunar Inspiration",
             "row": "0",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "158476": {
             "spellId": "158476",
             "spellName": "Soul of the Forest",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "197488": {
             "spellId": "197488",
             "spellName": "Balance Affinity",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "197492": {
             "spellId": "197492",
             "spellName": "Restoration Affinity",
             "row": "2",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "202021": {
             "spellId": "202021",
             "spellName": "Predator",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "202028": {
             "spellId": "202028",
             "spellName": "Brutal Slash",
             "row": "5",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "202031": {
             "spellId": "202031",
             "spellName": "Sabertooth",
             "row": "0",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "217615": {
             "spellId": "217615",
             "spellName": "Guardian Affinity",
             "row": "2",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "236068": {
             "spellId": "236068",
             "spellName": "Moment of Clarity",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "252216": {
             "spellId": "252216",
             "spellName": "Tiger Dash",
             "row": "1",
-            "col": "0",
-            "targetType": "SELF"
+            "col": "0"
           },
           "274837": {
             "spellId": "274837",
             "spellName": "Feral Frenzy",
             "row": "6",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "285381": {
             "spellId": "285381",
             "spellName": "Primal Wrath",
             "row": "5",
-            "col": "2",
-            "targetType": "PLACED"
+            "col": "2"
           },
           "285564": {
             "spellId": "285564",
             "spellName": "Scent of Blood",
             "row": "5",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "319439": {
             "spellId": "319439",
             "spellName": "Bloodtalons",
             "row": "6",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "319454": {
             "spellId": "319454",
             "spellName": "Heart of the Wild",
             "row": "3",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           }
         },
         "PvP": {
@@ -4377,148 +4231,127 @@
             "spellId": "5211",
             "spellName": "Mighty Bash",
             "row": "3",
-            "col": "0",
-            "targetType": "ONE_ENEMY"
+            "col": "0"
           },
           "80313": {
             "spellId": "80313",
             "spellName": "Pulverize",
             "row": "6",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "102359": {
             "spellId": "102359",
             "spellName": "Mass Entanglement",
             "row": "3",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "102558": {
             "spellId": "102558",
             "spellName": "Incarnation: Guardian of Ursoc",
             "row": "4",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "108238": {
             "spellId": "108238",
             "spellName": "Renewal",
             "row": "1",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "132302": {
             "spellId": "132302",
             "spellName": "Wild Charge",
             "row": "1",
-            "col": "2",
-            "targetType": "ONE_ANY"
+            "col": "2"
           },
           "135288": {
             "spellId": "135288",
             "spellName": "Tooth and Claw",
             "row": "6",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "155578": {
             "spellId": "155578",
             "spellName": "Guardian of Elune",
             "row": "5",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "155835": {
             "spellId": "155835",
             "spellName": "Bristling Fur",
             "row": "0",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "158477": {
             "spellId": "158477",
             "spellName": "Soul of the Forest",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "197488": {
             "spellId": "197488",
             "spellName": "Balance Affinity",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "197492": {
             "spellId": "197492",
             "spellName": "Restoration Affinity",
             "row": "2",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "202155": {
             "spellId": "202155",
             "spellName": "Feral Affinity",
             "row": "2",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "203953": {
             "spellId": "203953",
             "spellName": "Brambles",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "203962": {
             "spellId": "203962",
             "spellName": "Blood Frenzy",
             "row": "0",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "203964": {
             "spellId": "203964",
             "spellName": "Galactic Guardian",
             "row": "4",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "203965": {
             "spellId": "203965",
             "spellName": "Survival of the Fittest",
             "row": "5",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "203974": {
             "spellId": "203974",
             "spellName": "Earthwarden",
             "row": "5",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "204053": {
             "spellId": "204053",
             "spellName": "Rend and Tear",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "252216": {
             "spellId": "252216",
             "spellName": "Tiger Dash",
             "row": "1",
-            "col": "0",
-            "targetType": "SELF"
+            "col": "0"
           },
           "319454": {
             "spellId": "319454",
             "spellName": "Heart of the Wild",
             "row": "3",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           }
         },
         "PvP": {
@@ -4547,148 +4380,127 @@
             "spellId": "5211",
             "spellName": "Mighty Bash",
             "row": "3",
-            "col": "0",
-            "targetType": "ONE_ENEMY"
+            "col": "0"
           },
           "102359": {
             "spellId": "102359",
             "spellName": "Mass Entanglement",
             "row": "3",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "102560": {
             "spellId": "102560",
             "spellName": "Incarnation: Chosen of Elune",
             "row": "4",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "108238": {
             "spellId": "108238",
             "spellName": "Renewal",
             "row": "1",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "114107": {
             "spellId": "114107",
             "spellName": "Soul of the Forest",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "132302": {
             "spellId": "132302",
             "spellName": "Wild Charge",
             "row": "1",
-            "col": "2",
-            "targetType": "ONE_ANY"
+            "col": "2"
           },
           "197491": {
             "spellId": "197491",
             "spellName": "Guardian Affinity",
             "row": "2",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "197492": {
             "spellId": "197492",
             "spellName": "Restoration Affinity",
             "row": "2",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "202157": {
             "spellId": "202157",
             "spellName": "Feral Affinity",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "202345": {
             "spellId": "202345",
             "spellName": "Starlord",
             "row": "4",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "202347": {
             "spellId": "202347",
             "spellName": "Stellar Flare",
             "row": "5",
-            "col": "2",
-            "targetType": "MANY_ENEMY"
+            "col": "2"
           },
           "202354": {
             "spellId": "202354",
             "spellName": "Stellar Drift",
             "row": "5",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "202425": {
             "spellId": "202425",
             "spellName": "Warrior of Elune",
             "row": "0",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "202430": {
             "spellId": "202430",
             "spellName": "Nature's Balance",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "202770": {
             "spellId": "202770",
             "spellName": "Fury of Elune",
             "row": "6",
-            "col": "1",
-            "targetType": "PLACED"
+            "col": "1"
           },
           "205636": {
             "spellId": "205636",
             "spellName": "Force of Nature",
             "row": "0",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "252216": {
             "spellId": "252216",
             "spellName": "Tiger Dash",
             "row": "1",
-            "col": "0",
-            "targetType": "SELF"
+            "col": "0"
           },
           "274281": {
             "spellId": "274281",
             "spellName": "New Moon",
             "row": "6",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "279620": {
             "spellId": "279620",
             "spellName": "Twin Moons",
             "row": "5",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "319454": {
             "spellId": "319454",
             "spellName": "Heart of the Wild",
             "row": "3",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "343647": {
             "spellId": "343647",
             "spellName": "Solstice",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           }
         },
         "PvP": {
@@ -4716,148 +4528,127 @@
             "spellId": "53209",
             "spellName": "Chimaera Shot",
             "row": "1",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "109215": {
             "spellId": "109215",
             "spellName": "Posthaste",
             "row": "4",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "109248": {
             "spellId": "109248",
             "spellName": "Binding Shot",
             "row": "4",
-            "col": "2",
-            "targetType": "PLACED"
+            "col": "2"
           },
           "120360": {
             "spellId": "120360",
             "spellName": "Barrage",
             "row": "5",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "120679": {
             "spellId": "120679",
             "spellName": "Dire Beast",
             "row": "0",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "131894": {
             "spellId": "131894",
             "spellName": "A Murder of Crows",
             "row": "3",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "191384": {
             "spellId": "191384",
             "spellName": "Aspect of the Beast",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "193532": {
             "spellId": "193532",
             "spellName": "Scent of Blood",
             "row": "1",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "199483": {
             "spellId": "199483",
             "spellName": "Camouflage",
             "row": "2",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "199528": {
             "spellId": "199528",
             "spellName": "One with the Pack",
             "row": "1",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "199530": {
             "spellId": "199530",
             "spellName": "Stomp",
             "row": "5",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "199532": {
             "spellId": "199532",
             "spellName": "Killer Cobra",
             "row": "6",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "199921": {
             "spellId": "199921",
             "spellName": "Trailblazer",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "201430": {
             "spellId": "201430",
             "spellName": "Stampede",
             "row": "5",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "257891": {
             "spellId": "257891",
             "spellName": "Spitting Cobra",
             "row": "3",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "257944": {
             "spellId": "257944",
             "spellName": "Thrill of the Hunt",
             "row": "3",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "266921": {
             "spellId": "266921",
             "spellName": "Born To Be Wild",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "267116": {
             "spellId": "267116",
             "spellName": "Animal Companion",
             "row": "0",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "270581": {
             "spellId": "270581",
             "spellName": "Natural Mending",
             "row": "2",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "273887": {
             "spellId": "273887",
             "spellName": "Killer Instinct",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "321530": {
             "spellId": "321530",
             "spellName": "Bloodshed",
             "row": "6",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           }
         },
         "PvP": {}
@@ -4868,148 +4659,127 @@
             "spellId": "109215",
             "spellName": "Posthaste",
             "row": "4",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "120360": {
             "spellId": "120360",
             "spellName": "Barrage",
             "row": "1",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "131894": {
             "spellId": "131894",
             "spellName": "A Murder of Crows",
             "row": "0",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "193533": {
             "spellId": "193533",
             "spellName": "Steady Focus",
             "row": "3",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "194595": {
             "spellId": "194595",
             "spellName": "Lock and Load",
             "row": "6",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "199483": {
             "spellId": "199483",
             "spellName": "Camouflage",
             "row": "2",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "199921": {
             "spellId": "199921",
             "spellName": "Trailblazer",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "212431": {
             "spellId": "212431",
             "spellName": "Explosive Shot",
             "row": "1",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "260228": {
             "spellId": "260228",
             "spellName": "Careful Aim",
             "row": "1",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "260243": {
             "spellId": "260243",
             "spellName": "Volley",
             "row": "6",
-            "col": "2",
-            "targetType": "PLACED"
+            "col": "2"
           },
           "260309": {
             "spellId": "260309",
             "spellName": "Master Marksman",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "260367": {
             "spellId": "260367",
             "spellName": "Streamline",
             "row": "3",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "260393": {
             "spellId": "260393",
             "spellName": "Lethal Shots",
             "row": "5",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "260402": {
             "spellId": "260402",
             "spellName": "Double Tap",
             "row": "5",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "260404": {
             "spellId": "260404",
             "spellName": "Calling the Shots",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "266921": {
             "spellId": "266921",
             "spellName": "Born To Be Wild",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "270581": {
             "spellId": "270581",
             "spellName": "Natural Mending",
             "row": "2",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "271788": {
             "spellId": "271788",
             "spellName": "Serpent Sting",
             "row": "0",
-            "col": "1",
-            "targetType": "MANY_ENEMY"
+            "col": "1"
           },
           "321460": {
             "spellId": "321460",
             "spellName": "Dead Eye",
             "row": "5",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "321468": {
             "spellId": "321468",
             "spellName": "Binding Shackles",
             "row": "4",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "342049": {
             "spellId": "342049",
             "spellName": "Chimaera Shot",
             "row": "3",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           }
         },
         "PvP": {
@@ -5033,148 +4803,127 @@
             "spellId": "109215",
             "spellName": "Posthaste",
             "row": "4",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "109248": {
             "spellId": "109248",
             "spellName": "Binding Shot",
             "row": "4",
-            "col": "2",
-            "targetType": "PLACED"
+            "col": "2"
           },
           "131894": {
             "spellId": "131894",
             "spellName": "A Murder of Crows",
             "row": "3",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "162488": {
             "spellId": "162488",
             "spellName": "Steel Trap",
             "row": "3",
-            "col": "1",
-            "targetType": "PLACED"
+            "col": "1"
           },
           "199483": {
             "spellId": "199483",
             "spellName": "Camouflage",
             "row": "2",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "199921": {
             "spellId": "199921",
             "spellName": "Trailblazer",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "212436": {
             "spellId": "212436",
             "spellName": "Butchery",
             "row": "1",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "259387": {
             "spellId": "259387",
             "spellName": "Mongoose Bite",
             "row": "5",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "259391": {
             "spellId": "259391",
             "spellName": "Chakrams",
             "row": "6",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "260241": {
             "spellId": "260241",
             "spellName": "Hydra's Bite",
             "row": "1",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "260248": {
             "spellId": "260248",
             "spellName": "Bloodseeker",
             "row": "3",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "260285": {
             "spellId": "260285",
             "spellName": "Tip of the Spear",
             "row": "5",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "260331": {
             "spellId": "260331",
             "spellName": "Birds of Prey",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "264332": {
             "spellId": "264332",
             "spellName": "Guerrilla Tactics",
             "row": "1",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "265895": {
             "spellId": "265895",
             "spellName": "Terms of Engagement",
             "row": "0",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "266921": {
             "spellId": "266921",
             "spellName": "Born To Be Wild",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "268501": {
             "spellId": "268501",
             "spellName": "Viper's Venom",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "269737": {
             "spellId": "269737",
             "spellName": "Alpha Predator",
             "row": "0",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "269751": {
             "spellId": "269751",
             "spellName": "Flanking Strike",
             "row": "5",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "270581": {
             "spellId": "270581",
             "spellName": "Natural Mending",
             "row": "2",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "271014": {
             "spellId": "271014",
             "spellName": "Wildfire Infusion",
             "row": "6",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           }
         },
         "PvP": {
@@ -5200,134 +4949,115 @@
             "spellId": "1463",
             "spellName": "Incanter's Flow",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "44457": {
             "spellId": "44457",
             "spellName": "Living Bomb",
             "row": "5",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "113724": {
             "spellId": "113724",
             "spellName": "Ring of Frost",
             "row": "4",
-            "col": "2",
-            "targetType": "PLACED"
+            "col": "2"
           },
           "116011": {
             "spellId": "116011",
             "spellName": "Rune of Power",
             "row": "2",
-            "col": "2",
-            "targetType": "PLACED"
+            "col": "2"
           },
           "153561": {
             "spellId": "153561",
             "spellName": "Meteor",
             "row": "6",
-            "col": "2",
-            "targetType": "PLACED"
+            "col": "2"
           },
           "155148": {
             "spellId": "155148",
             "spellName": "Kindling",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "157981": {
             "spellId": "157981",
             "spellName": "Blast Wave",
             "row": "1",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "205020": {
             "spellId": "205020",
             "spellName": "Pyromaniac",
             "row": "0",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "205023": {
             "spellId": "205023",
             "spellName": "Conflagration",
             "row": "5",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "205026": {
             "spellId": "205026",
             "spellName": "Firestarter",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "205029": {
             "spellId": "205029",
             "spellName": "Flame On",
             "row": "3",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "205036": {
             "spellId": "205036",
             "spellName": "Ice Ward",
             "row": "4",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "205037": {
             "spellId": "205037",
             "spellName": "Flame Patch",
             "row": "5",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "212653": {
             "spellId": "212653",
             "spellName": "Shimmer",
             "row": "1",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "235365": {
             "spellId": "235365",
             "spellName": "Blazing Soul",
             "row": "1",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "235870": {
             "spellId": "235870",
             "spellName": "Alexstrasza's Fury",
             "row": "3",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "236058": {
             "spellId": "236058",
             "spellName": "Frenetic Speed",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "269644": {
             "spellId": "269644",
             "spellName": "Searing Touch",
             "row": "0",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "269650": {
             "spellId": "269650",
             "spellName": "Pyroclasm",
             "row": "6",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "321358": {
             "spellId": "321358",
@@ -5339,8 +5069,7 @@
             "spellId": "342344",
             "spellName": "From the Ashes",
             "row": "3",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           }
         },
         "PvP": {
@@ -5362,141 +5091,121 @@
             "spellId": "1463",
             "spellName": "Incanter's Flow",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "56377": {
             "spellId": "56377",
             "spellName": "Splitting Ice",
             "row": "5",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "108839": {
             "spellId": "108839",
             "spellName": "Ice Floes",
             "row": "1",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "113724": {
             "spellId": "113724",
             "spellName": "Ring of Frost",
             "row": "4",
-            "col": "2",
-            "targetType": "PLACED"
+            "col": "2"
           },
           "116011": {
             "spellId": "116011",
             "spellName": "Rune of Power",
             "row": "2",
-            "col": "2",
-            "targetType": "PLACED"
+            "col": "2"
           },
           "153595": {
             "spellId": "153595",
             "spellName": "Comet Storm",
             "row": "5",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "155149": {
             "spellId": "155149",
             "spellName": "Thermal Void",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "157997": {
             "spellId": "157997",
             "spellName": "Ice Nova",
             "row": "0",
-            "col": "2",
-            "targetType": "PLACED"
+            "col": "2"
           },
           "199786": {
             "spellId": "199786",
             "spellName": "Glacial Spike",
             "row": "6",
-            "col": "2",
-            "targetType": "MANY_ENEMY"
+            "col": "2"
           },
           "205021": {
             "spellId": "205021",
             "spellName": "Ray of Frost",
             "row": "6",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "205024": {
             "spellId": "205024",
             "spellName": "Lonely Winter",
             "row": "0",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "205027": {
             "spellId": "205027",
             "spellName": "Bone Chilling",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "205030": {
             "spellId": "205030",
             "spellName": "Frozen Touch",
             "row": "3",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "205036": {
             "spellId": "205036",
             "spellName": "Ice Ward",
             "row": "4",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "212653": {
             "spellId": "212653",
             "spellName": "Shimmer",
             "row": "1",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "235224": {
             "spellId": "235224",
             "spellName": "Frigid Winds",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "235297": {
             "spellId": "235297",
             "spellName": "Glacial Insulation",
             "row": "1",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "257537": {
             "spellId": "257537",
             "spellName": "Ebonbolt",
             "row": "3",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "270233": {
             "spellId": "270233",
             "spellName": "Freezing Rain",
             "row": "5",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "278309": {
             "spellId": "278309",
             "spellName": "Chain Reaction",
             "row": "3",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "321358": {
             "spellId": "321358",
@@ -5513,120 +5222,103 @@
             "spellId": "1463",
             "spellName": "Incanter's Flow",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "113724": {
             "spellId": "113724",
             "spellName": "Ring of Frost",
             "row": "4",
-            "col": "2",
-            "targetType": "PLACED"
+            "col": "2"
           },
           "114923": {
             "spellId": "114923",
             "spellName": "Nether Tempest",
             "row": "3",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "116011": {
             "spellId": "116011",
             "spellName": "Rune of Power",
             "row": "2",
-            "col": "2",
-            "targetType": "PLACED"
+            "col": "2"
           },
           "153626": {
             "spellId": "153626",
             "spellName": "Arcane Orb",
             "row": "5",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "155147": {
             "spellId": "155147",
             "spellName": "Overpowered",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "157980": {
             "spellId": "157980",
             "spellName": "Supernova",
             "row": "5",
-            "col": "2",
-            "targetType": "PLACED"
+            "col": "2"
           },
           "205022": {
             "spellId": "205022",
             "spellName": "Arcane Familiar",
             "row": "0",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "205028": {
             "spellId": "205028",
             "spellName": "Resonance",
             "row": "3",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "205036": {
             "spellId": "205036",
             "spellName": "Ice Ward",
             "row": "4",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "210805": {
             "spellId": "210805",
             "spellName": "Time Anomaly",
             "row": "6",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "212653": {
             "spellId": "212653",
             "spellName": "Shimmer",
             "row": "1",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "235711": {
             "spellId": "235711",
             "spellName": "Chrono Shift",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "236457": {
             "spellId": "236457",
             "spellName": "Slipstream",
             "row": "1",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "236628": {
             "spellId": "236628",
             "spellName": "Amplification",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "264354": {
             "spellId": "264354",
             "spellName": "Rule of Threes",
             "row": "0",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "281482": {
             "spellId": "281482",
             "spellName": "Reverberate",
             "row": "5",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "321358": {
             "spellId": "321358",
@@ -5638,22 +5330,19 @@
             "spellId": "321387",
             "spellName": "Enlightened",
             "row": "6",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "342231": {
             "spellId": "342231",
             "spellName": "Arcane Echo",
             "row": "3",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "342249": {
             "spellId": "342249",
             "spellName": "Master of Time",
             "row": "1",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           }
         },
         "PvP": {
@@ -5676,148 +5365,127 @@
             "spellId": "115008",
             "spellName": "Chi Torpedo",
             "row": "1",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "115098": {
             "spellId": "115098",
             "spellName": "Chi Wave",
             "row": "0",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "115173": {
             "spellId": "115173",
             "spellName": "Celerity",
             "row": "1",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "115288": {
             "spellId": "115288",
             "spellName": "Energizing Elixir",
             "row": "2",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "115396": {
             "spellId": "115396",
             "spellName": "Ascension",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "116841": {
             "spellId": "116841",
             "spellName": "Tiger's Lust",
             "row": "1",
-            "col": "2",
-            "targetType": "ONE_FRIENDLY"
+            "col": "2"
           },
           "116844": {
             "spellId": "116844",
             "spellName": "Ring of Peace",
             "row": "3",
-            "col": "2",
-            "targetType": "PLACED"
+            "col": "2"
           },
           "116847": {
             "spellId": "116847",
             "spellName": "Rushing Jade Wind",
             "row": "5",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "122278": {
             "spellId": "122278",
             "spellName": "Dampen Harm",
             "row": "4",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "122783": {
             "spellId": "122783",
             "spellName": "Diffuse Magic",
             "row": "4",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "123986": {
             "spellId": "123986",
             "spellName": "Chi Burst",
             "row": "0",
-            "col": "2",
-            "targetType": "ONE_FRIENDLY"
+            "col": "2"
           },
           "152173": {
             "spellId": "152173",
             "spellName": "Serenity",
             "row": "6",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "152175": {
             "spellId": "152175",
             "spellName": "Whirling Dragon Punch",
             "row": "6",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "196607": {
             "spellId": "196607",
             "spellName": "Eye of the Tiger",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "196740": {
             "spellId": "196740",
             "spellName": "Hit Combo",
             "row": "5",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "261767": {
             "spellId": "261767",
             "spellName": "Inner Strength",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "261947": {
             "spellId": "261947",
             "spellName": "Fist of the White Tiger",
             "row": "2",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "264348": {
             "spellId": "264348",
             "spellName": "Tiger Tail Sweep",
             "row": "3",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "280195": {
             "spellId": "280195",
             "spellName": "Good Karma",
             "row": "3",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "280197": {
             "spellId": "280197",
             "spellName": "Spiritual Focus",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "325201": {
             "spellId": "325201",
             "spellName": "Dance of Chi-Ji",
             "row": "5",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           }
         },
         "PvP": {}
@@ -5828,22 +5496,19 @@
             "spellId": "115008",
             "spellName": "Chi Torpedo",
             "row": "1",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "115098": {
             "spellId": "115098",
             "spellName": "Chi Wave",
             "row": "0",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "115173": {
             "spellId": "115173",
             "spellName": "Celerity",
             "row": "1",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "115313": {
             "spellId": "115313",
@@ -5855,78 +5520,67 @@
             "spellId": "116841",
             "spellName": "Tiger's Lust",
             "row": "1",
-            "col": "2",
-            "targetType": "ONE_FRIENDLY"
+            "col": "2"
           },
           "116844": {
             "spellId": "116844",
             "spellName": "Ring of Peace",
             "row": "3",
-            "col": "2",
-            "targetType": "PLACED"
+            "col": "2"
           },
           "122278": {
             "spellId": "122278",
             "spellName": "Dampen Harm",
             "row": "4",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "122281": {
             "spellId": "122281",
             "spellName": "Healing Elixir",
             "row": "4",
-            "col": "0",
-            "targetType": "SELF"
+            "col": "0"
           },
           "122783": {
             "spellId": "122783",
             "spellName": "Diffuse Magic",
             "row": "4",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "123986": {
             "spellId": "123986",
             "spellName": "Chi Burst",
             "row": "0",
-            "col": "2",
-            "targetType": "ONE_FRIENDLY"
+            "col": "2"
           },
           "196725": {
             "spellId": "196725",
             "spellName": "Refreshing Jade Wind",
             "row": "5",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "197895": {
             "spellId": "197895",
             "spellName": "Focused Thunder",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "197900": {
             "spellId": "197900",
             "spellName": "Mist Wrap",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "197908": {
             "spellId": "197908",
             "spellName": "Mana Tea",
             "row": "2",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "197915": {
             "spellId": "197915",
             "spellName": "Lifecycles",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "198898": {
             "spellId": "198898",
@@ -5938,36 +5592,31 @@
             "spellId": "210802",
             "spellName": "Spirit of the Crane",
             "row": "2",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "264348": {
             "spellId": "264348",
             "spellName": "Tiger Tail Sweep",
             "row": "3",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "274909": {
             "spellId": "274909",
             "spellName": "Rising Mist",
             "row": "6",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "274963": {
             "spellId": "274963",
             "spellName": "Upwelling",
             "row": "6",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "325197": {
             "spellId": "325197",
             "spellName": "Invoke Chi-Ji, the Red Crane",
             "row": "5",
-            "col": "2",
-            "targetType": "ONE_FRIENDLY"
+            "col": "2"
           }
         },
         "PvP": {
@@ -5988,22 +5637,19 @@
             "spellId": "115008",
             "spellName": "Chi Torpedo",
             "row": "1",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "115098": {
             "spellId": "115098",
             "spellName": "Chi Wave",
             "row": "0",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "115173": {
             "spellId": "115173",
             "spellName": "Celerity",
             "row": "1",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "115315": {
             "spellId": "115315",
@@ -6015,120 +5661,103 @@
             "spellId": "115399",
             "spellName": "Black Ox Brew",
             "row": "2",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "116841": {
             "spellId": "116841",
             "spellName": "Tiger's Lust",
             "row": "1",
-            "col": "2",
-            "targetType": "ONE_FRIENDLY"
+            "col": "2"
           },
           "116844": {
             "spellId": "116844",
             "spellName": "Ring of Peace",
             "row": "3",
-            "col": "2",
-            "targetType": "PLACED"
+            "col": "2"
           },
           "116847": {
             "spellId": "116847",
             "spellName": "Rushing Jade Wind",
             "row": "5",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "122278": {
             "spellId": "122278",
             "spellName": "Dampen Harm",
             "row": "4",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "122281": {
             "spellId": "122281",
             "spellName": "Healing Elixir",
             "row": "4",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "123986": {
             "spellId": "123986",
             "spellName": "Chi Burst",
             "row": "0",
-            "col": "2",
-            "targetType": "ONE_FRIENDLY"
+            "col": "2"
           },
           "196607": {
             "spellId": "196607",
             "spellName": "Eye of the Tiger",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "196730": {
             "spellId": "196730",
             "spellName": "Special Delivery",
             "row": "5",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "196736": {
             "spellId": "196736",
             "spellName": "Blackout Combo",
             "row": "6",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "196737": {
             "spellId": "196737",
             "spellName": "High Tolerance",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "242580": {
             "spellId": "242580",
             "spellName": "Spitfire",
             "row": "2",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "264348": {
             "spellId": "264348",
             "spellName": "Tiger Tail Sweep",
             "row": "3",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "280515": {
             "spellId": "280515",
             "spellName": "Bob and Weave",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "325093": {
             "spellId": "325093",
             "spellName": "Light Brewing",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "325153": {
             "spellId": "325153",
             "spellName": "Exploding Keg",
             "row": "5",
-            "col": "2",
-            "targetType": "PLACED"
+            "col": "2"
           },
           "325177": {
             "spellId": "325177",
             "spellName": "Celestial Flames",
             "row": "6",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           }
         },
         "PvP": {}
@@ -6141,148 +5770,127 @@
             "spellId": "20066",
             "spellName": "Repentance",
             "row": "2",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "85804": {
             "spellId": "85804",
             "spellName": "Selfless Healer",
             "row": "5",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "105809": {
             "spellId": "105809",
             "spellName": "Holy Avenger",
             "row": "4",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "114154": {
             "spellId": "114154",
             "spellName": "Unbreakable Spirit",
             "row": "3",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "115750": {
             "spellId": "115750",
             "spellName": "Blinding Light",
             "row": "2",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "152262": {
             "spellId": "152262",
             "spellName": "Seraphim",
             "row": "4",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "203316": {
             "spellId": "203316",
             "spellName": "Fires of Justice",
             "row": "1",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "205191": {
             "spellId": "205191",
             "spellName": "Eye for an Eye",
             "row": "3",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "215661": {
             "spellId": "215661",
             "spellName": "Justicar's Vengeance",
             "row": "5",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "223817": {
             "spellId": "223817",
             "spellName": "Divine Purpose",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "230332": {
             "spellId": "230332",
             "spellName": "Cavalier",
             "row": "3",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "231832": {
             "spellId": "231832",
             "spellName": "Blade of Wrath",
             "row": "1",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "231895": {
             "spellId": "231895",
             "spellName": "Crusade",
             "row": "6",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "234299": {
             "spellId": "234299",
             "spellName": "Fist of Justice",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "267610": {
             "spellId": "267610",
             "spellName": "Righteous Verdict",
             "row": "0",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "269569": {
             "spellId": "269569",
             "spellName": "Zeal",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "317866": {
             "spellId": "317866",
             "spellName": "Sanctified Wrath",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "326732": {
             "spellId": "326732",
             "spellName": "Empyrean Power",
             "row": "1",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "326734": {
             "spellId": "326734",
             "spellName": "Healing Hands",
             "row": "5",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "343527": {
             "spellId": "343527",
             "spellName": "Execution Sentence",
             "row": "0",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "343721": {
             "spellId": "343721",
             "spellName": "Final Reckoning",
             "row": "6",
-            "col": "2",
-            "targetType": "PLACED"
+            "col": "2"
           }
         },
         "PvP": {}
@@ -6293,148 +5901,127 @@
             "spellId": "20066",
             "spellName": "Repentance",
             "row": "2",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "53376": {
             "spellId": "53376",
             "spellName": "Sanctified Wrath",
             "row": "5",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "105809": {
             "spellId": "105809",
             "spellName": "Holy Avenger",
             "row": "4",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "114154": {
             "spellId": "114154",
             "spellName": "Unbreakable Spirit",
             "row": "3",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "114158": {
             "spellId": "114158",
             "spellName": "Light's Hammer",
             "row": "0",
-            "col": "2",
-            "targetType": "PLACED"
+            "col": "2"
           },
           "114165": {
             "spellId": "114165",
             "spellName": "Holy Prism",
             "row": "1",
-            "col": "2",
-            "targetType": "ONE_FRIENDLY"
+            "col": "2"
           },
           "115750": {
             "spellId": "115750",
             "spellName": "Blinding Light",
             "row": "2",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "152262": {
             "spellId": "152262",
             "spellName": "Seraphim",
             "row": "4",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "156910": {
             "spellId": "156910",
             "spellName": "Beacon of Faith",
             "row": "6",
-            "col": "1",
-            "targetType": "ONE_FRIENDLY"
+            "col": "1"
           },
           "157047": {
             "spellId": "157047",
             "spellName": "Saved by the Light",
             "row": "1",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "183778": {
             "spellId": "183778",
             "spellName": "Judgment of Light",
             "row": "1",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "196926": {
             "spellId": "196926",
             "spellName": "Crusader's Might",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "200025": {
             "spellId": "200025",
             "spellName": "Beacon of Virtue",
             "row": "6",
-            "col": "2",
-            "targetType": "ONE_FRIENDLY"
+            "col": "2"
           },
           "214202": {
             "spellId": "214202",
             "spellName": "Rule of Law",
             "row": "3",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "216331": {
             "spellId": "216331",
             "spellName": "Avenging Crusader",
             "row": "5",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "223306": {
             "spellId": "223306",
             "spellName": "Bestow Faith",
             "row": "0",
-            "col": "1",
-            "targetType": "ONE_FRIENDLY"
+            "col": "1"
           },
           "223817": {
             "spellId": "223817",
             "spellName": "Divine Purpose",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "230332": {
             "spellId": "230332",
             "spellName": "Cavalier",
             "row": "3",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "234299": {
             "spellId": "234299",
             "spellName": "Fist of Justice",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "248033": {
             "spellId": "248033",
             "spellName": "Awakening",
             "row": "5",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "325966": {
             "spellId": "325966",
             "spellName": "Glimmer of Light",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           }
         },
         "PvP": {
@@ -6459,148 +6046,127 @@
             "spellId": "20066",
             "spellName": "Repentance",
             "row": "2",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "105809": {
             "spellId": "105809",
             "spellName": "Holy Avenger",
             "row": "4",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "114154": {
             "spellId": "114154",
             "spellName": "Unbreakable Spirit",
             "row": "3",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "115750": {
             "spellId": "115750",
             "spellName": "Blinding Light",
             "row": "2",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "152261": {
             "spellId": "152261",
             "spellName": "Holy Shield",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "152262": {
             "spellId": "152262",
             "spellName": "Seraphim",
             "row": "4",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "171648": {
             "spellId": "171648",
             "spellName": "Sanctified Wrath",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "183778": {
             "spellId": "183778",
             "spellName": "Judgment of Light",
             "row": "5",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "203776": {
             "spellId": "203776",
             "spellName": "First Avenger",
             "row": "1",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "204018": {
             "spellId": "204018",
             "spellName": "Blessing of Spellwarding",
             "row": "3",
-            "col": "2",
-            "targetType": "ONE_FRIENDLY"
+            "col": "2"
           },
           "204019": {
             "spellId": "204019",
             "spellName": "Blessed Hammer",
             "row": "0",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "204023": {
             "spellId": "204023",
             "spellName": "Crusader's Judgment",
             "row": "1",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "204054": {
             "spellId": "204054",
             "spellName": "Consecrated Ground",
             "row": "5",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "204074": {
             "spellId": "204074",
             "spellName": "Righteous Protector",
             "row": "6",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "204077": {
             "spellId": "204077",
             "spellName": "Final Stand",
             "row": "6",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "223817": {
             "spellId": "223817",
             "spellName": "Divine Purpose",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "230332": {
             "spellId": "230332",
             "spellName": "Cavalier",
             "row": "3",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "234299": {
             "spellId": "234299",
             "spellName": "Fist of Justice",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "280373": {
             "spellId": "280373",
             "spellName": "Redoubt",
             "row": "0",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "315924": {
             "spellId": "315924",
             "spellName": "Hand of the Protector",
             "row": "5",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "327193": {
             "spellId": "327193",
             "spellName": "Moment of Glory",
             "row": "1",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           }
         },
         "PvP": {
@@ -6635,148 +6201,127 @@
             "spellId": "64129",
             "spellName": "Body and Soul",
             "row": "1",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "109964": {
             "spellId": "109964",
             "spellName": "Spirit Shell",
             "row": "6",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "110744": {
             "spellId": "110744",
             "spellName": "Divine Star",
             "row": "5",
-            "col": "1",
-            "targetType": "ONE_FRIENDLY"
+            "col": "1"
           },
           "120517": {
             "spellId": "120517",
             "spellName": "Halo",
             "row": "5",
-            "col": "2",
-            "targetType": "ONE_FRIENDLY"
+            "col": "2"
           },
           "121536": {
             "spellId": "121536",
             "spellName": "Angelic Feather",
             "row": "1",
-            "col": "2",
-            "targetType": "PLACED"
+            "col": "2"
           },
           "123040": {
             "spellId": "123040",
             "spellName": "Mindbender",
             "row": "2",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "129250": {
             "spellId": "129250",
             "spellName": "Power Word: Solace",
             "row": "2",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "193063": {
             "spellId": "193063",
             "spellName": "Masochism",
             "row": "1",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "193134": {
             "spellId": "193134",
             "spellName": "Castigation",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "196704": {
             "spellId": "196704",
             "spellName": "Psychic Voice",
             "row": "3",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "197045": {
             "spellId": "197045",
             "spellName": "Shield Discipline",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "197419": {
             "spellId": "197419",
             "spellName": "Contrition",
             "row": "4",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "204197": {
             "spellId": "204197",
             "spellName": "Purge the Wicked",
             "row": "5",
-            "col": "0",
-            "targetType": "MANY_ENEMY"
+            "col": "0"
           },
           "204263": {
             "spellId": "204263",
             "spellName": "Shining Force",
             "row": "3",
-            "col": "2",
-            "targetType": "ONE_FRIENDLY"
+            "col": "2"
           },
           "205367": {
             "spellId": "205367",
             "spellName": "Dominant Mind",
             "row": "3",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "214621": {
             "spellId": "214621",
             "spellName": "Schism",
             "row": "0",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "238063": {
             "spellId": "238063",
             "spellName": "Lenience",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "246287": {
             "spellId": "246287",
             "spellName": "Evangelism",
             "row": "6",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "265259": {
             "spellId": "265259",
             "spellName": "Twist of Fate",
             "row": "0",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "280391": {
             "spellId": "280391",
             "spellName": "Sins of the Many",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "314867": {
             "spellId": "314867",
             "spellName": "Shadow Covenant",
             "row": "4",
-            "col": "2",
-            "targetType": "ONE_FRIENDLY"
+            "col": "2"
           }
         },
         "PvP": {}
@@ -6787,148 +6332,127 @@
             "spellId": "32546",
             "spellName": "Binding Heal",
             "row": "4",
-            "col": "1",
-            "targetType": "ONE_FRIENDLY"
+            "col": "1"
           },
           "64129": {
             "spellId": "64129",
             "spellName": "Body and Soul",
             "row": "1",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "109186": {
             "spellId": "109186",
             "spellName": "Surge of Light",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "110744": {
             "spellId": "110744",
             "spellName": "Divine Star",
             "row": "5",
-            "col": "1",
-            "targetType": "ONE_FRIENDLY"
+            "col": "1"
           },
           "120517": {
             "spellId": "120517",
             "spellName": "Halo",
             "row": "5",
-            "col": "2",
-            "targetType": "ONE_FRIENDLY"
+            "col": "2"
           },
           "121536": {
             "spellId": "121536",
             "spellName": "Angelic Feather",
             "row": "1",
-            "col": "2",
-            "targetType": "PLACED"
+            "col": "2"
           },
           "193155": {
             "spellId": "193155",
             "spellName": "Enlightenment",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "193157": {
             "spellId": "193157",
             "spellName": "Benediction",
             "row": "5",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "196704": {
             "spellId": "196704",
             "spellName": "Psychic Voice",
             "row": "3",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "196707": {
             "spellId": "196707",
             "spellName": "Afterlife",
             "row": "2",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "196985": {
             "spellId": "196985",
             "spellName": "Light of the Naaru",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "200128": {
             "spellId": "200128",
             "spellName": "Trail of Light",
             "row": "0",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "200183": {
             "spellId": "200183",
             "spellName": "Apotheosis",
             "row": "6",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "200199": {
             "spellId": "200199",
             "spellName": "Censure",
             "row": "3",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "200209": {
             "spellId": "200209",
             "spellName": "Guardian Angel",
             "row": "2",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "204263": {
             "spellId": "204263",
             "spellName": "Shining Force",
             "row": "3",
-            "col": "2",
-            "targetType": "ONE_FRIENDLY"
+            "col": "2"
           },
           "238100": {
             "spellId": "238100",
             "spellName": "Angel's Mercy",
             "row": "1",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "238136": {
             "spellId": "238136",
             "spellName": "Cosmic Ripple",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "265202": {
             "spellId": "265202",
             "spellName": "Holy Word: Salvation",
             "row": "6",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "321377": {
             "spellId": "321377",
             "spellName": "Prayer Circle",
             "row": "4",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "341997": {
             "spellId": "341997",
             "spellName": "Renewed Faith",
             "row": "0",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           }
         },
         "PvP": {
@@ -6957,120 +6481,103 @@
             "spellId": "64044",
             "spellName": "Psychic Horror",
             "row": "3",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "64129": {
             "spellId": "64129",
             "spellName": "Body and Soul",
             "row": "1",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "109142": {
             "spellId": "109142",
             "spellName": "Twist of Fate",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "155271": {
             "spellId": "155271",
             "spellName": "Auspicious Spirits",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "193195": {
             "spellId": "193195",
             "spellName": "Fortress of the Mind",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "199484": {
             "spellId": "199484",
             "spellName": "Psychic Link",
             "row": "4",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "199855": {
             "spellId": "199855",
             "spellName": "San'layn",
             "row": "1",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "200174": {
             "spellId": "200174",
             "spellName": "Mindbender",
             "row": "5",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "205369": {
             "spellId": "205369",
             "spellName": "Mind Bomb",
             "row": "3",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "238558": {
             "spellId": "238558",
             "spellName": "Misery",
             "row": "2",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "263165": {
             "spellId": "263165",
             "spellName": "Void Torrent",
             "row": "5",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "263716": {
             "spellId": "263716",
             "spellName": "Last Word",
             "row": "3",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "288733": {
             "spellId": "288733",
             "spellName": "Intangibility",
             "row": "1",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "319952": {
             "spellId": "319952",
             "spellName": "Surrender to Madness",
             "row": "6",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "321291": {
             "spellId": "321291",
             "spellName": "Death and Madness",
             "row": "0",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "341240": {
             "spellId": "341240",
             "spellName": "Ancient Madness",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "341273": {
             "spellId": "341273",
             "spellName": "Unfurling Darkness",
             "row": "0",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "341374": {
             "spellId": "341374",
@@ -7082,22 +6589,19 @@
             "spellId": "341385",
             "spellName": "Searing Nightmare",
             "row": "2",
-            "col": "2",
-            "targetType": "PLACED"
+            "col": "2"
           },
           "342834": {
             "spellId": "342834",
             "spellName": "Shadow Crash",
             "row": "4",
-            "col": "2",
-            "targetType": "PLACED"
+            "col": "2"
           },
           "345218": {
             "spellId": "345218",
             "spellName": "Hungering Void",
             "row": "6",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           }
         },
         "PvP": {
@@ -7120,50 +6624,43 @@
             "spellId": "14062",
             "spellName": "Nightstalker",
             "row": "1",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "14983": {
             "spellId": "14983",
             "spellName": "Vigor",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "31230": {
             "spellId": "31230",
             "spellName": "Cheat Death",
             "row": "3",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "79008": {
             "spellId": "79008",
             "spellName": "Elusiveness",
             "row": "3",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "108208": {
             "spellId": "108208",
             "spellName": "Subterfuge",
             "row": "1",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "121411": {
             "spellId": "121411",
             "spellName": "Crimson Tempest",
             "row": "6",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "131511": {
             "spellId": "131511",
             "spellName": "Prey on the Weak",
             "row": "4",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "137619": {
             "spellId": "137619",
@@ -7175,92 +6672,79 @@
             "spellId": "152152",
             "spellName": "Venom Rush",
             "row": "5",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "154904": {
             "spellId": "154904",
             "spellName": "Internal Bleeding",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "193531": {
             "spellId": "193531",
             "spellName": "Deeper Stratagem",
             "row": "2",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "193539": {
             "spellId": "193539",
             "spellName": "Alacrity",
             "row": "5",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "193640": {
             "spellId": "193640",
             "spellName": "Elaborate Planning",
             "row": "0",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "196861": {
             "spellId": "196861",
             "spellName": "Iron Wire",
             "row": "4",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "196864": {
             "spellId": "196864",
             "spellName": "Master Poisoner",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "200806": {
             "spellId": "200806",
             "spellName": "Exsanguinate",
             "row": "5",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "255544": {
             "spellId": "255544",
             "spellName": "Poison Bomb",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "255989": {
             "spellId": "255989",
             "spellName": "Master Assassin",
             "row": "1",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "270061": {
             "spellId": "270061",
             "spellName": "Hidden Blades",
             "row": "6",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "280716": {
             "spellId": "280716",
             "spellName": "Leeching Poison",
             "row": "3",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "328085": {
             "spellId": "328085",
             "spellName": "Blindside",
             "row": "0",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           }
         },
         "PvP": {}
@@ -7271,50 +6755,43 @@
             "spellId": "14062",
             "spellName": "Nightstalker",
             "row": "1",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "14983": {
             "spellId": "14983",
             "spellName": "Vigor",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "31230": {
             "spellId": "31230",
             "spellName": "Cheat Death",
             "row": "3",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "79008": {
             "spellId": "79008",
             "spellName": "Elusiveness",
             "row": "3",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "108208": {
             "spellId": "108208",
             "spellName": "Subterfuge",
             "row": "1",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "108209": {
             "spellId": "108209",
             "spellName": "Shadow Focus",
             "row": "1",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "131511": {
             "spellId": "131511",
             "spellName": "Prey on the Weak",
             "row": "4",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "137619": {
             "spellId": "137619",
@@ -7326,92 +6803,79 @@
             "spellId": "193531",
             "spellName": "Deeper Stratagem",
             "row": "2",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "193537": {
             "spellId": "193537",
             "spellName": "Weaponmaster",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "193539": {
             "spellId": "193539",
             "spellName": "Alacrity",
             "row": "5",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "196976": {
             "spellId": "196976",
             "spellName": "Master of Shadows",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "200758": {
             "spellId": "200758",
             "spellName": "Gloomblade",
             "row": "0",
-            "col": "2",
-            "targetType": "MANY_ENEMY"
+            "col": "2"
           },
           "200759": {
             "spellId": "200759",
             "spellName": "Soothing Darkness",
             "row": "3",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "238104": {
             "spellId": "238104",
             "spellName": "Enveloping Shadows",
             "row": "5",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "245687": {
             "spellId": "245687",
             "spellName": "Dark Shadow",
             "row": "5",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "257505": {
             "spellId": "257505",
             "spellName": "Shot in the Dark",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "277925": {
             "spellId": "277925",
             "spellName": "Shuriken Tornado",
             "row": "6",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "277953": {
             "spellId": "277953",
             "spellName": "Night Terrors",
             "row": "4",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "280719": {
             "spellId": "280719",
             "spellName": "Secret Technique",
             "row": "6",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "343160": {
             "spellId": "343160",
             "spellName": "Premeditation",
             "row": "0",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           }
         },
         "PvP": {}
@@ -7422,43 +6886,37 @@
             "spellId": "14983",
             "spellName": "Vigor",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "31230": {
             "spellId": "31230",
             "spellName": "Cheat Death",
             "row": "3",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "51690": {
             "spellId": "51690",
             "spellName": "Killing Spree",
             "row": "6",
-            "col": "2",
-            "targetType": "PLACED"
+            "col": "2"
           },
           "79008": {
             "spellId": "79008",
             "spellName": "Elusiveness",
             "row": "3",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "108216": {
             "spellId": "108216",
             "spellName": "Dirty Tricks",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "131511": {
             "spellId": "131511",
             "spellName": "Prey on the Weak",
             "row": "4",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "137619": {
             "spellId": "137619",
@@ -7470,99 +6928,85 @@
             "spellId": "193531",
             "spellName": "Deeper Stratagem",
             "row": "2",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "193539": {
             "spellId": "193539",
             "spellName": "Alacrity",
             "row": "5",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "193546": {
             "spellId": "193546",
             "spellName": "Iron Stomach",
             "row": "3",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "196922": {
             "spellId": "196922",
             "spellName": "Hit and Run",
             "row": "1",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "196924": {
             "spellId": "196924",
             "spellName": "Acrobatic Strikes",
             "row": "1",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "196937": {
             "spellId": "196937",
             "spellName": "Ghostly Strike",
             "row": "0",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "196938": {
             "spellId": "196938",
             "spellName": "Quick Draw",
             "row": "0",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "200733": {
             "spellId": "200733",
             "spellName": "Weaponmaster",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "256165": {
             "spellId": "256165",
             "spellName": "Blinding Powder",
             "row": "4",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "256170": {
             "spellId": "256170",
             "spellName": "Loaded Dice",
             "row": "5",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "256188": {
             "spellId": "256188",
             "spellName": "Retractable Hook",
             "row": "1",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "271877": {
             "spellId": "271877",
             "spellName": "Blade Rush",
             "row": "6",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "272026": {
             "spellId": "272026",
             "spellName": "Dancing Steel",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "343142": {
             "spellId": "343142",
             "spellName": "Dreadblades",
             "row": "5",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           }
         },
         "PvP": {
@@ -7592,148 +7036,127 @@
             "spellId": "30884",
             "spellName": "Nature's Guardian",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "51485": {
             "spellId": "51485",
             "spellName": "Earthgrab Totem",
             "row": "2",
-            "col": "1",
-            "targetType": "PLACED"
+            "col": "1"
           },
           "73685": {
             "spellId": "73685",
             "spellName": "Unleash Life",
             "row": "0",
-            "col": "2",
-            "targetType": "ONE_FRIENDLY"
+            "col": "2"
           },
           "108283": {
             "spellId": "108283",
             "spellName": "Echo of the Elements",
             "row": "1",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "114052": {
             "spellId": "114052",
             "spellName": "Ascendance",
             "row": "6",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "157153": {
             "spellId": "157153",
             "spellName": "Cloudburst Totem",
             "row": "5",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "157154": {
             "spellId": "157154",
             "spellName": "High Tide",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "192077": {
             "spellId": "192077",
             "spellName": "Wind Rush Totem",
             "row": "4",
-            "col": "2",
-            "targetType": "ONE_FRIENDLY"
+            "col": "2"
           },
           "192088": {
             "spellId": "192088",
             "spellName": "Graceful Spirit",
             "row": "4",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "197995": {
             "spellId": "197995",
             "spellName": "Wellspring",
             "row": "6",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "198838": {
             "spellId": "198838",
             "spellName": "Earthen Wall Totem",
             "row": "3",
-            "col": "1",
-            "targetType": "PLACED"
+            "col": "1"
           },
           "200071": {
             "spellId": "200071",
             "spellName": "Undulation",
             "row": "0",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "200072": {
             "spellId": "200072",
             "spellName": "Torrent",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "200076": {
             "spellId": "200076",
             "spellName": "Deluge",
             "row": "1",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "207399": {
             "spellId": "207399",
             "spellName": "Ancestral Protection Totem",
             "row": "3",
-            "col": "2",
-            "targetType": "ONE_FRIENDLY"
+            "col": "2"
           },
           "207401": {
             "spellId": "207401",
             "spellName": "Ancestral Vigor",
             "row": "3",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "207778": {
             "spellId": "207778",
             "spellName": "Downpour",
             "row": "5",
-            "col": "1",
-            "targetType": "PLACED"
+            "col": "1"
           },
           "260878": {
             "spellId": "260878",
             "spellName": "Spirit Wolf",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "265046": {
             "spellId": "265046",
             "spellName": "Static Charge",
             "row": "2",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "280614": {
             "spellId": "280614",
             "spellName": "Flash Flood",
             "row": "5",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "320746": {
             "spellId": "320746",
             "spellName": "Surge of Earth",
             "row": "1",
-            "col": "2",
-            "targetType": "ONE_FRIENDLY"
+            "col": "2"
           }
         },
         "PvP": {
@@ -7756,148 +7179,127 @@
             "spellId": "974",
             "spellName": "Earth Shield",
             "row": "2",
-            "col": "1",
-            "targetType": "ONE_FRIENDLY"
+            "col": "1"
           },
           "16166": {
             "spellId": "16166",
             "spellName": "Master of the Elements",
             "row": "3",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "30884": {
             "spellId": "30884",
             "spellName": "Nature's Guardian",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "108281": {
             "spellId": "108281",
             "spellName": "Ancestral Guidance",
             "row": "4",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "114050": {
             "spellId": "114050",
             "spellName": "Ascendance",
             "row": "6",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "117013": {
             "spellId": "117013",
             "spellName": "Primal Elementalist",
             "row": "5",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "117014": {
             "spellId": "117014",
             "spellName": "Elemental Blast",
             "row": "1",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "170374": {
             "spellId": "170374",
             "spellName": "Earthen Rage",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "191634": {
             "spellId": "191634",
             "spellName": "Stormkeeper",
             "row": "6",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "192077": {
             "spellId": "192077",
             "spellName": "Wind Rush Totem",
             "row": "4",
-            "col": "2",
-            "targetType": "ONE_FRIENDLY"
+            "col": "2"
           },
           "192222": {
             "spellId": "192222",
             "spellName": "Liquid Magma Totem",
             "row": "3",
-            "col": "2",
-            "targetType": "PLACED"
+            "col": "2"
           },
           "192249": {
             "spellId": "192249",
             "spellName": "Storm Elemental",
             "row": "3",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "210714": {
             "spellId": "210714",
             "spellName": "Icefury",
             "row": "5",
-            "col": "2",
-            "targetType": "ONE_FRIENDLY"
+            "col": "2"
           },
           "260878": {
             "spellId": "260878",
             "spellName": "Spirit Wolf",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "260895": {
             "spellId": "260895",
             "spellName": "Unlimited Power",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "262303": {
             "spellId": "262303",
             "spellName": "Surge of Power",
             "row": "5",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "265046": {
             "spellId": "265046",
             "spellName": "Static Charge",
             "row": "2",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "273221": {
             "spellId": "273221",
             "spellName": "Aftershock",
             "row": "1",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "320125": {
             "spellId": "320125",
             "spellName": "Echoing Shock",
             "row": "1",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "333919": {
             "spellId": "333919",
             "spellName": "Echo of the Elements",
             "row": "0",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "342243": {
             "spellId": "342243",
             "spellName": "Static Discharge",
             "row": "0",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           }
         },
         "PvP": {
@@ -7922,148 +7324,127 @@
             "spellId": "974",
             "spellName": "Earth Shield",
             "row": "2",
-            "col": "1",
-            "targetType": "ONE_FRIENDLY"
+            "col": "1"
           },
           "30884": {
             "spellId": "30884",
             "spellName": "Nature's Guardian",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "114051": {
             "spellId": "114051",
             "spellName": "Ascendance",
             "row": "6",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "117014": {
             "spellId": "117014",
             "spellName": "Elemental Blast",
             "row": "0",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "188089": {
             "spellId": "188089",
             "spellName": "Earthen Spike",
             "row": "6",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "192077": {
             "spellId": "192077",
             "spellName": "Wind Rush Totem",
             "row": "4",
-            "col": "2",
-            "targetType": "ONE_FRIENDLY"
+            "col": "2"
           },
           "192246": {
             "spellId": "192246",
             "spellName": "Crashing Storm",
             "row": "5",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "196884": {
             "spellId": "196884",
             "spellName": "Feral Lunge",
             "row": "4",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "197214": {
             "spellId": "197214",
             "spellName": "Sundering",
             "row": "5",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "201900": {
             "spellId": "201900",
             "spellName": "Hot Hand",
             "row": "1",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "210853": {
             "spellId": "210853",
             "spellName": "Elemental Assault",
             "row": "3",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "260878": {
             "spellId": "260878",
             "spellName": "Spirit Wolf",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "262624": {
             "spellId": "262624",
             "spellName": "Elemental Spirits",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "262647": {
             "spellId": "262647",
             "spellName": "Forceful Winds",
             "row": "0",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "265046": {
             "spellId": "265046",
             "spellName": "Static Charge",
             "row": "2",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "320137": {
             "spellId": "320137",
             "spellName": "Stormkeeper",
             "row": "5",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "333974": {
             "spellId": "333974",
             "spellName": "Fire Nova",
             "row": "3",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "334046": {
             "spellId": "334046",
             "spellName": "Lashing Flames",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "334195": {
             "spellId": "334195",
             "spellName": "Hailstorm",
             "row": "3",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "342240": {
             "spellId": "342240",
             "spellName": "Ice Strike",
             "row": "1",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "344357": {
             "spellId": "344357",
             "spellName": "Stormflurry",
             "row": "1",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           }
         },
         "PvP": {
@@ -8087,148 +7468,127 @@
             "spellId": "5484",
             "spellName": "Howl of Terror",
             "row": "4",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "6353": {
             "spellId": "6353",
             "spellName": "Soul Fire",
             "row": "0",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "6789": {
             "spellId": "6789",
             "spellName": "Mortal Coil",
             "row": "4",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "17877": {
             "spellId": "17877",
             "spellName": "Shadowburn",
             "row": "1",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "108416": {
             "spellId": "108416",
             "spellName": "Dark Pact",
             "row": "2",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "108503": {
             "spellId": "108503",
             "spellName": "Grimoire of Sacrifice",
             "row": "5",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "111400": {
             "spellId": "111400",
             "spellName": "Burning Rush",
             "row": "2",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "113858": {
             "spellId": "113858",
             "spellName": "Dark Soul: Instability",
             "row": "6",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "152108": {
             "spellId": "152108",
             "spellName": "Cataclysm",
             "row": "3",
-            "col": "2",
-            "targetType": "PLACED"
+            "col": "2"
           },
           "196408": {
             "spellId": "196408",
             "spellName": "Fire and Brimstone",
             "row": "3",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "196412": {
             "spellId": "196412",
             "spellName": "Eradication",
             "row": "0",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "196447": {
             "spellId": "196447",
             "spellName": "Channel Demonfire",
             "row": "6",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "205148": {
             "spellId": "205148",
             "spellName": "Reverse Entropy",
             "row": "1",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "205184": {
             "spellId": "205184",
             "spellName": "Roaring Blaze",
             "row": "5",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "215941": {
             "spellId": "215941",
             "spellName": "Soul Conduit",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "219272": {
             "spellId": "219272",
             "spellName": "Demon Skin",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "264874": {
             "spellId": "264874",
             "spellName": "Darkfury",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "266086": {
             "spellId": "266086",
             "spellName": "Rain of Chaos",
             "row": "5",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "266134": {
             "spellId": "266134",
             "spellName": "Internal Combustion",
             "row": "1",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "267115": {
             "spellId": "267115",
             "spellName": "Flashover",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "270545": {
             "spellId": "270545",
             "spellName": "Inferno",
             "row": "3",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           }
         },
         "PvP": {
@@ -8251,148 +7611,127 @@
             "spellId": "5484",
             "spellName": "Howl of Terror",
             "row": "4",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "6789": {
             "spellId": "6789",
             "spellName": "Mortal Coil",
             "row": "4",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "48181": {
             "spellId": "48181",
             "spellName": "Haunt",
             "row": "5",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "63106": {
             "spellId": "63106",
             "spellName": "Siphon Life",
             "row": "1",
-            "col": "2",
-            "targetType": "MANY_ENEMY"
+            "col": "2"
           },
           "108416": {
             "spellId": "108416",
             "spellName": "Dark Pact",
             "row": "2",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "108503": {
             "spellId": "108503",
             "spellName": "Grimoire of Sacrifice",
             "row": "5",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "108558": {
             "spellId": "108558",
             "spellName": "Nightfall",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "111400": {
             "spellId": "111400",
             "spellName": "Burning Rush",
             "row": "2",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "113860": {
             "spellId": "113860",
             "spellName": "Dark Soul: Misery",
             "row": "6",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "196102": {
             "spellId": "196102",
             "spellName": "Writhe in Agony",
             "row": "1",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "196103": {
             "spellId": "196103",
             "spellName": "Absolute Corruption",
             "row": "1",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "196226": {
             "spellId": "196226",
             "spellName": "Sow the Seeds",
             "row": "3",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "198590": {
             "spellId": "198590",
             "spellName": "Drain Soul",
             "row": "0",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "205179": {
             "spellId": "205179",
             "spellName": "Phantom Singularity",
             "row": "3",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "215941": {
             "spellId": "215941",
             "spellName": "Soul Conduit",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "219272": {
             "spellId": "219272",
             "spellName": "Demon Skin",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "264000": {
             "spellId": "264000",
             "spellName": "Creeping Death",
             "row": "6",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "264874": {
             "spellId": "264874",
             "spellName": "Darkfury",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "278350": {
             "spellId": "278350",
             "spellName": "Vile Taint",
             "row": "3",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "334183": {
             "spellId": "334183",
             "spellName": "Dark Caller",
             "row": "5",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "334319": {
             "spellId": "334319",
             "spellName": "Inevitable Demise",
             "row": "0",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           }
         },
         "PvP": {
@@ -8417,78 +7756,67 @@
             "spellId": "603",
             "spellName": "Doom",
             "row": "1",
-            "col": "2",
-            "targetType": "MANY_ENEMY"
+            "col": "2"
           },
           "5484": {
             "spellId": "5484",
             "spellName": "Howl of Terror",
             "row": "4",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "6789": {
             "spellId": "6789",
             "spellName": "Mortal Coil",
             "row": "4",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "108416": {
             "spellId": "108416",
             "spellName": "Dark Pact",
             "row": "2",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "111400": {
             "spellId": "111400",
             "spellName": "Burning Rush",
             "row": "2",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "111898": {
             "spellId": "111898",
             "spellName": "Grimoire: Felguard",
             "row": "5",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "205145": {
             "spellId": "205145",
             "spellName": "Demonic Calling",
             "row": "1",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "215941": {
             "spellId": "215941",
             "spellName": "Soul Conduit",
             "row": "5",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "219272": {
             "spellId": "219272",
             "spellName": "Demon Skin",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "264057": {
             "spellId": "264057",
             "spellName": "Soul Strike",
             "row": "3",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "264078": {
             "spellId": "264078",
             "spellName": "Dreadlash",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "264119": {
             "spellId": "264119",
@@ -8500,64 +7828,55 @@
             "spellId": "264130",
             "spellName": "Power Siphon",
             "row": "1",
-            "col": "1",
-            "targetType": "PLACED"
+            "col": "1"
           },
           "264874": {
             "spellId": "264874",
             "spellName": "Darkfury",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "267170": {
             "spellId": "267170",
             "spellName": "From the Shadows",
             "row": "3",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "267171": {
             "spellId": "267171",
             "spellName": "Demonic Strength",
             "row": "0",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "267211": {
             "spellId": "267211",
             "spellName": "Bilescourge Bombers",
             "row": "0",
-            "col": "1",
-            "targetType": "PLACED"
+            "col": "1"
           },
           "267214": {
             "spellId": "267214",
             "spellName": "Sacrificed Souls",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "267215": {
             "spellId": "267215",
             "spellName": "Demonic Consumption",
             "row": "6",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "267216": {
             "spellId": "267216",
             "spellName": "Inner Demons",
             "row": "5",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "267217": {
             "spellId": "267217",
             "spellName": "Nether Portal",
             "row": "6",
-            "col": "2",
-            "targetType": "PLACED"
+            "col": "2"
           }
         },
         "PvP": {
@@ -8586,148 +7905,127 @@
             "spellId": "46924",
             "spellName": "Bladestorm",
             "row": "5",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "103827": {
             "spellId": "103827",
             "spellName": "Double Time",
             "row": "1",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "107570": {
             "spellId": "107570",
             "spellName": "Storm Bolt",
             "row": "1",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "118000": {
             "spellId": "118000",
             "spellName": "Dragon Roar",
             "row": "5",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "152278": {
             "spellId": "152278",
             "spellName": "Anger Management",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "202163": {
             "spellId": "202163",
             "spellName": "Bounding Stride",
             "row": "3",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "202168": {
             "spellId": "202168",
             "spellName": "Impending Victory",
             "row": "1",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "202224": {
             "spellId": "202224",
             "spellName": "Furious Charge",
             "row": "3",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "202751": {
             "spellId": "202751",
             "spellName": "Reckless Abandon",
             "row": "6",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "206315": {
             "spellId": "206315",
             "spellName": "Massacre",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "208154": {
             "spellId": "208154",
             "spellName": "Warpaint",
             "row": "3",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "215568": {
             "spellId": "215568",
             "spellName": "Fresh Meat",
             "row": "0",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "215571": {
             "spellId": "215571",
             "spellName": "Frothing Berserker",
             "row": "4",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "280392": {
             "spellId": "280392",
             "spellName": "Meat Cleaver",
             "row": "5",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "280721": {
             "spellId": "280721",
             "spellName": "Sudden Death",
             "row": "0",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "280772": {
             "spellId": "280772",
             "spellName": "Siegebreaker",
             "row": "6",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "315720": {
             "spellId": "315720",
             "spellName": "Onslaught",
             "row": "2",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "335070": {
             "spellId": "335070",
             "spellName": "Cruelty",
             "row": "4",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "335077": {
             "spellId": "335077",
             "spellName": "Frenzy",
             "row": "2",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "335091": {
             "spellId": "335091",
             "spellName": "Seethe",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "346002": {
             "spellId": "346002",
             "spellName": "War Machine",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           }
         },
         "PvP": {
@@ -8753,148 +8051,127 @@
             "spellId": "772",
             "spellName": "Rend",
             "row": "2",
-            "col": "2",
-            "targetType": "MANY_ENEMY"
+            "col": "2"
           },
           "845": {
             "spellId": "845",
             "spellName": "Cleave",
             "row": "4",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "29725": {
             "spellId": "29725",
             "spellName": "Sudden Death",
             "row": "0",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "29838": {
             "spellId": "29838",
             "spellName": "Second Wind",
             "row": "3",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "103827": {
             "spellId": "103827",
             "spellName": "Double Time",
             "row": "1",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "107570": {
             "spellId": "107570",
             "spellName": "Storm Bolt",
             "row": "1",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "107574": {
             "spellId": "107574",
             "spellName": "Avatar",
             "row": "5",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "152277": {
             "spellId": "152277",
             "spellName": "Ravager",
             "row": "6",
-            "col": "2",
-            "targetType": "PLACED"
+            "col": "2"
           },
           "152278": {
             "spellId": "152278",
             "spellName": "Anger Management",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "197690": {
             "spellId": "197690",
             "spellName": "Defensive Stance",
             "row": "3",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "202163": {
             "spellId": "202163",
             "spellName": "Bounding Stride",
             "row": "3",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "202168": {
             "spellId": "202168",
             "spellName": "Impending Victory",
             "row": "1",
-            "col": "1",
-            "targetType": "ONE_ENEMY"
+            "col": "1"
           },
           "202316": {
             "spellId": "202316",
             "spellName": "Fervor of Battle",
             "row": "2",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "248621": {
             "spellId": "248621",
             "spellName": "In For The Kill",
             "row": "5",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "260643": {
             "spellId": "260643",
             "spellName": "Skullsplitter",
             "row": "0",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "262150": {
             "spellId": "262150",
             "spellName": "Dreadnaught",
             "row": "6",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "262161": {
             "spellId": "262161",
             "spellName": "Warbreaker",
             "row": "4",
-            "col": "1",
-            "targetType": "SELF"
+            "col": "1"
           },
           "262228": {
             "spellId": "262228",
             "spellName": "Deadly Calm",
             "row": "5",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "262231": {
             "spellId": "262231",
             "spellName": "War Machine",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "281001": {
             "spellId": "281001",
             "spellName": "Massacre",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "334779": {
             "spellId": "334779",
             "spellName": "Collateral Damage",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           }
         },
         "PvP": {
@@ -8925,148 +8202,127 @@
             "spellId": "103827",
             "spellName": "Double Time",
             "row": "1",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "107570": {
             "spellId": "107570",
             "spellName": "Storm Bolt",
             "row": "1",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "118000": {
             "spellId": "118000",
             "spellName": "Dragon Roar",
             "row": "2",
-            "col": "2",
-            "targetType": "SELF"
+            "col": "2"
           },
           "152278": {
             "spellId": "152278",
             "spellName": "Anger Management",
             "row": "6",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "202095": {
             "spellId": "202095",
             "spellName": "Indomitable",
             "row": "4",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "202163": {
             "spellId": "202163",
             "spellName": "Bounding Stride",
             "row": "3",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "202168": {
             "spellId": "202168",
             "spellName": "Impending Victory",
             "row": "4",
-            "col": "2",
-            "targetType": "ONE_ENEMY"
+            "col": "2"
           },
           "202560": {
             "spellId": "202560",
             "spellName": "Best Served Cold",
             "row": "2",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "202561": {
             "spellId": "202561",
             "spellName": "Never Surrender",
             "row": "4",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "202603": {
             "spellId": "202603",
             "spellName": "Into the Fray",
             "row": "5",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "202743": {
             "spellId": "202743",
             "spellName": "Booming Voice",
             "row": "2",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "203177": {
             "spellId": "203177",
             "spellName": "Heavy Repercussions",
             "row": "6",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "203201": {
             "spellId": "203201",
             "spellName": "Crackling Thunder",
             "row": "3",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           },
           "228920": {
             "spellId": "228920",
             "spellName": "Ravager",
             "row": "5",
-            "col": "2",
-            "targetType": "PLACED"
+            "col": "2"
           },
           "236279": {
             "spellId": "236279",
             "spellName": "Devastator",
             "row": "0",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "275334": {
             "spellId": "275334",
             "spellName": "Punish",
             "row": "0",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "275336": {
             "spellId": "275336",
             "spellName": "Unstoppable Force",
             "row": "5",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "275338": {
             "spellId": "275338",
             "spellName": "Menace",
             "row": "3",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "275339": {
             "spellId": "275339",
             "spellName": "Rumbling Earth",
             "row": "1",
-            "col": "1",
-            "isPassive": true
+            "col": "1"
           },
           "280001": {
             "spellId": "280001",
             "spellName": "Bolster",
             "row": "6",
-            "col": "2",
-            "isPassive": true
+            "col": "2"
           },
           "316733": {
             "spellId": "316733",
             "spellName": "War Machine",
             "row": "0",
-            "col": "0",
-            "isPassive": true
+            "col": "0"
           }
         },
         "PvP": {

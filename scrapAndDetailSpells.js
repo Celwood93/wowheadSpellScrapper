@@ -13,9 +13,18 @@ function sleep(ms) {
 }
 
 //Type is incase Spells/Talents/PvPTalents/Covenants produces a different type of datastorage -- might not need here
-async function getDetails(spellId, browser, className, spellName, type, mutex) {
+async function getDetails(
+  spellId,
+  browser,
+  className,
+  spellName,
+  type,
+  spec,
+  mutex
+) {
   let newDataForId;
   let pageSpellData;
+  let usingCache = false;
   const release = await mutex.acquire();
   if (!(spellId in cachedIds)) {
     let page;
@@ -54,6 +63,19 @@ async function getDetails(spellId, browser, className, spellName, type, mutex) {
                 } > table > tbody > tr:nth-child(1) > td > table:nth-child(1) > tbody > tr > td`
               )
               .textContent.match(/(\d\d?\.?\d?\d?) (\w+) recharge/);
+            const iconId = document
+              .querySelector("ul>li.icon-db-link>div>a")
+              .textContent.replace(/\s/g, "");
+            datas["iconId"] = iconId;
+            const replaceSpell = document.querySelector(
+              "table>tbody>tr>td>span.q>a"
+            );
+            if (replaceSpell && replaceSpell.href) {
+              const didMatch = replaceSpell.href.match(/spell=(\d+)/);
+              if (didMatch && didMatch[1]) {
+                datas["idOfReplacedSpell"] = didMatch[1];
+              }
+            }
             Array.from(document.querySelectorAll("#spelldetails > tbody > tr"))
               .map((el) => {
                 const tharr = Array.from(
@@ -93,32 +115,51 @@ async function getDetails(spellId, browser, className, spellName, type, mutex) {
       }
     } else {
       release();
+      usingCache = true;
       pageSpellData = cachedData[spellId];
     }
     if (pageSpellData) {
       newDataForId = filterData(pageSpellData, spellId, spellName);
-      // console.log(
-      //   `${Object.keys(cachedIds).length + 1}/${promises.length} finished`
-      // );
+      if (!usingCache) {
+        console.log(
+          `${Object.keys(cachedIds).length + 1}/${promises.length} finished`
+        );
+      }
+      if (Object.keys(druidAffinities).includes(spellId)) {
+        newDataForId = {
+          ...newDataForId,
+          enabledSpells: druidAffinities[spellId],
+        };
+      }
       cachedIds[spellId] = newDataForId;
     }
     if (page) {
       await page.close();
     }
   } else {
-    console.log(spellId, cachedIds);
     newDataForId = cachedIds[spellId];
+    release();
   }
   if (newDataForId) {
-    spellData["Spells"][className][spellId] = {
-      ...spellData["Spells"][className][spellId],
-      ...newDataForId,
-    };
+    if (type === "Spells") {
+      spellData["Spells"][className][spellId] = {
+        ...spellData["Spells"][className][spellId],
+        ...newDataForId,
+      };
+    } else if (type === "Talents") {
+      spellData["Talents"][className][spec]["Normal"][spellId] = {
+        ...spellData["Talents"][className][spec]["Normal"][spellId],
+        ...newDataForId,
+      };
+    }
   }
 }
 
 function filterData(pageSpellData, spellId, spellName) {
   let newDataForId = {};
+  const isPassive =
+    pageSpellData["Flags"] &&
+    pageSpellData["Flags"].some((e) => /Passive spell/.test(e));
   const doesIncludeSelf = pageSpellData["Range"].includes("Self");
   const isUnlimitedRange = pageSpellData["Range"].includes(
     "Anywhere - Unlimited"
@@ -154,7 +195,7 @@ function filterData(pageSpellData, spellId, spellName) {
   );
   const doesntEngage =
     pageSpellData["Flags"] &&
-    /Does not engage target/.test(pageSpellData["Flags"]);
+    pageSpellData["Flags"].some((e) => /Does not engage target/.test(e));
   let doesIncludeRadius = false;
   if (!spellsThatArntPlacedButMatch.includes(spellId)) {
     doesIncludeRadius = Object.keys(pageSpellData)
@@ -335,8 +376,10 @@ function filterData(pageSpellData, spellId, spellName) {
     .some((details) => /Apply Aura: Stalked/.test(pageSpellData[details]));
   const isWeaponRequired =
     pageSpellData["Flags"] &&
-    pageSpellData["Flags"].includes("Requires main hand weapon");
-  if (
+    pageSpellData["Flags"].some((e) => e.includes("Requires main hand weapon"));
+  if (isPassive) {
+    newDataForId["isPassive"] = true;
+  } else if (
     doesIncludeSelf ||
     isInPartyOrRaid ||
     isAroundOrInfront ||
@@ -435,6 +478,20 @@ function filterData(pageSpellData, spellId, spellName) {
   } else {
     console.log(`Failed to work for ${spellId} - ${spellName}`);
   }
+  if (pageSpellData.idOfReplacedSpell) {
+    newDataForId = {
+      ...newDataForId,
+      idOfReplacedSpell: pageSpellData["idOfReplacedSpell"],
+    };
+  }
+  if (pageSpellData.iconId) {
+    newDataForId = {
+      ...newDataForId,
+      iconId: pageSpellData["iconId"],
+    };
+  } else {
+    console.log(`failed to find icon id for ${spellId} ${spellName}`);
+  }
 
   return newDataForId;
 }
@@ -502,12 +559,61 @@ async function runSpells(browser, mutex) {
             browser,
             classNames[className],
             spellName,
-            "Spell",
+            "Spells",
+            "",
             mutex
           )
         );
       } else {
         delete spellData["Spells"][classNames[className]][spellIds[spellId]];
+      }
+    }
+  }
+}
+
+async function runTalents(browser, mutex) {
+  const classNames = Object.keys(spellData["Talents"]);
+  for (const className in classNames) {
+    const specNames = Object.keys(spellData["Talents"][classNames[className]]);
+    for (const specName in specNames) {
+      const spellIds = Object.keys(
+        spellData["Talents"][classNames[className]][specNames[specName]][
+          "Normal"
+        ]
+      );
+      for (spellId in spellIds) {
+        const spellName =
+          spellData["Talents"][classNames[className]][specNames[specName]][
+            "Normal"
+          ][spellIds[spellId]].spellName;
+        let isAllowedSpell;
+        if (testingWorkingKey) {
+          isAllowedSpell = !brokenSpells
+            .concat(incorrectSpells)
+            .includes(spellIds[spellId] * 1);
+        } else {
+          isAllowedSpell = brokenSpells
+            .concat(incorrectSpells)
+            .includes(spellIds[spellId] * 1);
+        }
+
+        if (isAllowedSpell) {
+          promises.push(
+            getDetails(
+              spellIds[spellId],
+              browser,
+              classNames[className],
+              spellName,
+              "Talents",
+              specNames[specName],
+              mutex
+            )
+          );
+        } else {
+          delete spellData["Talents"][classNames[className]][
+            specNames[specName]
+          ]["Normal"][spellIds[spellId]];
+        }
       }
     }
   }
@@ -571,6 +677,14 @@ function checkForImprovements(targetData, calculatedData) {
   }
   console.log(`${spellsWorkingLength}/${spellsLength} now work`);
 }
+//Feral(rake, rip, swipe, maim), Guardian(thrash, frenzied regeneration, incapacitating roar),
+// Resto(rejuv, swiftmend, wild growth, ursols vortex), Balance(moonkin form, starsurge, starfire, sunfire, typhoon)
+const druidAffinities = {
+  197490: ["1822", "1079", "213764", "22570"],
+  197491: ["106832", "22842", "99"],
+  197492: ["774", "18562", "48438", "102793"],
+  197488: ["24858", "78674", "194153", "93402", "132469"],
+};
 
 const testingWorkingKey = true;
 
@@ -578,13 +692,13 @@ async function runAllThings() {
   const browser = await puppeteer.launch();
   const mutex = new Mutex();
   runSpells(browser, mutex);
-  // runTalents(browser, mutex);
+  runTalents(browser, mutex);
   // runPvPTalents(browser, mutex);
   // runCovenants(browser, mutex);
 
   Promise.all(promises).then(async () => {
     let jsonToWrite = JSON.stringify(spellData);
-    const testWorkingDataReal = require("./SpellsPhase2AllSpellsWorkingKey.json");
+    //const testWorkingDataReal = require("./SpellsPhase2AllSpellsWorkingKey.json");
     // const brokeSpellsFixedKey = require("./SpellsPhase2AllBrokenSpellsFIXED.json");
     const stringifiedOldCachedData = await fs.readFileSync(
       "./CachedPageSpellData.json"
@@ -599,9 +713,9 @@ async function runAllThings() {
     }
     if (testingWorkingKey) {
       fs.writeFileSync(`SpellsPhase2AllSpellsWorkingKey.json`, jsonToWrite);
-      if (!_.isEqual(testWorkingDataReal, spellData)) {
-        findDifferences(testWorkingDataReal, spellData);
-      }
+      // if (!_.isEqual(testWorkingDataReal, spellData)) {
+      //   findDifferences(testWorkingDataReal, spellData);
+      // }
     } else {
       checkForImprovements(brokeSpellsFixedKey, spellData);
       fs.writeFileSync(`SpellsPhase2AllBrokenSpells.json`, jsonToWrite);
