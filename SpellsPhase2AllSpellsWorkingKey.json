@@ -1869,6 +1869,12 @@
         "spellName": "Prayer of Healing",
         "targetType": "ONE_FRIENDLY"
       },
+      "605": {
+        "spec": ["DISCIPLINE", "HOLY", "SHADOW"],
+        "spellId": "605",
+        "spellName": "Mind Control",
+        "targetType": "ONE_ENEMY"
+      },
       "1706": {
         "spec": ["DISCIPLINE", "HOLY", "SHADOW"],
         "spellId": "1706",
@@ -1959,6 +1965,12 @@
         "spellName": "Power Word: Fortitude",
         "targetType": "SELF"
       },
+      "32375": {
+        "spec": ["DISCIPLINE", "HOLY", "SHADOW"],
+        "spellId": "32375",
+        "spellName": "Mass Dispel",
+        "targetType": "PLACED"
+      },
       "33076": {
         "spec": ["HOLY"],
         "spellId": "33076",
@@ -1977,11 +1989,23 @@
         "spellName": "Shadowfiend",
         "targetType": "ONE_ENEMY"
       },
+      "34861": {
+        "spec": ["HOLY"],
+        "spellId": "34861",
+        "spellName": "Holy Word: Sanctify",
+        "targetType": "PLACED"
+      },
       "34914": {
         "spec": ["SHADOW"],
         "spellId": "34914",
         "spellName": "Vampiric Touch",
         "targetType": "MANY_ENEMY"
+      },
+      "47536": {
+        "spec": ["DISCIPLINE"],
+        "spellId": "47536",
+        "spellName": "Rapture",
+        "targetType": "ONE_FRIENDLY"
       },
       "47540": {
         "spec": ["DISCIPLINE"],
@@ -2012,6 +2036,12 @@
         "spellId": "62618",
         "spellName": "Power Word: Barrier",
         "targetType": "PLACED"
+      },
+      "64843": {
+        "spec": ["HOLY"],
+        "spellId": "64843",
+        "spellName": "Divine Hymn",
+        "targetType": "SELF"
       },
       "64901": {
         "spec": ["HOLY"],
@@ -2072,6 +2102,12 @@
         "spellId": "213634",
         "spellName": "Purify Disease",
         "targetType": "ONE_FRIENDLY"
+      },
+      "228260": {
+        "spec": ["SHADOW"],
+        "spellId": "228260",
+        "spellName": "Void Eruption",
+        "targetType": "ONE_ENEMY"
       },
       "232698": {
         "spec": ["SHADOW"],
@@ -2751,6 +2787,12 @@
         "spellName": "Unending Breath",
         "targetType": "MANY_FRIENDLY"
       },
+      "5740": {
+        "spec": ["DESTRUCTION"],
+        "spellId": "5740",
+        "spellName": "Rain of Fire",
+        "targetType": "PLACED"
+      },
       "5782": {
         "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
         "spellId": "5782",
@@ -2787,11 +2829,23 @@
         "spellName": "Seed of Corruption",
         "targetType": "MANY_ENEMY"
       },
+      "29722": {
+        "spec": ["DESTRUCTION"],
+        "spellId": "29722",
+        "spellName": "Incinerate",
+        "targetType": "ONE_ENEMY"
+      },
       "30146": {
         "spec": ["DEMONOLOGY"],
         "spellId": "30146",
         "spellName": "Summon Felguard",
         "targetType": "SELF"
+      },
+      "30283": {
+        "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
+        "spellId": "30283",
+        "spellName": "Shadowfury",
+        "targetType": "PLACED"
       },
       "48018": {
         "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],
@@ -2853,6 +2907,12 @@
         "spellName": "Chaos Bolt",
         "targetType": "ONE_ENEMY"
       },
+      "196277": {
+        "spec": ["DEMONOLOGY"],
+        "spellId": "196277",
+        "spellName": "Implosion",
+        "targetType": "ONE_ENEMY"
+      },
       "205180": {
         "spec": ["AFFLICTION"],
         "spellId": "205180",
@@ -2871,11 +2931,23 @@
         "spellName": "Demonbolt",
         "targetType": "ONE_ENEMY"
       },
+      "265187": {
+        "spec": ["DEMONOLOGY"],
+        "spellId": "265187",
+        "spellName": "Summon Demonic Tyrant",
+        "targetType": "SELF"
+      },
       "316099": {
         "spec": ["AFFLICTION"],
         "spellId": "316099",
         "spellName": "Unstable Affliction",
         "targetType": "ONE_ENEMY"
+      },
+      "324536": {
+        "spec": ["AFFLICTION"],
+        "spellId": "324536",
+        "spellName": "Malefic Rapture",
+        "targetType": "SELF"
       },
       "333889": {
         "spec": ["DESTRUCTION", "AFFLICTION", "DEMONOLOGY"],

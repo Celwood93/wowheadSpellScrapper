@@ -129,6 +129,9 @@ function filterData(pageSpellData, spellId, spellName) {
   const isInPartyOrRaid = /party or raid, all party and raid/.test(
     pageSpellData["Description"]
   );
+  const isRaidWideCooldown = /[hH]eals all (party or raid members|allies)/.test(
+    pageSpellData["Description"]
+  );
   const allHealersInRaid = /all healers in your party or raid/.test(
     pageSpellData["Description"]
   );
@@ -157,12 +160,12 @@ function filterData(pageSpellData, spellId, spellName) {
     doesIncludeRadius = Object.keys(pageSpellData)
       .filter((topics) => topics.includes("Effect"))
       .some((details) =>
-        /^(Create Area Trigger|Dummy|Trigger Missile|School Damage|Distract).*Radius/.test(
+        /^(Create Area Trigger|Dummy|Trigger Missile|School Damage|Distract|Dispel|Persistent Area Aura|Apply Aura: Stun).*Radius/.test(
           pageSpellData[details]
         )
       );
   }
-  const descTargLoc = /to the target location/.test(
+  const descTargLoc = /(to the|at a) target location/.test(
     pageSpellData["Description"]
   );
   const isAoeSpeedBoost = Object.keys(pageSpellData)
@@ -305,6 +308,9 @@ function filterData(pageSpellData, spellId, spellName) {
     spellName === "Wild Charge" ||
     spellName === "Death Coil" ||
     spellName === "Gorefiend's Grasp";
+  const isSelfException =
+    spellName === "Summon Demonic Tyrant" || spellName === "Malefic Rapture";
+  const isRapture = spellName === "Rapture";
   const doesItSD = Object.keys(pageSpellData)
     .filter((topics) => topics.includes("Effect"))
     .some((details) => pageSpellData[details].includes("School Damage"));
@@ -343,7 +349,9 @@ function filterData(pageSpellData, spellId, spellName) {
     doesOverrideSpell ||
     teleportOrTransfer ||
     allHealersInRaid ||
-    givesAttackSpeedSteroid
+    givesAttackSpeedSteroid ||
+    isRaidWideCooldown ||
+    isSelfException
   ) {
     //Self
     newDataForId["targetType"] = targetTypes[0];
@@ -363,7 +371,8 @@ function filterData(pageSpellData, spellId, spellName) {
       isRez ||
       healTargInDesc ||
       isPowerInfusion ||
-      isFriendlyDispel) && //not sure how else to catch it, its too unique
+      isFriendlyDispel ||
+      isRapture) && //not sure how else to catch it, its too unique
     (oneTarAtATime || flagsOneTarg || maxTargOne || durLtCd)
   ) {
     //One Friendly
@@ -383,7 +392,11 @@ function filterData(pageSpellData, spellId, spellName) {
     //Many Friendly
     newDataForId["targetType"] = targetTypes[4];
   } else if (
-    (oneTarAtATime || flagsOneTarg || maxTargOne || durLtCd) &&
+    (oneTarAtATime ||
+      flagsOneTarg ||
+      maxTargOne ||
+      durLtCd ||
+      isRequireUntapped) &&
     (doesItNWD ||
       doesItRC ||
       doesItSD ||
@@ -444,9 +457,10 @@ const negativeMechanics = [
   "Interrupted",
   "Banished",
   "Asleep",
+  "Charmed",
 ];
 
-//Hand of guldan, maim, starfire, necrotic strike, howling blast, scourge strike, multishot, kegsmash
+//Hand of guldan, maim, starfire, necrotic strike, howling blast, scourge strike, multishot, kegsmash, voidEruption, incinerate, solarBeam, implosion
 const spellsThatArntPlacedButMatch = [
   "105174",
   "22570",
@@ -457,6 +471,10 @@ const spellsThatArntPlacedButMatch = [
   "257620",
   "2643",
   "121253",
+  "228260",
+  "29722",
+  "78675",
+  "196277",
 ];
 
 async function runSpells(browser, mutex) {
@@ -496,20 +514,7 @@ async function runSpells(browser, mutex) {
 }
 
 const brokenSpells = [];
-const incorrectSpells = [
-  605,
-  47536,
-  32375,
-  34861,
-  64843,
-  228260,
-  29722,
-  5740,
-  30283,
-  324536,
-  196277,
-  265187,
-];
+const incorrectSpells = [];
 
 async function findDifferences(trueData, newData) {
   const classNames = Object.keys(trueData["Spells"]);
@@ -580,7 +585,7 @@ async function runAllThings() {
   Promise.all(promises).then(async () => {
     let jsonToWrite = JSON.stringify(spellData);
     const testWorkingDataReal = require("./SpellsPhase2AllSpellsWorkingKey.json");
-    const brokeSpellsFixedKey = require("./SpellsPhase2AllBrokenSpellsFIXED.json");
+    // const brokeSpellsFixedKey = require("./SpellsPhase2AllBrokenSpellsFIXED.json");
     const stringifiedOldCachedData = await fs.readFileSync(
       "./CachedPageSpellData.json"
     );
