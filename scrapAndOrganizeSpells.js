@@ -76,15 +76,16 @@ async function scrapeSpell(classType, timer = 0) {
         }
       }
       if (
-        spellName in
+        found[1] in
         spellIds["Talents"][classtype][readableSpec.toUpperCase()]["Normal"]
       ) {
         console.log(`${spellName} already in talents for ${classtype}`);
       } else {
         spellIds["Talents"][classtype][readableSpec.toUpperCase()]["Normal"][
-          spellName
+          found[1]
         ] = {
           spellId: found[1],
+          spellName: spellName,
           row,
           col,
         };
@@ -121,15 +122,16 @@ async function scrapeSpell(classType, timer = 0) {
         }
       }
       if (
-        spellName in
+        found[1] in
         spellIds["Talents"][classtype][readableSpec.toUpperCase()]["PvP"]
       ) {
         console.log(`${spellName} already in PvP talents for ${classtype}`);
       } else {
         spellIds["Talents"][classtype][readableSpec.toUpperCase()]["PvP"][
-          spellName
+          found[1]
         ] = {
           spellId: found[1],
+          spellName: spellName,
         };
       }
     });
@@ -528,7 +530,7 @@ let spellIds = { Spells: {}, Talents: {}, Covenants: {} };
 let promises = [];
 
 for (let k = 0; k < classes.length; k++) {
-  promises.push(scrapeSpell(classes[k], 3000 * k));
+  promises.push(scrapeSpell(classes[k], 12000 * k));
 }
 
 Promise.all(promises).then(() => {
