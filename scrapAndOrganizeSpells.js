@@ -1,14 +1,26 @@
 const puppeteer = require("puppeteer");
 const { performance } = require("perf_hooks");
 const fs = require("fs");
+const Mutex = require("async-mutex").Mutex;
+const maxPages = 1;
 
-async function scrapeSpell(classType, timer = 0) {
+async function scrapeSpell(classType, browser, mutex) {
   const classtype = classReadable[classType];
-  await sleep(timer);
+  let page;
+  const release = await mutex.acquire();
+  try {
+    let pages = await browser.pages();
+
+    while (pages.length > maxPages) {
+      pages = await browser.pages();
+      await sleep(500);
+    }
+
+    page = await browser.newPage();
+  } finally {
+    release();
+  }
   let t0 = performance.now();
-  console.log(`${classtype} starting`);
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
   if (!(classtype in spellIds["Spells"])) {
     spellIds["Spells"][classtype] = {};
   }
@@ -92,21 +104,29 @@ async function scrapeSpell(classType, timer = 0) {
       }
     });
 
-    await page.click("div.talentcalc-pvp > div.iconmedium > a");
-
-    const pvpTalentData = await page.evaluate(() => {
-      tds = Array.from(
-        document.querySelectorAll("div.talentcalc-pvp-talent:not(.active)")
-      );
-      return tds.map((td) => {
-        const spellId = td.querySelector("span + a").href;
-        const spellName = td.textContent;
-        return {
-          spellId,
-          spellName,
-        };
+    let pvpTalentData;
+    while (
+      !pvpTalentData ||
+      (pvpTalentData && Object.keys(pvpTalentData).length < 1)
+    ) {
+      await page.click("div.talentcalc-pvp > div.iconmedium > a");
+      pvpTalentData = await page.evaluate(() => {
+        tds = Array.from(
+          document.querySelectorAll("div.talentcalc-pvp-talent:not(.active)")
+        );
+        return tds.map((td) => {
+          const spellId = td.querySelector("span + a").href;
+          const spellName = td.textContent;
+          return {
+            spellId,
+            spellName,
+          };
+        });
       });
-    });
+      console.log(
+        `${classType} ${readableSpec} ${Object.keys(pvpTalentData).length}`
+      );
+    }
     pvpTalentData.forEach(({ spellId, spellName }) => {
       const regex = /spell=(\d+)/;
       const found = spellId.match(regex);
@@ -365,7 +385,7 @@ async function scrapeSpell(classType, timer = 0) {
       spellName: "Void Bolt",
     };
   }
-  browser.close();
+  page.close();
   let t1 = performance.now();
   console.log(`${classType} finished in ${(t1 - t0) / 1000} seconds`);
 }
@@ -429,7 +449,7 @@ const blacklistedSpells = {
     "1:Frost Breath",
     "6:Runeforging",
     "10:Death Gate",
-    "19:Corpse Exploder",
+    "(19|10):Corpse Exploder",
     "27:Path of Frost",
     "29\\*:Raise Dead",
     "37:Control Undead",
@@ -445,10 +465,11 @@ const blacklistedSpells = {
     "1:Vengeful Retreat",
   ],
   druid: [
-    "1:Flap",
+    "(1|21):Flap",
+    "10:Track Beasts",
     "10:Dreamwalk",
     "10:Strength of the Wild",
-    "19:Charm Woodland Creature",
+    "(19|10):Charm Woodland Creature",
     "22:Teleport: Moonglade",
     "24:Flight Form",
     "13:Sunfire",
@@ -462,25 +483,25 @@ const blacklistedSpells = {
     "5:Dismiss Pet",
     "5:Feed Pet",
     "5:Tame Beast",
-    "6:Wake Up",
+    "(10|6):Wake Up",
     "10:Call Pet 2",
     "12:Chakrams",
     "17:Call Pet 3",
-    "19:Aspect of the Chameleon",
-    "19:Fireworks",
-    "19:Play Dead",
+    "(19|10):Aspect of the Chameleon",
+    "(19|10):Fireworks",
+    "(19|10):Play Dead",
     "41:Call Pet 4",
     "43:Eagle Eye",
-    "47:Fetch",
+    "(10|47):Fetch",
     "48:Call Pet 5",
   ],
   mage: [
     "1:Polymorph",
     "1:Shoot",
-    "1:Illusion",
-    "(1|10|11|23|24|25|28|32|52|58):(Ancient )?(Portal|Teleport): .*",
+    "(1|10):Illusion",
+    "(1|10|11|21|23|24|25|28|32|52|58):(Ancient )?(Portal|Teleport): .*",
     "5:Conjure Refreshments",
-    "11:Teleport",
+    "(21|11):Teleport",
     "24:Portal",
     "17:Conjure Mana Gem",
     "25:Polymorph",
@@ -491,7 +512,7 @@ const blacklistedSpells = {
     "10:Soothing Mist",
     "11:Zen Pilgrimage",
     "17:Touch of Fatality",
-    "37:Zen Flight",
+    "(37|30):Zen Flight",
   ],
   paladin: [
     "1\\*:Judgment",
@@ -499,11 +520,16 @@ const blacklistedSpells = {
     "1:Tyr's Deliverance",
     "1:Crusader's Direhorn",
     "(1):Summon .*",
-    "19:Contemplation",
+    "(19|10):Contemplation",
     "54:Sense Undead",
   ],
   priest: ["1:Shoot", "22:Mind Vision"],
-  rogue: ["1:Detection", "24:Pick Lock", "24:Pick Pocket", "1:Sinister Strike"],
+  rogue: [
+    "(1|10):Detection",
+    "(24|14):Pick Lock",
+    "24:Pick Pocket",
+    "1:Sinister Strike",
+  ],
   shaman: [
     "1:Surge of Earth",
     "1:Fae Transfusion",
@@ -529,11 +555,19 @@ const blacklistedSpells = {
 let spellIds = { Spells: {}, Talents: {}, Covenants: {} };
 let promises = [];
 
-for (let k = 0; k < classes.length; k++) {
-  promises.push(scrapeSpell(classes[k], 12000 * k));
+async function runScript() {
+  const browser = await puppeteer.launch();
+  const mutex = new Mutex();
+
+  for (let k = 0; k < classes.length; k++) {
+    promises.push(scrapeSpell(classes[k], browser, mutex, 12000 * k));
+  }
+
+  Promise.all(promises).then(() => {
+    let jsonToWrite = JSON.stringify(spellIds);
+    fs.writeFileSync(`SpellsPhase1.json`, jsonToWrite);
+    browser.close();
+  });
 }
 
-Promise.all(promises).then(() => {
-  let jsonToWrite = JSON.stringify(spellIds);
-  fs.writeFileSync(`SpellsPhase1NEW.json`, jsonToWrite);
-});
+runScript();

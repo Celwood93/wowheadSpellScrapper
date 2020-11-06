@@ -3477,7 +3477,18 @@
             "col": "2"
           }
         },
-        "PvP": {}
+        "PvP": {
+          "200931": { "spellId": "200931", "spellName": "High Winds" },
+          "203399": { "spellId": "203399", "spellName": "Reactive Resin" },
+          "203553": { "spellId": "203553", "spellName": "Focused Growth" },
+          "203624": { "spellId": "203624", "spellName": "Early Spring" },
+          "233673": { "spellId": "233673", "spellName": "Disentanglement" },
+          "233755": { "spellId": "233755", "spellName": "Deep Roots" },
+          "247543": { "spellId": "247543", "spellName": "Entangling Bark" },
+          "289237": { "spellId": "289237", "spellName": "Master Shapeshifter" },
+          "289318": { "spellId": "289318", "spellName": "Mark of the Wild" },
+          "305497": { "spellId": "305497", "spellName": "Thorns" }
+        }
       },
       "FERAL": {
         "Normal": {
@@ -4051,7 +4062,24 @@
             "col": "2"
           }
         },
-        "PvP": {}
+        "PvP": {
+          "53480": { "spellId": "53480", "spellName": "Roar of Sacrifice" },
+          "202589": { "spellId": "202589", "spellName": "Dragonscale Armor" },
+          "202746": { "spellId": "202746", "spellName": "Survival Tactics" },
+          "202797": { "spellId": "202797", "spellName": "Viper Sting" },
+          "202900": { "spellId": "202900", "spellName": "Scorpid Sting" },
+          "202914": { "spellId": "202914", "spellName": "Spider Sting" },
+          "203235": { "spellId": "203235", "spellName": "Hunting Pack" },
+          "204190": { "spellId": "204190", "spellName": "Wild Protector" },
+          "205691": {
+            "spellId": "205691",
+            "spellName": "Dire Beast: Basilisk"
+          },
+          "208652": { "spellId": "208652", "spellName": "Dire Beast: Hawk" },
+          "212668": { "spellId": "212668", "spellName": "The Beast Within" },
+          "236776": { "spellId": "236776", "spellName": "Hi-Explosive Trap" },
+          "248518": { "spellId": "248518", "spellName": "Interlope" }
+        }
       },
       "MARKSMANSHIP": {
         "Normal": {
@@ -4614,7 +4642,21 @@
             "col": "1"
           }
         },
-        "PvP": {}
+        "PvP": {
+          "198062": { "spellId": "198062", "spellName": "Netherwind Armor" },
+          "198064": { "spellId": "198064", "spellName": "Prismatic Cloak" },
+          "198100": { "spellId": "198100", "spellName": "Kleptomania" },
+          "198120": { "spellId": "198120", "spellName": "Frostbite" },
+          "198123": { "spellId": "198123", "spellName": "Deep Shatter" },
+          "198126": { "spellId": "198126", "spellName": "Chilled to the Bone" },
+          "198144": { "spellId": "198144", "spellName": "Ice Form" },
+          "198148": {
+            "spellId": "198148",
+            "spellName": "Concentrated Coolness"
+          },
+          "206431": { "spellId": "206431", "spellName": "Burst of Cold" },
+          "236788": { "spellId": "236788", "spellName": "Dampened Magic" }
+        }
       },
       "ARCANE": {
         "Normal": {
@@ -4888,7 +4930,17 @@
             "col": "2"
           }
         },
-        "PvP": {}
+        "PvP": {
+          "201372": { "spellId": "201372", "spellName": "Ride the Wind" },
+          "201769": { "spellId": "201769", "spellName": "Disabling Reach" },
+          "233759": { "spellId": "233759", "spellName": "Grapple Weapon" },
+          "247483": { "spellId": "247483", "spellName": "Tigereye Brew" },
+          "287503": { "spellId": "287503", "spellName": "Alpha Tiger" },
+          "287506": { "spellId": "287506", "spellName": "Wind Waker" },
+          "287681": { "spellId": "287681", "spellName": "Turbo Fists" },
+          "342928": { "spellId": "342928", "spellName": "Reverse Harm" },
+          "345829": { "spellId": "345829", "spellName": "Pressure Points" }
+        }
       },
       "MISTWEAVER": {
         "Normal": {
@@ -5160,7 +5212,19 @@
             "col": "1"
           }
         },
-        "PvP": {}
+        "PvP": {
+          "202107": { "spellId": "202107", "spellName": "Microbrew" },
+          "202126": { "spellId": "202126", "spellName": "Hot Trub" },
+          "202162": { "spellId": "202162", "spellName": "Avert Harm" },
+          "202200": { "spellId": "202200", "spellName": "Guided Meditation" },
+          "202272": { "spellId": "202272", "spellName": "Incendiary Breath" },
+          "202335": { "spellId": "202335", "spellName": "Double Barrel" },
+          "202370": { "spellId": "202370", "spellName": "Mighty Ox Kick" },
+          "205147": { "spellId": "205147", "spellName": "Eerie Fermentation" },
+          "207025": { "spellId": "207025", "spellName": "Admonishment" },
+          "213658": { "spellId": "213658", "spellName": "Craft: Nimble Brew" },
+          "232876": { "spellId": "232876", "spellName": "Niuzao's Essence" }
+        }
       }
     },
     "Paladin": {
@@ -5293,7 +5357,25 @@
             "col": "2"
           }
         },
-        "PvP": {}
+        "PvP": {
+          "199428": { "spellId": "199428", "spellName": "Luminescence" },
+          "204914": { "spellId": "204914", "spellName": "Divine Punisher" },
+          "204934": { "spellId": "204934", "spellName": "Law and Order" },
+          "204979": { "spellId": "204979", "spellName": "Jurisdiction" },
+          "210256": {
+            "spellId": "210256",
+            "spellName": "Blessing of Sanctuary"
+          },
+          "210323": { "spellId": "210323", "spellName": "Vengeance Aura" },
+          "236186": { "spellId": "236186", "spellName": "Cleansing Light" },
+          "246806": { "spellId": "246806", "spellName": "Lawbringer" },
+          "247675": { "spellId": "247675", "spellName": "Aura of Reckoning" },
+          "287947": {
+            "spellId": "287947",
+            "spellName": "Ultimate Retribution"
+          },
+          "305394": { "spellId": "305394", "spellName": "Unbound Freedom" }
+        }
       },
       "HOLY": {
         "Normal": {
@@ -5724,7 +5806,18 @@
             "col": "2"
           }
         },
-        "PvP": {}
+        "PvP": {
+          "196162": { "spellId": "196162", "spellName": "Purification" },
+          "196439": { "spellId": "196439", "spellName": "Purified Resolve" },
+          "197535": { "spellId": "197535", "spellName": "Strength of Soul" },
+          "197590": { "spellId": "197590", "spellName": "Dome of Light" },
+          "197862": { "spellId": "197862", "spellName": "Archangel" },
+          "197871": { "spellId": "197871", "spellName": "Dark Archangel" },
+          "214205": { "spellId": "214205", "spellName": "Trinity" },
+          "215768": { "spellId": "215768", "spellName": "Searing Light" },
+          "236499": { "spellId": "236499", "spellName": "Ultimate Radiance" },
+          "316262": { "spellId": "316262", "spellName": "Thoughtsteal" }
+        }
       },
       "HOLY": {
         "Normal": {
@@ -5931,6 +6024,12 @@
             "row": "3",
             "col": "1"
           },
+          "205385": {
+            "spellId": "205385",
+            "spellName": "Shadow Crash",
+            "row": "4",
+            "col": "2"
+          },
           "238558": {
             "spellId": "238558",
             "spellName": "Misery",
@@ -5989,12 +6088,6 @@
             "spellId": "341385",
             "spellName": "Searing Nightmare",
             "row": "2",
-            "col": "2"
-          },
-          "342834": {
-            "spellId": "342834",
-            "spellName": "Shadow Crash",
-            "row": "4",
             "col": "2"
           },
           "345218": {
@@ -6147,7 +6240,18 @@
             "col": "2"
           }
         },
-        "PvP": {}
+        "PvP": {
+          "197000": { "spellId": "197000", "spellName": "Maneuverability" },
+          "197007": { "spellId": "197007", "spellName": "Intent to Kill" },
+          "197050": { "spellId": "197050", "spellName": "Mind-Numbing Poison" },
+          "198032": { "spellId": "198032", "spellName": "Honor Among Thieves" },
+          "198092": { "spellId": "198092", "spellName": "Creeping Venom" },
+          "198128": { "spellId": "198128", "spellName": "Flying Daggers" },
+          "198145": { "spellId": "198145", "spellName": "System Shock" },
+          "206328": { "spellId": "206328", "spellName": "Neurotoxin" },
+          "212182": { "spellId": "212182", "spellName": "Smoke Bomb" },
+          "269513": { "spellId": "269513", "spellName": "Death from Above" }
+        }
       },
       "SUBTLETY": {
         "Normal": {
@@ -6278,7 +6382,18 @@
             "col": "1"
           }
         },
-        "PvP": {}
+        "PvP": {
+          "197000": { "spellId": "197000", "spellName": "Maneuverability" },
+          "197899": { "spellId": "197899", "spellName": "Silhouette" },
+          "198032": { "spellId": "198032", "spellName": "Honor Among Thieves" },
+          "198675": { "spellId": "198675", "spellName": "Dagger in the Dark" },
+          "198952": { "spellId": "198952", "spellName": "Veil of Midnight" },
+          "207736": { "spellId": "207736", "spellName": "Shadowy Duel" },
+          "212081": { "spellId": "212081", "spellName": "Thief's Bargain" },
+          "212182": { "spellId": "212182", "spellName": "Smoke Bomb" },
+          "213981": { "spellId": "213981", "spellName": "Cold Blood" },
+          "269513": { "spellId": "269513", "spellName": "Death from Above" }
+        }
       },
       "OUTLAW": {
         "Normal": {
