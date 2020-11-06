@@ -2365,7 +2365,7 @@
         "spellId": "48045",
         "spellName": "Mind Sear",
         "iconId": "spell_shadow_mindshear",
-        "targetType": "ONE_ENEMY"
+        "targetType": "ONE_ANY"
       },
       "62618": {
         "spec": ["DISCIPLINE"],

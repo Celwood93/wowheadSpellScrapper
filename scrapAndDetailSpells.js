@@ -358,7 +358,8 @@ function filterData(pageSpellData, spellId, spellName) {
     spellName === "Shadowstep" ||
     spellName === "Wild Charge" ||
     spellName === "Death Coil" ||
-    spellName === "Gorefiend's Grasp";
+    spellName === "Gorefiend's Grasp" ||
+    spellName === "Mind Sear";
   const isSelfException =
     spellName === "Summon Demonic Tyrant" || spellName === "Malefic Rapture";
   const isRapture = spellName === "Rapture";
@@ -642,7 +643,6 @@ const brokenSpells = [
 ];
 const incorrectSpells = [
   194913,
-  49206,
   207311,
   52610,
   285381,
@@ -793,7 +793,7 @@ const druidAffinities = {
   197488: ["24858", "78674", "194153", "93402", "132469"]
 };
 
-const testingWorkingKey = false;
+const testingWorkingKey = true;
 
 async function runAllThings() {
   const browser = await puppeteer.launch();
@@ -805,8 +805,8 @@ async function runAllThings() {
 
   Promise.all(promises).then(async () => {
     let jsonToWrite = JSON.stringify(spellData);
-    //const testWorkingDataReal = require("./SpellsPhase2AllSpellsWorkingKey.json");
-    // const brokeSpellsFixedKey = require("./SpellsPhase2AllBrokenSpellsFIXED.json");
+    const testWorkingDataReal = require("./SpellsPhase2AllSpellsWorkingKey.json");
+    const brokeSpellsFixedKey = require("./SpellsPhase2AllBrokenSpellsFIXED.json");
     const stringifiedOldCachedData = await fs.readFileSync(
       "./CachedPageSpellData.json"
     );
@@ -820,11 +820,11 @@ async function runAllThings() {
     }
     if (testingWorkingKey) {
       fs.writeFileSync(`SpellsPhase2AllSpellsWorkingKey.json`, jsonToWrite);
-      // if (!_.isEqual(testWorkingDataReal, spellData)) {
-      //   findDifferences(testWorkingDataReal, spellData);
-      // }
+      if (!_.isEqual(testWorkingDataReal, spellData)) {
+        findDifferences(testWorkingDataReal, spellData);
+      }
     } else {
-      //checkForImprovements(brokeSpellsFixedKey, spellData);
+      checkForImprovements(brokeSpellsFixedKey, spellData);
       fs.writeFileSync(`SpellsPhase2AllBrokenSpells.json`, jsonToWrite);
     }
     browser.close();
