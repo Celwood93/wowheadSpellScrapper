@@ -957,7 +957,7 @@
         "spellId": "34477",
         "spellName": "Misdirection",
         "iconId": "ability_hunter_misdirection",
-        "targetType": "ONE_FRIENDLY"
+        "targetType": "FRIENDLY_NOT_SELF"
       },
       "53271": {
         "spec": ["BEAST MASTERY", "MARKSMANSHIP", "SURVIVAL"],
@@ -1873,7 +1873,7 @@
         "spellId": "6940",
         "spellName": "Blessing of Sacrifice",
         "iconId": "spell_holy_sealofsacrifice",
-        "targetType": "ONE_FRIENDLY"
+        "targetType": "FRIENDLY_NOT_SELF"
       },
       "7328": {
         "spec": ["RETRIBUTION", "HOLY", "PROTECTION"],
@@ -2062,7 +2062,7 @@
         "spellId": "183998",
         "spellName": "Light of the Martyr",
         "iconId": "ability_paladin_lightofthemartyr",
-        "targetType": "ONE_FRIENDLY"
+        "targetType": "FRIENDLY_NOT_SELF"
       },
       "184575": {
         "spec": ["RETRIBUTION"],
@@ -2393,7 +2393,7 @@
         "spellId": "73325",
         "spellName": "Leap of Faith",
         "iconId": "priest_spell_leapoffaith_a",
-        "targetType": "ONE_FRIENDLY"
+        "targetType": "FRIENDLY_NOT_SELF"
       },
       "88625": {
         "spec": ["HOLY"],
@@ -2682,7 +2682,7 @@
         "spellId": "57934",
         "spellName": "Tricks of the Trade",
         "iconId": "ability_rogue_tricksofthetrade",
-        "targetType": "ONE_FRIENDLY"
+        "targetType": "FRIENDLY_NOT_SELF"
       },
       "79140": {
         "spec": ["ASSASINATION"],
@@ -3528,7 +3528,7 @@
         "spellId": "3411",
         "spellName": "Intervene",
         "iconId": "ability_warrior_victoryrush",
-        "targetType": "ONE_FRIENDLY"
+        "targetType": "FRIENDLY_NOT_SELF"
       },
       "5246": {
         "spec": ["FURY", "ARMS", "PROTECTION"],
@@ -3814,7 +3814,8 @@
             "spellName": "Blooddrinker",
             "row": "0",
             "col": "1",
-            "iconId": "ability_animusdraw"
+            "iconId": "ability_animusdraw",
+            "targetType": "ONE_ENEMY"
           },
           "206940": {
             "spellId": "206940",
@@ -4002,7 +4003,7 @@
             "row": "5",
             "col": "2",
             "iconId": "ability_hunter_glacialtrap",
-            "targetType": "PLACED"
+            "targetType": "SELF"
           },
           "207061": {
             "spellId": "207061",
@@ -4223,7 +4224,7 @@
             "col": "2",
             "idOfReplacedSpell": "55090",
             "iconId": "warlock_curse_shadow",
-            "targetType": "PLACED"
+            "targetType": "ONE_ENEMY"
           },
           "207321": {
             "spellId": "207321",
@@ -4884,7 +4885,7 @@
             "row": "4",
             "col": "1",
             "iconId": "ability_druid_skinteeth",
-            "targetType": "MANY_ENEMY"
+            "targetType": "SELF"
           },
           "102359": {
             "spellId": "102359",
@@ -5016,7 +5017,7 @@
             "row": "5",
             "col": "2",
             "iconId": "artifactability_feraldruid_ashamanesbite",
-            "targetType": "PLACED"
+            "targetType": "SELF"
           },
           "285564": {
             "spellId": "285564",
@@ -5376,7 +5377,7 @@
             "row": "6",
             "col": "1",
             "iconId": "ability_druid_dreamstate",
-            "targetType": "PLACED"
+            "targetType": "ONE_ENEMY"
           },
           "205636": {
             "spellId": "205636",
@@ -5384,7 +5385,7 @@
             "row": "0",
             "col": "2",
             "iconId": "ability_druid_forceofnature",
-            "targetType": "SELF"
+            "targetType": "PLACED"
           },
           "252216": {
             "spellId": "252216",
@@ -6155,7 +6156,8 @@
             "spellName": "Focus Magic",
             "row": "2",
             "col": "1",
-            "iconId": "spell_arcane_studentofmagic"
+            "iconId": "spell_arcane_studentofmagic",
+            "targetType": "FRIENDLY_NOT_SELF"
           },
           "342344": {
             "spellId": "342344",
@@ -6243,7 +6245,7 @@
             "row": "0",
             "col": "2",
             "iconId": "spell_mage_icenova",
-            "targetType": "PLACED"
+            "targetType": "ONE_ENEMY"
           },
           "199786": {
             "spellId": "199786",
@@ -6251,7 +6253,7 @@
             "row": "6",
             "col": "2",
             "iconId": "ability_mage_glacialspike",
-            "targetType": "MANY_ENEMY"
+            "targetType": "ONE_ENEMY"
           },
           "205021": {
             "spellId": "205021",
@@ -6347,7 +6349,8 @@
             "spellName": "Focus Magic",
             "row": "2",
             "col": "1",
-            "iconId": "spell_arcane_studentofmagic"
+            "iconId": "spell_arcane_studentofmagic",
+            "targetType": "FRIENDLY_NOT_SELF"
           }
         },
         "PvP": {}
@@ -6392,7 +6395,7 @@
             "row": "5",
             "col": "1",
             "iconId": "spell_mage_arcaneorb",
-            "targetType": "ONE_ENEMY"
+            "targetType": "SELF"
           },
           "155147": {
             "spellId": "155147",
@@ -6408,7 +6411,7 @@
             "row": "5",
             "col": "2",
             "iconId": "spell_mage_supernova",
-            "targetType": "PLACED"
+            "targetType": "ONE_ENEMY"
           },
           "205022": {
             "spellId": "205022",
@@ -6495,7 +6498,8 @@
             "spellName": "Focus Magic",
             "row": "2",
             "col": "1",
-            "iconId": "spell_arcane_studentofmagic"
+            "iconId": "spell_arcane_studentofmagic",
+            "targetType": "FRIENDLY_NOT_SELF"
           },
           "321387": {
             "spellId": "321387",
@@ -6552,7 +6556,7 @@
             "row": "0",
             "col": "1",
             "iconId": "ability_monk_chiwave",
-            "targetType": "ONE_ENEMY"
+            "targetType": "ONE_ANY"
           },
           "115173": {
             "spellId": "115173",
@@ -6624,7 +6628,7 @@
             "row": "0",
             "col": "2",
             "iconId": "spell_arcane_arcanetorrent",
-            "targetType": "ONE_FRIENDLY"
+            "targetType": "SELF"
           },
           "152173": {
             "spellId": "152173",
@@ -6727,7 +6731,7 @@
             "row": "0",
             "col": "1",
             "iconId": "ability_monk_chiwave",
-            "targetType": "ONE_ENEMY"
+            "targetType": "ONE_ANY"
           },
           "115173": {
             "spellId": "115173",
@@ -6742,7 +6746,8 @@
             "spellName": "Summon Jade Serpent Statue",
             "row": "5",
             "col": "0",
-            "iconId": "ability_monk_summonserpentstatue"
+            "iconId": "ability_monk_summonserpentstatue",
+            "targetType": "PLACED"
           },
           "116841": {
             "spellId": "116841",
@@ -6790,7 +6795,7 @@
             "row": "0",
             "col": "2",
             "iconId": "spell_arcane_arcanetorrent",
-            "targetType": "ONE_FRIENDLY"
+            "targetType": "SELF"
           },
           "196725": {
             "spellId": "196725",
@@ -6838,7 +6843,8 @@
             "row": "3",
             "col": "1",
             "idOfReplacedSpell": "175697",
-            "iconId": "inv_chaos_orb"
+            "iconId": "inv_chaos_orb",
+            "targetType": "SELF"
           },
           "210802": {
             "spellId": "210802",
@@ -6879,7 +6885,7 @@
             "col": "2",
             "idOfReplacedSpell": "322118",
             "iconId": "inv_pet_cranegod",
-            "targetType": "ONE_FRIENDLY"
+            "targetType": "SELF"
           }
         },
         "PvP": {
@@ -6910,7 +6916,7 @@
             "row": "0",
             "col": "1",
             "iconId": "ability_monk_chiwave",
-            "targetType": "ONE_ENEMY"
+            "targetType": "ONE_ANY"
           },
           "115173": {
             "spellId": "115173",
@@ -6925,7 +6931,8 @@
             "spellName": "Summon Black Ox Statue",
             "row": "3",
             "col": "1",
-            "iconId": "monk_ability_summonoxstatue"
+            "iconId": "monk_ability_summonoxstatue",
+            "targetType": "PLACED"
           },
           "115399": {
             "spellId": "115399",
@@ -6981,7 +6988,7 @@
             "row": "0",
             "col": "2",
             "iconId": "spell_arcane_arcanetorrent",
-            "targetType": "ONE_FRIENDLY"
+            "targetType": "SELF"
           },
           "196607": {
             "spellId": "196607",
@@ -7290,7 +7297,7 @@
             "row": "1",
             "col": "2",
             "iconId": "spell_paladin_holyprism",
-            "targetType": "ONE_FRIENDLY"
+            "targetType": "ONE_ANY"
           },
           "115750": {
             "spellId": "115750",
@@ -7654,7 +7661,7 @@
             "row": "5",
             "col": "1",
             "iconId": "spell_priest_divinestar",
-            "targetType": "ONE_FRIENDLY"
+            "targetType": "SELF"
           },
           "120517": {
             "spellId": "120517",
@@ -7662,7 +7669,7 @@
             "row": "5",
             "col": "2",
             "iconId": "ability_priest_halo",
-            "targetType": "ONE_FRIENDLY"
+            "targetType": "SELF"
           },
           "121536": {
             "spellId": "121536",
@@ -7836,7 +7843,7 @@
             "row": "5",
             "col": "1",
             "iconId": "spell_priest_divinestar",
-            "targetType": "ONE_FRIENDLY"
+            "targetType": "SELF"
           },
           "120517": {
             "spellId": "120517",
@@ -7844,7 +7851,7 @@
             "row": "5",
             "col": "2",
             "iconId": "ability_priest_halo",
-            "targetType": "ONE_FRIENDLY"
+            "targetType": "SELF"
           },
           "121536": {
             "spellId": "121536",
@@ -8140,7 +8147,8 @@
             "spellName": "Damnation",
             "row": "5",
             "col": "0",
-            "iconId": "ability_warlock_eradication"
+            "iconId": "ability_warlock_eradication",
+            "targetType": "ONE_ENEMY"
           },
           "341385": {
             "spellId": "341385",
@@ -8148,7 +8156,7 @@
             "row": "2",
             "col": "2",
             "iconId": "ability_priest_voidentropy",
-            "targetType": "PLACED"
+            "targetType": "ONE_ENEMY"
           },
           "342834": {
             "spellId": "342834",
@@ -8244,7 +8252,8 @@
             "spellName": "Marked for Death",
             "row": "2",
             "col": "2",
-            "iconId": "achievement_bg_killingblow_berserker"
+            "iconId": "achievement_bg_killingblow_berserker",
+            "targetType": "ONE_ENEMY"
           },
           "152152": {
             "spellId": "152152",
@@ -8416,7 +8425,8 @@
             "spellName": "Marked for Death",
             "row": "2",
             "col": "2",
-            "iconId": "achievement_bg_killingblow_berserker"
+            "iconId": "achievement_bg_killingblow_berserker",
+            "targetType": "ONE_ENEMY"
           },
           "193531": {
             "spellId": "193531",
@@ -8550,7 +8560,7 @@
             "row": "6",
             "col": "2",
             "iconId": "ability_rogue_murderspree",
-            "targetType": "PLACED"
+            "targetType": "ONE_ENEMY"
           },
           "79008": {
             "spellId": "79008",
@@ -8581,7 +8591,8 @@
             "spellName": "Marked for Death",
             "row": "2",
             "col": "2",
-            "iconId": "achievement_bg_killingblow_berserker"
+            "iconId": "achievement_bg_killingblow_berserker",
+            "targetType": "ONE_ENEMY"
           },
           "193531": {
             "spellId": "193531",
@@ -8781,7 +8792,7 @@
             "row": "4",
             "col": "2",
             "iconId": "ability_shaman_windwalktotem",
-            "targetType": "ONE_FRIENDLY"
+            "targetType": "PLACED"
           },
           "192088": {
             "spellId": "192088",
@@ -8837,7 +8848,7 @@
             "row": "3",
             "col": "2",
             "iconId": "spell_nature_reincarnation",
-            "targetType": "ONE_FRIENDLY"
+            "targetType": "PLACED"
           },
           "207401": {
             "spellId": "207401",
@@ -8982,7 +8993,7 @@
             "row": "4",
             "col": "2",
             "iconId": "ability_shaman_windwalktotem",
-            "targetType": "ONE_FRIENDLY"
+            "targetType": "PLACED"
           },
           "192222": {
             "spellId": "192222",
@@ -8999,7 +9010,7 @@
             "col": "1",
             "idOfReplacedSpell": "198067",
             "iconId": "inv_stormelemental",
-            "targetType": "ONE_ENEMY"
+            "targetType": "SELF"
           },
           "210714": {
             "spellId": "210714",
@@ -9007,7 +9018,7 @@
             "row": "5",
             "col": "2",
             "iconId": "spell_frost_iceshard",
-            "targetType": "ONE_FRIENDLY"
+            "targetType": "ONE_ENEMY"
           },
           "260878": {
             "spellId": "260878",
@@ -9138,7 +9149,7 @@
             "row": "4",
             "col": "2",
             "iconId": "ability_shaman_windwalktotem",
-            "targetType": "ONE_FRIENDLY"
+            "targetType": "PLACED"
           },
           "192246": {
             "spellId": "192246",
@@ -9226,7 +9237,7 @@
             "row": "3",
             "col": "2",
             "iconId": "spell_shaman_improvedfirenova",
-            "targetType": "ONE_ENEMY"
+            "targetType": "SELF"
           },
           "334046": {
             "spellId": "334046",
@@ -9372,7 +9383,7 @@
             "row": "6",
             "col": "1",
             "iconId": "spell_fire_ragnaros_lavaboltgreen",
-            "targetType": "ONE_ENEMY"
+            "targetType": "SELF"
           },
           "205148": {
             "spellId": "205148",
@@ -9614,7 +9625,7 @@
             "row": "3",
             "col": "2",
             "iconId": "sha_spell_shadow_shadesofdarkness_nightborne",
-            "targetType": "ONE_ENEMY"
+            "targetType": "PLACED"
           },
           "334183": {
             "spellId": "334183",
@@ -9744,7 +9755,8 @@
             "spellName": "Summon Vilefiend",
             "row": "3",
             "col": "2",
-            "iconId": "inv_argusfelstalkermount"
+            "iconId": "inv_argusfelstalkermount",
+            "targetType": "SELF"
           },
           "264130": {
             "spellId": "264130",
@@ -9752,7 +9764,7 @@
             "row": "1",
             "col": "1",
             "iconId": "ability_warlock_backdraft",
-            "targetType": "PLACED"
+            "targetType": "SELF"
           },
           "264874": {
             "spellId": "264874",
@@ -9776,7 +9788,7 @@
             "row": "0",
             "col": "2",
             "iconId": "ability_warlock_demonicempowerment",
-            "targetType": "ONE_ENEMY"
+            "targetType": "SELF"
           },
           "267211": {
             "spellId": "267211",
@@ -9816,7 +9828,7 @@
             "row": "6",
             "col": "2",
             "iconId": "inv_netherportal",
-            "targetType": "PLACED"
+            "targetType": "SELF"
           }
         },
         "PvP": {

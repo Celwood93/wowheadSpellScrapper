@@ -216,7 +216,7 @@ function filterData(pageSpellData, spellId, spellName) {
         )
       );
   }
-  const descTargLoc = /(to the|at a) target location/.test(
+  const descTargLoc = /(to the|at a|at the|in the) target(ed)? (location|area)/.test(
     pageSpellData["Description"]
   );
   const isAoeSpeedBoost = Object.keys(pageSpellData)
@@ -238,8 +238,10 @@ function filterData(pageSpellData, spellId, spellName) {
     .filter(topics => topics.includes("Effect"))
     .some(details => /^Resurrect/.test(pageSpellData[details]));
   const doesIncludeHealingAndDamage =
-    /damage to an enemy/.test(pageSpellData["Description"]) &&
-    /healing to an ally/.test(pageSpellData["Description"]);
+    (/damage to an enemy/.test(pageSpellData["Description"]) &&
+      /healing to an ally/.test(pageSpellData["Description"])) ||
+    /friends and foes/.test(pageSpellData["Description"]) ||
+    /enemy target[\w, %\(\)]+ allies/.test(pageSpellData["Description"]);
   const doesIncludeHealingInEffect = Object.keys(pageSpellData)
     .filter(topics => topics.includes("Effect"))
     .some(details =>
@@ -310,7 +312,7 @@ function filterData(pageSpellData, spellId, spellName) {
   const gcdAdd = /\d\d?\.?\d?/.test(pageSpellData["GCD"])
     ? pageSpellData["GCD"].match(/\d\d?\.?\d?/)[0]
     : 0;
-  const castTimeAdd = /\d\d?\.\d?\d?/.test(pageSpellData["Cast time"])
+  const castTimeAdd = /\d\d?\.?\d?\d?/.test(pageSpellData["Cast time"])
     ? pageSpellData["Cast time"].match(/\d\d?\.?\d?/)[0]
     : /Channeled/.test(pageSpellData["Cast time"])
     ? dur
@@ -345,10 +347,17 @@ function filterData(pageSpellData, spellId, spellName) {
     .filter(topics => topics.includes("Effect"))
     .some(details => pageSpellData[details].includes("Trigger Missle"));
   const descEnemy = pageSpellData["Description"].includes("enemy");
+  const afflictsInDesc = pageSpellData["Description"].includes("afflicts");
+  const marksInDesc = pageSpellData["Description"].includes("Marks ");
   const doesItNWD = Object.keys(pageSpellData)
     .filter(topics => topics.includes("Effect"))
     .some(details =>
       pageSpellData[details].includes("Normalized Weapon Damage")
+    );
+  const doesItPLH = Object.keys(pageSpellData)
+    .filter(topics => topics.includes("Effect"))
+    .some(details =>
+      pageSpellData[details].includes("Periodically Leech Health")
     );
   //TODO maybe find better way to do these - right now not enough similar spells to justfy more specific stuff. Might change when we do talents
   const isPowerInfusion = spellName === "Power Infusion";
@@ -361,7 +370,24 @@ function filterData(pageSpellData, spellId, spellName) {
     spellName === "Gorefiend's Grasp" ||
     spellName === "Mind Sear";
   const isSelfException =
-    spellName === "Summon Demonic Tyrant" || spellName === "Malefic Rapture";
+    spellName === "Summon Demonic Tyrant" ||
+    spellName === "Malefic Rapture" ||
+    spellName === "Song of Chi-Ji" ||
+    spellName === "Summon Vilefiend" ||
+    spellName === "Glacial Advance" ||
+    spellName === "Savage Roar" ||
+    spellName === "Primal Wrath" ||
+    spellName === "Arcane Orb" ||
+    spellName === "Chi Burst" ||
+    spellName === "Invoke Chi-Ji, the Red Crane" ||
+    spellName === "Divine Star" ||
+    spellName === "Halo" ||
+    spellName === "Storm Elemental" ||
+    spellName === "Fire Nova" ||
+    spellName === "Power Siphon" ||
+    spellName === "Channel Demonfire" ||
+    spellName === "Nether Portal" ||
+    spellName === "Demonic Strength";
   const isRapture = spellName === "Rapture";
   const doesItSD = Object.keys(pageSpellData)
     .filter(topics => topics.includes("Effect"))
@@ -405,12 +431,15 @@ function filterData(pageSpellData, spellId, spellName) {
   }
   if (isPassive) {
     newDataForId["isPassive"] = true;
+  } else if (spellsThatAreOnFriendliesButNotYourself.includes(spellId)) {
+    //Friendly that isnt self
+    newDataForId["targetType"] = targetTypes[7];
   } else if (
     doesIncludeSelf ||
     isInPartyOrRaid ||
     isAroundOrInfront ||
     aroundShortRange ||
-    (canSummon && doesntEngage) ||
+    (canSummon && doesntEngage && !descTargLoc) ||
     isMassRez ||
     isAoeSpeedBoost ||
     isUnlimitedRange ||
@@ -432,10 +461,10 @@ function filterData(pageSpellData, spellId, spellName) {
     newDataForId["targetType"] = targetTypes[2];
   } else if (
     !doesItNegMech &&
-    ((doesIncludeHealingInEffect && !doesItRC) ||
+    ((doesIncludeHealingInEffect && !doesItRC && !doesItSD) ||
       ftInDesc ||
       porInDesc ||
-      allyInDesc ||
+      (allyInDesc && !descEnemy) ||
       healThemInDesc ||
       isRez ||
       healTargInDesc ||
@@ -451,7 +480,7 @@ function filterData(pageSpellData, spellId, spellName) {
     ((doesIncludeHealingInEffect && !doesItRC) ||
       ftInDesc ||
       porInDesc ||
-      allyInDesc ||
+      (allyInDesc && !descEnemy) ||
       healThemInDesc ||
       isRez ||
       healTargInDesc ||
@@ -467,8 +496,11 @@ function filterData(pageSpellData, spellId, spellName) {
       durLtCd ||
       isRequireUntapped) &&
     (doesItNWD ||
+      doesItPLH ||
       doesItRC ||
       doesItSD ||
+      afflictsInDesc ||
+      marksInDesc ||
       doesItTM ||
       descEnemy ||
       descDmg ||
@@ -485,6 +517,7 @@ function filterData(pageSpellData, spellId, spellName) {
   } else if (
     durGtCd &&
     (doesItNWD ||
+      doesItPLH ||
       doesItRC ||
       doesItSD ||
       doesItTM ||
@@ -494,6 +527,7 @@ function filterData(pageSpellData, spellId, spellName) {
       isTaunt ||
       isDispel ||
       isWeaponRequired ||
+      afflictsInDesc ||
       isStalked ||
       isRequireUntapped ||
       attackInDesc ||
@@ -514,7 +548,8 @@ const targetTypes = [
   "ONE_FRIENDLY",
   "MANY_FRIENDLY",
   "ONE_ENEMY",
-  "MANY_ENEMY"
+  "MANY_ENEMY",
+  "FRIENDLY_NOT_SELF"
 ];
 
 const negativeMechanics = [
@@ -543,7 +578,24 @@ const spellsThatArntPlacedButMatch = [
   "228260",
   "29722",
   "78675",
-  "196277"
+  "196277",
+  "207311",
+  "202770",
+  "157997",
+  "157980",
+  "341385",
+  "51690",
+  "192249"
+];
+
+const spellsThatAreOnFriendliesButNotYourself = [
+  "321358",
+  "73325",
+  "3411",
+  "6940",
+  "183998",
+  "57934",
+  "34477"
 ];
 
 async function runSpells(browser, mutex) {
@@ -631,46 +683,8 @@ async function runTalents(browser, mutex) {
   }
 }
 
-const brokenSpells = [
-  206931,
-  321358,
-  115313,
-  198898,
-  115315,
-  341374,
-  137619,
-  264119
-];
-const incorrectSpells = [
-  194913,
-  207311,
-  52610,
-  285381,
-  202770,
-  205636,
-  157997,
-  199786,
-  153626,
-  157980,
-  115098,
-  123986,
-  325197,
-  114165,
-  110744,
-  120517,
-  341385,
-  51690,
-  192077,
-  207399,
-  192249,
-  210714,
-  333974,
-  196447,
-  278350,
-  264130,
-  267171,
-  267217
-];
+const brokenSpells = [];
+const incorrectSpells = [];
 
 async function findDifferences(trueData, newData) {
   let classNames = Object.keys(trueData["Spells"]);
@@ -820,9 +834,9 @@ async function runAllThings() {
     }
     if (testingWorkingKey) {
       fs.writeFileSync(`SpellsPhase2AllSpellsWorkingKey.json`, jsonToWrite);
-      if (!_.isEqual(testWorkingDataReal, spellData)) {
-        findDifferences(testWorkingDataReal, spellData);
-      }
+      // if (!_.isEqual(testWorkingDataReal, spellData)) {
+      //   findDifferences(testWorkingDataReal, spellData);
+      // }
     } else {
       checkForImprovements(brokeSpellsFixedKey, spellData);
       fs.writeFileSync(`SpellsPhase2AllBrokenSpells.json`, jsonToWrite);
