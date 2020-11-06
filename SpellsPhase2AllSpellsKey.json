@@ -3923,19 +3923,72 @@
           }
         },
         "PvP": {
-          "47476": { "spellId": "47476", "spellName": "Strangulate" },
-          "77606": { "spellId": "77606", "spellName": "Dark Simulacrum" },
-          "199642": { "spellId": "199642", "spellName": "Necrotic Aura" },
-          "199720": { "spellId": "199720", "spellName": "Decomposing Aura" },
-          "202727": { "spellId": "202727", "spellName": "Rot and Wither" },
-          "202731": { "spellId": "202731", "spellName": "Walking Dead" },
-          "203173": { "spellId": "203173", "spellName": "Death Chain" },
-          "207018": { "spellId": "207018", "spellName": "Murderous Intent" },
-          "233411": { "spellId": "233411", "spellName": "Blood for Blood" },
-          "233412": { "spellId": "233412", "spellName": "Last Dance" },
+          "47476": {
+            "spellId": "47476",
+            "spellName": "Strangulate",
+            "iconId": "spell_shadow_soulleech_3",
+            "targetType": "ONE_ENEMY"
+          },
+          "77606": {
+            "spellId": "77606",
+            "spellName": "Dark Simulacrum",
+            "iconId": "spell_holy_consumemagic",
+            "targetType": "ONE_ENEMY"
+          },
+          "199642": {
+            "spellId": "199642",
+            "spellName": "Necrotic Aura",
+            "iconId": "ability_deathknight_decomposingaura",
+            "isPassive": true
+          },
+          "199720": {
+            "spellId": "199720",
+            "spellName": "Decomposing Aura",
+            "iconId": "ability_deathknight_necroticaura",
+            "isPassive": true
+          },
+          "202727": {
+            "spellId": "202727",
+            "spellName": "Rot and Wither",
+            "iconId": "ability_deathknight_roilingblood",
+            "isPassive": true
+          },
+          "202731": {
+            "spellId": "202731",
+            "spellName": "Walking Dead",
+            "iconId": "ability_fiegndead",
+            "isPassive": true
+          },
+          "203173": {
+            "spellId": "203173",
+            "spellName": "Death Chain",
+            "iconId": "ability_deathknight_deathchain",
+            "targetType": "ONE_ENEMY"
+          },
+          "207018": {
+            "spellId": "207018",
+            "spellName": "Murderous Intent",
+            "idOfReplacedSpell": "56222",
+            "iconId": "spell_nature_shamanrage",
+            "targetType": "MANY_ENEMY"
+          },
+          "233411": {
+            "spellId": "233411",
+            "spellName": "Blood for Blood",
+            "iconId": "ability_ironmaidens_bloodritual",
+            "targetType": "SELF"
+          },
+          "233412": {
+            "spellId": "233412",
+            "spellName": "Last Dance",
+            "iconId": "inv_sword_07",
+            "isPassive": true
+          },
           "328718": {
             "spellId": "328718",
-            "spellName": "Dome of Ancient Shadow"
+            "spellName": "Dome of Ancient Shadow",
+            "iconId": "spell_deathknight_antimagiczone",
+            "isPassive": true
           }
         }
       },
@@ -4111,18 +4164,65 @@
           }
         },
         "PvP": {
-          "77606": { "spellId": "77606", "spellName": "Dark Simulacrum" },
-          "199642": { "spellId": "199642", "spellName": "Necrotic Aura" },
-          "199719": { "spellId": "199719", "spellName": "Heartstop Aura" },
-          "201995": { "spellId": "201995", "spellName": "Cadaverous Pallor" },
-          "204080": { "spellId": "204080", "spellName": "Deathchill" },
-          "233396": { "spellId": "233396", "spellName": "Delirium" },
-          "287250": { "spellId": "287250", "spellName": "Dead of Winter" },
-          "288977": { "spellId": "288977", "spellName": "Transfusion" },
-          "305392": { "spellId": "305392", "spellName": "Chill Streak" },
+          "77606": {
+            "spellId": "77606",
+            "spellName": "Dark Simulacrum",
+            "iconId": "spell_holy_consumemagic",
+            "targetType": "ONE_ENEMY"
+          },
+          "199642": {
+            "spellId": "199642",
+            "spellName": "Necrotic Aura",
+            "iconId": "ability_deathknight_decomposingaura",
+            "isPassive": true
+          },
+          "199719": {
+            "spellId": "199719",
+            "spellName": "Heartstop Aura",
+            "iconId": "ability_deathknight_heartstopaura",
+            "isPassive": true
+          },
+          "201995": {
+            "spellId": "201995",
+            "spellName": "Cadaverous Pallor",
+            "iconId": "spell_holy_turnundead",
+            "isPassive": true
+          },
+          "204080": {
+            "spellId": "204080",
+            "spellName": "Deathchill",
+            "iconId": "spell_frost_frostarmor",
+            "isPassive": true
+          },
+          "233396": {
+            "spellId": "233396",
+            "spellName": "Delirium",
+            "iconId": "spell_festergutgas",
+            "isPassive": true
+          },
+          "287250": {
+            "spellId": "287250",
+            "spellName": "Dead of Winter",
+            "iconId": "ability_deathknight_remorselesswinters2",
+            "isPassive": true
+          },
+          "288977": {
+            "spellId": "288977",
+            "spellName": "Transfusion",
+            "iconId": "spell_deathknight_bloodtap",
+            "targetType": "SELF"
+          },
+          "305392": {
+            "spellId": "305392",
+            "spellName": "Chill Streak",
+            "iconId": "spell_frost_piercing-chill",
+            "targetType": "ONE_ENEMY"
+          },
           "328718": {
             "spellId": "328718",
-            "spellName": "Dome of Ancient Shadow"
+            "spellName": "Dome of Ancient Shadow",
+            "iconId": "spell_deathknight_antimagiczone",
+            "isPassive": true
           }
         }
       },
@@ -4300,22 +4400,72 @@
           }
         },
         "PvP": {
-          "77606": { "spellId": "77606", "spellName": "Dark Simulacrum" },
-          "199642": { "spellId": "199642", "spellName": "Necrotic Aura" },
-          "199720": { "spellId": "199720", "spellName": "Decomposing Aura" },
-          "201995": { "spellId": "201995", "spellName": "Cadaverous Pallor" },
-          "210128": { "spellId": "210128", "spellName": "Reanimation" },
-          "223829": { "spellId": "223829", "spellName": "Necrotic Strike" },
+          "77606": {
+            "spellId": "77606",
+            "spellName": "Dark Simulacrum",
+            "iconId": "spell_holy_consumemagic",
+            "targetType": "ONE_ENEMY"
+          },
+          "199642": {
+            "spellId": "199642",
+            "spellName": "Necrotic Aura",
+            "iconId": "ability_deathknight_decomposingaura",
+            "isPassive": true
+          },
+          "199720": {
+            "spellId": "199720",
+            "spellName": "Decomposing Aura",
+            "iconId": "ability_deathknight_necroticaura",
+            "isPassive": true
+          },
+          "201995": {
+            "spellId": "201995",
+            "spellName": "Cadaverous Pallor",
+            "iconId": "spell_holy_turnundead",
+            "isPassive": true
+          },
+          "210128": {
+            "spellId": "210128",
+            "spellName": "Reanimation",
+            "iconId": "ability_deathknight_reanimation",
+            "targetType": "MANY_ENEMY"
+          },
+          "223829": {
+            "spellId": "223829",
+            "spellName": "Necrotic Strike",
+            "iconId": "inv_axe_96",
+            "targetType": "ONE_ENEMY"
+          },
           "288848": {
             "spellId": "288848",
-            "spellName": "Necromancer's Bargain"
+            "spellName": "Necromancer's Bargain",
+            "iconId": "artifactability_unholydeathknight_deathsembrace",
+            "isPassive": true
           },
-          "288853": { "spellId": "288853", "spellName": "Raise Abomination" },
-          "288855": { "spellId": "288855", "spellName": "Life and Death" },
-          "288977": { "spellId": "288977", "spellName": "Transfusion" },
+          "288853": {
+            "spellId": "288853",
+            "spellName": "Raise Abomination",
+            "idOfReplacedSpell": "42650",
+            "iconId": "achievement_boss_patchwerk",
+            "targetType": "PLACED"
+          },
+          "288855": {
+            "spellId": "288855",
+            "spellName": "Life and Death",
+            "iconId": "spell_deathvortex",
+            "isPassive": true
+          },
+          "288977": {
+            "spellId": "288977",
+            "spellName": "Transfusion",
+            "iconId": "spell_deathknight_bloodtap",
+            "targetType": "SELF"
+          },
           "328718": {
             "spellId": "328718",
-            "spellName": "Dome of Ancient Shadow"
+            "spellName": "Dome of Ancient Shadow",
+            "iconId": "spell_deathknight_antimagiczone",
+            "isPassive": true
           }
         }
       }
@@ -4494,16 +4644,67 @@
           }
         },
         "PvP": {
-          "205596": { "spellId": "205596", "spellName": "Detainment" },
-          "205604": { "spellId": "205604", "spellName": "Reverse Magic" },
-          "205625": { "spellId": "205625", "spellName": "Cleansed by Flame" },
-          "205626": { "spellId": "205626", "spellName": "Everlasting Hunt" },
-          "205627": { "spellId": "205627", "spellName": "Jagged Spikes" },
-          "205629": { "spellId": "205629", "spellName": "Demonic Trample" },
-          "205630": { "spellId": "205630", "spellName": "Illidan's Grasp" },
-          "207029": { "spellId": "207029", "spellName": "Tormentor" },
-          "211489": { "spellId": "211489", "spellName": "Sigil Mastery" },
-          "213480": { "spellId": "213480", "spellName": "Unending Hatred" }
+          "205596": {
+            "spellId": "205596",
+            "spellName": "Detainment",
+            "iconId": "inv_misc_steelweaponchain",
+            "isPassive": true
+          },
+          "205604": {
+            "spellId": "205604",
+            "spellName": "Reverse Magic",
+            "iconId": "ability_demonhunter_reversemagic",
+            "targetType": "SELF"
+          },
+          "205625": {
+            "spellId": "205625",
+            "spellName": "Cleansed by Flame",
+            "iconId": "spell_fire_felimmolation",
+            "isPassive": true
+          },
+          "205626": {
+            "spellId": "205626",
+            "spellName": "Everlasting Hunt",
+            "iconId": "ability_demonhunter_spectank",
+            "isPassive": true
+          },
+          "205627": {
+            "spellId": "205627",
+            "spellName": "Jagged Spikes",
+            "iconId": "ability_demonhunter_demonspikes",
+            "isPassive": true
+          },
+          "205629": {
+            "spellId": "205629",
+            "spellName": "Demonic Trample",
+            "iconId": "inv_misc_monsterclaw_01",
+            "targetType": "SELF"
+          },
+          "205630": {
+            "spellId": "205630",
+            "spellName": "Illidan's Grasp",
+            "iconId": "ability_demonhunter_illidansgrasp",
+            "targetType": "SELF"
+          },
+          "207029": {
+            "spellId": "207029",
+            "spellName": "Tormentor",
+            "idOfReplacedSpell": "185245",
+            "iconId": "ability_demonhunter_torment",
+            "targetType": "MANY_ENEMY"
+          },
+          "211489": {
+            "spellId": "211489",
+            "spellName": "Sigil Mastery",
+            "iconId": "ability_fomor_boss_rune_green",
+            "isPassive": true
+          },
+          "213480": {
+            "spellId": "213480",
+            "spellName": "Unending Hatred",
+            "iconId": "ability_demonhunter_brandofthehunt",
+            "isPassive": true
+          }
         }
       },
       "HAVOC": {
@@ -4679,17 +4880,72 @@
           }
         },
         "PvP": {
-          "203704": { "spellId": "203704", "spellName": "Mana Break" },
-          "205596": { "spellId": "205596", "spellName": "Detainment" },
-          "205604": { "spellId": "205604", "spellName": "Reverse Magic" },
-          "205625": { "spellId": "205625", "spellName": "Cleansed by Flame" },
-          "206649": { "spellId": "206649", "spellName": "Eye of Leotheras" },
-          "206803": { "spellId": "206803", "spellName": "Rain from Above" },
-          "213480": { "spellId": "213480", "spellName": "Unending Hatred" },
-          "227635": { "spellId": "227635", "spellName": "Cover of Darkness" },
-          "235893": { "spellId": "235893", "spellName": "Demonic Origins" },
-          "235903": { "spellId": "235903", "spellName": "Mana Rift" },
-          "328725": { "spellId": "328725", "spellName": "Mortal Rush" }
+          "203704": {
+            "spellId": "203704",
+            "spellName": "Mana Break",
+            "iconId": "ability_demonhunter_manabreak",
+            "targetType": "ONE_ENEMY"
+          },
+          "205596": {
+            "spellId": "205596",
+            "spellName": "Detainment",
+            "iconId": "inv_misc_steelweaponchain",
+            "isPassive": true
+          },
+          "205604": {
+            "spellId": "205604",
+            "spellName": "Reverse Magic",
+            "iconId": "ability_demonhunter_reversemagic",
+            "targetType": "SELF"
+          },
+          "205625": {
+            "spellId": "205625",
+            "spellName": "Cleansed by Flame",
+            "iconId": "spell_fire_felimmolation",
+            "isPassive": true
+          },
+          "206649": {
+            "spellId": "206649",
+            "spellName": "Eye of Leotheras",
+            "iconId": "ability_demonhunter_eyeofleotheras",
+            "targetType": "ONE_ENEMY"
+          },
+          "206803": {
+            "spellId": "206803",
+            "spellName": "Rain from Above",
+            "iconId": "ability_demonhunter_rain-from-above",
+            "targetType": "SELF"
+          },
+          "213480": {
+            "spellId": "213480",
+            "spellName": "Unending Hatred",
+            "iconId": "ability_demonhunter_brandofthehunt",
+            "isPassive": true
+          },
+          "227635": {
+            "spellId": "227635",
+            "spellName": "Cover of Darkness",
+            "iconId": "ability_demonhunter_darkness",
+            "isPassive": true
+          },
+          "235893": {
+            "spellId": "235893",
+            "spellName": "Demonic Origins",
+            "iconId": "artifactability_havocdemonhunter_anguishofthedeceiver",
+            "isPassive": true
+          },
+          "235903": {
+            "spellId": "235903",
+            "spellName": "Mana Rift",
+            "iconId": "spell_mage_supernova",
+            "targetType": "ONE_ENEMY"
+          },
+          "328725": {
+            "spellId": "328725",
+            "spellName": "Mortal Rush",
+            "iconId": "ability_demonhunter_vengefulretreat",
+            "isPassive": true
+          }
         }
       }
     },
@@ -4867,7 +5123,68 @@
             "targetType": "SELF"
           }
         },
-        "PvP": {}
+        "PvP": {
+          "200931": {
+            "spellId": "200931",
+            "spellName": "High Winds",
+            "iconId": "ability_druid_cyclone",
+            "isPassive": true
+          },
+          "203399": {
+            "spellId": "203399",
+            "spellName": "Reactive Resin",
+            "iconId": "ability_druid_empoweredtouch",
+            "isPassive": true
+          },
+          "203553": {
+            "spellId": "203553",
+            "spellName": "Focused Growth",
+            "iconId": "ability_druid_focusedgrowth",
+            "isPassive": true
+          },
+          "203624": {
+            "spellId": "203624",
+            "spellName": "Early Spring",
+            "iconId": "ability_druid_flourish",
+            "isPassive": true
+          },
+          "233673": {
+            "spellId": "233673",
+            "spellName": "Disentanglement",
+            "iconId": "inv_misc_herb_talandrasrose",
+            "isPassive": true
+          },
+          "233755": {
+            "spellId": "233755",
+            "spellName": "Deep Roots",
+            "iconId": "inv_misc_herb_sansamroot",
+            "isPassive": true
+          },
+          "247543": {
+            "spellId": "247543",
+            "spellName": "Entangling Bark",
+            "iconId": "spell_druid_ironbark",
+            "isPassive": true
+          },
+          "289237": {
+            "spellId": "289237",
+            "spellName": "Master Shapeshifter",
+            "iconId": "ability_druid_mastershapeshifter",
+            "isPassive": true
+          },
+          "289318": {
+            "spellId": "289318",
+            "spellName": "Mark of the Wild",
+            "iconId": "spell_nature_regeneration",
+            "targetType": "ONE_FRIENDLY"
+          },
+          "305497": {
+            "spellId": "305497",
+            "spellName": "Thorns",
+            "iconId": "spell_nature_thorns",
+            "targetType": "ONE_FRIENDLY"
+          }
+        }
       },
       "FERAL": {
         "Normal": {
@@ -5045,20 +5362,72 @@
           }
         },
         "PvP": {
-          "200931": { "spellId": "200931", "spellName": "High Winds" },
-          "202626": { "spellId": "202626", "spellName": "Leader of the Pack" },
-          "203052": { "spellId": "203052", "spellName": "King of the Jungle" },
-          "203224": { "spellId": "203224", "spellName": "Fresh Wound" },
-          "203242": { "spellId": "203242", "spellName": "Rip and Tear" },
-          "205673": { "spellId": "205673", "spellName": "Savage Momentum" },
-          "213200": { "spellId": "213200", "spellName": "Freedom of the Herd" },
-          "236012": { "spellId": "236012", "spellName": "Malorne's Swiftness" },
+          "200931": {
+            "spellId": "200931",
+            "spellName": "High Winds",
+            "iconId": "ability_druid_cyclone",
+            "isPassive": true
+          },
+          "202626": {
+            "spellId": "202626",
+            "spellName": "Leader of the Pack",
+            "iconId": "spell_holy_blessingofstamina",
+            "isPassive": true
+          },
+          "203052": {
+            "spellId": "203052",
+            "spellName": "King of the Jungle",
+            "iconId": "ability_druid_kingofthejungle",
+            "isPassive": true
+          },
+          "203224": {
+            "spellId": "203224",
+            "spellName": "Fresh Wound",
+            "iconId": "ability_druid_disembowel",
+            "isPassive": true
+          },
+          "203242": {
+            "spellId": "203242",
+            "spellName": "Rip and Tear",
+            "iconId": "inv_misc_boilingblood",
+            "targetType": "ONE_ENEMY"
+          },
+          "205673": {
+            "spellId": "205673",
+            "spellName": "Savage Momentum",
+            "iconId": "ability_mount_jungletiger",
+            "isPassive": true
+          },
+          "213200": {
+            "spellId": "213200",
+            "spellName": "Freedom of the Herd",
+            "iconId": "spell_druid_stampedingroar_cat",
+            "isPassive": true
+          },
+          "236012": {
+            "spellId": "236012",
+            "spellName": "Malorne's Swiftness",
+            "iconId": "inv_stagform",
+            "isPassive": true
+          },
           "236019": {
             "spellId": "236019",
-            "spellName": "Strength of the Wild"
+            "spellName": "Strength of the Wild",
+            "iconId": "ability_druid_protectorofthepack",
+            "isPassive": true
           },
-          "236020": { "spellId": "236020", "spellName": "Ferocious Wound" },
-          "305497": { "spellId": "305497", "spellName": "Thorns" }
+          "236020": {
+            "spellId": "236020",
+            "spellName": "Ferocious Wound",
+            "iconId": "ability_druid_ferociousbite",
+            "isPassive": true
+          },
+          "305497": {
+            "spellId": "305497",
+            "spellName": "Thorns",
+            "iconId": "spell_nature_thorns",
+            "targetType": "ONE_FRIENDLY"
+          }
         }
       },
       "GUARDIAN": {
@@ -5236,22 +5605,90 @@
           }
         },
         "PvP": {
-          "200931": { "spellId": "200931", "spellName": "High Winds" },
-          "201259": { "spellId": "201259", "spellName": "Toughness" },
-          "201664": { "spellId": "201664", "spellName": "Demoralizing Roar" },
-          "202110": { "spellId": "202110", "spellName": "Sharpened Claws" },
-          "202226": { "spellId": "202226", "spellName": "Entangling Claws" },
-          "202246": { "spellId": "202246", "spellName": "Overrun" },
-          "207017": { "spellId": "207017", "spellName": "Alpha Challenge" },
-          "213200": { "spellId": "213200", "spellName": "Freedom of the Herd" },
-          "228431": { "spellId": "228431", "spellName": "Charging Bash" },
-          "236144": { "spellId": "236144", "spellName": "Master Shapeshifter" },
-          "236147": { "spellId": "236147", "spellName": "Malorne's Swiftness" },
-          "236153": { "spellId": "236153", "spellName": "Raging Frenzy" },
-          "236180": { "spellId": "236180", "spellName": "Den Mother" },
+          "200931": {
+            "spellId": "200931",
+            "spellName": "High Winds",
+            "iconId": "ability_druid_cyclone",
+            "isPassive": true
+          },
+          "201259": {
+            "spellId": "201259",
+            "spellName": "Toughness",
+            "iconId": "ability_toughness",
+            "isPassive": true
+          },
+          "201664": {
+            "spellId": "201664",
+            "spellName": "Demoralizing Roar",
+            "iconId": "ability_druid_challangingroar",
+            "targetType": "SELF"
+          },
+          "202110": {
+            "spellId": "202110",
+            "spellName": "Sharpened Claws",
+            "iconId": "spell_druid_thrash",
+            "isPassive": true
+          },
+          "202226": {
+            "spellId": "202226",
+            "spellName": "Entangling Claws",
+            "iconId": "spell_nature_stranglevines",
+            "isPassive": true
+          },
+          "202246": {
+            "spellId": "202246",
+            "spellName": "Overrun",
+            "iconId": "ability_druid_overrun",
+            "targetType": "ONE_ENEMY"
+          },
+          "207017": {
+            "spellId": "207017",
+            "spellName": "Alpha Challenge",
+            "idOfReplacedSpell": "6795",
+            "iconId": "ability_physical_taunt",
+            "targetType": "MANY_ENEMY"
+          },
+          "213200": {
+            "spellId": "213200",
+            "spellName": "Freedom of the Herd",
+            "iconId": "spell_druid_stampedingroar_cat",
+            "isPassive": true
+          },
+          "228431": {
+            "spellId": "228431",
+            "spellName": "Charging Bash",
+            "iconId": "inv_bone_skull_04",
+            "isPassive": true
+          },
+          "236144": {
+            "spellId": "236144",
+            "spellName": "Master Shapeshifter",
+            "iconId": "ability_druid_mastershapeshifter",
+            "isPassive": true
+          },
+          "236147": {
+            "spellId": "236147",
+            "spellName": "Malorne's Swiftness",
+            "iconId": "inv_stagform",
+            "isPassive": true
+          },
+          "236153": {
+            "spellId": "236153",
+            "spellName": "Raging Frenzy",
+            "iconId": "ability_bullrush",
+            "isPassive": true
+          },
+          "236180": {
+            "spellId": "236180",
+            "spellName": "Den Mother",
+            "iconId": "ability_druid_denmother",
+            "isPassive": true
+          },
           "329042": {
             "spellId": "329042",
-            "spellName": "Roar of the Protector"
+            "spellName": "Roar of the Protector",
+            "iconId": "ability_druid_protectorofthepack",
+            "targetType": "SELF"
           }
         }
       },
@@ -5429,20 +5866,72 @@
           }
         },
         "PvP": {
-          "200549": { "spellId": "200549", "spellName": "Prickling Thorns" },
-          "200567": { "spellId": "200567", "spellName": "Crescent Burn" },
-          "200931": { "spellId": "200931", "spellName": "High Winds" },
+          "200549": {
+            "spellId": "200549",
+            "spellName": "Prickling Thorns",
+            "iconId": "inv_misc_herb_nightmarevine",
+            "isPassive": true
+          },
+          "200567": {
+            "spellId": "200567",
+            "spellName": "Crescent Burn",
+            "iconId": "spell_nature_starfall",
+            "isPassive": true
+          },
+          "200931": {
+            "spellId": "200931",
+            "spellName": "High Winds",
+            "iconId": "ability_druid_cyclone",
+            "isPassive": true
+          },
           "209730": {
             "spellId": "209730",
-            "spellName": "Protector of the Grove"
+            "spellName": "Protector of the Grove",
+            "iconId": "spell_nature_naturesblessing",
+            "isPassive": true
           },
-          "209740": { "spellId": "209740", "spellName": "Moonkin Aura" },
-          "209749": { "spellId": "209749", "spellName": "Faerie Swarm" },
-          "232546": { "spellId": "232546", "spellName": "Dying Stars" },
-          "233750": { "spellId": "233750", "spellName": "Moon and Stars" },
-          "233754": { "spellId": "233754", "spellName": "Celestial Guardian" },
-          "233755": { "spellId": "233755", "spellName": "Deep Roots" },
-          "305497": { "spellId": "305497", "spellName": "Thorns" }
+          "209740": {
+            "spellId": "209740",
+            "spellName": "Moonkin Aura",
+            "iconId": "ability_druid_improvedmoonkinform",
+            "isPassive": true
+          },
+          "209749": {
+            "spellId": "209749",
+            "spellName": "Faerie Swarm",
+            "iconId": "spell_druid_swarm",
+            "targetType": "ONE_ENEMY"
+          },
+          "232546": {
+            "spellId": "232546",
+            "spellName": "Dying Stars",
+            "iconId": "artifactability_balancedruid_moonandstars",
+            "isPassive": true
+          },
+          "233750": {
+            "spellId": "233750",
+            "spellName": "Moon and Stars",
+            "iconId": "ability_druid_fortifiedbark",
+            "isPassive": true
+          },
+          "233754": {
+            "spellId": "233754",
+            "spellName": "Celestial Guardian",
+            "iconId": "ability_druid_protectorofthepack",
+            "isPassive": true
+          },
+          "233755": {
+            "spellId": "233755",
+            "spellName": "Deep Roots",
+            "iconId": "inv_misc_herb_sansamroot",
+            "isPassive": true
+          },
+          "305497": {
+            "spellId": "305497",
+            "spellName": "Thorns",
+            "iconId": "spell_nature_thorns",
+            "targetType": "ONE_FRIENDLY"
+          }
         }
       }
     },
@@ -5618,7 +6107,84 @@
             "targetType": "ONE_ENEMY"
           }
         },
-        "PvP": {}
+        "PvP": {
+          "53480": {
+            "spellId": "53480",
+            "spellName": "Roar of Sacrifice",
+            "iconId": "ability_hunter_fervor",
+            "targetType": "SELF"
+          },
+          "202589": {
+            "spellId": "202589",
+            "spellName": "Dragonscale Armor",
+            "iconId": "inv_misc_deepseascales",
+            "isPassive": true
+          },
+          "202746": {
+            "spellId": "202746",
+            "spellName": "Survival Tactics",
+            "iconId": "ability_rogue_feigndeath",
+            "isPassive": true
+          },
+          "202797": {
+            "spellId": "202797",
+            "spellName": "Viper Sting",
+            "iconId": "ability_hunter_potentvenom",
+            "targetType": "ONE_FRIENDLY"
+          },
+          "202900": {
+            "spellId": "202900",
+            "spellName": "Scorpid Sting",
+            "iconId": "ability_hunter_criticalshot"
+          },
+          "202914": {
+            "spellId": "202914",
+            "spellName": "Spider Sting",
+            "iconId": "hunter_pvp_spidersting"
+          },
+          "203235": {
+            "spellId": "203235",
+            "spellName": "Hunting Pack",
+            "iconId": "ability_hunter_huntingparty",
+            "isPassive": true
+          },
+          "204190": {
+            "spellId": "204190",
+            "spellName": "Wild Protector",
+            "iconId": "ability_hunter_invigeration",
+            "isPassive": true
+          },
+          "205691": {
+            "spellId": "205691",
+            "spellName": "Dire Beast: Basilisk",
+            "iconId": "hunter_pvp_direbeastbasilisk",
+            "targetType": "ONE_ENEMY"
+          },
+          "208652": {
+            "spellId": "208652",
+            "spellName": "Dire Beast: Hawk",
+            "iconId": "spell_hunter_aspectoftheironhawk",
+            "targetType": "PLACED"
+          },
+          "212668": {
+            "spellId": "212668",
+            "spellName": "The Beast Within",
+            "iconId": "ability_hunter_beastwithin",
+            "isPassive": true
+          },
+          "236776": {
+            "spellId": "236776",
+            "spellName": "Hi-Explosive Trap",
+            "iconId": "spell_fire_selfdestruct",
+            "targetType": "PLACED"
+          },
+          "248518": {
+            "spellId": "248518",
+            "spellName": "Interlope",
+            "idOfReplacedSpell": "34477",
+            "iconId": "ability_hunter_misdirection"
+          }
+        }
       },
       "MARKSMANSHIP": {
         "Normal": {
@@ -5793,18 +6359,76 @@
           }
         },
         "PvP": {
-          "53480": { "spellId": "53480", "spellName": "Roar of Sacrifice" },
-          "202589": { "spellId": "202589", "spellName": "Dragonscale Armor" },
-          "202746": { "spellId": "202746", "spellName": "Survival Tactics" },
-          "202797": { "spellId": "202797", "spellName": "Viper Sting" },
-          "202900": { "spellId": "202900", "spellName": "Scorpid Sting" },
-          "202914": { "spellId": "202914", "spellName": "Spider Sting" },
-          "203129": { "spellId": "203129", "spellName": "Trueshot Mastery" },
-          "203155": { "spellId": "203155", "spellName": "Sniper Shot" },
-          "203235": { "spellId": "203235", "spellName": "Hunting Pack" },
-          "213691": { "spellId": "213691", "spellName": "Scatter Shot" },
-          "236776": { "spellId": "236776", "spellName": "Hi-Explosive Trap" },
-          "248443": { "spellId": "248443", "spellName": "Ranger's Finesse" }
+          "53480": {
+            "spellId": "53480",
+            "spellName": "Roar of Sacrifice",
+            "iconId": "ability_hunter_fervor",
+            "targetType": "SELF"
+          },
+          "202589": {
+            "spellId": "202589",
+            "spellName": "Dragonscale Armor",
+            "iconId": "inv_misc_deepseascales",
+            "isPassive": true
+          },
+          "202746": {
+            "spellId": "202746",
+            "spellName": "Survival Tactics",
+            "iconId": "ability_rogue_feigndeath",
+            "isPassive": true
+          },
+          "202797": {
+            "spellId": "202797",
+            "spellName": "Viper Sting",
+            "iconId": "ability_hunter_potentvenom",
+            "targetType": "ONE_FRIENDLY"
+          },
+          "202900": {
+            "spellId": "202900",
+            "spellName": "Scorpid Sting",
+            "iconId": "ability_hunter_criticalshot"
+          },
+          "202914": {
+            "spellId": "202914",
+            "spellName": "Spider Sting",
+            "iconId": "hunter_pvp_spidersting"
+          },
+          "203129": {
+            "spellId": "203129",
+            "spellName": "Trueshot Mastery",
+            "iconId": "ability_trueshot",
+            "isPassive": true
+          },
+          "203155": {
+            "spellId": "203155",
+            "spellName": "Sniper Shot",
+            "iconId": "hunter_pvp_snipershot",
+            "targetType": "ONE_ENEMY"
+          },
+          "203235": {
+            "spellId": "203235",
+            "spellName": "Hunting Pack",
+            "iconId": "ability_hunter_huntingparty",
+            "isPassive": true
+          },
+          "213691": {
+            "spellId": "213691",
+            "spellName": "Scatter Shot",
+            "iconId": "ability_golemstormbolt",
+            "targetType": "ONE_ENEMY"
+          },
+          "236776": {
+            "spellId": "236776",
+            "spellName": "Hi-Explosive Trap",
+            "iconId": "spell_fire_selfdestruct",
+            "targetType": "PLACED"
+          },
+          "248443": {
+            "spellId": "248443",
+            "spellName": "Ranger's Finesse",
+            "iconId": "ability_hunter_runningshot",
+            "isPassive": true
+          }
         }
       },
       "SURVIVAL": {
@@ -5981,18 +6605,76 @@
           }
         },
         "PvP": {
-          "53480": { "spellId": "53480", "spellName": "Roar of Sacrifice" },
-          "202589": { "spellId": "202589", "spellName": "Dragonscale Armor" },
-          "202746": { "spellId": "202746", "spellName": "Survival Tactics" },
-          "202797": { "spellId": "202797", "spellName": "Viper Sting" },
-          "202900": { "spellId": "202900", "spellName": "Scorpid Sting" },
-          "202914": { "spellId": "202914", "spellName": "Spider Sting" },
-          "203235": { "spellId": "203235", "spellName": "Hunting Pack" },
-          "203264": { "spellId": "203264", "spellName": "Sticky Tar" },
-          "203340": { "spellId": "203340", "spellName": "Diamond Ice" },
-          "212638": { "spellId": "212638", "spellName": "Tracker's Net" },
-          "212640": { "spellId": "212640", "spellName": "Mending Bandage" },
-          "236776": { "spellId": "236776", "spellName": "Hi-Explosive Trap" }
+          "53480": {
+            "spellId": "53480",
+            "spellName": "Roar of Sacrifice",
+            "iconId": "ability_hunter_fervor",
+            "targetType": "SELF"
+          },
+          "202589": {
+            "spellId": "202589",
+            "spellName": "Dragonscale Armor",
+            "iconId": "inv_misc_deepseascales",
+            "isPassive": true
+          },
+          "202746": {
+            "spellId": "202746",
+            "spellName": "Survival Tactics",
+            "iconId": "ability_rogue_feigndeath",
+            "isPassive": true
+          },
+          "202797": {
+            "spellId": "202797",
+            "spellName": "Viper Sting",
+            "iconId": "ability_hunter_potentvenom",
+            "targetType": "ONE_FRIENDLY"
+          },
+          "202900": {
+            "spellId": "202900",
+            "spellName": "Scorpid Sting",
+            "iconId": "ability_hunter_criticalshot"
+          },
+          "202914": {
+            "spellId": "202914",
+            "spellName": "Spider Sting",
+            "iconId": "hunter_pvp_spidersting"
+          },
+          "203235": {
+            "spellId": "203235",
+            "spellName": "Hunting Pack",
+            "iconId": "ability_hunter_huntingparty",
+            "isPassive": true
+          },
+          "203264": {
+            "spellId": "203264",
+            "spellName": "Sticky Tar",
+            "iconId": "spell_yorsahj_bloodboil_black",
+            "isPassive": true
+          },
+          "203340": {
+            "spellId": "203340",
+            "spellName": "Diamond Ice",
+            "iconId": "ability_mage_coldasice",
+            "isPassive": true
+          },
+          "212638": {
+            "spellId": "212638",
+            "spellName": "Tracker's Net",
+            "iconId": "hunter_pvp_trackersnet",
+            "targetType": "ONE_ENEMY"
+          },
+          "212640": {
+            "spellId": "212640",
+            "spellName": "Mending Bandage",
+            "iconId": "inv_firstaid_bandage2",
+            "targetType": "ONE_FRIENDLY"
+          },
+          "236776": {
+            "spellId": "236776",
+            "spellName": "Hi-Explosive Trap",
+            "iconId": "spell_fire_selfdestruct",
+            "targetType": "PLACED"
+          }
         }
       }
     },
@@ -6169,16 +6851,66 @@
           }
         },
         "PvP": {
-          "198062": { "spellId": "198062", "spellName": "Netherwind Armor" },
-          "198064": { "spellId": "198064", "spellName": "Prismatic Cloak" },
-          "198100": { "spellId": "198100", "spellName": "Kleptomania" },
-          "203275": { "spellId": "203275", "spellName": "Tinder" },
-          "203280": { "spellId": "203280", "spellName": "World in Flames" },
-          "203283": { "spellId": "203283", "spellName": "Pyrokinesis" },
-          "203284": { "spellId": "203284", "spellName": "Flamecannon" },
-          "203286": { "spellId": "203286", "spellName": "Greater Pyroblast" },
-          "236788": { "spellId": "236788", "spellName": "Dampened Magic" },
-          "280450": { "spellId": "280450", "spellName": "Controlled Burn" }
+          "198062": {
+            "spellId": "198062",
+            "spellName": "Netherwind Armor",
+            "iconId": "spell_magearmor",
+            "isPassive": true
+          },
+          "198064": {
+            "spellId": "198064",
+            "spellName": "Prismatic Cloak",
+            "iconId": "spell_arcane_prismaticcloak",
+            "isPassive": true
+          },
+          "198100": {
+            "spellId": "198100",
+            "spellName": "Kleptomania",
+            "iconId": "spell_arcane_arcane02",
+            "isPassive": true
+          },
+          "203275": {
+            "spellId": "203275",
+            "spellName": "Tinder",
+            "iconId": "inv_ember",
+            "isPassive": true
+          },
+          "203280": {
+            "spellId": "203280",
+            "spellName": "World in Flames",
+            "iconId": "ability_mage_worldinflames",
+            "isPassive": true
+          },
+          "203283": {
+            "spellId": "203283",
+            "spellName": "Pyrokinesis",
+            "iconId": "ability_mage_firestarter",
+            "isPassive": true
+          },
+          "203284": {
+            "spellId": "203284",
+            "spellName": "Flamecannon",
+            "iconId": "ability_mage_flamecannon",
+            "isPassive": true
+          },
+          "203286": {
+            "spellId": "203286",
+            "spellName": "Greater Pyroblast",
+            "iconId": "ability_mage_greaterpyroblast",
+            "targetType": "ONE_ENEMY"
+          },
+          "236788": {
+            "spellId": "236788",
+            "spellName": "Dampened Magic",
+            "iconId": "spell_arcane_rune",
+            "isPassive": true
+          },
+          "280450": {
+            "spellId": "280450",
+            "spellName": "Controlled Burn",
+            "iconId": "inv_trinket_firelands_02",
+            "isPassive": true
+          }
         }
       },
       "FROST": {
@@ -6353,7 +7085,69 @@
             "targetType": "FRIENDLY_NOT_SELF"
           }
         },
-        "PvP": {}
+        "PvP": {
+          "198062": {
+            "spellId": "198062",
+            "spellName": "Netherwind Armor",
+            "iconId": "spell_magearmor",
+            "isPassive": true
+          },
+          "198064": {
+            "spellId": "198064",
+            "spellName": "Prismatic Cloak",
+            "iconId": "spell_arcane_prismaticcloak",
+            "isPassive": true
+          },
+          "198100": {
+            "spellId": "198100",
+            "spellName": "Kleptomania",
+            "iconId": "spell_arcane_arcane02",
+            "isPassive": true
+          },
+          "198120": {
+            "spellId": "198120",
+            "spellName": "Frostbite",
+            "iconId": "spell_frost_frostarmor",
+            "isPassive": true
+          },
+          "198123": {
+            "spellId": "198123",
+            "spellName": "Deep Shatter",
+            "iconId": "inv_misc_frostemblem_01",
+            "isPassive": true
+          },
+          "198126": {
+            "spellId": "198126",
+            "spellName": "Chilled to the Bone",
+            "iconId": "ability_mage_chilledtothebone",
+            "isPassive": true
+          },
+          "198144": {
+            "spellId": "198144",
+            "spellName": "Ice Form",
+            "idOfReplacedSpell": "12472",
+            "iconId": "ability_mage_iceform",
+            "targetType": "SELF"
+          },
+          "198148": {
+            "spellId": "198148",
+            "spellName": "Concentrated Coolness",
+            "iconId": "spell_frost_frozenorb",
+            "isPassive": true
+          },
+          "206431": {
+            "spellId": "206431",
+            "spellName": "Burst of Cold",
+            "iconId": "spell_frost_glacier",
+            "isPassive": true
+          },
+          "236788": {
+            "spellId": "236788",
+            "spellName": "Dampened Magic",
+            "iconId": "spell_arcane_rune",
+            "isPassive": true
+          }
+        }
       },
       "ARCANE": {
         "Normal": {
@@ -6527,15 +7321,60 @@
           }
         },
         "PvP": {
-          "198062": { "spellId": "198062", "spellName": "Netherwind Armor" },
-          "198064": { "spellId": "198064", "spellName": "Prismatic Cloak" },
-          "198100": { "spellId": "198100", "spellName": "Kleptomania" },
-          "198111": { "spellId": "198111", "spellName": "Temporal Shield" },
-          "198151": { "spellId": "198151", "spellName": "Torment the Weak" },
-          "198158": { "spellId": "198158", "spellName": "Mass Invisibility" },
-          "210476": { "spellId": "210476", "spellName": "Master of Escape" },
-          "236788": { "spellId": "236788", "spellName": "Dampened Magic" },
-          "276741": { "spellId": "276741", "spellName": "Arcane Empowerment" }
+          "198062": {
+            "spellId": "198062",
+            "spellName": "Netherwind Armor",
+            "iconId": "spell_magearmor",
+            "isPassive": true
+          },
+          "198064": {
+            "spellId": "198064",
+            "spellName": "Prismatic Cloak",
+            "iconId": "spell_arcane_prismaticcloak",
+            "isPassive": true
+          },
+          "198100": {
+            "spellId": "198100",
+            "spellName": "Kleptomania",
+            "iconId": "spell_arcane_arcane02",
+            "isPassive": true
+          },
+          "198111": {
+            "spellId": "198111",
+            "spellName": "Temporal Shield",
+            "iconId": "spell_mage_temporalshield",
+            "targetType": "SELF"
+          },
+          "198151": {
+            "spellId": "198151",
+            "spellName": "Torment the Weak",
+            "iconId": "ability_mage_tormentoftheweak",
+            "isPassive": true
+          },
+          "198158": {
+            "spellId": "198158",
+            "spellName": "Mass Invisibility",
+            "iconId": "ability_mage_massinvisibility",
+            "targetType": "SELF"
+          },
+          "210476": {
+            "spellId": "210476",
+            "spellName": "Master of Escape",
+            "iconId": "ability_mage_invisibility",
+            "isPassive": true
+          },
+          "236788": {
+            "spellId": "236788",
+            "spellName": "Dampened Magic",
+            "iconId": "spell_arcane_rune",
+            "isPassive": true
+          },
+          "276741": {
+            "spellId": "276741",
+            "spellName": "Arcane Empowerment",
+            "iconId": "spell_frost_manaburn",
+            "isPassive": true
+          }
         }
       }
     },
@@ -6713,7 +7552,61 @@
             "isPassive": true
           }
         },
-        "PvP": {}
+        "PvP": {
+          "201372": {
+            "spellId": "201372",
+            "spellName": "Ride the Wind",
+            "iconId": "ability_monk_ridethewind",
+            "isPassive": true
+          },
+          "201769": {
+            "spellId": "201769",
+            "spellName": "Disabling Reach",
+            "iconId": "ability_shockwave",
+            "isPassive": true
+          },
+          "233759": {
+            "spellId": "233759",
+            "spellName": "Grapple Weapon",
+            "iconId": "ability_warrior_disarm"
+          },
+          "247483": {
+            "spellId": "247483",
+            "spellName": "Tigereye Brew",
+            "iconId": "ability_monk_tigereyebrandy",
+            "targetType": "SELF"
+          },
+          "287503": {
+            "spellId": "287503",
+            "spellName": "Alpha Tiger",
+            "iconId": "ability_monk_tigerpalm",
+            "isPassive": true
+          },
+          "287506": {
+            "spellId": "287506",
+            "spellName": "Wind Waker",
+            "iconId": "monk_stance_whitetiger",
+            "isPassive": true
+          },
+          "287681": {
+            "spellId": "287681",
+            "spellName": "Turbo Fists",
+            "iconId": "monk_ability_fistoffury",
+            "isPassive": true
+          },
+          "342928": {
+            "spellId": "342928",
+            "spellName": "Reverse Harm",
+            "iconId": "ability_monk_expelharm",
+            "isPassive": true
+          },
+          "345829": {
+            "spellId": "345829",
+            "spellName": "Pressure Points",
+            "iconId": "ability_monk_touchofdeath",
+            "isPassive": true
+          }
+        }
       },
       "MISTWEAVER": {
         "Normal": {
@@ -6889,15 +7782,59 @@
           }
         },
         "PvP": {
-          "202424": { "spellId": "202424", "spellName": "Chrysalis" },
-          "202428": { "spellId": "202428", "spellName": "Counteract Magic" },
-          "202523": { "spellId": "202523", "spellName": "Refreshing Breeze" },
-          "202577": { "spellId": "202577", "spellName": "Dome of Mist" },
-          "205234": { "spellId": "205234", "spellName": "Healing Sphere" },
-          "209584": { "spellId": "209584", "spellName": "Zen Focus Tea" },
-          "216255": { "spellId": "216255", "spellName": "Eminence" },
-          "227344": { "spellId": "227344", "spellName": "Surging Mist" },
-          "233759": { "spellId": "233759", "spellName": "Grapple Weapon" }
+          "202424": {
+            "spellId": "202424",
+            "spellName": "Chrysalis",
+            "iconId": "ability_monk_chicocoon",
+            "isPassive": true
+          },
+          "202428": {
+            "spellId": "202428",
+            "spellName": "Counteract Magic",
+            "iconId": "ability_monk_counteractmagic",
+            "isPassive": true
+          },
+          "202523": {
+            "spellId": "202523",
+            "spellName": "Refreshing Breeze",
+            "iconId": "ability_monk_uplift",
+            "isPassive": true
+          },
+          "202577": {
+            "spellId": "202577",
+            "spellName": "Dome of Mist",
+            "iconId": "ability_monk_domeofmist",
+            "isPassive": true
+          },
+          "205234": {
+            "spellId": "205234",
+            "spellName": "Healing Sphere",
+            "iconId": "ability_monk_healthsphere",
+            "targetType": "PLACED"
+          },
+          "209584": {
+            "spellId": "209584",
+            "spellName": "Zen Focus Tea",
+            "iconId": "inv_misc_pearlmilktea",
+            "targetType": "SELF"
+          },
+          "216255": {
+            "spellId": "216255",
+            "spellName": "Eminence",
+            "iconId": "monk_ability_transcendence",
+            "isPassive": true
+          },
+          "227344": {
+            "spellId": "227344",
+            "spellName": "Surging Mist",
+            "iconId": "ability_monk_surgingmist",
+            "targetType": "MANY_FRIENDLY"
+          },
+          "233759": {
+            "spellId": "233759",
+            "spellName": "Grapple Weapon",
+            "iconId": "ability_warrior_disarm"
+          }
         }
       },
       "BREWMASTER": {
@@ -7071,7 +8008,75 @@
             "isPassive": true
           }
         },
-        "PvP": {}
+        "PvP": {
+          "202107": {
+            "spellId": "202107",
+            "spellName": "Microbrew",
+            "iconId": "ability_monk_fortifyingale_new",
+            "isPassive": true
+          },
+          "202126": {
+            "spellId": "202126",
+            "spellName": "Hot Trub",
+            "iconId": "spell_brew_dark",
+            "isPassive": true
+          },
+          "202162": {
+            "spellId": "202162",
+            "spellName": "Avert Harm",
+            "iconId": "ability_monk_leeroftheox",
+            "targetType": "SELF"
+          },
+          "202200": {
+            "spellId": "202200",
+            "spellName": "Guided Meditation",
+            "iconId": "ability_monk_zenmeditation",
+            "isPassive": true
+          },
+          "202272": {
+            "spellId": "202272",
+            "spellName": "Incendiary Breath",
+            "iconId": "inv_misc_fireink",
+            "isPassive": true
+          },
+          "202335": {
+            "spellId": "202335",
+            "spellName": "Double Barrel",
+            "iconId": "archaeology_5_0_emptykegofbrewfatherxinwoyin",
+            "targetType": "SELF"
+          },
+          "202370": {
+            "spellId": "202370",
+            "spellName": "Mighty Ox Kick",
+            "iconId": "ability_monk_mightyoxkick",
+            "targetType": "ONE_ENEMY"
+          },
+          "205147": {
+            "spellId": "205147",
+            "spellName": "Eerie Fermentation",
+            "iconId": "inv_misc_food_cooked_jadewitchbrew",
+            "isPassive": true
+          },
+          "207025": {
+            "spellId": "207025",
+            "spellName": "Admonishment",
+            "idOfReplacedSpell": "115546",
+            "iconId": "ability_monk_provoke",
+            "targetType": "MANY_ENEMY"
+          },
+          "213658": {
+            "spellId": "213658",
+            "spellName": "Craft: Nimble Brew",
+            "iconId": "spell_monk_nimblebrew",
+            "targetType": "SELF"
+          },
+          "232876": {
+            "spellId": "232876",
+            "spellName": "Niuzao's Essence",
+            "iconId": "inv_misc_beer_06",
+            "isPassive": true
+          }
+        }
       }
     },
     "Paladin": {
@@ -7247,7 +8252,75 @@
             "targetType": "PLACED"
           }
         },
-        "PvP": {}
+        "PvP": {
+          "199428": {
+            "spellId": "199428",
+            "spellName": "Luminescence",
+            "iconId": "spell_holy_fanaticism",
+            "isPassive": true
+          },
+          "204914": {
+            "spellId": "204914",
+            "spellName": "Divine Punisher",
+            "iconId": "ability_paladin_conviction",
+            "isPassive": true
+          },
+          "204934": {
+            "spellId": "204934",
+            "spellName": "Law and Order",
+            "iconId": "spell_holy_sealofwrath",
+            "isPassive": true
+          },
+          "204979": {
+            "spellId": "204979",
+            "spellName": "Jurisdiction",
+            "iconId": "ability_paladin_longarmofthelaw",
+            "isPassive": true
+          },
+          "210256": {
+            "spellId": "210256",
+            "spellName": "Blessing of Sanctuary",
+            "iconId": "spell_holy_greaterblessingofsanctuary",
+            "targetType": "ONE_ENEMY"
+          },
+          "210323": {
+            "spellId": "210323",
+            "spellName": "Vengeance Aura",
+            "iconId": "spell_holy_retributionaura",
+            "isPassive": true
+          },
+          "236186": {
+            "spellId": "236186",
+            "spellName": "Cleansing Light",
+            "idOfReplacedSpell": "213644",
+            "iconId": "spell_holy_renew",
+            "targetType": "SELF"
+          },
+          "246806": {
+            "spellId": "246806",
+            "spellName": "Lawbringer",
+            "iconId": "ability_paladin_judgementred",
+            "isPassive": true
+          },
+          "247675": {
+            "spellId": "247675",
+            "spellName": "Aura of Reckoning",
+            "iconId": "spell_holy_blessingofstrength",
+            "isPassive": true
+          },
+          "287947": {
+            "spellId": "287947",
+            "spellName": "Ultimate Retribution",
+            "iconId": "spell_holy_crusade",
+            "isPassive": true
+          },
+          "305394": {
+            "spellId": "305394",
+            "spellName": "Unbound Freedom",
+            "iconId": "spell_holy_sealofvalor",
+            "isPassive": true
+          }
+        }
       },
       "HOLY": {
         "Normal": {
@@ -7423,19 +8496,66 @@
           }
         },
         "PvP": {
-          "199324": { "spellId": "199324", "spellName": "Divine Vision" },
-          "199330": { "spellId": "199330", "spellName": "Cleanse the Weak" },
-          "199441": { "spellId": "199441", "spellName": "Avenging Light" },
-          "199452": { "spellId": "199452", "spellName": "Ultimate Sacrifice" },
-          "199454": { "spellId": "199454", "spellName": "Blessed Hands" },
-          "199456": { "spellId": "199456", "spellName": "Spreading the Word" },
-          "210294": { "spellId": "210294", "spellName": "Divine Favor" },
+          "199324": {
+            "spellId": "199324",
+            "spellName": "Divine Vision",
+            "iconId": "spell_holy_mindvision",
+            "isPassive": true
+          },
+          "199330": {
+            "spellId": "199330",
+            "spellName": "Cleanse the Weak",
+            "iconId": "spell_holy_purify",
+            "isPassive": true
+          },
+          "199441": {
+            "spellId": "199441",
+            "spellName": "Avenging Light",
+            "iconId": "ability_paladin_holyavenger",
+            "isPassive": true
+          },
+          "199452": {
+            "spellId": "199452",
+            "spellName": "Ultimate Sacrifice",
+            "iconId": "spell_holy_sealofsacrifice",
+            "isPassive": true
+          },
+          "199454": {
+            "spellId": "199454",
+            "spellName": "Blessed Hands",
+            "iconId": "ability_paladin_blessedhands",
+            "isPassive": true
+          },
+          "199456": {
+            "spellId": "199456",
+            "spellName": "Spreading the Word",
+            "iconId": "inv_misc_book_17",
+            "isPassive": true
+          },
+          "210294": {
+            "spellId": "210294",
+            "spellName": "Divine Favor",
+            "iconId": "spell_holy_heal",
+            "targetType": "SELF"
+          },
           "210378": {
             "spellId": "210378",
-            "spellName": "Darkest before the Dawn"
+            "spellName": "Darkest before the Dawn",
+            "iconId": "spell_paladin_lightofdawn",
+            "isPassive": true
           },
-          "216327": { "spellId": "216327", "spellName": "Light's Grace" },
-          "216868": { "spellId": "216868", "spellName": "Hallowed Ground" }
+          "216327": {
+            "spellId": "216327",
+            "spellName": "Light's Grace",
+            "iconId": "spell_holy_lightsgrace",
+            "isPassive": true
+          },
+          "216868": {
+            "spellId": "216868",
+            "spellName": "Hallowed Ground",
+            "iconId": "spell_holy_innerfire",
+            "isPassive": true
+          }
         }
       },
       "PROTECTION": {
@@ -7612,27 +8732,81 @@
           }
         },
         "PvP": {
-          "199428": { "spellId": "199428", "spellName": "Luminescence" },
-          "199542": { "spellId": "199542", "spellName": "Steed of Glory" },
-          "207028": { "spellId": "207028", "spellName": "Inquisition" },
-          "210341": { "spellId": "210341", "spellName": "Warrior of Light" },
-          "215652": { "spellId": "215652", "spellName": "Shield of Virtue" },
-          "216853": { "spellId": "216853", "spellName": "Sacred Duty" },
+          "199428": {
+            "spellId": "199428",
+            "spellName": "Luminescence",
+            "iconId": "spell_holy_fanaticism",
+            "isPassive": true
+          },
+          "199542": {
+            "spellId": "199542",
+            "spellName": "Steed of Glory",
+            "iconId": "spell_holy_crusaderaura",
+            "isPassive": true
+          },
+          "207028": {
+            "spellId": "207028",
+            "spellName": "Inquisition",
+            "idOfReplacedSpell": "62124",
+            "iconId": "spell_holy_unyieldingfaith",
+            "targetType": "MANY_ENEMY"
+          },
+          "210341": {
+            "spellId": "210341",
+            "spellName": "Warrior of Light",
+            "iconId": "ability_paladin_empoweredsealsrighteous",
+            "isPassive": true
+          },
+          "215652": {
+            "spellId": "215652",
+            "spellName": "Shield of Virtue",
+            "iconId": "inv_shield_60",
+            "targetType": "SELF"
+          },
+          "216853": {
+            "spellId": "216853",
+            "spellName": "Sacred Duty",
+            "iconId": "spell_holy_sealofprotection",
+            "isPassive": true
+          },
           "216855": {
             "spellId": "216855",
-            "spellName": "Guarded by the Light"
+            "spellName": "Guarded by the Light",
+            "iconId": "ability_paladin_gaurdedbythelight",
+            "isPassive": true
           },
           "216860": {
             "spellId": "216860",
-            "spellName": "Judgments of the Pure"
+            "spellName": "Judgments of the Pure",
+            "iconId": "ability_paladin_judgementofthepure",
+            "isPassive": true
           },
-          "216868": { "spellId": "216868", "spellName": "Hallowed Ground" },
+          "216868": {
+            "spellId": "216868",
+            "spellName": "Hallowed Ground",
+            "iconId": "spell_holy_innerfire",
+            "isPassive": true
+          },
           "228049": {
             "spellId": "228049",
-            "spellName": "Guardian of the Forgotten Queen"
+            "spellName": "Guardian of the Forgotten Queen",
+            "idOfReplacedSpell": "86659",
+            "iconId": "spell_holy_heroism",
+            "targetType": "ONE_FRIENDLY"
           },
-          "236186": { "spellId": "236186", "spellName": "Cleansing Light" },
-          "305394": { "spellId": "305394", "spellName": "Unbound Freedom" }
+          "236186": {
+            "spellId": "236186",
+            "spellName": "Cleansing Light",
+            "idOfReplacedSpell": "213644",
+            "iconId": "spell_holy_renew",
+            "targetType": "SELF"
+          },
+          "305394": {
+            "spellId": "305394",
+            "spellName": "Unbound Freedom",
+            "iconId": "spell_holy_sealofvalor",
+            "isPassive": true
+          }
         }
       }
     },
@@ -7809,7 +8983,68 @@
             "targetType": "ONE_FRIENDLY"
           }
         },
-        "PvP": {}
+        "PvP": {
+          "196162": {
+            "spellId": "196162",
+            "spellName": "Purification",
+            "iconId": "spell_holy_dispelmagic",
+            "isPassive": true
+          },
+          "196439": {
+            "spellId": "196439",
+            "spellName": "Purified Resolve",
+            "iconId": "spell_holy_devineaegis",
+            "isPassive": true
+          },
+          "197535": {
+            "spellId": "197535",
+            "spellName": "Strength of Soul",
+            "iconId": "spell_holy_blessingofprotection",
+            "isPassive": true
+          },
+          "197590": {
+            "spellId": "197590",
+            "spellName": "Dome of Light",
+            "iconId": "spell_holy_powerwordbarrier",
+            "isPassive": true
+          },
+          "197862": {
+            "spellId": "197862",
+            "spellName": "Archangel",
+            "iconId": "ability_priest_archangel",
+            "targetType": "SELF"
+          },
+          "197871": {
+            "spellId": "197871",
+            "spellName": "Dark Archangel",
+            "iconId": "ability_priest_darkarchangel",
+            "targetType": "SELF"
+          },
+          "214205": {
+            "spellId": "214205",
+            "spellName": "Trinity",
+            "iconId": "spell_priest_burningwill",
+            "isPassive": true
+          },
+          "215768": {
+            "spellId": "215768",
+            "spellName": "Searing Light",
+            "iconId": "spell_holy_searinglightpriest",
+            "isPassive": true
+          },
+          "236499": {
+            "spellId": "236499",
+            "spellName": "Ultimate Radiance",
+            "iconId": "spell_priest_power-word",
+            "isPassive": true
+          },
+          "316262": {
+            "spellId": "316262",
+            "spellName": "Thoughtsteal",
+            "iconId": "ability_priest_thoughtsteal01",
+            "targetType": "PLACED"
+          }
+        }
       },
       "HOLY": {
         "Normal": {
@@ -7983,23 +9218,74 @@
           }
         },
         "PvP": {
-          "196611": { "spellId": "196611", "spellName": "Delivered from Evil" },
-          "197268": { "spellId": "197268", "spellName": "Ray of Hope" },
-          "213602": { "spellId": "213602", "spellName": "Greater Fade" },
-          "213610": { "spellId": "213610", "spellName": "Holy Ward" },
+          "196611": {
+            "spellId": "196611",
+            "spellName": "Delivered from Evil",
+            "iconId": "priest_spell_leapoffaith_b",
+            "isPassive": true
+          },
+          "197268": {
+            "spellId": "197268",
+            "spellName": "Ray of Hope",
+            "iconId": "ability_priest_rayofhope",
+            "targetType": "ONE_FRIENDLY"
+          },
+          "213602": {
+            "spellId": "213602",
+            "spellName": "Greater Fade",
+            "idOfReplacedSpell": "586",
+            "iconId": "spell_magic_lesserinvisibilty",
+            "targetType": "SELF"
+          },
+          "213610": {
+            "spellId": "213610",
+            "spellName": "Holy Ward",
+            "iconId": "ability_priest_soulwarding",
+            "targetType": "ONE_ENEMY"
+          },
           "215982": {
             "spellId": "215982",
-            "spellName": "Spirit of the Redeemer"
+            "spellName": "Spirit of the Redeemer",
+            "idOfReplacedSpell": "20711",
+            "iconId": "inv_enchant_essenceeternallarge",
+            "isPassive": true
           },
-          "235587": { "spellId": "235587", "spellName": "Miracle Worker" },
+          "235587": {
+            "spellId": "235587",
+            "spellName": "Miracle Worker",
+            "iconId": "spell_holy_persuitofjustice",
+            "isPassive": true
+          },
           "289657": {
             "spellId": "289657",
-            "spellName": "Holy Word: Concentration"
+            "spellName": "Holy Word: Concentration",
+            "iconId": "spell_holy_impholyconcentration",
+            "targetType": "PLACED"
           },
-          "289666": { "spellId": "289666", "spellName": "Greater Heal" },
-          "316262": { "spellId": "316262", "spellName": "Thoughtsteal" },
-          "328529": { "spellId": "328529", "spellName": "Cardinal Mending" },
-          "328530": { "spellId": "328530", "spellName": "Divine Ascension" }
+          "289666": {
+            "spellId": "289666",
+            "spellName": "Greater Heal",
+            "iconId": "spell_holy_heal",
+            "targetType": "ONE_FRIENDLY"
+          },
+          "316262": {
+            "spellId": "316262",
+            "spellName": "Thoughtsteal",
+            "iconId": "ability_priest_thoughtsteal01",
+            "targetType": "PLACED"
+          },
+          "328529": {
+            "spellId": "328529",
+            "spellName": "Cardinal Mending",
+            "iconId": "spell_holy_prayerofmendingtga",
+            "isPassive": true
+          },
+          "328530": {
+            "spellId": "328530",
+            "spellName": "Divine Ascension",
+            "iconId": "ability_priest_angelicfeather",
+            "targetType": "SELF"
+          }
         }
       },
       "SHADOW": {
@@ -8077,6 +9363,14 @@
             "idOfReplacedSpell": "8122",
             "iconId": "spell_shadow_mindbomb",
             "targetType": "ONE_ENEMY"
+          },
+          "205385": {
+            "spellId": "205385",
+            "spellName": "Shadow Crash",
+            "row": "4",
+            "col": "2",
+            "iconId": "spell_shadow_shadowfury",
+            "targetType": "PLACED"
           },
           "238558": {
             "spellId": "238558",
@@ -8158,14 +9452,6 @@
             "iconId": "ability_priest_voidentropy",
             "targetType": "ONE_ENEMY"
           },
-          "342834": {
-            "spellId": "342834",
-            "spellName": "Shadow Crash",
-            "row": "4",
-            "col": "2",
-            "iconId": "spell_shadow_shadowfury",
-            "targetType": "PLACED"
-          },
           "345218": {
             "spellId": "345218",
             "spellName": "Hungering Void",
@@ -8176,15 +9462,61 @@
           }
         },
         "PvP": {
-          "108968": { "spellId": "108968", "spellName": "Void Shift" },
-          "199259": { "spellId": "199259", "spellName": "Driven to Madness" },
-          "199445": { "spellId": "199445", "spellName": "Mind Trauma" },
-          "211522": { "spellId": "211522", "spellName": "Psyfiend" },
-          "213602": { "spellId": "213602", "spellName": "Greater Fade" },
-          "228630": { "spellId": "228630", "spellName": "Void Origins" },
-          "280749": { "spellId": "280749", "spellName": "Void Shield" },
-          "316262": { "spellId": "316262", "spellName": "Thoughtsteal" },
-          "341167": { "spellId": "341167", "spellName": "Lasting Plague" }
+          "108968": {
+            "spellId": "108968",
+            "spellName": "Void Shift",
+            "iconId": "spell_priest_voidshift",
+            "targetType": "ONE_FRIENDLY"
+          },
+          "199259": {
+            "spellId": "199259",
+            "spellName": "Driven to Madness",
+            "iconId": "ability_warlock_improvedsoulleech",
+            "isPassive": true
+          },
+          "199445": {
+            "spellId": "199445",
+            "spellName": "Mind Trauma",
+            "iconId": "spell_shadow_mindflay",
+            "isPassive": true
+          },
+          "211522": {
+            "spellId": "211522",
+            "spellName": "Psyfiend",
+            "iconId": "spell_priest_psyfiend",
+            "targetType": "ONE_ENEMY"
+          },
+          "213602": {
+            "spellId": "213602",
+            "spellName": "Greater Fade",
+            "idOfReplacedSpell": "586",
+            "iconId": "spell_magic_lesserinvisibilty",
+            "targetType": "SELF"
+          },
+          "228630": {
+            "spellId": "228630",
+            "spellName": "Void Origins",
+            "iconId": "ability_priest_shadowyapparition",
+            "isPassive": true
+          },
+          "280749": {
+            "spellId": "280749",
+            "spellName": "Void Shield",
+            "iconId": "inv_enchant_voidsphere",
+            "isPassive": true
+          },
+          "316262": {
+            "spellId": "316262",
+            "spellName": "Thoughtsteal",
+            "iconId": "ability_priest_thoughtsteal01",
+            "targetType": "PLACED"
+          },
+          "341167": {
+            "spellId": "341167",
+            "spellName": "Lasting Plague",
+            "iconId": "spell_shadow_devouringplague",
+            "isPassive": true
+          }
         }
       }
     },
@@ -8360,7 +9692,68 @@
             "isPassive": true
           }
         },
-        "PvP": {}
+        "PvP": {
+          "197000": {
+            "spellId": "197000",
+            "spellName": "Maneuverability",
+            "iconId": "ability_rogue_sprint_blue",
+            "isPassive": true
+          },
+          "197007": {
+            "spellId": "197007",
+            "spellName": "Intent to Kill",
+            "iconId": "ability_rogue_bloodyeye",
+            "isPassive": true
+          },
+          "197050": {
+            "spellId": "197050",
+            "spellName": "Mind-Numbing Poison",
+            "iconId": "spell_nature_nullifydisease",
+            "isPassive": true
+          },
+          "198032": {
+            "spellId": "198032",
+            "spellName": "Honor Among Thieves",
+            "iconId": "ability_rogue_honoramongstthieves",
+            "isPassive": true
+          },
+          "198092": {
+            "spellId": "198092",
+            "spellName": "Creeping Venom",
+            "iconId": "ability_rogue_creepingvenom",
+            "isPassive": true
+          },
+          "198128": {
+            "spellId": "198128",
+            "spellName": "Flying Daggers",
+            "iconId": "ability_rogue_fanofknives",
+            "isPassive": true
+          },
+          "198145": {
+            "spellId": "198145",
+            "spellName": "System Shock",
+            "iconId": "ability_rogue_systemshock",
+            "isPassive": true
+          },
+          "206328": {
+            "spellId": "206328",
+            "spellName": "Neurotoxin",
+            "iconId": "rogue_paralytic_poison",
+            "targetType": "ONE_ENEMY"
+          },
+          "212182": {
+            "spellId": "212182",
+            "spellName": "Smoke Bomb",
+            "iconId": "ability_rogue_smoke",
+            "targetType": "SELF"
+          },
+          "269513": {
+            "spellId": "269513",
+            "spellName": "Death from Above",
+            "iconId": "spell_rogue_deathfromabove",
+            "targetType": "ONE_ENEMY"
+          }
+        }
       },
       "SUBTLETY": {
         "Normal": {
@@ -8534,7 +9927,68 @@
             "isPassive": true
           }
         },
-        "PvP": {}
+        "PvP": {
+          "197000": {
+            "spellId": "197000",
+            "spellName": "Maneuverability",
+            "iconId": "ability_rogue_sprint_blue",
+            "isPassive": true
+          },
+          "197899": {
+            "spellId": "197899",
+            "spellName": "Silhouette",
+            "iconId": "ability_rogue_shadowstep",
+            "isPassive": true
+          },
+          "198032": {
+            "spellId": "198032",
+            "spellName": "Honor Among Thieves",
+            "iconId": "ability_rogue_honoramongstthieves",
+            "isPassive": true
+          },
+          "198675": {
+            "spellId": "198675",
+            "spellName": "Dagger in the Dark",
+            "iconId": "ability_rogue_surpriseattack2",
+            "isPassive": true
+          },
+          "198952": {
+            "spellId": "198952",
+            "spellName": "Veil of Midnight",
+            "iconId": "spell_shadow_nethercloak",
+            "isPassive": true
+          },
+          "207736": {
+            "spellId": "207736",
+            "spellName": "Shadowy Duel",
+            "iconId": "rogue_shadow_reflection",
+            "targetType": "ONE_ENEMY"
+          },
+          "212081": {
+            "spellId": "212081",
+            "spellName": "Thief's Bargain",
+            "iconId": "inv_letter_17",
+            "isPassive": true
+          },
+          "212182": {
+            "spellId": "212182",
+            "spellName": "Smoke Bomb",
+            "iconId": "ability_rogue_smoke",
+            "targetType": "SELF"
+          },
+          "213981": {
+            "spellId": "213981",
+            "spellName": "Cold Blood",
+            "iconId": "spell_ice_lament",
+            "targetType": "SELF"
+          },
+          "269513": {
+            "spellId": "269513",
+            "spellName": "Death from Above",
+            "iconId": "spell_rogue_deathfromabove",
+            "targetType": "ONE_ENEMY"
+          }
+        }
       },
       "OUTLAW": {
         "Normal": {
@@ -8708,22 +10162,84 @@
           }
         },
         "PvP": {
-          "197000": { "spellId": "197000", "spellName": "Maneuverability" },
-          "198020": { "spellId": "198020", "spellName": "Turn the Tables" },
-          "198032": { "spellId": "198032", "spellName": "Honor Among Thieves" },
-          "198265": { "spellId": "198265", "spellName": "Take Your Cut" },
-          "198529": { "spellId": "198529", "spellName": "Plunder Armor" },
-          "207777": { "spellId": "207777", "spellName": "Dismantle" },
-          "209752": { "spellId": "209752", "spellName": "Boarding Party" },
-          "212035": { "spellId": "212035", "spellName": "Cheap Tricks" },
-          "212182": { "spellId": "212182", "spellName": "Smoke Bomb" },
+          "197000": {
+            "spellId": "197000",
+            "spellName": "Maneuverability",
+            "iconId": "ability_rogue_sprint_blue",
+            "isPassive": true
+          },
+          "198020": {
+            "spellId": "198020",
+            "spellName": "Turn the Tables",
+            "iconId": "ability_rogue_waylay",
+            "isPassive": true
+          },
+          "198032": {
+            "spellId": "198032",
+            "spellName": "Honor Among Thieves",
+            "iconId": "ability_rogue_honoramongstthieves",
+            "isPassive": true
+          },
+          "198265": {
+            "spellId": "198265",
+            "spellName": "Take Your Cut",
+            "iconId": "inv_misc_coin_02",
+            "isPassive": true
+          },
+          "198529": {
+            "spellId": "198529",
+            "spellName": "Plunder Armor",
+            "iconId": "inv_misc_coin_04",
+            "targetType": "ONE_ENEMY"
+          },
+          "207777": {
+            "spellId": "207777",
+            "spellName": "Dismantle",
+            "iconId": "ability_rogue_dismantle",
+            "targetType": "ONE_ENEMY"
+          },
+          "209752": {
+            "spellId": "209752",
+            "spellName": "Boarding Party",
+            "iconId": "ships_ability_boardingpartyalliance",
+            "isPassive": true
+          },
+          "212035": {
+            "spellId": "212035",
+            "spellName": "Cheap Tricks",
+            "iconId": "rogue_dirtytricks",
+            "isPassive": true
+          },
+          "212182": {
+            "spellId": "212182",
+            "spellName": "Smoke Bomb",
+            "iconId": "ability_rogue_smoke",
+            "targetType": "SELF"
+          },
           "212210": {
             "spellId": "212210",
-            "spellName": "Drink Up Me Hearties"
+            "spellName": "Drink Up Me Hearties",
+            "iconId": "inv_drink_33_bloodredale",
+            "isPassive": true
           },
-          "212217": { "spellId": "212217", "spellName": "Control is King" },
-          "221622": { "spellId": "221622", "spellName": "Thick as Thieves" },
-          "269513": { "spellId": "269513", "spellName": "Death from Above" }
+          "212217": {
+            "spellId": "212217",
+            "spellName": "Control is King",
+            "iconId": "ability_rogue_kidneyshot",
+            "isPassive": true
+          },
+          "221622": {
+            "spellId": "221622",
+            "spellName": "Thick as Thieves",
+            "iconId": "ability_rogue_tricksofthetrade",
+            "isPassive": true
+          },
+          "269513": {
+            "spellId": "269513",
+            "spellName": "Death from Above",
+            "iconId": "spell_rogue_deathfromabove",
+            "targetType": "ONE_ENEMY"
+          }
         }
       }
     },
@@ -8900,17 +10416,73 @@
           }
         },
         "PvP": {
-          "204261": { "spellId": "204261", "spellName": "Spectral Recovery" },
-          "204264": { "spellId": "204264", "spellName": "Swelling Waves" },
-          "204268": { "spellId": "204268", "spellName": "Voodoo Mastery" },
-          "204293": { "spellId": "204293", "spellName": "Spirit Link" },
-          "204330": { "spellId": "204330", "spellName": "Skyfury Totem" },
-          "204331": { "spellId": "204331", "spellName": "Counterstrike Totem" },
-          "204336": { "spellId": "204336", "spellName": "Grounding Totem" },
-          "206642": { "spellId": "206642", "spellName": "Electrocute" },
-          "236501": { "spellId": "236501", "spellName": "Tidebringer" },
-          "290250": { "spellId": "290250", "spellName": "Cleansing Waters" },
-          "290254": { "spellId": "290254", "spellName": "Ancestral Gift" }
+          "204261": {
+            "spellId": "204261",
+            "spellName": "Spectral Recovery",
+            "iconId": "ability_shaman_freedomwolf",
+            "isPassive": true
+          },
+          "204264": {
+            "spellId": "204264",
+            "spellName": "Swelling Waves",
+            "iconId": "spell_shaman_tidalwaves",
+            "isPassive": true
+          },
+          "204268": {
+            "spellId": "204268",
+            "spellName": "Voodoo Mastery",
+            "iconId": "spell_shaman_hex",
+            "isPassive": true
+          },
+          "204293": {
+            "spellId": "204293",
+            "spellName": "Spirit Link",
+            "idOfReplacedSpell": "98008",
+            "iconId": "spell_shaman_spiritlink",
+            "targetType": "MANY_FRIENDLY"
+          },
+          "204330": {
+            "spellId": "204330",
+            "spellName": "Skyfury Totem",
+            "iconId": "spell_fire_totemofwrath",
+            "targetType": "SELF"
+          },
+          "204331": {
+            "spellId": "204331",
+            "spellName": "Counterstrike Totem",
+            "iconId": "spell_nature_wrathofair_totem",
+            "targetType": "ONE_ENEMY"
+          },
+          "204336": {
+            "spellId": "204336",
+            "spellName": "Grounding Totem",
+            "iconId": "spell_nature_groundingtotem",
+            "targetType": "SELF"
+          },
+          "206642": {
+            "spellId": "206642",
+            "spellName": "Electrocute",
+            "iconId": "spell_nature_purge",
+            "isPassive": true
+          },
+          "236501": {
+            "spellId": "236501",
+            "spellName": "Tidebringer",
+            "iconId": "spell_nature_healingwavegreater",
+            "isPassive": true
+          },
+          "290250": {
+            "spellId": "290250",
+            "spellName": "Cleansing Waters",
+            "iconId": "inv_elemental_primal_water",
+            "isPassive": true
+          },
+          "290254": {
+            "spellId": "290254",
+            "spellName": "Ancestral Gift",
+            "iconId": "spell_shaman_spiritwalkersgrace",
+            "isPassive": true
+          }
         }
       },
       "ELEMENTAL": {
@@ -9086,19 +10658,67 @@
           }
         },
         "PvP": {
-          "204247": { "spellId": "204247", "spellName": "Purifying Waters" },
-          "204261": { "spellId": "204261", "spellName": "Spectral Recovery" },
-          "204264": { "spellId": "204264", "spellName": "Swelling Waves" },
-          "204330": { "spellId": "204330", "spellName": "Skyfury Totem" },
-          "204331": { "spellId": "204331", "spellName": "Counterstrike Totem" },
-          "204336": { "spellId": "204336", "spellName": "Grounding Totem" },
+          "204247": {
+            "spellId": "204247",
+            "spellName": "Purifying Waters",
+            "iconId": "spell_nature_regeneration_02",
+            "isPassive": true
+          },
+          "204261": {
+            "spellId": "204261",
+            "spellName": "Spectral Recovery",
+            "iconId": "ability_shaman_freedomwolf",
+            "isPassive": true
+          },
+          "204264": {
+            "spellId": "204264",
+            "spellName": "Swelling Waves",
+            "iconId": "spell_shaman_tidalwaves",
+            "isPassive": true
+          },
+          "204330": {
+            "spellId": "204330",
+            "spellName": "Skyfury Totem",
+            "iconId": "spell_fire_totemofwrath",
+            "targetType": "SELF"
+          },
+          "204331": {
+            "spellId": "204331",
+            "spellName": "Counterstrike Totem",
+            "iconId": "spell_nature_wrathofair_totem",
+            "targetType": "ONE_ENEMY"
+          },
+          "204336": {
+            "spellId": "204336",
+            "spellName": "Grounding Totem",
+            "iconId": "spell_nature_groundingtotem",
+            "targetType": "SELF"
+          },
           "204385": {
             "spellId": "204385",
-            "spellName": "Elemental Attunement"
+            "spellName": "Elemental Attunement",
+            "iconId": "spell_shaman_maelstromweapon",
+            "isPassive": true
           },
-          "204393": { "spellId": "204393", "spellName": "Control of Lava" },
-          "204403": { "spellId": "204403", "spellName": "Traveling Storms" },
-          "305483": { "spellId": "305483", "spellName": "Lightning Lasso" }
+          "204393": {
+            "spellId": "204393",
+            "spellName": "Control of Lava",
+            "idOfReplacedSpell": "77756",
+            "iconId": "spell_shaman_lavaflow",
+            "isPassive": true
+          },
+          "204403": {
+            "spellId": "204403",
+            "spellName": "Traveling Storms",
+            "iconId": "spell_shaman_thunderstorm",
+            "isPassive": true
+          },
+          "305483": {
+            "spellId": "305483",
+            "spellName": "Lightning Lasso",
+            "iconId": "shaman_pvp_lightninglasso",
+            "targetType": "ONE_ENEMY"
+          }
         }
       },
       "ENHANCEMENT": {
@@ -9273,16 +10893,66 @@
           }
         },
         "PvP": {
-          "193876": { "spellId": "193876", "spellName": "Shamanism" },
-          "204247": { "spellId": "204247", "spellName": "Purifying Waters" },
-          "204261": { "spellId": "204261", "spellName": "Spectral Recovery" },
-          "204264": { "spellId": "204264", "spellName": "Swelling Waves" },
-          "204330": { "spellId": "204330", "spellName": "Skyfury Totem" },
-          "204331": { "spellId": "204331", "spellName": "Counterstrike Totem" },
-          "204336": { "spellId": "204336", "spellName": "Grounding Totem" },
-          "204366": { "spellId": "204366", "spellName": "Thundercharge" },
-          "210918": { "spellId": "210918", "spellName": "Ethereal Form" },
-          "289874": { "spellId": "289874", "spellName": "Ride the Lightning" }
+          "193876": {
+            "spellId": "193876",
+            "spellName": "Shamanism",
+            "iconId": "trade_archaeology_ancientorcshamanheaddress",
+            "isPassive": true
+          },
+          "204247": {
+            "spellId": "204247",
+            "spellName": "Purifying Waters",
+            "iconId": "spell_nature_regeneration_02",
+            "isPassive": true
+          },
+          "204261": {
+            "spellId": "204261",
+            "spellName": "Spectral Recovery",
+            "iconId": "ability_shaman_freedomwolf",
+            "isPassive": true
+          },
+          "204264": {
+            "spellId": "204264",
+            "spellName": "Swelling Waves",
+            "iconId": "spell_shaman_tidalwaves",
+            "isPassive": true
+          },
+          "204330": {
+            "spellId": "204330",
+            "spellName": "Skyfury Totem",
+            "iconId": "spell_fire_totemofwrath",
+            "targetType": "SELF"
+          },
+          "204331": {
+            "spellId": "204331",
+            "spellName": "Counterstrike Totem",
+            "iconId": "spell_nature_wrathofair_totem",
+            "targetType": "ONE_ENEMY"
+          },
+          "204336": {
+            "spellId": "204336",
+            "spellName": "Grounding Totem",
+            "iconId": "spell_nature_groundingtotem",
+            "targetType": "SELF"
+          },
+          "204366": {
+            "spellId": "204366",
+            "spellName": "Thundercharge",
+            "iconId": "shaman_pvp_thundercharge"
+          },
+          "210918": {
+            "spellId": "210918",
+            "spellName": "Ethereal Form",
+            "idOfReplacedSpell": "108271",
+            "iconId": "spell_shaman_astralshift",
+            "targetType": "SELF"
+          },
+          "289874": {
+            "spellId": "289874",
+            "spellName": "Ride the Lightning",
+            "iconId": "ability_thunderking_balllightning",
+            "isPassive": true
+          }
         }
       }
     },
@@ -9459,17 +11129,72 @@
           }
         },
         "PvP": {
-          "199954": { "spellId": "199954", "spellName": "Bane of Fragility" },
-          "200546": { "spellId": "200546", "spellName": "Bane of Havoc" },
-          "200586": { "spellId": "200586", "spellName": "Fel Fissure" },
-          "212282": { "spellId": "212282", "spellName": "Cremation" },
-          "212295": { "spellId": "212295", "spellName": "Nether Ward" },
-          "221703": { "spellId": "221703", "spellName": "Casting Circle" },
-          "221711": { "spellId": "221711", "spellName": "Essence Drain" },
-          "233577": { "spellId": "233577", "spellName": "Focused Chaos" },
-          "248855": { "spellId": "248855", "spellName": "Gateway Mastery" },
-          "285933": { "spellId": "285933", "spellName": "Demon Armor" },
-          "328774": { "spellId": "328774", "spellName": "Amplify Curse" }
+          "199954": {
+            "spellId": "199954",
+            "spellName": "Bane of Fragility",
+            "iconId": "ability_creature_cursed_05"
+          },
+          "200546": {
+            "spellId": "200546",
+            "spellName": "Bane of Havoc",
+            "idOfReplacedSpell": "80240",
+            "iconId": "warlock_pvp_banehavoc",
+            "targetType": "PLACED"
+          },
+          "200586": {
+            "spellId": "200586",
+            "spellName": "Fel Fissure",
+            "iconId": "spell_fire_felhellfire",
+            "isPassive": true
+          },
+          "212282": {
+            "spellId": "212282",
+            "spellName": "Cremation",
+            "iconId": "ability_warlock_cremation",
+            "isPassive": true
+          },
+          "212295": {
+            "spellId": "212295",
+            "spellName": "Nether Ward",
+            "iconId": "spell_fire_felfireward",
+            "targetType": "SELF"
+          },
+          "221703": {
+            "spellId": "221703",
+            "spellName": "Casting Circle",
+            "iconId": "70_inscription_vantus_rune_suramar",
+            "targetType": "SELF"
+          },
+          "221711": {
+            "spellId": "221711",
+            "spellName": "Essence Drain",
+            "iconId": "warlock_spelldrain",
+            "isPassive": true
+          },
+          "233577": {
+            "spellId": "233577",
+            "spellName": "Focused Chaos",
+            "iconId": "ability_warlock_chaosbolt",
+            "isPassive": true
+          },
+          "248855": {
+            "spellId": "248855",
+            "spellName": "Gateway Mastery",
+            "iconId": "spell_warlock_demonicportal_green",
+            "isPassive": true
+          },
+          "285933": {
+            "spellId": "285933",
+            "spellName": "Demon Armor",
+            "iconId": "spell_shadow_ragingscream",
+            "targetType": "SELF"
+          },
+          "328774": {
+            "spellId": "328774",
+            "spellName": "Amplify Curse",
+            "iconId": "spell_shadow_contagion",
+            "targetType": "SELF"
+          }
         }
       },
       "AFFLICTION": {
@@ -9645,19 +11370,83 @@
           }
         },
         "PvP": {
-          "199954": { "spellId": "199954", "spellName": "Bane of Fragility" },
-          "212295": { "spellId": "212295", "spellName": "Nether Ward" },
-          "212356": { "spellId": "212356", "spellName": "Soulshatter" },
-          "212371": { "spellId": "212371", "spellName": "Rot and Decay" },
-          "221703": { "spellId": "221703", "spellName": "Casting Circle" },
-          "221711": { "spellId": "221711", "spellName": "Essence Drain" },
-          "234877": { "spellId": "234877", "spellName": "Bane of Shadows" },
-          "248855": { "spellId": "248855", "spellName": "Gateway Mastery" },
-          "264106": { "spellId": "264106", "spellName": "Deathbolt" },
-          "285933": { "spellId": "285933", "spellName": "Demon Armor" },
-          "328774": { "spellId": "328774", "spellName": "Amplify Curse" },
-          "335052": { "spellId": "335052", "spellName": "Rampant Afflictions" },
-          "344566": { "spellId": "344566", "spellName": "Rapid Contagion" }
+          "199954": {
+            "spellId": "199954",
+            "spellName": "Bane of Fragility",
+            "iconId": "ability_creature_cursed_05"
+          },
+          "212295": {
+            "spellId": "212295",
+            "spellName": "Nether Ward",
+            "iconId": "spell_fire_felfireward",
+            "targetType": "SELF"
+          },
+          "212356": {
+            "spellId": "212356",
+            "spellName": "Soulshatter",
+            "iconId": "spell_arcane_arcane01",
+            "targetType": "ONE_ENEMY"
+          },
+          "212371": {
+            "spellId": "212371",
+            "spellName": "Rot and Decay",
+            "iconId": "spell_warlock_soulburn_haunt",
+            "isPassive": true
+          },
+          "221703": {
+            "spellId": "221703",
+            "spellName": "Casting Circle",
+            "iconId": "70_inscription_vantus_rune_suramar",
+            "targetType": "SELF"
+          },
+          "221711": {
+            "spellId": "221711",
+            "spellName": "Essence Drain",
+            "iconId": "warlock_spelldrain",
+            "isPassive": true
+          },
+          "234877": {
+            "spellId": "234877",
+            "spellName": "Bane of Shadows",
+            "iconId": "warlock_curse_shadow",
+            "targetType": "ONE_ENEMY"
+          },
+          "248855": {
+            "spellId": "248855",
+            "spellName": "Gateway Mastery",
+            "iconId": "spell_warlock_demonicportal_green",
+            "isPassive": true
+          },
+          "264106": {
+            "spellId": "264106",
+            "spellName": "Deathbolt",
+            "iconId": "spell_fire_twilightflamebolt",
+            "targetType": "ONE_ENEMY"
+          },
+          "285933": {
+            "spellId": "285933",
+            "spellName": "Demon Armor",
+            "iconId": "spell_shadow_ragingscream",
+            "targetType": "SELF"
+          },
+          "328774": {
+            "spellId": "328774",
+            "spellName": "Amplify Curse",
+            "iconId": "spell_shadow_contagion",
+            "targetType": "SELF"
+          },
+          "335052": {
+            "spellId": "335052",
+            "spellName": "Rampant Afflictions",
+            "iconId": "spell_shadow_unstableaffliction_3_purple",
+            "isPassive": true
+          },
+          "344566": {
+            "spellId": "344566",
+            "spellName": "Rapid Contagion",
+            "iconId": "spell_shadow_deathsembrace",
+            "targetType": "SELF"
+          }
         }
       },
       "DEMONOLOGY": {
@@ -9832,21 +11621,77 @@
           }
         },
         "PvP": {
-          "199954": { "spellId": "199954", "spellName": "Bane of Fragility" },
-          "201996": { "spellId": "201996", "spellName": "Call Observer" },
-          "212295": { "spellId": "212295", "spellName": "Nether Ward" },
-          "212459": { "spellId": "212459", "spellName": "Call Fel Lord" },
+          "199954": {
+            "spellId": "199954",
+            "spellName": "Bane of Fragility",
+            "iconId": "ability_creature_cursed_05"
+          },
+          "201996": {
+            "spellId": "201996",
+            "spellName": "Call Observer",
+            "iconId": "warlock_summon_-beholder",
+            "targetType": "ONE_ENEMY"
+          },
+          "212295": {
+            "spellId": "212295",
+            "spellName": "Nether Ward",
+            "iconId": "spell_fire_felfireward",
+            "targetType": "SELF"
+          },
+          "212459": {
+            "spellId": "212459",
+            "spellName": "Call Fel Lord",
+            "iconId": "achievement_boss_hellfire_fellord",
+            "targetType": "PLACED"
+          },
           "212618": {
             "spellId": "212618",
-            "spellName": "Pleasure through Pain"
+            "spellName": "Pleasure through Pain",
+            "iconId": "spell_shadow_summonsuccubus",
+            "isPassive": true
           },
-          "212619": { "spellId": "212619", "spellName": "Call Felhunter" },
-          "212623": { "spellId": "212623", "spellName": "Singe Magic" },
-          "212628": { "spellId": "212628", "spellName": "Master Summoner" },
-          "221703": { "spellId": "221703", "spellName": "Casting Circle" },
-          "221711": { "spellId": "221711", "spellName": "Essence Drain" },
-          "248855": { "spellId": "248855", "spellName": "Gateway Mastery" },
-          "328774": { "spellId": "328774", "spellName": "Amplify Curse" }
+          "212619": {
+            "spellId": "212619",
+            "spellName": "Call Felhunter",
+            "iconId": "spell_shadow_mindrot",
+            "targetType": "ONE_ENEMY"
+          },
+          "212623": {
+            "spellId": "212623",
+            "spellName": "Singe Magic",
+            "iconId": "spell_fire_elementaldevastation",
+            "targetType": "ONE_ENEMY"
+          },
+          "212628": {
+            "spellId": "212628",
+            "spellName": "Master Summoner",
+            "iconId": "inv_feldreadravenmount",
+            "isPassive": true
+          },
+          "221703": {
+            "spellId": "221703",
+            "spellName": "Casting Circle",
+            "iconId": "70_inscription_vantus_rune_suramar",
+            "targetType": "SELF"
+          },
+          "221711": {
+            "spellId": "221711",
+            "spellName": "Essence Drain",
+            "iconId": "warlock_spelldrain",
+            "isPassive": true
+          },
+          "248855": {
+            "spellId": "248855",
+            "spellName": "Gateway Mastery",
+            "iconId": "spell_warlock_demonicportal_green",
+            "isPassive": true
+          },
+          "328774": {
+            "spellId": "328774",
+            "spellName": "Amplify Curse",
+            "iconId": "spell_shadow_contagion",
+            "targetType": "SELF"
+          }
         }
       }
     },
@@ -10024,20 +11869,72 @@
           }
         },
         "PvP": {
-          "198500": { "spellId": "198500", "spellName": "Death Sentence" },
-          "198877": { "spellId": "198877", "spellName": "Enduring Rage" },
-          "199261": { "spellId": "199261", "spellName": "Death Wish" },
-          "213857": { "spellId": "213857", "spellName": "Battle Trance" },
+          "198500": {
+            "spellId": "198500",
+            "spellName": "Death Sentence",
+            "iconId": "spell_deathknight_butcher2",
+            "isPassive": true
+          },
+          "198877": {
+            "spellId": "198877",
+            "spellName": "Enduring Rage",
+            "iconId": "ability_warrior_rampage",
+            "isPassive": true
+          },
+          "199261": {
+            "spellId": "199261",
+            "spellName": "Death Wish",
+            "iconId": "spell_shadow_deathpact",
+            "targetType": "SELF"
+          },
+          "213857": {
+            "spellId": "213857",
+            "spellName": "Battle Trance",
+            "iconId": "warrior_talent_icon_furyintheblood",
+            "isPassive": true
+          },
           "235941": {
             "spellId": "235941",
-            "spellName": "Master and Commander"
+            "spellName": "Master and Commander",
+            "iconId": "ability_warrior_rallyingcry",
+            "isPassive": true
           },
-          "236077": { "spellId": "236077", "spellName": "Disarm" },
-          "280745": { "spellId": "280745", "spellName": "Barbarian" },
-          "280747": { "spellId": "280747", "spellName": "Slaughterhouse" },
-          "329033": { "spellId": "329033", "spellName": "Demolition" },
-          "329035": { "spellId": "329035", "spellName": "Overwatch" },
-          "329038": { "spellId": "329038", "spellName": "Bloodrage" }
+          "236077": {
+            "spellId": "236077",
+            "spellName": "Disarm",
+            "iconId": "ability_warrior_disarm",
+            "targetType": "ONE_ENEMY"
+          },
+          "280745": {
+            "spellId": "280745",
+            "spellName": "Barbarian",
+            "iconId": "spell_warrior_barbarian",
+            "isPassive": true
+          },
+          "280747": {
+            "spellId": "280747",
+            "spellName": "Slaughterhouse",
+            "iconId": "warrior_talent_icon_mastercleaver",
+            "isPassive": true
+          },
+          "329033": {
+            "spellId": "329033",
+            "spellName": "Demolition",
+            "iconId": "ability_warrior_shatteringthrow",
+            "isPassive": true
+          },
+          "329035": {
+            "spellId": "329035",
+            "spellName": "Overwatch",
+            "iconId": "ability_warrior_intervene",
+            "isPassive": true
+          },
+          "329038": {
+            "spellId": "329038",
+            "spellName": "Bloodrage",
+            "iconId": "ability_racial_bloodrage",
+            "targetType": "SELF"
+          }
         }
       },
       "ARMS": {
@@ -10216,25 +12113,66 @@
           }
         },
         "PvP": {
-          "198500": { "spellId": "198500", "spellName": "Death Sentence" },
+          "198500": {
+            "spellId": "198500",
+            "spellName": "Death Sentence",
+            "iconId": "spell_deathknight_butcher2",
+            "isPassive": true
+          },
           "198807": {
             "spellId": "198807",
-            "spellName": "Shadow of the Colossus"
+            "spellName": "Shadow of the Colossus",
+            "iconId": "ability_meleedamage",
+            "isPassive": true
           },
-          "198817": { "spellId": "198817", "spellName": "Sharpen Blade" },
+          "198817": {
+            "spellId": "198817",
+            "spellName": "Sharpen Blade",
+            "iconId": "spell_warrior_sharpenblade",
+            "targetType": "SELF"
+          },
           "235941": {
             "spellId": "235941",
-            "spellName": "Master and Commander"
+            "spellName": "Master and Commander",
+            "iconId": "ability_warrior_rallyingcry",
+            "isPassive": true
           },
-          "236077": { "spellId": "236077", "spellName": "Disarm" },
-          "236273": { "spellId": "236273", "spellName": "Duel" },
+          "236077": {
+            "spellId": "236077",
+            "spellName": "Disarm",
+            "iconId": "ability_warrior_disarm",
+            "targetType": "ONE_ENEMY"
+          },
+          "236273": {
+            "spellId": "236273",
+            "spellName": "Duel",
+            "iconId": "achievement_legionpvptier3",
+            "targetType": "ONE_ENEMY"
+          },
           "236308": {
             "spellId": "236308",
-            "spellName": "Storm of Destruction"
+            "spellName": "Storm of Destruction",
+            "iconId": "ability_warrior_bladestorm",
+            "isPassive": true
           },
-          "236320": { "spellId": "236320", "spellName": "War Banner" },
-          "329033": { "spellId": "329033", "spellName": "Demolition" },
-          "329035": { "spellId": "329035", "spellName": "Overwatch" }
+          "236320": {
+            "spellId": "236320",
+            "spellName": "War Banner",
+            "iconId": "warrior_skullbanner",
+            "targetType": "SELF"
+          },
+          "329033": {
+            "spellId": "329033",
+            "spellName": "Demolition",
+            "iconId": "ability_warrior_shatteringthrow",
+            "isPassive": true
+          },
+          "329035": {
+            "spellId": "329035",
+            "spellName": "Overwatch",
+            "iconId": "ability_warrior_intervene",
+            "isPassive": true
+          }
         }
       },
       "PROTECTION": {
@@ -10411,18 +12349,79 @@
           }
         },
         "PvP": {
-          "198912": { "spellId": "198912", "spellName": "Shield Bash" },
-          "199023": { "spellId": "199023", "spellName": "Morale Killer" },
-          "199045": { "spellId": "199045", "spellName": "Thunderstruck" },
-          "199086": { "spellId": "199086", "spellName": "Warpath" },
-          "199127": { "spellId": "199127", "spellName": "Sword and Board" },
-          "205800": { "spellId": "205800", "spellName": "Oppressor" },
-          "206572": { "spellId": "206572", "spellName": "Dragon Charge" },
-          "213871": { "spellId": "213871", "spellName": "Bodyguard" },
-          "213915": { "spellId": "213915", "spellName": "Rebound" },
-          "236077": { "spellId": "236077", "spellName": "Disarm" },
-          "329033": { "spellId": "329033", "spellName": "Demolition" },
-          "329035": { "spellId": "329035", "spellName": "Overwatch" }
+          "198912": {
+            "spellId": "198912",
+            "spellName": "Shield Bash",
+            "iconId": "ability_warrior_shieldbash",
+            "targetType": "ONE_ENEMY"
+          },
+          "199023": {
+            "spellId": "199023",
+            "spellName": "Morale Killer",
+            "iconId": "ability_warrior_warcry",
+            "isPassive": true
+          },
+          "199045": {
+            "spellId": "199045",
+            "spellName": "Thunderstruck",
+            "iconId": "warrior_talent_icon_bloodandthunder",
+            "isPassive": true
+          },
+          "199086": {
+            "spellId": "199086",
+            "spellName": "Warpath",
+            "iconId": "inv_helm_plate_draenorquest95_b_01",
+            "isPassive": true
+          },
+          "199127": {
+            "spellId": "199127",
+            "spellName": "Sword and Board",
+            "iconId": "ability_warrior_swordandboard",
+            "isPassive": true
+          },
+          "205800": {
+            "spellId": "205800",
+            "spellName": "Oppressor",
+            "idOfReplacedSpell": "355",
+            "iconId": "spell_nature_reincarnation",
+            "targetType": "MANY_ENEMY"
+          },
+          "206572": {
+            "spellId": "206572",
+            "spellName": "Dragon Charge",
+            "iconId": "spell_warrior_dragoncharge",
+            "targetType": "SELF"
+          },
+          "213871": {
+            "spellId": "213871",
+            "spellName": "Bodyguard",
+            "iconId": "ability_warrior_shieldguard",
+            "targetType": "ONE_FRIENDLY"
+          },
+          "213915": {
+            "spellId": "213915",
+            "spellName": "Rebound",
+            "iconId": "ability_warrior_shieldbreak",
+            "isPassive": true
+          },
+          "236077": {
+            "spellId": "236077",
+            "spellName": "Disarm",
+            "iconId": "ability_warrior_disarm",
+            "targetType": "ONE_ENEMY"
+          },
+          "329033": {
+            "spellId": "329033",
+            "spellName": "Demolition",
+            "iconId": "ability_warrior_shatteringthrow",
+            "isPassive": true
+          },
+          "329035": {
+            "spellId": "329035",
+            "spellName": "Overwatch",
+            "iconId": "ability_warrior_intervene",
+            "isPassive": true
+          }
         }
       }
     }
