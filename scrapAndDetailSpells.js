@@ -302,7 +302,7 @@ function filterData(pageSpellData, spellId, spellName) {
   } else {
     dur = 0;
   }
-  //Spellsteal includes a time in the description, i think its the only spell that does.
+  //Spellsteal includes a time in the description, i think its the only spell that does. (this was not true)
   if (spellId === "30449") {
     dur = -1;
   }
@@ -630,11 +630,50 @@ async function runTalents(browser, mutex) {
   }
 }
 
-const brokenSpells = [];
-const incorrectSpells = [];
+const brokenSpells = [
+  206931,
+  321358,
+  115313,
+  198898,
+  115315,
+  341374,
+  137619,
+  264119
+];
+const incorrectSpells = [
+  194913,
+  49206,
+  207311,
+  52610,
+  285381,
+  202770,
+  205636,
+  157997,
+  199786,
+  153626,
+  157980,
+  115098,
+  123986,
+  325197,
+  114165,
+  110744,
+  120517,
+  341385,
+  51690,
+  192077,
+  207399,
+  192249,
+  210714,
+  333974,
+  196447,
+  278350,
+  264130,
+  267171,
+  267217
+];
 
 async function findDifferences(trueData, newData) {
-  const classNames = Object.keys(trueData["Spells"]);
+  let classNames = Object.keys(trueData["Spells"]);
   for (const className in classNames) {
     const spellIds = Object.keys(trueData["Spells"][classNames[className]]);
     for (const spellId in spellIds) {
@@ -652,10 +691,43 @@ async function findDifferences(trueData, newData) {
       }
     }
   }
+  classNames = Object.keys(trueData["Talents"]);
+  for (const className in classNames) {
+    const specNames = Object.keys(trueData["Talents"][classNames[className]]);
+    for (const specName in specNames) {
+      const spellIds = Object.keys(
+        trueData["Talents"][classNames[className]][specNames[specName]][
+          "Normal"
+        ]
+      );
+      for (spellId in spellIds) {
+        if (
+          !_.isEqual(
+            newData["Talents"][classNames[className]][specNames[specName]][
+              "Normal"
+            ][spellIds[spellId]],
+            trueData["Talents"][classNames[className]][specNames[specName]][
+              "Normal"
+            ][spellIds[spellId]]
+          )
+        ) {
+          console.log(
+            `${trueData["Talents"][classNames[className]][specNames[specName]]["Normal"][spellIds[spellId]].spellName} Not Equal`,
+            trueData["Talents"][classNames[className]][specNames[specName]][
+              "Normal"
+            ][spellIds[spellId]],
+            newData["Talents"][classNames[className]][specNames[specName]][
+              "Normal"
+            ][spellIds[spellId]]
+          );
+        }
+      }
+    }
+  }
 }
 
 function checkForImprovements(targetData, calculatedData) {
-  const classNames = Object.keys(calculatedData["Spells"]);
+  let classNames = Object.keys(calculatedData["Spells"]);
   let spellsLength = 0;
   let spellsWorkingLength = 0;
   for (const className in classNames) {
@@ -677,10 +749,43 @@ function checkForImprovements(targetData, calculatedData) {
       }
     }
   }
+  classNames = Object.keys(calculatedData["Talents"]);
+  for (const className in classNames) {
+    const specNames = Object.keys(
+      calculatedData["Talents"][classNames[className]]
+    );
+    for (const specName in specNames) {
+      const spellIds = Object.keys(
+        calculatedData["Talents"][classNames[className]][specNames[specName]][
+          "Normal"
+        ]
+      );
+      spellsLength += spellIds.length;
+      for (spellId in spellIds) {
+        if (
+          _.isEqual(
+            targetData["Talents"][classNames[className]][specNames[specName]][
+              "Normal"
+            ][spellIds[spellId]],
+            calculatedData["Talents"][classNames[className]][
+              specNames[specName]
+            ]["Normal"][spellIds[spellId]]
+          )
+        ) {
+          spellsWorkingLength++;
+          console.log(
+            `${calculatedData["Talents"][classNames[className]][specNames[specName]]["Normal"][spellIds[spellId]].spellName}, Spell ID: ${spellIds[spellId]} Now Equal With ${calculatedData["Talents"][classNames[className]][specNames[specName]]["Normal"][spellIds[spellId]].targetType}`
+          );
+        }
+      }
+    }
+  }
   console.log(`${spellsWorkingLength}/${spellsLength} now work`);
 }
-//Feral(rake, rip, swipe, maim), Guardian(thrash, frenzied regeneration, incapacitating roar),
-// Resto(rejuv, swiftmend, wild growth, ursols vortex), Balance(moonkin form, starsurge, starfire, sunfire, typhoon)
+//Feral(rake, rip, swipe, maim),
+//Guardian(thrash, frenzied regeneration, incapacitating roar),
+//Resto(rejuv, swiftmend, wild growth, ursols vortex),
+//Balance(moonkin form, starsurge, starfire, sunfire, typhoon)
 const druidAffinities = {
   197490: ["1822", "1079", "213764", "22570"],
   197491: ["106832", "22842", "99"],
@@ -688,7 +793,7 @@ const druidAffinities = {
   197488: ["24858", "78674", "194153", "93402", "132469"]
 };
 
-const testingWorkingKey = true;
+const testingWorkingKey = false;
 
 async function runAllThings() {
   const browser = await puppeteer.launch();
@@ -719,7 +824,7 @@ async function runAllThings() {
       //   findDifferences(testWorkingDataReal, spellData);
       // }
     } else {
-      checkForImprovements(brokeSpellsFixedKey, spellData);
+      //checkForImprovements(brokeSpellsFixedKey, spellData);
       fs.writeFileSync(`SpellsPhase2AllBrokenSpells.json`, jsonToWrite);
     }
     browser.close();
