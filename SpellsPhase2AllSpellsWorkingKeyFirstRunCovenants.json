@@ -12444,11 +12444,13 @@
       "Kyrian": {
         "312202": {
           "spellId": "312202",
+          "spellName": "Shackle the Unworthy",
           "iconId": "ability_bastion_deathknight",
           "targetType": "ONE_ENEMY"
         },
         "324739": {
           "spellId": "324739",
+          "spellName": "Summon Steward",
           "iconId": "ability_kyrian_summonsteward",
           "targetType": "SELF"
         }
@@ -12456,11 +12458,13 @@
       "Venthyr": {
         "300728": {
           "spellId": "300728",
+          "spellName": "Door of Shadows",
           "iconId": "ability_venthyr_doorofshadows",
           "targetType": "PLACED"
         },
         "311648": {
           "spellId": "311648",
+          "spellName": "Swarming Mist",
           "iconId": "ability_revendreth_deathknight",
           "targetType": "SELF"
         }
@@ -12468,11 +12472,13 @@
       "Night Fae": {
         "310143": {
           "spellId": "310143",
+          "spellName": "Soulshape",
           "iconId": "ability_nightfae_flicker",
           "targetType": "SELF"
         },
         "324128": {
           "spellId": "324128",
+          "spellName": "Death's Due",
           "iconId": "ability_ardenweald_deathknight",
           "targetType": "PLACED"
         }
@@ -12480,13 +12486,15 @@
       "Necrolord": {
         "315443": {
           "spellId": "315443",
+          "spellName": "Abomination Limb",
           "iconId": "ability_maldraxxus_deathknight",
-          "targetType": "ONE_ENEMY"
+          "targetType": "SELF"
         },
         "324631": {
           "spellId": "324631",
+          "spellName": "Fleshcraft",
           "iconId": "ability_necrolord_fleshcraft",
-          "targetType": "ONE_ENEMY"
+          "targetType": "SELF"
         }
       }
     },
@@ -12494,11 +12502,13 @@
       "Kyrian": {
         "306830": {
           "spellId": "306830",
+          "spellName": "Elysian Decree",
           "iconId": "ability_bastion_demonhunter",
           "targetType": "PLACED"
         },
         "324739": {
           "spellId": "324739",
+          "spellName": "Summon Steward",
           "iconId": "ability_kyrian_summonsteward",
           "targetType": "SELF"
         }
@@ -12506,11 +12516,13 @@
       "Venthyr": {
         "300728": {
           "spellId": "300728",
+          "spellName": "Door of Shadows",
           "iconId": "ability_venthyr_doorofshadows",
           "targetType": "PLACED"
         },
         "317009": {
           "spellId": "317009",
+          "spellName": "Sinful Brand",
           "iconId": "ability_revendreth_demonhunter",
           "targetType": "ONE_ENEMY"
         }
@@ -12518,11 +12530,13 @@
       "Night Fae": {
         "310143": {
           "spellId": "310143",
+          "spellName": "Soulshape",
           "iconId": "ability_nightfae_flicker",
           "targetType": "SELF"
         },
         "323639": {
           "spellId": "323639",
+          "spellName": "The Hunt",
           "iconId": "ability_ardenweald_demonhunter",
           "targetType": "ONE_ENEMY"
         }
@@ -12530,11 +12544,13 @@
       "Necrolord": {
         "324631": {
           "spellId": "324631",
+          "spellName": "Fleshcraft",
           "iconId": "ability_necrolord_fleshcraft",
-          "targetType": "ONE_ENEMY"
+          "targetType": "SELF"
         },
         "329554": {
           "spellId": "329554",
+          "spellName": "Fodder to the Flame",
           "iconId": "ability_maldraxxus_demonhunter",
           "targetType": "SELF"
         }
@@ -12544,11 +12560,13 @@
       "Kyrian": {
         "324739": {
           "spellId": "324739",
+          "spellName": "Summon Steward",
           "iconId": "ability_kyrian_summonsteward",
           "targetType": "SELF"
         },
         "326434": {
           "spellId": "326434",
+          "spellName": "Kindred Spirits",
           "iconId": "ability_bastion_druid",
           "targetType": "ONE_FRIENDLY"
         }
@@ -12556,11 +12574,13 @@
       "Venthyr": {
         "300728": {
           "spellId": "300728",
+          "spellName": "Door of Shadows",
           "iconId": "ability_venthyr_doorofshadows",
           "targetType": "PLACED"
         },
         "323546": {
           "spellId": "323546",
+          "spellName": "Ravenous Frenzy",
           "iconId": "ability_revendreth_druid",
           "targetType": "SELF"
         }
@@ -12568,11 +12588,13 @@
       "Night Fae": {
         "310143": {
           "spellId": "310143",
+          "spellName": "Soulshape",
           "iconId": "ability_nightfae_flicker",
           "targetType": "SELF"
         },
         "323764": {
           "spellId": "323764",
+          "spellName": "Convoke the Spirits",
           "iconId": "ability_ardenweald_druid",
           "targetType": "SELF"
         }
@@ -12580,13 +12602,15 @@
       "Necrolord": {
         "324631": {
           "spellId": "324631",
+          "spellName": "Fleshcraft",
           "iconId": "ability_necrolord_fleshcraft",
-          "targetType": "ONE_ENEMY"
+          "targetType": "SELF"
         },
         "325727": {
           "spellId": "325727",
+          "spellName": "Adaptive Swarm",
           "iconId": "ability_maldraxxus_druid",
-          "targetType": "ONE_ENEMY"
+          "targetType": "ONE_ANY"
         }
       }
     },
@@ -12594,11 +12618,13 @@
       "Kyrian": {
         "308491": {
           "spellId": "308491",
+          "spellName": "Resonating Arrow",
           "iconId": "ability_bastion_hunter",
           "targetType": "PLACED"
         },
         "324739": {
           "spellId": "324739",
+          "spellName": "Summon Steward",
           "iconId": "ability_kyrian_summonsteward",
           "targetType": "SELF"
         }
@@ -12606,11 +12632,13 @@
       "Venthyr": {
         "300728": {
           "spellId": "300728",
+          "spellName": "Door of Shadows",
           "iconId": "ability_venthyr_doorofshadows",
           "targetType": "PLACED"
         },
         "324149": {
           "spellId": "324149",
+          "spellName": "Flayed Shot",
           "iconId": "ability_revendreth_hunter",
           "targetType": "ONE_ENEMY"
         }
@@ -12618,11 +12646,13 @@
       "Night Fae": {
         "310143": {
           "spellId": "310143",
+          "spellName": "Soulshape",
           "iconId": "ability_nightfae_flicker",
           "targetType": "SELF"
         },
         "328231": {
           "spellId": "328231",
+          "spellName": "Wild Spirits",
           "iconId": "ability_ardenweald_hunter",
           "targetType": "PLACED"
         }
@@ -12630,11 +12660,13 @@
       "Necrolord": {
         "324631": {
           "spellId": "324631",
+          "spellName": "Fleshcraft",
           "iconId": "ability_necrolord_fleshcraft",
-          "targetType": "ONE_ENEMY"
+          "targetType": "SELF"
         },
         "325028": {
           "spellId": "325028",
+          "spellName": "Death Chakram",
           "iconId": "ability_maldraxxus_hunter",
           "targetType": "ONE_ENEMY"
         }
@@ -12644,11 +12676,13 @@
       "Kyrian": {
         "307443": {
           "spellId": "307443",
+          "spellName": "Radiant Spark",
           "iconId": "ability_bastion_mage",
           "targetType": "ONE_ENEMY"
         },
         "324739": {
           "spellId": "324739",
+          "spellName": "Summon Steward",
           "iconId": "ability_kyrian_summonsteward",
           "targetType": "SELF"
         }
@@ -12656,11 +12690,13 @@
       "Venthyr": {
         "300728": {
           "spellId": "300728",
+          "spellName": "Door of Shadows",
           "iconId": "ability_venthyr_doorofshadows",
           "targetType": "PLACED"
         },
         "314793": {
           "spellId": "314793",
+          "spellName": "Mirrors of Torment",
           "iconId": "ability_revendreth_mage",
           "targetType": "ONE_ENEMY"
         }
@@ -12668,11 +12704,13 @@
       "Night Fae": {
         "310143": {
           "spellId": "310143",
+          "spellName": "Soulshape",
           "iconId": "ability_nightfae_flicker",
           "targetType": "SELF"
         },
         "314791": {
           "spellId": "314791",
+          "spellName": "Shifting Power",
           "iconId": "ability_ardenweald_mage",
           "targetType": "SELF"
         }
@@ -12680,13 +12718,15 @@
       "Necrolord": {
         "324220": {
           "spellId": "324220",
+          "spellName": "Deathborne",
           "iconId": "ability_maldraxxus_mage",
           "targetType": "SELF"
         },
         "324631": {
           "spellId": "324631",
+          "spellName": "Fleshcraft",
           "iconId": "ability_necrolord_fleshcraft",
-          "targetType": "ONE_ENEMY"
+          "targetType": "SELF"
         }
       }
     },
@@ -12694,11 +12734,13 @@
       "Kyrian": {
         "310454": {
           "spellId": "310454",
+          "spellName": "Weapons of Order",
           "iconId": "ability_bastion_monk",
           "targetType": "SELF"
         },
         "324739": {
           "spellId": "324739",
+          "spellName": "Summon Steward",
           "iconId": "ability_kyrian_summonsteward",
           "targetType": "SELF"
         }
@@ -12706,11 +12748,13 @@
       "Venthyr": {
         "300728": {
           "spellId": "300728",
+          "spellName": "Door of Shadows",
           "iconId": "ability_venthyr_doorofshadows",
           "targetType": "PLACED"
         },
         "326860": {
           "spellId": "326860",
+          "spellName": "Fallen Order",
           "iconId": "ability_revendreth_monk",
           "targetType": "SELF"
         }
@@ -12718,25 +12762,29 @@
       "Night Fae": {
         "310143": {
           "spellId": "310143",
+          "spellName": "Soulshape",
           "iconId": "ability_nightfae_flicker",
           "targetType": "SELF"
         },
         "327104": {
           "spellId": "327104",
+          "spellName": "Faeline Stomp",
           "iconId": "ability_ardenweald_monk",
-          "targetType": "PLACED"
+          "targetType": "SELF"
         }
       },
       "Necrolord": {
         "324631": {
           "spellId": "324631",
+          "spellName": "Fleshcraft",
           "iconId": "ability_necrolord_fleshcraft",
-          "targetType": "ONE_ENEMY"
+          "targetType": "SELF"
         },
         "325216": {
           "spellId": "325216",
+          "spellName": "Bonedust Brew",
           "iconId": "ability_maldraxxus_monk",
-          "targetType": "ONE_ENEMY"
+          "targetType": "PLACED"
         }
       }
     },
@@ -12744,11 +12792,13 @@
       "Kyrian": {
         "304971": {
           "spellId": "304971",
+          "spellName": "Divine Toll",
           "iconId": "ability_bastion_paladin",
-          "targetType": "PLACED"
+          "targetType": "ONE_ANY"
         },
         "324739": {
           "spellId": "324739",
+          "spellName": "Summon Steward",
           "iconId": "ability_kyrian_summonsteward",
           "targetType": "SELF"
         }
@@ -12756,11 +12806,13 @@
       "Venthyr": {
         "300728": {
           "spellId": "300728",
+          "spellName": "Door of Shadows",
           "iconId": "ability_venthyr_doorofshadows",
           "targetType": "PLACED"
         },
         "316958": {
           "spellId": "316958",
+          "spellName": "Ashen Hallow",
           "iconId": "ability_revendreth_paladin",
           "targetType": "PLACED"
         }
@@ -12768,11 +12820,13 @@
       "Night Fae": {
         "310143": {
           "spellId": "310143",
+          "spellName": "Soulshape",
           "iconId": "ability_nightfae_flicker",
           "targetType": "SELF"
         },
         "328620": {
           "spellId": "328620",
+          "spellName": "Blessing of Summer",
           "iconId": "ability_ardenweald_paladin_summer",
           "targetType": "ONE_FRIENDLY"
         }
@@ -12780,11 +12834,13 @@
       "Necrolord": {
         "324631": {
           "spellId": "324631",
+          "spellName": "Fleshcraft",
           "iconId": "ability_necrolord_fleshcraft",
-          "targetType": "ONE_ENEMY"
+          "targetType": "SELF"
         },
         "328204": {
           "spellId": "328204",
+          "spellName": "Vanquisher's Hammer",
           "iconId": "ability_maldraxxus_paladin",
           "targetType": "ONE_ENEMY"
         }
@@ -12794,11 +12850,13 @@
       "Kyrian": {
         "324739": {
           "spellId": "324739",
+          "spellName": "Summon Steward",
           "iconId": "ability_kyrian_summonsteward",
           "targetType": "SELF"
         },
         "325013": {
           "spellId": "325013",
+          "spellName": "Boon of the Ascended",
           "iconId": "ability_bastion_priest",
           "targetType": "SELF"
         }
@@ -12806,11 +12864,13 @@
       "Venthyr": {
         "300728": {
           "spellId": "300728",
+          "spellName": "Door of Shadows",
           "iconId": "ability_venthyr_doorofshadows",
           "targetType": "PLACED"
         },
         "323673": {
           "spellId": "323673",
+          "spellName": "Mindgames",
           "iconId": "ability_revendreth_priest",
           "targetType": "ONE_ENEMY"
         }
@@ -12818,11 +12878,13 @@
       "Night Fae": {
         "310143": {
           "spellId": "310143",
+          "spellName": "Soulshape",
           "iconId": "ability_nightfae_flicker",
           "targetType": "SELF"
         },
         "327661": {
           "spellId": "327661",
+          "spellName": "Fae Guardians",
           "iconId": "ability_ardenweald_priest",
           "targetType": "SELF"
         }
@@ -12830,13 +12892,15 @@
       "Necrolord": {
         "324631": {
           "spellId": "324631",
+          "spellName": "Fleshcraft",
           "iconId": "ability_necrolord_fleshcraft",
-          "targetType": "ONE_ENEMY"
+          "targetType": "SELF"
         },
         "324724": {
           "spellId": "324724",
+          "spellName": "Unholy Nova",
           "iconId": "ability_maldraxxus_priest",
-          "targetType": "ONE_FRIENDLY"
+          "targetType": "ONE_ANY"
         }
       }
     },
@@ -12844,11 +12908,13 @@
       "Kyrian": {
         "323547": {
           "spellId": "323547",
+          "spellName": "Echoing Reprimand",
           "iconId": "ability_bastion_rogue",
           "targetType": "ONE_ENEMY"
         },
         "324739": {
           "spellId": "324739",
+          "spellName": "Summon Steward",
           "iconId": "ability_kyrian_summonsteward",
           "targetType": "SELF"
         }
@@ -12856,11 +12922,13 @@
       "Venthyr": {
         "300728": {
           "spellId": "300728",
+          "spellName": "Door of Shadows",
           "iconId": "ability_venthyr_doorofshadows",
           "targetType": "PLACED"
         },
         "323654": {
           "spellId": "323654",
+          "spellName": "Slaughter",
           "iconId": "ability_revendreth_rogue",
           "targetType": "MANY_ENEMY"
         }
@@ -12868,11 +12936,13 @@
       "Night Fae": {
         "310143": {
           "spellId": "310143",
+          "spellName": "Soulshape",
           "iconId": "ability_nightfae_flicker",
           "targetType": "SELF"
         },
         "328305": {
           "spellId": "328305",
+          "spellName": "Sepsis",
           "iconId": "ability_ardenweald_rogue",
           "targetType": "ONE_ENEMY"
         }
@@ -12880,11 +12950,13 @@
       "Necrolord": {
         "324631": {
           "spellId": "324631",
+          "spellName": "Fleshcraft",
           "iconId": "ability_necrolord_fleshcraft",
-          "targetType": "ONE_ENEMY"
+          "targetType": "SELF"
         },
         "328547": {
           "spellId": "328547",
+          "spellName": "Serrated Bone Spike",
           "iconId": "ability_maldraxxus_rogue",
           "targetType": "ONE_ENEMY"
         }
@@ -12894,11 +12966,13 @@
       "Kyrian": {
         "324386": {
           "spellId": "324386",
+          "spellName": "Vesper Totem",
           "iconId": "ability_bastion_shaman",
-          "targetType": "SELF"
+          "targetType": "PLACED"
         },
         "324739": {
           "spellId": "324739",
+          "spellName": "Summon Steward",
           "iconId": "ability_kyrian_summonsteward",
           "targetType": "SELF"
         }
@@ -12906,23 +12980,27 @@
       "Venthyr": {
         "300728": {
           "spellId": "300728",
+          "spellName": "Door of Shadows",
           "iconId": "ability_venthyr_doorofshadows",
           "targetType": "PLACED"
         },
         "320674": {
           "spellId": "320674",
+          "spellName": "Chain Harvest",
           "iconId": "ability_revendreth_shaman",
-          "targetType": "PLACED"
+          "targetType": "ONE_ANY"
         }
       },
       "Night Fae": {
         "310143": {
           "spellId": "310143",
+          "spellName": "Soulshape",
           "iconId": "ability_nightfae_flicker",
           "targetType": "SELF"
         },
         "328923": {
           "spellId": "328923",
+          "spellName": "Fae Transfusion",
           "iconId": "ability_ardenweald_shaman",
           "targetType": "PLACED"
         }
@@ -12930,13 +13008,15 @@
       "Necrolord": {
         "324631": {
           "spellId": "324631",
+          "spellName": "Fleshcraft",
           "iconId": "ability_necrolord_fleshcraft",
-          "targetType": "ONE_ENEMY"
+          "targetType": "SELF"
         },
         "326059": {
           "spellId": "326059",
+          "spellName": "Primordial Wave",
           "iconId": "ability_maldraxxus_shaman",
-          "targetType": "ONE_ENEMY"
+          "targetType": "ONE_ANY"
         }
       }
     },
@@ -12944,11 +13024,13 @@
       "Kyrian": {
         "312321": {
           "spellId": "312321",
+          "spellName": "Scouring Tithe",
           "iconId": "ability_bastion_warlock",
           "targetType": "ONE_ENEMY"
         },
         "324739": {
           "spellId": "324739",
+          "spellName": "Summon Steward",
           "iconId": "ability_kyrian_summonsteward",
           "targetType": "SELF"
         }
@@ -12956,11 +13038,13 @@
       "Venthyr": {
         "300728": {
           "spellId": "300728",
+          "spellName": "Door of Shadows",
           "iconId": "ability_venthyr_doorofshadows",
           "targetType": "PLACED"
         },
         "321792": {
           "spellId": "321792",
+          "spellName": "Impending Catastrophe",
           "iconId": "ability_revendreth_warlock",
           "targetType": "ONE_ENEMY"
         }
@@ -12968,11 +13052,13 @@
       "Night Fae": {
         "310143": {
           "spellId": "310143",
+          "spellName": "Soulshape",
           "iconId": "ability_nightfae_flicker",
           "targetType": "SELF"
         },
         "325640": {
           "spellId": "325640",
+          "spellName": "Soul Rot",
           "iconId": "ability_ardenweald_warlock",
           "targetType": "ONE_ENEMY"
         }
@@ -12980,11 +13066,13 @@
       "Necrolord": {
         "324631": {
           "spellId": "324631",
+          "spellName": "Fleshcraft",
           "iconId": "ability_necrolord_fleshcraft",
-          "targetType": "ONE_ENEMY"
+          "targetType": "SELF"
         },
         "325289": {
           "spellId": "325289",
+          "spellName": "Decimating Bolt",
           "iconId": "ability_maldraxxus_warlock",
           "targetType": "ONE_ENEMY"
         }
@@ -12994,11 +13082,13 @@
       "Kyrian": {
         "307865": {
           "spellId": "307865",
+          "spellName": "Spear of Bastion",
           "iconId": "ability_bastion_warrior",
           "targetType": "PLACED"
         },
         "324739": {
           "spellId": "324739",
+          "spellName": "Summon Steward",
           "iconId": "ability_kyrian_summonsteward",
           "targetType": "SELF"
         }
@@ -13006,11 +13096,13 @@
       "Venthyr": {
         "300728": {
           "spellId": "300728",
+          "spellName": "Door of Shadows",
           "iconId": "ability_venthyr_doorofshadows",
           "targetType": "PLACED"
         },
         "317320": {
           "spellId": "317320",
+          "spellName": "Condemn",
           "iconId": "ability_revendreth_warrior",
           "isPassive": true
         }
@@ -13018,11 +13110,13 @@
       "Night Fae": {
         "310143": {
           "spellId": "310143",
+          "spellName": "Soulshape",
           "iconId": "ability_nightfae_flicker",
           "targetType": "SELF"
         },
         "325886": {
           "spellId": "325886",
+          "spellName": "Ancient Aftershock",
           "iconId": "ability_ardenweald_warrior",
           "targetType": "SELF"
         }
@@ -13030,13 +13124,15 @@
       "Necrolord": {
         "324143": {
           "spellId": "324143",
+          "spellName": "Conqueror's Banner",
           "iconId": "ability_maldraxxus_warriorplantbanner",
           "targetType": "SELF"
         },
         "324631": {
           "spellId": "324631",
+          "spellName": "Fleshcraft",
           "iconId": "ability_necrolord_fleshcraft",
-          "targetType": "ONE_ENEMY"
+          "targetType": "SELF"
         }
       }
     }

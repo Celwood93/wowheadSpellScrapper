@@ -131,6 +131,12 @@ async function getDetails(
     }
     if (pageSpellData) {
       newDataForId = filterData(pageSpellData, spellId, spellName);
+      if (type === "Covenants") {
+        newDataForId = {
+          spellName: pageSpellData.SpellName,
+          ...newDataForId,
+        };
+      }
       if (!usingCache) {
         console.log(
           `${Object.keys(cachedIds).length + 1}/${promises.length} finished`
@@ -227,7 +233,7 @@ function filterData(pageSpellData, spellId, spellName) {
         )
       );
   }
-  const descTargLoc = /(to the|at a|at the|in the) target(ed)? (location|area)/.test(
+  const descTargLoc = /(to the|at a|at the|in the) target(ed)? (location|area)|at the ground/.test(
     pageSpellData["Description"]
   );
   const isAoeSpeedBoost = Object.keys(pageSpellData)
@@ -397,7 +403,12 @@ function filterData(pageSpellData, spellId, spellName) {
     spellName === "Wild Charge" ||
     spellName === "Death Coil" ||
     spellName === "Gorefiend's Grasp" ||
-    spellName === "Mind Sear";
+    spellName === "Mind Sear" ||
+    spellId === "325727" ||
+    spellId === "304971" ||
+    spellId === "324724" ||
+    spellId === "320674" ||
+    spellId === "326059";
   const isSelfException =
     spellName === "Summon Demonic Tyrant" ||
     spellName === "Malefic Rapture" ||
@@ -420,7 +431,11 @@ function filterData(pageSpellData, spellId, spellName) {
     spellName === "Reanimation" ||
     spellName === "Spirit Link" ||
     spellName === "Soulshatter" ||
-    spellName === "Call Observer";
+    spellName === "Call Observer" ||
+    spellId === "324631" ||
+    spellId === "315443" ||
+    spellId === "327104";
+
   const isFriendlyException =
     spellName === "Rapture" ||
     spellName === "Interlope" ||
@@ -484,7 +499,9 @@ function filterData(pageSpellData, spellId, spellName) {
     isAoeSpeedBoost ||
     isUnlimitedRange ||
     isPetOrDemon ||
-    (doesOverrideSpell && !doesItNegMech) ||
+    (doesOverrideSpell &&
+      !doesItNegMech &&
+      spellId !== "324386") /*Cant be vesper totem*/ ||
     teleportOrTransfer ||
     allHealersInRaid ||
     givesAttackSpeedSteroid ||
@@ -640,6 +657,8 @@ const spellsThatArntPlacedButMatch = [
   "51690",
   "192249",
   "316262",
+  "304971",
+  "320674",
 ];
 
 const spellsThatAreOnFriendliesButNotYourself = [
