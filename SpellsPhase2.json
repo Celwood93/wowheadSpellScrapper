@@ -2297,6 +2297,13 @@
         "iconId": "spell_arcane_massdispel",
         "targetType": "PLACED"
       },
+      "32379": {
+        "spec": ["DISCIPLINE", "HOLY", "SHADOW"],
+        "spellId": "32379",
+        "spellName": "Shadow Word: Death",
+        "iconId": "spell_shadow_demonicfortitude",
+        "targetType": "ONE_ENEMY"
+      },
       "33076": {
         "spec": ["HOLY"],
         "spellId": "33076",
@@ -3968,7 +3975,7 @@
           "207018": {
             "spellId": "207018",
             "spellName": "Murderous Intent",
-            "idOfReplacedSpell": "56222",
+            "idOfReplacedSpell": ["56222"],
             "iconId": "spell_nature_shamanrage",
             "targetType": "MANY_ENEMY"
           },
@@ -4265,7 +4272,7 @@
             "spellName": "Defile",
             "row": "5",
             "col": "2",
-            "idOfReplacedSpell": "43265",
+            "idOfReplacedSpell": ["43265"],
             "iconId": "spell_deathknight_defile",
             "targetType": "PLACED"
           },
@@ -4322,7 +4329,7 @@
             "spellName": "Clawing Shadows",
             "row": "0",
             "col": "2",
-            "idOfReplacedSpell": "55090",
+            "idOfReplacedSpell": ["55090"],
             "iconId": "warlock_curse_shadow",
             "targetType": "ONE_ENEMY"
           },
@@ -4445,7 +4452,7 @@
           "288853": {
             "spellId": "288853",
             "spellName": "Raise Abomination",
-            "idOfReplacedSpell": "42650",
+            "idOfReplacedSpell": ["42650"],
             "iconId": "achievement_boss_patchwerk",
             "targetType": "PLACED"
           },
@@ -4582,7 +4589,7 @@
             "spellName": "Fracture",
             "row": "3",
             "col": "2",
-            "idOfReplacedSpell": "203782",
+            "idOfReplacedSpell": ["203782"],
             "iconId": "ability_creature_felsunder",
             "targetType": "ONE_ENEMY"
           },
@@ -4689,7 +4696,7 @@
           "207029": {
             "spellId": "207029",
             "spellName": "Tormentor",
-            "idOfReplacedSpell": "185245",
+            "idOfReplacedSpell": ["185245"],
             "iconId": "ability_demonhunter_torment",
             "targetType": "MANY_ENEMY"
           },
@@ -4730,7 +4737,7 @@
             "spellName": "Demon Blades",
             "row": "1",
             "col": "2",
-            "idOfReplacedSpell": "162243",
+            "idOfReplacedSpell": ["162243"],
             "iconId": "inv_weapon_shortblade_92",
             "isPassive": true
           },
@@ -4854,6 +4861,14 @@
             "iconId": "inv_felbarrage",
             "targetType": "SELF"
           },
+          "275144": {
+            "spellId": "275144",
+            "spellName": "Unbound Chaos",
+            "row": "2",
+            "col": "1",
+            "iconId": "ability_demonhunter_felrush",
+            "isPassive": true
+          },
           "320374": {
             "spellId": "320374",
             "spellName": "Burning Hatred",
@@ -4869,14 +4884,6 @@
             "col": "2",
             "iconId": "inv_glaive_1h_artifactazgalor_d_06dual",
             "targetType": "SELF"
-          },
-          "347461": {
-            "spellId": "347461",
-            "spellName": "Unbound Chaos",
-            "row": "2",
-            "col": "1",
-            "iconId": "artifactability_vengeancedemonhunter_painbringer",
-            "isPassive": true
           }
         },
         "PvP": {
@@ -5217,7 +5224,7 @@
             "spellName": "Incarnation: King of the Jungle",
             "row": "4",
             "col": "2",
-            "idOfReplacedSpell": "106951",
+            "idOfReplacedSpell": ["106951"],
             "iconId": "spell_druid_incarnation",
             "targetType": "SELF"
           },
@@ -5284,7 +5291,7 @@
             "spellName": "Brutal Slash",
             "row": "5",
             "col": "1",
-            "idOfReplacedSpell": "213764",
+            "idOfReplacedSpell": ["213764"],
             "iconId": "ability_druid_ravage",
             "targetType": "SELF"
           },
@@ -5461,7 +5468,7 @@
             "spellName": "Incarnation: Guardian of Ursoc",
             "row": "4",
             "col": "2",
-            "idOfReplacedSpell": "50334",
+            "idOfReplacedSpell": ["50334"],
             "iconId": "spell_druid_incarnation",
             "targetType": "SELF"
           },
@@ -5644,7 +5651,7 @@
           "207017": {
             "spellId": "207017",
             "spellName": "Alpha Challenge",
-            "idOfReplacedSpell": "6795",
+            "idOfReplacedSpell": ["6795"],
             "iconId": "ability_physical_taunt",
             "targetType": "MANY_ENEMY"
           },
@@ -6183,7 +6190,7 @@
           "248518": {
             "spellId": "248518",
             "spellName": "Interlope",
-            "idOfReplacedSpell": "34477",
+            "idOfReplacedSpell": ["34477"],
             "iconId": "ability_hunter_misdirection",
             "targetType": "ONE_FRIENDLY"
           }
@@ -6356,7 +6363,7 @@
             "spellName": "Chimaera Shot",
             "row": "3",
             "col": "2",
-            "idOfReplacedSpell": "185358",
+            "idOfReplacedSpell": ["185358"],
             "iconId": "ability_hunter_chimerashot2",
             "targetType": "ONE_ENEMY"
           }
@@ -6491,7 +6498,7 @@
             "spellName": "Butchery",
             "row": "1",
             "col": "2",
-            "idOfReplacedSpell": "187708",
+            "idOfReplacedSpell": ["187708"],
             "iconId": "ability_butcher_cleave",
             "targetType": "SELF"
           },
@@ -6500,7 +6507,7 @@
             "spellName": "Mongoose Bite",
             "row": "5",
             "col": "1",
-            "idOfReplacedSpell": "186270",
+            "idOfReplacedSpell": ["186270"],
             "iconId": "ability_hunter_mongoosebite",
             "targetType": "ONE_ENEMY"
           },
@@ -6890,7 +6897,7 @@
           },
           "203283": {
             "spellId": "203283",
-            "spellName": "Pyrokinesis",
+            "spellName": "Firestarter",
             "iconId": "ability_mage_firestarter",
             "isPassive": true
           },
@@ -7007,7 +7014,7 @@
             "spellName": "Lonely Winter",
             "row": "0",
             "col": "1",
-            "idOfReplacedSpell": "31687",
+            "idOfReplacedSpell": ["31687"],
             "iconId": "achievement_dungeon_frozenthrone",
             "isPassive": true
           },
@@ -7132,7 +7139,7 @@
           "198144": {
             "spellId": "198144",
             "spellName": "Ice Form",
-            "idOfReplacedSpell": "12472",
+            "idOfReplacedSpell": ["12472"],
             "iconId": "ability_mage_iceform",
             "targetType": "SELF"
           },
@@ -7481,7 +7488,7 @@
             "spellName": "Serenity",
             "row": "6",
             "col": "2",
-            "idOfReplacedSpell": "137639",
+            "idOfReplacedSpell": ["137639"],
             "iconId": "ability_monk_serenity",
             "targetType": "SELF"
           },
@@ -7538,7 +7545,7 @@
             "spellName": "Good Karma",
             "row": "3",
             "col": "1",
-            "idOfReplacedSpell": "175697",
+            "idOfReplacedSpell": ["175697"],
             "iconId": "ability_monk_touchofkarma",
             "isPassive": true
           },
@@ -7743,7 +7750,7 @@
             "spellName": "Song of Chi-Ji",
             "row": "3",
             "col": "1",
-            "idOfReplacedSpell": "175697",
+            "idOfReplacedSpell": ["175697"],
             "iconId": "inv_chaos_orb",
             "targetType": "SELF"
           },
@@ -7784,7 +7791,7 @@
             "spellName": "Invoke Chi-Ji, the Red Crane",
             "row": "5",
             "col": "2",
-            "idOfReplacedSpell": "322118",
+            "idOfReplacedSpell": ["322118"],
             "iconId": "inv_pet_cranegod",
             "targetType": "SELF"
           }
@@ -8069,7 +8076,7 @@
           "207025": {
             "spellId": "207025",
             "spellName": "Admonishment",
-            "idOfReplacedSpell": "115546",
+            "idOfReplacedSpell": ["115546"],
             "iconId": "ability_monk_provoke",
             "targetType": "MANY_ENEMY"
           },
@@ -8192,7 +8199,7 @@
             "spellName": "Crusade",
             "row": "6",
             "col": "1",
-            "idOfReplacedSpell": "31884",
+            "idOfReplacedSpell": ["31884"],
             "iconId": "ability_paladin_sanctifiedwrath",
             "targetType": "SELF"
           },
@@ -8301,7 +8308,7 @@
           "236186": {
             "spellId": "236186",
             "spellName": "Cleansing Light",
-            "idOfReplacedSpell": "213644",
+            "idOfReplacedSpell": ["213644"],
             "iconId": "spell_holy_renew",
             "targetType": "SELF"
           },
@@ -8434,7 +8441,7 @@
             "spellName": "Beacon of Virtue",
             "row": "6",
             "col": "2",
-            "idOfReplacedSpell": "53563",
+            "idOfReplacedSpell": ["53563"],
             "iconId": "ability_paladin_beaconofinsight",
             "targetType": "ONE_FRIENDLY"
           },
@@ -8451,7 +8458,7 @@
             "spellName": "Avenging Crusader",
             "row": "5",
             "col": "1",
-            "idOfReplacedSpell": "31884",
+            "idOfReplacedSpell": ["31884"],
             "iconId": "ability_paladin_veneration",
             "targetType": "SELF"
           },
@@ -8646,7 +8653,7 @@
             "spellName": "Blessing of Spellwarding",
             "row": "3",
             "col": "2",
-            "idOfReplacedSpell": "1022",
+            "idOfReplacedSpell": ["1022"],
             "iconId": "spell_holy_blessingofprotection",
             "targetType": "ONE_FRIENDLY"
           },
@@ -8655,7 +8662,7 @@
             "spellName": "Blessed Hammer",
             "row": "0",
             "col": "2",
-            "idOfReplacedSpell": "53595",
+            "idOfReplacedSpell": ["53595"],
             "iconId": "paladin_retribution",
             "targetType": "SELF"
           },
@@ -8756,7 +8763,7 @@
           "207028": {
             "spellId": "207028",
             "spellName": "Inquisition",
-            "idOfReplacedSpell": "62124",
+            "idOfReplacedSpell": ["62124"],
             "iconId": "spell_holy_unyieldingfaith",
             "targetType": "MANY_ENEMY"
           },
@@ -8799,14 +8806,14 @@
           "228049": {
             "spellId": "228049",
             "spellName": "Guardian of the Forgotten Queen",
-            "idOfReplacedSpell": "86659",
+            "idOfReplacedSpell": ["86659"],
             "iconId": "spell_holy_heroism",
             "targetType": "ONE_FRIENDLY"
           },
           "236186": {
             "spellId": "236186",
             "spellName": "Cleansing Light",
-            "idOfReplacedSpell": "213644",
+            "idOfReplacedSpell": ["213644"],
             "iconId": "spell_holy_renew",
             "targetType": "SELF"
           },
@@ -8923,7 +8930,7 @@
             "spellName": "Purge the Wicked",
             "row": "5",
             "col": "0",
-            "idOfReplacedSpell": "589",
+            "idOfReplacedSpell": ["589"],
             "iconId": "ability_mage_firestarter",
             "targetType": "MANY_ENEMY"
           },
@@ -9242,7 +9249,7 @@
           "213602": {
             "spellId": "213602",
             "spellName": "Greater Fade",
-            "idOfReplacedSpell": "586",
+            "idOfReplacedSpell": ["586"],
             "iconId": "spell_magic_lesserinvisibilty",
             "targetType": "SELF"
           },
@@ -9255,7 +9262,7 @@
           "215982": {
             "spellId": "215982",
             "spellName": "Spirit of the Redeemer",
-            "idOfReplacedSpell": "20711",
+            "idOfReplacedSpell": ["20711"],
             "iconId": "inv_enchant_essenceeternallarge",
             "isPassive": true
           },
@@ -9360,7 +9367,7 @@
             "spellName": "Mindbender",
             "row": "5",
             "col": "1",
-            "idOfReplacedSpell": "34433",
+            "idOfReplacedSpell": ["34433"],
             "iconId": "spell_shadow_soulleech_3",
             "targetType": "ONE_ENEMY"
           },
@@ -9369,17 +9376,9 @@
             "spellName": "Mind Bomb",
             "row": "3",
             "col": "1",
-            "idOfReplacedSpell": "8122",
+            "idOfReplacedSpell": ["8122"],
             "iconId": "spell_shadow_mindbomb",
             "targetType": "ONE_ENEMY"
-          },
-          "205385": {
-            "spellId": "205385",
-            "spellName": "Shadow Crash",
-            "row": "4",
-            "col": "2",
-            "iconId": "spell_shadow_shadowfury",
-            "targetType": "PLACED"
           },
           "238558": {
             "spellId": "238558",
@@ -9461,6 +9460,14 @@
             "iconId": "ability_priest_voidentropy",
             "targetType": "ONE_ENEMY"
           },
+          "342834": {
+            "spellId": "342834",
+            "spellName": "Shadow Crash",
+            "row": "4",
+            "col": "2",
+            "iconId": "spell_shadow_shadowfury",
+            "targetType": "PLACED"
+          },
           "345218": {
             "spellId": "345218",
             "spellName": "Hungering Void",
@@ -9498,7 +9505,7 @@
           "213602": {
             "spellId": "213602",
             "spellName": "Greater Fade",
-            "idOfReplacedSpell": "586",
+            "idOfReplacedSpell": ["586"],
             "iconId": "spell_magic_lesserinvisibilty",
             "targetType": "SELF"
           },
@@ -9867,7 +9874,7 @@
             "spellName": "Gloomblade",
             "row": "0",
             "col": "2",
-            "idOfReplacedSpell": "53",
+            "idOfReplacedSpell": ["53"],
             "iconId": "ability_ironmaidens_convulsiveshadows",
             "targetType": "MANY_ENEMY"
           },
@@ -10446,7 +10453,7 @@
           "204293": {
             "spellId": "204293",
             "spellName": "Spirit Link",
-            "idOfReplacedSpell": "98008",
+            "idOfReplacedSpell": ["98008"],
             "iconId": "spell_shaman_spiritlink",
             "targetType": "SELF"
           },
@@ -10589,7 +10596,7 @@
             "spellName": "Storm Elemental",
             "row": "3",
             "col": "1",
-            "idOfReplacedSpell": "198067",
+            "idOfReplacedSpell": ["198067"],
             "iconId": "inv_stormelemental",
             "targetType": "SELF"
           },
@@ -10712,7 +10719,7 @@
           "204393": {
             "spellId": "204393",
             "spellName": "Control of Lava",
-            "idOfReplacedSpell": "77756",
+            "idOfReplacedSpell": ["77756"],
             "iconId": "spell_shaman_lavaflow",
             "isPassive": true
           },
@@ -10905,6 +10912,8 @@
           "193876": {
             "spellId": "193876",
             "spellName": "Shamanism",
+            "idOfReplacedSpell": ["32182", "2825"],
+            "enableSpells": ["204362", "204361"],
             "iconId": "trade_archaeology_ancientorcshamanheaddress",
             "isPassive": true
           },
@@ -10944,6 +10953,20 @@
             "iconId": "spell_nature_groundingtotem",
             "targetType": "SELF"
           },
+          "204361": {
+            "spellId": "204361",
+            "spellName": "Bloodlust",
+            "hidden": true,
+            "iconId": "spell_nature_bloodlust",
+            "targetType": "ONE_FRIENDLY"
+          },
+          "204362": {
+            "spellId": "204362",
+            "spellName": "Bloodlust",
+            "hidden": true,
+            "iconId": "ability_shaman_heroism",
+            "targetType": "ONE_FRIENDLY"
+          },
           "204366": {
             "spellId": "204366",
             "spellName": "Thundercharge",
@@ -10953,7 +10976,7 @@
           "210918": {
             "spellId": "210918",
             "spellName": "Ethereal Form",
-            "idOfReplacedSpell": "108271",
+            "idOfReplacedSpell": ["108271"],
             "iconId": "spell_shaman_astralshift",
             "targetType": "SELF"
           },
@@ -11148,7 +11171,7 @@
           "200546": {
             "spellId": "200546",
             "spellName": "Bane of Havoc",
-            "idOfReplacedSpell": "80240",
+            "idOfReplacedSpell": ["80240"],
             "iconId": "warlock_pvp_banehavoc",
             "targetType": "PLACED"
           },
@@ -11311,7 +11334,7 @@
             "spellName": "Drain Soul",
             "row": "0",
             "col": "2",
-            "idOfReplacedSpell": "686",
+            "idOfReplacedSpell": ["686"],
             "iconId": "spell_shadow_haunting",
             "targetType": "ONE_ENEMY"
           },
@@ -11452,12 +11475,6 @@
             "spellName": "Rampant Afflictions",
             "iconId": "spell_shadow_unstableaffliction_3_purple",
             "isPassive": true
-          },
-          "344566": {
-            "spellId": "344566",
-            "spellName": "Rapid Contagion",
-            "iconId": "spell_shadow_deathsembrace",
-            "targetType": "SELF"
           }
         }
       },
@@ -11764,7 +11781,7 @@
             "spellName": "Impending Victory",
             "row": "1",
             "col": "1",
-            "idOfReplacedSpell": "34428",
+            "idOfReplacedSpell": ["34428"],
             "iconId": "spell_impending_victory",
             "targetType": "ONE_ENEMY"
           },
@@ -11965,7 +11982,7 @@
             "spellName": "Cleave",
             "row": "4",
             "col": "2",
-            "idOfReplacedSpell": "260708",
+            "idOfReplacedSpell": ["260708"],
             "iconId": "ability_warrior_cleave",
             "targetType": "SELF"
           },
@@ -12014,7 +12031,7 @@
             "spellName": "Ravager",
             "row": "6",
             "col": "2",
-            "idOfReplacedSpell": "227847",
+            "idOfReplacedSpell": ["227847"],
             "iconId": "warrior_talent_icon_ravager",
             "targetType": "PLACED"
           },
@@ -12047,7 +12064,7 @@
             "spellName": "Impending Victory",
             "row": "1",
             "col": "1",
-            "idOfReplacedSpell": "34428",
+            "idOfReplacedSpell": ["34428"],
             "iconId": "spell_impending_victory",
             "targetType": "ONE_ENEMY"
           },
@@ -12088,7 +12105,7 @@
             "spellName": "Warbreaker",
             "row": "4",
             "col": "1",
-            "idOfReplacedSpell": "167105",
+            "idOfReplacedSpell": ["167105"],
             "iconId": "inv_warbreaker",
             "targetType": "SELF"
           },
@@ -12243,7 +12260,7 @@
             "spellName": "Impending Victory",
             "row": "4",
             "col": "2",
-            "idOfReplacedSpell": "34428",
+            "idOfReplacedSpell": ["34428"],
             "iconId": "spell_impending_victory",
             "targetType": "ONE_ENEMY"
           },
@@ -12308,7 +12325,7 @@
             "spellName": "Devastator",
             "row": "0",
             "col": "2",
-            "idOfReplacedSpell": "20243",
+            "idOfReplacedSpell": ["20243"],
             "iconId": "inv_sword_11",
             "isPassive": true
           },
@@ -12395,7 +12412,7 @@
           "205800": {
             "spellId": "205800",
             "spellName": "Oppressor",
-            "idOfReplacedSpell": "355",
+            "idOfReplacedSpell": ["355"],
             "iconId": "spell_nature_reincarnation",
             "targetType": "MANY_ENEMY"
           },
@@ -13101,10 +13118,28 @@
           "targetType": "PLACED"
         },
         "317320": {
-          "spellId": "317320",
+          "spellId": "317349",
+          "idOfReplacedSpell": ["5308", "163201"],
+          "enableSpells": ["317485", "317349"],
           "spellName": "Condemn",
           "iconId": "ability_revendreth_warrior",
           "isPassive": true
+        },
+        "317349": {
+          "spec": ["ARMS", "PROTECTION"],
+          "spellId": "317349",
+          "hidden": true,
+          "spellName": "Condemn",
+          "iconId": "ability_revendreth_warrior",
+          "targetType": "ONE_ENEMY"
+        },
+        "317485": {
+          "spec": ["FURY"],
+          "spellId": "317485",
+          "hidden": true,
+          "spellName": "Condemn",
+          "iconId": "ability_revendreth_warrior",
+          "targetType": "ONE_ENEMY"
         }
       },
       "Night Fae": {

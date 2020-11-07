@@ -2,9 +2,11 @@ const puppeteer = require("puppeteer");
 const Mutex = require("async-mutex").Mutex;
 const fs = require("fs");
 const _ = require("lodash");
+const { performance } = require("perf_hooks");
 const spellData = require("./SpellsPhase1.json");
-const maxPages = 8;
-const promises = [];
+const maxPages = 20;
+let promises = [];
+const failedSpells = [];
 const cachedIds = {};
 const cachedData = require("./CachedPageSpellData.json");
 
@@ -25,162 +27,175 @@ async function getDetails(
   let pageSpellData;
   let usingCache = false;
   const release = await mutex.acquire();
-  if (!(spellId in cachedIds)) {
-    let page;
-    if (!(spellId in cachedData)) {
-      try {
-        let pages = await browser.pages();
-
-        while (pages.length > maxPages) {
-          pages = await browser.pages();
-          await sleep(500);
-        }
-
-        page = await browser.newPage();
-      } finally {
-        release();
-      }
-      let timeoutCounter = 1;
-      let didTimeout = true;
-      while (didTimeout) {
+  let page;
+  try {
+    if (!(spellId in cachedIds)) {
+      if (!(spellId in cachedData)) {
         try {
-          await page.goto(`https://wowhead.com/spell=${spellId}`, {
-            timeout: 30000 + 5000 * timeoutCounter
-          });
-          //could also grab rank 2/3/4 of spells to check if they add durations /reduce cds
-          pageSpellData = await page.evaluate(() => {
-            let datas = {};
-            datas["Description"] = Array.from(
-              document.querySelectorAll("span.q")
-            )
-              .map(e => e.textContent)
-              .join(" ");
-            const listedSpellName = document.querySelector("h1.heading-size-1");
-            const isRechargeCooldown = document
-              .querySelector(
-                `#tt${
-                  document.URL.match(/\d+/)[0]
-                } > table > tbody > tr:nth-child(1) > td > table:nth-child(1) > tbody > tr > td`
-              )
-              .textContent.match(/(\d\d?\.?\d?\d?) (\w+) recharge/);
-            const iconId = document
-              .querySelector("ul>li.icon-db-link>div>a")
-              .textContent.replace(/\s/g, "");
-            datas["iconId"] = iconId;
-            const correctPhraseForSpellReplace = document.querySelector(
-              "table>tbody>tr>td>span.q"
-            );
-            const replaceSpell = document.querySelector(
-              "table>tbody>tr>td>span.q>a"
-            );
-            if (
-              correctPhraseForSpellReplace &&
-              /^Replaces /.test(correctPhraseForSpellReplace.textContent) &&
-              replaceSpell &&
-              replaceSpell.href
-            ) {
-              const didMatch = replaceSpell.href.match(/spell=(\d+)/);
-              if (didMatch && didMatch[1]) {
-                datas["idOfReplacedSpell"] = didMatch[1];
-              }
-            }
-            Array.from(document.querySelectorAll("#spelldetails > tbody > tr"))
-              .map(el => {
-                const tharr = Array.from(
-                  el.querySelectorAll(
-                    "th:not(.grid-hideable-cell):not(.grid-nesting-wrapper)"
-                  )
-                ).flat();
-                const tdarr = Array.from(
-                  el.querySelectorAll(
-                    "td:not(.grid-hideable-cell):not(.grid-nesting-wrapper)"
-                  )
-                ).flat();
-                return tharr.forEach((e, i) => {
-                  if (e.textContent === "Flags") {
-                    datas[e.textContent] = Array.from(
-                      tdarr[i].querySelectorAll("li")
-                    ).map(el => el.textContent);
-                  } else {
-                    datas[e.textContent] = tdarr[i].textContent;
-                  }
-                });
-              })
-              .flat();
-            if (isRechargeCooldown) {
-              datas.Cooldown = `${isRechargeCooldown[1]} ${
-                isRechargeCooldown[2]
-              }`;
-            }
-            if (listedSpellName) {
-              datas.SpellName = listedSpellName.textContent;
-            }
-            return datas;
-          });
-          cachedData[spellId] = pageSpellData;
-          //process
-          didTimeout = false;
-        } catch (e) {
-          console.log(`Timeout on ${spellId}`, e);
-          didTimeout = !!timeoutCounter % 3;
-          timeoutCounter++;
+          let pages = await browser.pages();
+
+          while (pages.length > maxPages) {
+            pages = await browser.pages();
+            await sleep(500);
+          }
+
+          page = await browser.newPage();
+        } finally {
+          release();
         }
+        let timeoutCounter = 1;
+        let didTimeout = true;
+        while (didTimeout) {
+          try {
+            await page.goto(`https://wowhead.com/spell=${spellId}`, {
+              timeout: 30000 + 5000 * timeoutCounter
+            });
+            //could also grab rank 2/3/4 of spells to check if they add durations /reduce cds
+            pageSpellData = await page.evaluate(() => {
+              let datas = {};
+              datas["Description"] = Array.from(
+                document.querySelectorAll("span.q")
+              )
+                .map(e => e.textContent)
+                .join(" ");
+              const listedSpellName = document.querySelector(
+                "h1.heading-size-1"
+              );
+              const isRechargeCooldown = document
+                .querySelector(
+                  `#tt${
+                    document.URL.match(/\d+/)[0]
+                  } > table > tbody > tr:nth-child(1) > td > table:nth-child(1) > tbody > tr > td`
+                )
+                .textContent.match(/(\d\d?\.?\d?\d?) (\w+) recharge/);
+              const iconId = document
+                .querySelector("ul>li.icon-db-link>div>a")
+                .textContent.replace(/\s/g, "");
+              datas["iconId"] = iconId;
+              const correctPhraseForSpellReplace = document.querySelector(
+                "table>tbody>tr>td>span.q"
+              );
+              const replaceSpell = document.querySelector(
+                "table>tbody>tr>td>span.q>a"
+              );
+              if (
+                correctPhraseForSpellReplace &&
+                /^Replaces /.test(correctPhraseForSpellReplace.textContent) &&
+                replaceSpell &&
+                replaceSpell.href
+              ) {
+                const didMatch = replaceSpell.href.match(/spell=(\d+)/);
+                if (didMatch && didMatch[1]) {
+                  datas["idOfReplacedSpell"] = [didMatch[1]];
+                }
+              }
+              Array.from(
+                document.querySelectorAll("#spelldetails > tbody > tr")
+              )
+                .map(el => {
+                  const tharr = Array.from(
+                    el.querySelectorAll(
+                      "th:not(.grid-hideable-cell):not(.grid-nesting-wrapper)"
+                    )
+                  ).flat();
+                  const tdarr = Array.from(
+                    el.querySelectorAll(
+                      "td:not(.grid-hideable-cell):not(.grid-nesting-wrapper)"
+                    )
+                  ).flat();
+                  return tharr.forEach((e, i) => {
+                    if (e.textContent === "Flags") {
+                      datas[e.textContent] = Array.from(
+                        tdarr[i].querySelectorAll("li")
+                      ).map(el => el.textContent);
+                    } else {
+                      datas[e.textContent] = tdarr[i].textContent;
+                    }
+                  });
+                })
+                .flat();
+              if (isRechargeCooldown) {
+                datas.Cooldown = `${isRechargeCooldown[1]} ${
+                  isRechargeCooldown[2]
+                }`;
+              }
+              if (listedSpellName) {
+                datas.SpellName = listedSpellName.textContent;
+              }
+              return datas;
+            });
+            cachedData[spellId] = pageSpellData;
+            //process
+            didTimeout = false;
+          } catch (e) {
+            console.log(`Timeout on ${spellId}`, e);
+            didTimeout = !!timeoutCounter % 3;
+            timeoutCounter++;
+          }
+        }
+      } else {
+        release();
+        usingCache = true;
+        pageSpellData = cachedData[spellId];
+      }
+      if (pageSpellData) {
+        newDataForId = filterData(pageSpellData, spellId, spellName);
+        if (type === "Covenants") {
+          newDataForId = {
+            spellName: pageSpellData.SpellName,
+            ...newDataForId
+          };
+        }
+        if (!usingCache) {
+          console.log(
+            `${Object.keys(cachedIds).length + 1}/${promises.length} finished`
+          );
+        }
+        if (Object.keys(druidAffinities).includes(spellId)) {
+          newDataForId = {
+            ...newDataForId,
+            enabledSpells: druidAffinities[spellId]
+          };
+        }
+        cachedIds[spellId] = newDataForId;
+      }
+      if (page) {
+        await page.close();
       }
     } else {
+      newDataForId = cachedIds[spellId];
       release();
-      usingCache = true;
-      pageSpellData = cachedData[spellId];
     }
-    if (pageSpellData) {
-      newDataForId = filterData(pageSpellData, spellId, spellName);
-      if (type === "Covenants") {
-        newDataForId = {
-          spellName: pageSpellData.SpellName,
+    if (newDataForId) {
+      if (type === "Spells") {
+        spellData["Spells"][className][spellId] = {
+          ...spellData["Spells"][className][spellId],
+          ...newDataForId
+        };
+      } else if (type === "Talents") {
+        spellData["Talents"][className][spec]["Normal"][spellId] = {
+          ...spellData["Talents"][className][spec]["Normal"][spellId],
+          ...newDataForId
+        };
+      } else if (type === "PvPTalents") {
+        spellData["Talents"][className][spec]["PvP"][spellId] = {
+          ...spellData["Talents"][className][spec]["PvP"][spellId],
+          ...newDataForId
+        };
+      } else if (type === "Covenants") {
+        spellData["Covenants"][className][spec][spellId] = {
+          ...spellData["Covenants"][className][spec][spellId],
           ...newDataForId
         };
       }
-      if (!usingCache) {
-        console.log(
-          `${Object.keys(cachedIds).length + 1}/${promises.length} finished`
-        );
-      }
-      if (Object.keys(druidAffinities).includes(spellId)) {
-        newDataForId = {
-          ...newDataForId,
-          enabledSpells: druidAffinities[spellId]
-        };
-      }
-      cachedIds[spellId] = newDataForId;
     }
+  } catch (e) {
     if (page) {
       await page.close();
     }
-  } else {
-    newDataForId = cachedIds[spellId];
     release();
-  }
-  if (newDataForId) {
-    if (type === "Spells") {
-      spellData["Spells"][className][spellId] = {
-        ...spellData["Spells"][className][spellId],
-        ...newDataForId
-      };
-    } else if (type === "Talents") {
-      spellData["Talents"][className][spec]["Normal"][spellId] = {
-        ...spellData["Talents"][className][spec]["Normal"][spellId],
-        ...newDataForId
-      };
-    } else if (type === "PvPTalents") {
-      spellData["Talents"][className][spec]["PvP"][spellId] = {
-        ...spellData["Talents"][className][spec]["PvP"][spellId],
-        ...newDataForId
-      };
-    } else if (type === "Covenants") {
-      spellData["Covenants"][className][spec][spellId] = {
-        ...spellData["Covenants"][className][spec][spellId],
-        ...newDataForId
-      };
-    }
+    failedSpells.push(spellId);
+    await fs.appendFileSync("log.txt", e);
   }
 }
 
@@ -442,7 +457,9 @@ function filterData(pageSpellData, spellId, spellName) {
     spellName === "Rapture" ||
     spellName === "Interlope" ||
     spellName === "Thundercharge" ||
-    spellName === "Power Infusion";
+    spellName === "Power Infusion" ||
+    spellId === "204362" ||
+    spellId === "204361";
   const doesItSD = Object.keys(pageSpellData)
     .filter(topics => topics.includes("Effect"))
     .some(details => pageSpellData[details].includes("School Damage"));
@@ -857,6 +874,11 @@ async function runCovenants(browser, mutex) {
 
 const brokenSpells = [];
 const incorrectSpells = [];
+/**
+ * Takes in true data, which is the current working list of spells and compares it to newData, which is the newly created list of spells
+ * If there is something thats in both newData and trueData that is different, it will print to the screen, if there is something
+ * in newData that is not in true data, it will print the data structure with only the spells unique to newData.
+ */
 
 async function findDifferences(trueData, newData) {
   let classNames = Object.keys(trueData["Spells"]);
@@ -875,7 +897,14 @@ async function findDifferences(trueData, newData) {
           newData["Spells"][classNames[className]][spellIds[spellId]]
         );
       }
+      delete newData["Spells"][classNames[className]][spellIds[spellId]];
     }
+    if (Object.keys(newData["Spells"][classNames[className]]).length === 0) {
+      delete newData["Spells"][classNames[className]];
+    }
+  }
+  if (Object.keys(newData["Spells"]).length === 0) {
+    delete newData["Spells"];
   }
   classNames = Object.keys(trueData["Talents"]);
   for (const className in classNames) {
@@ -907,52 +936,85 @@ async function findDifferences(trueData, newData) {
             ][spellIds[spellId]]
           );
         }
+        delete newData["Talents"][classNames[className]][specNames[specName]][
+          "Normal"
+        ][spellIds[spellId]];
+      }
+      if (
+        Object.keys(
+          newData["Talents"][classNames[className]][specNames[specName]][
+            "Normal"
+          ]
+        ).length === 0
+      ) {
+        delete newData["Talents"][classNames[className]][specNames[specName]][
+          "Normal"
+        ];
       }
     }
-    classNames = Object.keys(trueData["Covenants"]);
-    for (const className in classNames) {
-      const covenantNames = Object.keys(
-        trueData["Covenants"][classNames[className]]
+  }
+
+  classNames = Object.keys(trueData["Covenants"]);
+  for (const className in classNames) {
+    const covenantNames = Object.keys(
+      trueData["Covenants"][classNames[className]]
+    );
+    for (const covenantName in covenantNames) {
+      const covenantSpellIds = Object.keys(
+        trueData["Covenants"][classNames[className]][
+          covenantNames[covenantName]
+        ]
       );
-      for (const covenantName in covenantNames) {
-        const covenantSpellIds = Object.keys(
-          trueData["Covenants"][classNames[className]][
+      for (const covenantSpellId in covenantSpellIds) {
+        if (
+          !_.isEqual(
+            newData["Covenants"][classNames[className]][
+              covenantNames[covenantName]
+            ][covenantSpellIds[covenantSpellId]],
+            trueData["Covenants"][classNames[className]][
+              covenantNames[covenantName]
+            ][covenantSpellIds[covenantSpellId]]
+          )
+        ) {
+          console.log(
+            `${trueData["Covenants"][classNames[className]][covenantNames[covenantName]][covenantSpellIds[covenantSpellId]].spellName} Not Equal`,
+            trueData["Covenants"][classNames[className]][
+              covenantNames[covenantName]
+            ][covenantSpellIds[covenantSpellId]],
+            newData["Covenants"][classNames[className]][
+              covenantNames[covenantName]
+            ][covenantSpellIds[covenantSpellId]]
+          );
+        }
+        delete newData["Covenants"][classNames[className]][
+          covenantNames[covenantName]
+        ][covenantSpellIds[covenantSpellId]];
+      }
+      if (
+        Object.keys(
+          newData["Covenants"][classNames[className]][
             covenantNames[covenantName]
           ]
-        );
-        for (const covenantSpellId in covenantSpellIds) {
-          if (
-            !_.isEqual(
-              newData["Covenants"][classNames[className]][
-                covenantNames[covenantName]
-              ][covenantSpellIds[covenantSpellId]],
-              trueData["Covenants"][classNames[className]][
-                covenantNames[covenantName]
-              ][covenantSpellIds[covenantSpellId]]
-            )
-          ) {
-            console.log(
-              `${trueData["Covenants"][classNames[className]][covenantNames[covenantName]][covenantSpellIds[covenantSpellId]].spellName} Not Equal`,
-              trueData["Covenants"][classNames[className]][
-                covenantNames[covenantName]
-              ][covenantSpellIds[covenantSpellId]],
-              newData["Covenants"][classNames[className]][
-                covenantNames[covenantName]
-              ][covenantSpellIds[covenantSpellId]]
-            );
-          }
-        }
+        ).length === 0
+      ) {
+        delete newData["Covenants"][classNames[className]][
+          covenantNames[covenantName]
+        ];
       }
     }
+    if (Object.keys(newData["Covenants"][classNames[className]]).length === 0) {
+      delete newData["Covenants"][classNames[className]];
+    }
+  }
+  if (Object.keys(newData["Covenants"]).length === 0) {
+    delete newData["Covenants"];
   }
   classNames = Object.keys(trueData["Talents"]);
   for (const className in classNames) {
     const specNames = Object.keys(trueData["Talents"][classNames[className]]);
     for (const specName in specNames) {
       const spellIds = Object.keys(
-        trueData["Talents"][classNames[className]][specNames[specName]][
-          "Normal"
-        ]
+        trueData["Talents"][classNames[className]][specNames[specName]]["PvP"]
       );
       for (spellId in spellIds) {
         if (
@@ -975,9 +1037,38 @@ async function findDifferences(trueData, newData) {
             ][spellIds[spellId]]
           );
         }
+        delete newData["Talents"][classNames[className]][specNames[specName]][
+          "PvP"
+        ][spellIds[spellId]];
+      }
+      if (
+        Object.keys(
+          newData["Talents"][classNames[className]][specNames[specName]]["PvP"]
+        ).length === 0
+      ) {
+        delete newData["Talents"][classNames[className]][specNames[specName]][
+          "PvP"
+        ];
+      }
+      if (
+        Object.keys(
+          newData["Talents"][classNames[className]][specNames[specName]]
+        ).length === 0
+      ) {
+        delete newData["Talents"][classNames[className]][specNames[specName]];
       }
     }
+    if (Object.keys(newData["Talents"][classNames[className]]).length === 0) {
+      delete newData["Talents"][classNames[className]];
+    }
   }
+  if (Object.keys(newData["Talents"]).length === 0) {
+    delete newData["Talents"];
+  }
+
+  let jsonToWrite = JSON.stringify(newData);
+  fs.writeFileSync(`NewDataSpellsNotInTrueData.json`, jsonToWrite);
+  console.log(jsonToWrite);
 }
 
 function checkForImprovements(targetData, calculatedData) {
@@ -1113,39 +1204,53 @@ const testingWorkingKey = true;
 
 async function runAllThings() {
   const browser = await puppeteer.launch();
+  let t0 = performance.now();
   const mutex = new Mutex();
   runSpells(browser, mutex);
   runTalents(browser, mutex);
   runPvPTalents(browser, mutex);
   runCovenants(browser, mutex);
+  //Since there are alot of repeat spells, shuffling increases the chance that we can use cached data for them.
+  promises = _.shuffle(promises);
 
   Promise.all(promises).then(async () => {
-    let jsonToWrite = JSON.stringify(spellData);
-    const currentSpellData = require("./SpellsPhase2.json");
-    // const brokeSpellsFixedKey = require("./SpellsPhase2AllBrokenSpellsFIXED.json");
-    const stringifiedOldCachedData = await fs.readFileSync(
-      "./CachedPageSpellData.json"
-    );
-    const oldCachedData = JSON.parse(stringifiedOldCachedData);
-    if (!_.isEqual(oldCachedData, cachedData)) {
-      console.log("Cached Data updating");
+    if (failedSpells.length > 0) {
       fs.writeFileSync(
         `./CachedPageSpellData.json`,
         JSON.stringify(cachedData)
       );
-    }
-    if (testingWorkingKey) {
-      fs.writeFileSync(
-        `SpellsPhase2AllSpellsWorkingKeyFirstRunCovenants.json`,
-        jsonToWrite
+      console.log(
+        `${failedSpells.length} failed spells. Cached data has been updated.`
       );
-      if (!_.isEqual(currentSpellData, spellData)) {
-        findDifferences(currentSpellData, spellData);
-      }
     } else {
-      checkForImprovements(brokeSpellsFixedKey, spellData);
-      //fs.writeFileSync(`SpellsPhase2AllBrokenSpells.json`, jsonToWrite);
+      let jsonToWrite = JSON.stringify(spellData);
+      const currentSpellData = require("./SpellsPhase2.json");
+      // const brokeSpellsFixedKey = require("./SpellsPhase2AllBrokenSpellsFIXED.json");
+      const stringifiedOldCachedData = await fs.readFileSync(
+        "./CachedPageSpellData.json"
+      );
+      const oldCachedData = JSON.parse(stringifiedOldCachedData);
+      if (!_.isEqual(oldCachedData, cachedData)) {
+        console.log("Cached Data updating");
+        fs.writeFileSync(
+          `./CachedPageSpellData.json`,
+          JSON.stringify(cachedData)
+        );
+      }
+      if (testingWorkingKey) {
+        if (!_.isEqual(currentSpellData, spellData)) {
+          fs.writeFileSync(`SpellsPhase2New.json`, jsonToWrite);
+          findDifferences(currentSpellData, spellData);
+        } else {
+          console.log("equal");
+        }
+      } else {
+        checkForImprovements(brokeSpellsFixedKey, spellData);
+        //fs.writeFileSync(`SpellsPhase2AllBrokenSpells.json`, jsonToWrite);
+      }
     }
+    let t1 = performance.now();
+    console.log(`finished in ${(t1 - t0) / 1000} seconds`);
     browser.close();
   });
 }

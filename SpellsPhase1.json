@@ -1597,6 +1597,11 @@
         "spellId": "32375",
         "spellName": "Mass Dispel"
       },
+      "32379": {
+        "spec": ["DISCIPLINE", "HOLY", "SHADOW"],
+        "spellId": "32379",
+        "spellName": "Shadow Word: Death"
+      },
       "33076": {
         "spec": ["HOLY"],
         "spellId": "33076",
@@ -3313,6 +3318,12 @@
             "row": "6",
             "col": "2"
           },
+          "275144": {
+            "spellId": "275144",
+            "spellName": "Unbound Chaos",
+            "row": "2",
+            "col": "1"
+          },
           "320374": {
             "spellId": "320374",
             "spellName": "Burning Hatred",
@@ -3324,12 +3335,6 @@
             "spellName": "Glaive Tempest",
             "row": "2",
             "col": "2"
-          },
-          "347461": {
-            "spellId": "347461",
-            "spellName": "Unbound Chaos",
-            "row": "2",
-            "col": "1"
           }
         },
         "PvP": {
@@ -4506,7 +4511,7 @@
           "198100": { "spellId": "198100", "spellName": "Kleptomania" },
           "203275": { "spellId": "203275", "spellName": "Tinder" },
           "203280": { "spellId": "203280", "spellName": "World in Flames" },
-          "203283": { "spellId": "203283", "spellName": "Pyrokinesis" },
+          "203283": { "spellId": "203283", "spellName": "Firestarter" },
           "203284": { "spellId": "203284", "spellName": "Flamecannon" },
           "203286": { "spellId": "203286", "spellName": "Greater Pyroblast" },
           "236788": { "spellId": "236788", "spellName": "Dampened Magic" },
@@ -6024,12 +6029,6 @@
             "row": "3",
             "col": "1"
           },
-          "205385": {
-            "spellId": "205385",
-            "spellName": "Shadow Crash",
-            "row": "4",
-            "col": "2"
-          },
           "238558": {
             "spellId": "238558",
             "spellName": "Misery",
@@ -6088,6 +6087,12 @@
             "spellId": "341385",
             "spellName": "Searing Nightmare",
             "row": "2",
+            "col": "2"
+          },
+          "342834": {
+            "spellId": "342834",
+            "spellName": "Shadow Crash",
+            "row": "4",
             "col": "2"
           },
           "345218": {
@@ -6963,13 +6968,28 @@
           }
         },
         "PvP": {
-          "193876": { "spellId": "193876", "spellName": "Shamanism" },
+          "193876": {
+            "spellId": "193876",
+            "spellName": "Shamanism",
+            "idOfReplacedSpell": ["32182", "2825"],
+            "enableSpells": ["204362", "204361"]
+          },
           "204247": { "spellId": "204247", "spellName": "Purifying Waters" },
           "204261": { "spellId": "204261", "spellName": "Spectral Recovery" },
           "204264": { "spellId": "204264", "spellName": "Swelling Waves" },
           "204330": { "spellId": "204330", "spellName": "Skyfury Totem" },
           "204331": { "spellId": "204331", "spellName": "Counterstrike Totem" },
           "204336": { "spellId": "204336", "spellName": "Grounding Totem" },
+          "204361": {
+            "spellId": "204361",
+            "spellName": "Bloodlust",
+            "hidden": true
+          },
+          "204362": {
+            "spellId": "204362",
+            "spellName": "Bloodlust",
+            "hidden": true
+          },
           "204366": { "spellId": "204366", "spellName": "Thundercharge" },
           "210918": { "spellId": "210918", "spellName": "Ethereal Form" },
           "289874": { "spellId": "289874", "spellName": "Ride the Lightning" }
@@ -7261,8 +7281,7 @@
           "264106": { "spellId": "264106", "spellName": "Deathbolt" },
           "285933": { "spellId": "285933", "spellName": "Demon Armor" },
           "328774": { "spellId": "328774", "spellName": "Amplify Curse" },
-          "335052": { "spellId": "335052", "spellName": "Rampant Afflictions" },
-          "344566": { "spellId": "344566", "spellName": "Rapid Contagion" }
+          "335052": { "spellId": "335052", "spellName": "Rampant Afflictions" }
         }
       },
       "DEMONOLOGY": {
@@ -7860,8 +7879,8 @@
   "Covenants": {
     "Death Knight": {
       "Kyrian": {
-        "324739": { "spellId": "324739" },
-        "312202": { "spellId": "312202" }
+        "312202": { "spellId": "312202" },
+        "324739": { "spellId": "324739" }
       },
       "Venthyr": {
         "300728": { "spellId": "300728" },
@@ -7878,8 +7897,8 @@
     },
     "Demon Hunter": {
       "Kyrian": {
-        "324739": { "spellId": "324739" },
-        "306830": { "spellId": "306830" }
+        "306830": { "spellId": "306830" },
+        "324739": { "spellId": "324739" }
       },
       "Venthyr": {
         "300728": { "spellId": "300728" },
@@ -7914,8 +7933,8 @@
     },
     "Hunter": {
       "Kyrian": {
-        "324739": { "spellId": "324739" },
-        "308491": { "spellId": "308491" }
+        "308491": { "spellId": "308491" },
+        "324739": { "spellId": "324739" }
       },
       "Venthyr": {
         "300728": { "spellId": "300728" },
@@ -7932,8 +7951,8 @@
     },
     "Mage": {
       "Kyrian": {
-        "324739": { "spellId": "324739" },
-        "307443": { "spellId": "307443" }
+        "307443": { "spellId": "307443" },
+        "324739": { "spellId": "324739" }
       },
       "Venthyr": {
         "300728": { "spellId": "300728" },
@@ -7950,8 +7969,8 @@
     },
     "Monk": {
       "Kyrian": {
-        "324739": { "spellId": "324739" },
-        "310454": { "spellId": "310454" }
+        "310454": { "spellId": "310454" },
+        "324739": { "spellId": "324739" }
       },
       "Venthyr": {
         "300728": { "spellId": "300728" },
@@ -7968,8 +7987,8 @@
     },
     "Paladin": {
       "Kyrian": {
-        "324739": { "spellId": "324739" },
-        "304971": { "spellId": "304971" }
+        "304971": { "spellId": "304971" },
+        "324739": { "spellId": "324739" }
       },
       "Venthyr": {
         "300728": { "spellId": "300728" },
@@ -8004,8 +8023,8 @@
     },
     "Rogue": {
       "Kyrian": {
-        "324739": { "spellId": "324739" },
-        "323547": { "spellId": "323547" }
+        "323547": { "spellId": "323547" },
+        "324739": { "spellId": "324739" }
       },
       "Venthyr": {
         "300728": { "spellId": "300728" },
@@ -8022,8 +8041,8 @@
     },
     "Shaman": {
       "Kyrian": {
-        "324739": { "spellId": "324739" },
-        "324386": { "spellId": "324386" }
+        "324386": { "spellId": "324386" },
+        "324739": { "spellId": "324739" }
       },
       "Venthyr": {
         "300728": { "spellId": "300728" },
@@ -8040,8 +8059,8 @@
     },
     "Warlock": {
       "Kyrian": {
-        "324739": { "spellId": "324739" },
-        "312321": { "spellId": "312321" }
+        "312321": { "spellId": "312321" },
+        "324739": { "spellId": "324739" }
       },
       "Venthyr": {
         "300728": { "spellId": "300728" },
@@ -8058,12 +8077,22 @@
     },
     "Warrior": {
       "Kyrian": {
-        "324739": { "spellId": "324739" },
-        "307865": { "spellId": "307865" }
+        "307865": { "spellId": "307865" },
+        "324739": { "spellId": "324739" }
       },
       "Venthyr": {
         "300728": { "spellId": "300728" },
-        "317320": { "spellId": "317320" }
+        "317320": {
+          "spellId": "317349",
+          "idOfReplacedSpell": ["5308", "163201"],
+          "enableSpells": ["317485", "317349"]
+        },
+        "317349": {
+          "spec": ["ARMS", "PROTECTION"],
+          "spellId": "317349",
+          "hidden": true
+        },
+        "317485": { "spec": ["FURY"], "spellId": "317485", "hidden": true }
       },
       "Night Fae": {
         "310143": { "spellId": "310143" },
