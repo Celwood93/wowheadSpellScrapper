@@ -51,7 +51,7 @@ async function scrapeSpell(classType, browser, mutex) {
     //use blacklist to ignore spells at certain levels, and always ignore passives.
     //Then go through talents, make sure to grab the row and column info - issue here with the fact some are passive
     //Go through pvp talents aswell - some also passive
-    //then grab covenant abilities - replace the kyrian one with https://www.wowhead.com/item=177278/phial-of-serenity
+    //then grab covenant abilities - replace the kyrian one with https://www.wowhead.com/item=177278/phial-of-serenity //doesnt work cause its an item
     const talentData = await page.evaluate(() => {
       tds = Array.from(
         document.querySelectorAll(
@@ -191,9 +191,6 @@ async function scrapeSpell(classType, browser, mutex) {
       let spellID = found[1];
       const covenantName = covenantOptions[covNum];
       //if covenant is Summon steward switch to vial
-      if (spellID === "324739") {
-        spellID = "177278"; //Vial of serenity
-      }
       if (!(covenantName in spellIds["Covenants"][classtype])) {
         spellIds["Covenants"][classtype][covenantName] = {};
       }

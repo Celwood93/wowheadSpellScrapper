@@ -12442,218 +12442,602 @@
   "Covenants": {
     "Death Knight": {
       "Kyrian": {
-        "324739": { "spellId": "324739" },
-        "312202": { "spellId": "312202" }
+        "312202": {
+          "spellId": "312202",
+          "iconId": "ability_bastion_deathknight",
+          "targetType": "ONE_ENEMY"
+        },
+        "324739": {
+          "spellId": "324739",
+          "iconId": "ability_kyrian_summonsteward",
+          "targetType": "SELF"
+        }
       },
       "Venthyr": {
-        "300728": { "spellId": "300728" },
-        "311648": { "spellId": "311648" }
+        "300728": {
+          "spellId": "300728",
+          "iconId": "ability_venthyr_doorofshadows",
+          "targetType": "PLACED"
+        },
+        "311648": {
+          "spellId": "311648",
+          "iconId": "ability_revendreth_deathknight",
+          "targetType": "SELF"
+        }
       },
       "Night Fae": {
-        "310143": { "spellId": "310143" },
-        "324128": { "spellId": "324128" }
+        "310143": {
+          "spellId": "310143",
+          "iconId": "ability_nightfae_flicker",
+          "targetType": "SELF"
+        },
+        "324128": {
+          "spellId": "324128",
+          "iconId": "ability_ardenweald_deathknight",
+          "targetType": "PLACED"
+        }
       },
       "Necrolord": {
-        "315443": { "spellId": "315443" },
-        "324631": { "spellId": "324631" }
+        "315443": {
+          "spellId": "315443",
+          "iconId": "ability_maldraxxus_deathknight",
+          "targetType": "ONE_ENEMY"
+        },
+        "324631": {
+          "spellId": "324631",
+          "iconId": "ability_necrolord_fleshcraft",
+          "targetType": "ONE_ENEMY"
+        }
       }
     },
     "Demon Hunter": {
       "Kyrian": {
-        "324739": { "spellId": "324739" },
-        "306830": { "spellId": "306830" }
+        "306830": {
+          "spellId": "306830",
+          "iconId": "ability_bastion_demonhunter",
+          "targetType": "PLACED"
+        },
+        "324739": {
+          "spellId": "324739",
+          "iconId": "ability_kyrian_summonsteward",
+          "targetType": "SELF"
+        }
       },
       "Venthyr": {
-        "300728": { "spellId": "300728" },
-        "317009": { "spellId": "317009" }
+        "300728": {
+          "spellId": "300728",
+          "iconId": "ability_venthyr_doorofshadows",
+          "targetType": "PLACED"
+        },
+        "317009": {
+          "spellId": "317009",
+          "iconId": "ability_revendreth_demonhunter",
+          "targetType": "ONE_ENEMY"
+        }
       },
       "Night Fae": {
-        "310143": { "spellId": "310143" },
-        "323639": { "spellId": "323639" }
+        "310143": {
+          "spellId": "310143",
+          "iconId": "ability_nightfae_flicker",
+          "targetType": "SELF"
+        },
+        "323639": {
+          "spellId": "323639",
+          "iconId": "ability_ardenweald_demonhunter",
+          "targetType": "ONE_ENEMY"
+        }
       },
       "Necrolord": {
-        "324631": { "spellId": "324631" },
-        "329554": { "spellId": "329554" }
+        "324631": {
+          "spellId": "324631",
+          "iconId": "ability_necrolord_fleshcraft",
+          "targetType": "ONE_ENEMY"
+        },
+        "329554": {
+          "spellId": "329554",
+          "iconId": "ability_maldraxxus_demonhunter",
+          "targetType": "SELF"
+        }
       }
     },
     "Druid": {
       "Kyrian": {
-        "324739": { "spellId": "324739" },
-        "326434": { "spellId": "326434" }
+        "324739": {
+          "spellId": "324739",
+          "iconId": "ability_kyrian_summonsteward",
+          "targetType": "SELF"
+        },
+        "326434": {
+          "spellId": "326434",
+          "iconId": "ability_bastion_druid",
+          "targetType": "ONE_FRIENDLY"
+        }
       },
       "Venthyr": {
-        "300728": { "spellId": "300728" },
-        "323546": { "spellId": "323546" }
+        "300728": {
+          "spellId": "300728",
+          "iconId": "ability_venthyr_doorofshadows",
+          "targetType": "PLACED"
+        },
+        "323546": {
+          "spellId": "323546",
+          "iconId": "ability_revendreth_druid",
+          "targetType": "SELF"
+        }
       },
       "Night Fae": {
-        "310143": { "spellId": "310143" },
-        "323764": { "spellId": "323764" }
+        "310143": {
+          "spellId": "310143",
+          "iconId": "ability_nightfae_flicker",
+          "targetType": "SELF"
+        },
+        "323764": {
+          "spellId": "323764",
+          "iconId": "ability_ardenweald_druid",
+          "targetType": "SELF"
+        }
       },
       "Necrolord": {
-        "324631": { "spellId": "324631" },
-        "325727": { "spellId": "325727" }
+        "324631": {
+          "spellId": "324631",
+          "iconId": "ability_necrolord_fleshcraft",
+          "targetType": "ONE_ENEMY"
+        },
+        "325727": {
+          "spellId": "325727",
+          "iconId": "ability_maldraxxus_druid",
+          "targetType": "ONE_ENEMY"
+        }
       }
     },
     "Hunter": {
       "Kyrian": {
-        "324739": { "spellId": "324739" },
-        "308491": { "spellId": "308491" }
+        "308491": {
+          "spellId": "308491",
+          "iconId": "ability_bastion_hunter",
+          "targetType": "PLACED"
+        },
+        "324739": {
+          "spellId": "324739",
+          "iconId": "ability_kyrian_summonsteward",
+          "targetType": "SELF"
+        }
       },
       "Venthyr": {
-        "300728": { "spellId": "300728" },
-        "324149": { "spellId": "324149" }
+        "300728": {
+          "spellId": "300728",
+          "iconId": "ability_venthyr_doorofshadows",
+          "targetType": "PLACED"
+        },
+        "324149": {
+          "spellId": "324149",
+          "iconId": "ability_revendreth_hunter",
+          "targetType": "ONE_ENEMY"
+        }
       },
       "Night Fae": {
-        "310143": { "spellId": "310143" },
-        "328231": { "spellId": "328231" }
+        "310143": {
+          "spellId": "310143",
+          "iconId": "ability_nightfae_flicker",
+          "targetType": "SELF"
+        },
+        "328231": {
+          "spellId": "328231",
+          "iconId": "ability_ardenweald_hunter",
+          "targetType": "PLACED"
+        }
       },
       "Necrolord": {
-        "324631": { "spellId": "324631" },
-        "325028": { "spellId": "325028" }
+        "324631": {
+          "spellId": "324631",
+          "iconId": "ability_necrolord_fleshcraft",
+          "targetType": "ONE_ENEMY"
+        },
+        "325028": {
+          "spellId": "325028",
+          "iconId": "ability_maldraxxus_hunter",
+          "targetType": "ONE_ENEMY"
+        }
       }
     },
     "Mage": {
       "Kyrian": {
-        "324739": { "spellId": "324739" },
-        "307443": { "spellId": "307443" }
+        "307443": {
+          "spellId": "307443",
+          "iconId": "ability_bastion_mage",
+          "targetType": "ONE_ENEMY"
+        },
+        "324739": {
+          "spellId": "324739",
+          "iconId": "ability_kyrian_summonsteward",
+          "targetType": "SELF"
+        }
       },
       "Venthyr": {
-        "300728": { "spellId": "300728" },
-        "314793": { "spellId": "314793" }
+        "300728": {
+          "spellId": "300728",
+          "iconId": "ability_venthyr_doorofshadows",
+          "targetType": "PLACED"
+        },
+        "314793": {
+          "spellId": "314793",
+          "iconId": "ability_revendreth_mage",
+          "targetType": "ONE_ENEMY"
+        }
       },
       "Night Fae": {
-        "310143": { "spellId": "310143" },
-        "314791": { "spellId": "314791" }
+        "310143": {
+          "spellId": "310143",
+          "iconId": "ability_nightfae_flicker",
+          "targetType": "SELF"
+        },
+        "314791": {
+          "spellId": "314791",
+          "iconId": "ability_ardenweald_mage",
+          "targetType": "SELF"
+        }
       },
       "Necrolord": {
-        "324220": { "spellId": "324220" },
-        "324631": { "spellId": "324631" }
+        "324220": {
+          "spellId": "324220",
+          "iconId": "ability_maldraxxus_mage",
+          "targetType": "SELF"
+        },
+        "324631": {
+          "spellId": "324631",
+          "iconId": "ability_necrolord_fleshcraft",
+          "targetType": "ONE_ENEMY"
+        }
       }
     },
     "Monk": {
       "Kyrian": {
-        "324739": { "spellId": "324739" },
-        "310454": { "spellId": "310454" }
+        "310454": {
+          "spellId": "310454",
+          "iconId": "ability_bastion_monk",
+          "targetType": "SELF"
+        },
+        "324739": {
+          "spellId": "324739",
+          "iconId": "ability_kyrian_summonsteward",
+          "targetType": "SELF"
+        }
       },
       "Venthyr": {
-        "300728": { "spellId": "300728" },
-        "326860": { "spellId": "326860" }
+        "300728": {
+          "spellId": "300728",
+          "iconId": "ability_venthyr_doorofshadows",
+          "targetType": "PLACED"
+        },
+        "326860": {
+          "spellId": "326860",
+          "iconId": "ability_revendreth_monk",
+          "targetType": "SELF"
+        }
       },
       "Night Fae": {
-        "310143": { "spellId": "310143" },
-        "327104": { "spellId": "327104" }
+        "310143": {
+          "spellId": "310143",
+          "iconId": "ability_nightfae_flicker",
+          "targetType": "SELF"
+        },
+        "327104": {
+          "spellId": "327104",
+          "iconId": "ability_ardenweald_monk",
+          "targetType": "PLACED"
+        }
       },
       "Necrolord": {
-        "324631": { "spellId": "324631" },
-        "325216": { "spellId": "325216" }
+        "324631": {
+          "spellId": "324631",
+          "iconId": "ability_necrolord_fleshcraft",
+          "targetType": "ONE_ENEMY"
+        },
+        "325216": {
+          "spellId": "325216",
+          "iconId": "ability_maldraxxus_monk",
+          "targetType": "ONE_ENEMY"
+        }
       }
     },
     "Paladin": {
       "Kyrian": {
-        "324739": { "spellId": "324739" },
-        "304971": { "spellId": "304971" }
+        "304971": {
+          "spellId": "304971",
+          "iconId": "ability_bastion_paladin",
+          "targetType": "PLACED"
+        },
+        "324739": {
+          "spellId": "324739",
+          "iconId": "ability_kyrian_summonsteward",
+          "targetType": "SELF"
+        }
       },
       "Venthyr": {
-        "300728": { "spellId": "300728" },
-        "316958": { "spellId": "316958" }
+        "300728": {
+          "spellId": "300728",
+          "iconId": "ability_venthyr_doorofshadows",
+          "targetType": "PLACED"
+        },
+        "316958": {
+          "spellId": "316958",
+          "iconId": "ability_revendreth_paladin",
+          "targetType": "PLACED"
+        }
       },
       "Night Fae": {
-        "310143": { "spellId": "310143" },
-        "328620": { "spellId": "328620" }
+        "310143": {
+          "spellId": "310143",
+          "iconId": "ability_nightfae_flicker",
+          "targetType": "SELF"
+        },
+        "328620": {
+          "spellId": "328620",
+          "iconId": "ability_ardenweald_paladin_summer",
+          "targetType": "ONE_FRIENDLY"
+        }
       },
       "Necrolord": {
-        "324631": { "spellId": "324631" },
-        "328204": { "spellId": "328204" }
+        "324631": {
+          "spellId": "324631",
+          "iconId": "ability_necrolord_fleshcraft",
+          "targetType": "ONE_ENEMY"
+        },
+        "328204": {
+          "spellId": "328204",
+          "iconId": "ability_maldraxxus_paladin",
+          "targetType": "ONE_ENEMY"
+        }
       }
     },
     "Priest": {
       "Kyrian": {
-        "324739": { "spellId": "324739" },
-        "325013": { "spellId": "325013" }
+        "324739": {
+          "spellId": "324739",
+          "iconId": "ability_kyrian_summonsteward",
+          "targetType": "SELF"
+        },
+        "325013": {
+          "spellId": "325013",
+          "iconId": "ability_bastion_priest",
+          "targetType": "SELF"
+        }
       },
       "Venthyr": {
-        "300728": { "spellId": "300728" },
-        "323673": { "spellId": "323673" }
+        "300728": {
+          "spellId": "300728",
+          "iconId": "ability_venthyr_doorofshadows",
+          "targetType": "PLACED"
+        },
+        "323673": {
+          "spellId": "323673",
+          "iconId": "ability_revendreth_priest",
+          "targetType": "ONE_ENEMY"
+        }
       },
       "Night Fae": {
-        "310143": { "spellId": "310143" },
-        "327661": { "spellId": "327661" }
+        "310143": {
+          "spellId": "310143",
+          "iconId": "ability_nightfae_flicker",
+          "targetType": "SELF"
+        },
+        "327661": {
+          "spellId": "327661",
+          "iconId": "ability_ardenweald_priest",
+          "targetType": "SELF"
+        }
       },
       "Necrolord": {
-        "324631": { "spellId": "324631" },
-        "324724": { "spellId": "324724" }
+        "324631": {
+          "spellId": "324631",
+          "iconId": "ability_necrolord_fleshcraft",
+          "targetType": "ONE_ENEMY"
+        },
+        "324724": {
+          "spellId": "324724",
+          "iconId": "ability_maldraxxus_priest",
+          "targetType": "ONE_FRIENDLY"
+        }
       }
     },
     "Rogue": {
       "Kyrian": {
-        "324739": { "spellId": "324739" },
-        "323547": { "spellId": "323547" }
+        "323547": {
+          "spellId": "323547",
+          "iconId": "ability_bastion_rogue",
+          "targetType": "ONE_ENEMY"
+        },
+        "324739": {
+          "spellId": "324739",
+          "iconId": "ability_kyrian_summonsteward",
+          "targetType": "SELF"
+        }
       },
       "Venthyr": {
-        "300728": { "spellId": "300728" },
-        "323654": { "spellId": "323654" }
+        "300728": {
+          "spellId": "300728",
+          "iconId": "ability_venthyr_doorofshadows",
+          "targetType": "PLACED"
+        },
+        "323654": {
+          "spellId": "323654",
+          "iconId": "ability_revendreth_rogue",
+          "targetType": "MANY_ENEMY"
+        }
       },
       "Night Fae": {
-        "310143": { "spellId": "310143" },
-        "328305": { "spellId": "328305" }
+        "310143": {
+          "spellId": "310143",
+          "iconId": "ability_nightfae_flicker",
+          "targetType": "SELF"
+        },
+        "328305": {
+          "spellId": "328305",
+          "iconId": "ability_ardenweald_rogue",
+          "targetType": "ONE_ENEMY"
+        }
       },
       "Necrolord": {
-        "324631": { "spellId": "324631" },
-        "328547": { "spellId": "328547" }
+        "324631": {
+          "spellId": "324631",
+          "iconId": "ability_necrolord_fleshcraft",
+          "targetType": "ONE_ENEMY"
+        },
+        "328547": {
+          "spellId": "328547",
+          "iconId": "ability_maldraxxus_rogue",
+          "targetType": "ONE_ENEMY"
+        }
       }
     },
     "Shaman": {
       "Kyrian": {
-        "324739": { "spellId": "324739" },
-        "324386": { "spellId": "324386" }
+        "324386": {
+          "spellId": "324386",
+          "iconId": "ability_bastion_shaman",
+          "targetType": "SELF"
+        },
+        "324739": {
+          "spellId": "324739",
+          "iconId": "ability_kyrian_summonsteward",
+          "targetType": "SELF"
+        }
       },
       "Venthyr": {
-        "300728": { "spellId": "300728" },
-        "320674": { "spellId": "320674" }
+        "300728": {
+          "spellId": "300728",
+          "iconId": "ability_venthyr_doorofshadows",
+          "targetType": "PLACED"
+        },
+        "320674": {
+          "spellId": "320674",
+          "iconId": "ability_revendreth_shaman",
+          "targetType": "PLACED"
+        }
       },
       "Night Fae": {
-        "310143": { "spellId": "310143" },
-        "328923": { "spellId": "328923" }
+        "310143": {
+          "spellId": "310143",
+          "iconId": "ability_nightfae_flicker",
+          "targetType": "SELF"
+        },
+        "328923": {
+          "spellId": "328923",
+          "iconId": "ability_ardenweald_shaman",
+          "targetType": "PLACED"
+        }
       },
       "Necrolord": {
-        "324631": { "spellId": "324631" },
-        "326059": { "spellId": "326059" }
+        "324631": {
+          "spellId": "324631",
+          "iconId": "ability_necrolord_fleshcraft",
+          "targetType": "ONE_ENEMY"
+        },
+        "326059": {
+          "spellId": "326059",
+          "iconId": "ability_maldraxxus_shaman",
+          "targetType": "ONE_ENEMY"
+        }
       }
     },
     "Warlock": {
       "Kyrian": {
-        "324739": { "spellId": "324739" },
-        "312321": { "spellId": "312321" }
+        "312321": {
+          "spellId": "312321",
+          "iconId": "ability_bastion_warlock",
+          "targetType": "ONE_ENEMY"
+        },
+        "324739": {
+          "spellId": "324739",
+          "iconId": "ability_kyrian_summonsteward",
+          "targetType": "SELF"
+        }
       },
       "Venthyr": {
-        "300728": { "spellId": "300728" },
-        "321792": { "spellId": "321792" }
+        "300728": {
+          "spellId": "300728",
+          "iconId": "ability_venthyr_doorofshadows",
+          "targetType": "PLACED"
+        },
+        "321792": {
+          "spellId": "321792",
+          "iconId": "ability_revendreth_warlock",
+          "targetType": "ONE_ENEMY"
+        }
       },
       "Night Fae": {
-        "310143": { "spellId": "310143" },
-        "325640": { "spellId": "325640" }
+        "310143": {
+          "spellId": "310143",
+          "iconId": "ability_nightfae_flicker",
+          "targetType": "SELF"
+        },
+        "325640": {
+          "spellId": "325640",
+          "iconId": "ability_ardenweald_warlock",
+          "targetType": "ONE_ENEMY"
+        }
       },
       "Necrolord": {
-        "324631": { "spellId": "324631" },
-        "325289": { "spellId": "325289" }
+        "324631": {
+          "spellId": "324631",
+          "iconId": "ability_necrolord_fleshcraft",
+          "targetType": "ONE_ENEMY"
+        },
+        "325289": {
+          "spellId": "325289",
+          "iconId": "ability_maldraxxus_warlock",
+          "targetType": "ONE_ENEMY"
+        }
       }
     },
     "Warrior": {
       "Kyrian": {
-        "324739": { "spellId": "324739" },
-        "307865": { "spellId": "307865" }
+        "307865": {
+          "spellId": "307865",
+          "iconId": "ability_bastion_warrior",
+          "targetType": "PLACED"
+        },
+        "324739": {
+          "spellId": "324739",
+          "iconId": "ability_kyrian_summonsteward",
+          "targetType": "SELF"
+        }
       },
       "Venthyr": {
-        "300728": { "spellId": "300728" },
-        "317320": { "spellId": "317320" }
+        "300728": {
+          "spellId": "300728",
+          "iconId": "ability_venthyr_doorofshadows",
+          "targetType": "PLACED"
+        },
+        "317320": {
+          "spellId": "317320",
+          "iconId": "ability_revendreth_warrior",
+          "isPassive": true
+        }
       },
       "Night Fae": {
-        "310143": { "spellId": "310143" },
-        "325886": { "spellId": "325886" }
+        "310143": {
+          "spellId": "310143",
+          "iconId": "ability_nightfae_flicker",
+          "targetType": "SELF"
+        },
+        "325886": {
+          "spellId": "325886",
+          "iconId": "ability_ardenweald_warrior",
+          "targetType": "SELF"
+        }
       },
       "Necrolord": {
-        "324143": { "spellId": "324143" },
-        "324631": { "spellId": "324631" }
+        "324143": {
+          "spellId": "324143",
+          "iconId": "ability_maldraxxus_warriorplantbanner",
+          "targetType": "SELF"
+        },
+        "324631": {
+          "spellId": "324631",
+          "iconId": "ability_necrolord_fleshcraft",
+          "targetType": "ONE_ENEMY"
+        }
       }
     }
   }
