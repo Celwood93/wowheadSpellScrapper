@@ -948,24 +948,16 @@ const incorrectSpells = [];
 async function findDifferences(trueData, newData) {
   let classNames = Object.keys(trueData["Spells"]);
   for (const className in classNames) {
-    const spellIds = Object.keys(trueData["Spells"][classNames[className]]);
+    const spellIds = trueData["Spells"][classNames[className]];
     for (const spellId in spellIds) {
       if (
         newData["Spells"][classNames[className]].includes(spellIds[spellId]) &&
         !_.isEqual(
-          trueData["Spells"][classNames[className]][spellIds[spellId]],
+          trueData["AllSpells"][spellIds[spellId]],
           newData["AllSpells"][spellIds[spellId]]
         )
       ) {
         console.log("spells", spellIds[spellId]);
-        // console.log(
-        //   `${
-        //     trueData["Spells"][classNames[className]][spellIds[spellId]]
-        //       .spellName
-        //   } Not Equal`,
-        //   trueData["Spells"][classNames[className]][spellIds[spellId]],
-        //   newData["Spells"][classNames[className]][spellIds[spellId]]
-        // );
       }
       newData["Spells"][classNames[className]] = newData["Spells"][
         classNames[className]
@@ -982,54 +974,21 @@ async function findDifferences(trueData, newData) {
   for (const className in classNames) {
     const specNames = Object.keys(trueData["Talents"][classNames[className]]);
     for (const specName in specNames) {
-      const spellIds = Object.keys(
+      const spellIds =
         trueData["Talents"][classNames[className]][specNames[specName]][
           "Normal"
-        ]
-      );
+        ];
       for (spellId in spellIds) {
-        ({ talentCalcLoc, ...rest } = newData["AllSpells"][spellIds[spellId]]);
-        const vals = talentCalcLoc.filter(
-          (e) => e.spec === specNames[specName]
-        )[0];
-        rest["row"] = vals.row;
-        rest["col"] = vals.col;
-
-        if (spellIds[spellId] === "974") {
-          delete rest.spec;
-        }
         if (
           newData["Talents"][classNames[className]][specNames[specName]][
             "Normal"
           ].includes(spellIds[spellId]) &&
           !_.isEqual(
-            rest,
-            trueData["Talents"][classNames[className]][specNames[specName]][
-              "Normal"
-            ][spellIds[spellId]]
+            newData["AllSpells"][spellIds[spellId]],
+            trueData["AllSpells"][spellIds[spellId]]
           )
         ) {
-          console.log(
-            "talents",
-            newData["AllSpells"][spellIds[spellId]],
-            trueData["Talents"][classNames[className]][specNames[specName]][
-              "Normal"
-            ][spellIds[spellId]],
-            spellIds[spellId]
-          );
-          // console.log(
-          //   `${
-          //     trueData["Talents"][classNames[className]][specNames[specName]][
-          //       "Normal"
-          //     ][spellIds[spellId]].spellName
-          //   } Not Equal`,
-          //   trueData["Talents"][classNames[className]][specNames[specName]][
-          //     "Normal"
-          //   ][spellIds[spellId]],
-          //   newData["Talents"][classNames[className]][specNames[specName]][
-          //     "Normal"
-          //   ][spellIds[spellId]]
-          // );
+          console.log("talents", spellIds[spellId]);
         }
         newData["Talents"][classNames[className]][specNames[specName]][
           "Normal"
@@ -1054,11 +1013,10 @@ async function findDifferences(trueData, newData) {
       trueData["Covenants"][classNames[className]]
     );
     for (const covenantName in covenantNames) {
-      const covenantSpellIds = Object.keys(
+      const covenantSpellIds =
         trueData["Covenants"][classNames[className]][
           covenantNames[covenantName]
-        ]
-      );
+        ];
       for (const covenantSpellId in covenantSpellIds) {
         if (
           newData["Covenants"][classNames[className]][
@@ -1066,25 +1024,10 @@ async function findDifferences(trueData, newData) {
           ].includes(covenantSpellIds[covenantSpellId]) &&
           !_.isEqual(
             newData["AllSpells"][covenantSpellIds[covenantSpellId]],
-            trueData["Covenants"][classNames[className]][
-              covenantNames[covenantName]
-            ][covenantSpellIds[covenantSpellId]]
+            trueData["AllSpells"][covenantSpellIds[covenantSpellId]]
           )
         ) {
           console.log("covs", covenantSpellIds[covenantSpellId]);
-          // console.log(
-          //   `${
-          //     trueData["Covenants"][classNames[className]][
-          //       covenantNames[covenantName]
-          //     ][covenantSpellIds[covenantSpellId]].spellName
-          //   } Not Equal`,
-          //   trueData["Covenants"][classNames[className]][
-          //     covenantNames[covenantName]
-          //   ][covenantSpellIds[covenantSpellId]],
-          //   newData["Covenants"][classNames[className]][
-          //     covenantNames[covenantName]
-          //   ][covenantSpellIds[covenantSpellId]]
-          // );
         }
         newData["Covenants"][classNames[className]][
           covenantNames[covenantName]
@@ -1112,9 +1055,8 @@ async function findDifferences(trueData, newData) {
   for (const className in classNames) {
     const specNames = Object.keys(trueData["Talents"][classNames[className]]);
     for (const specName in specNames) {
-      const spellIds = Object.keys(
-        trueData["Talents"][classNames[className]][specNames[specName]]["PvP"]
-      );
+      const spellIds =
+        trueData["Talents"][classNames[className]][specNames[specName]]["PvP"];
       for (spellId in spellIds) {
         if (
           newData["Talents"][classNames[className]][specNames[specName]][
@@ -1122,25 +1064,10 @@ async function findDifferences(trueData, newData) {
           ].includes(spellIds[spellId]) &&
           !_.isEqual(
             newData["AllSpells"][spellIds[spellId]],
-            trueData["Talents"][classNames[className]][specNames[specName]][
-              "PvP"
-            ][spellIds[spellId]]
+            trueData["AllSpells"][spellIds[spellId]]
           )
         ) {
           console.log("pvptalents", spellIds[spellId]);
-          // console.log(
-          //   `${
-          //     trueData["Talents"][classNames[className]][specNames[specName]][
-          //       "PvP"
-          //     ][spellIds[spellId]].spellName
-          //   } Not Equal`,
-          //   trueData["Talents"][classNames[className]][specNames[specName]][
-          //     "PvP"
-          //   ][spellIds[spellId]],
-          //   newData["Talents"][classNames[className]][specNames[specName]][
-          //     "PvP"
-          //   ][spellIds[spellId]]
-          // );
         }
         newData["Talents"][classNames[className]][specNames[specName]][
           "PvP"
@@ -1172,10 +1099,23 @@ async function findDifferences(trueData, newData) {
     delete newData["Talents"];
   }
 
+  if (!_.isEqual(trueData["AllSpells"], newData["AllSpells"])) {
+    console.log(
+      "found in truedata but not in newdata",
+      trueData["AllSpells"].filter((x) => !newData["AllSpells"].includes(x)),
+      "found in newdata but not in truedata",
+      newData["AllSpells"].filter((x) => !trueData["AllSpells"].includes(x))
+    );
+    newData["AllSpells"] = newData["AllSpells"].filter(
+      (x) => !trueData["AllSpells"].includes(x)
+    );
+  } else {
+    delete newData["AllSpells"];
+  }
+
   //do something to verify the two things here
   let jsonToWrite = JSON.stringify(newData);
   fs.writeFileSync(`NewDataSpellsNotInTrueData.json`, jsonToWrite);
-  //console.log(jsonToWrite);
 }
 
 function checkForImprovements(targetData, calculatedData) {
