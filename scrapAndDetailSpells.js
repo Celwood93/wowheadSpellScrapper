@@ -185,6 +185,7 @@ async function getDetails(
             ...newDataForId,
           };
         }
+        //TODO potential for race conditions. Consider adding mutex
         cachedIds[spellId] = newDataForId;
       }
       if (page) {
