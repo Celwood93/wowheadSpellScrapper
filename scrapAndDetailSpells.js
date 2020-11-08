@@ -162,8 +162,16 @@ async function getDetails(
             ...newDataForId,
           };
         } else if (type === "Talents") {
+          ({ row, col, ...remaining } = spellData["Talents"][className][spec][
+            "Normal"
+          ][spellId]);
+          let talentCalcLoc = [{ spec, row, col }];
+          if (spellId in cachedIds) {
+            talentCalcLoc.concat(cachedIds[spellId].talentCalcLoc);
+          }
           newDataForId = {
-            ...spellData["Talents"][className][spec]["Normal"][spellId],
+            ...remaining,
+            talentCalcLoc,
             ...newDataForId,
           };
         } else if (type === "PvPTalents") {
@@ -184,6 +192,16 @@ async function getDetails(
       }
     } else {
       newDataForId = cachedIds[spellId];
+      if (type === "Talents") {
+        ({ row, col, ...remaining } = spellData["Talents"][className][spec][
+          "Normal"
+        ][spellId]);
+        if (newDataForId.talentCalcLoc) {
+          newDataForId.talentCalcLoc.push({ spec, row, col });
+        } else {
+          newDataForId["talentCalcLoc"] = [{ spec, row, col }];
+        }
+      }
       release();
     }
     if (newDataForId) {
@@ -239,6 +257,7 @@ async function getDetails(
     }
     release();
     failedSpells.push(spellId);
+    console.log(e);
     await fs.appendFileSync("log.txt", e);
   }
 }
@@ -969,12 +988,22 @@ async function findDifferences(trueData, newData) {
         ]
       );
       for (spellId in spellIds) {
+        ({ talentCalcLoc, ...rest } = newData["AllSpells"][spellIds[spellId]]);
+        const vals = talentCalcLoc.filter(
+          (e) => e.spec === specNames[specName]
+        )[0];
+        rest["row"] = vals.row;
+        rest["col"] = vals.col;
+
+        if (spellIds[spellId] === "974") {
+          delete rest.spec;
+        }
         if (
           newData["Talents"][classNames[className]][specNames[specName]][
             "Normal"
           ].includes(spellIds[spellId]) &&
           !_.isEqual(
-            newData["AllSpells"][spellIds[spellId]],
+            rest,
             trueData["Talents"][classNames[className]][specNames[specName]][
               "Normal"
             ][spellIds[spellId]]
