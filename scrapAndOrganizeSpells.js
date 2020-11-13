@@ -396,9 +396,9 @@ async function scrapeSpell(classType, browser, mutex) {
       hidden: true
     };
     spellIds["Covenants"]["Warrior"]["Venthyr"]["317320"] = {
-      spellId: "317349",
+      spellId: "317320",
       idOfReplacedSpell: ["5308", "163201"],
-      enableSpells: ["317485", "317349"]
+      enabledSpells: ["317485", "317349"]
     };
   }
   if (
@@ -420,7 +420,7 @@ async function scrapeSpell(classType, browser, mutex) {
     spellIds["Talents"]["Shaman"]["ENHANCEMENT"]["PvP"]["193876"] = {
       ...spellIds["Talents"]["Shaman"]["ENHANCEMENT"]["PvP"]["193876"],
       idOfReplacedSpell: ["32182", "2825"],
-      enableSpells: ["204362", "204361"]
+      enabledSpells: ["204362", "204361"]
     };
   }
   page.close();
