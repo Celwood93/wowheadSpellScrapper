@@ -244,6 +244,7 @@ async function getDetails(
           spellDataReformatted["Talents"][className][spec]["PvP"] = [spellId];
         }
       } else if (type === "Covenants") {
+        //Note spec is actually covenant
         if (Array.isArray(spellDataReformatted["Covenants"][className][spec])) {
           spellDataReformatted["Covenants"][className][spec] = [
             ...spellDataReformatted["Covenants"][className][spec],
